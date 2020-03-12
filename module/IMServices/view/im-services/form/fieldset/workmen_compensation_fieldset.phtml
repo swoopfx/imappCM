@@ -1,0 +1,450 @@
+<?php
+$workmenCompensationFieldset = $form->get("workmenFieldset");
+?>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}' data-ajax-loader="microFieldsetss"
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"workmenDecreelist")) ?>">
+		Employee Decree List <i id="microFieldsetss"
+		class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i></a>
+</div>
+<div class="form-group" id="div_work_decree_list"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isAllPersonsInservice'))?>
+								
+								<div class="col-md-7 col-sm- col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isAllPersonsInservice'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title=" Provide insurance for sub contractors"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isAllPersonsInservice'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('total12monthwages'))?>
+								
+		<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('total12monthwages'));?>
+									
+								</div>
+
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top"
+			title="Total amount of wages, salaries and other earning paid to employees list in the past twelve months"></i>
+	
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('total12monthwages'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isMedicalIndemnity'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isMedicalIndemnity'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Do you require indemnity in respect of Medical Expenses under Workmen Compensation Decree?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isMedicalIndemnity'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isInsureSubContractor'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isInsureSubContractor'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title=" Provide insurance your liability under the Workmen Compensation Decree to the Workmen of
+sub-contractor"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isInsureSubContractor'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_is_sub_contractor">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}' data-ajax-loader="microFieldsetsss"
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"workmencontractorlist")) ?>">
+			Sub Contractor List <i id="microFieldsetsss"
+		class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i></a>
+	</div>
+	<div class="form-group" id="div_work_contrractor_list"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('total12monthSubContractorwages'))?>
+								
+								
+		<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('total12monthSubContractorwages'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title=" Provide insurance for sub contractors"></i>
+			
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('total12monthSubContractorwages'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isAllSubContractors'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isAllSubContractors'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title=" Provide insurance for sub contractors"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isAllSubContractors'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('totalProvisionalAnnualPremium'))?>
+								
+							
+		<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('totalProvisionalAnnualPremium'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="TOTAL PROVISIONAL ANNUAL PREMIUMs"></i>
+		
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('totalProvisionalAnnualPremium'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isMaintenanceRegulation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isMaintenanceRegulation'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title=" Does your premises come within the meaning of any Decree or Regulation governing the conduct or maintenance of such premises"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isMaintenanceRegulation'));  // this defines the error?> 
+							</div>
+	</div>
+
+<div id="div_regulation">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('regulation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('regulation'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title=" Name such Decree or Regulation"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('regulation'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isCarriedOutObligation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isCarriedOutObligation'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title=" Have you carried out all the obligations imposed on you by
+such Decree or Regulation"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isCarriedOutObligation'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isFenceMachine'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isFenceMachine'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Are your machinery plant and ways properly fenced and guarded and in good order or
+condition"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isFenceMachine'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isBoilers'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isBoilers'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has boilers "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isBoilers'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_boiler_details">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('boilerDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('boilerDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has boilers "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('boilerDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isSaw'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isSaw'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Contains circular saws or other machinery driven by steam, gas"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isSaw'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_saw_details">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('sawDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('sawDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Give particulars of any circular saws or other machinery"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('sawDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isAcidExplosiveMaterials'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isAcidExplosiveMaterials'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Contains acids, gases, chemicals explosive or fissionable materials"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isAcidExplosiveMaterials'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_acid_details">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('acidDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('acidDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Give particulars acids, gases, chemicals explosive or fissionable materials"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('acidDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isPreviouslyInsured'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isPreviouslyInsured'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was previously insured with another insurer"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isPreviouslyInsured'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Declined by previous insurer "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isSpecialTerms'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isSpecialTerms'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Previous insurer required special terms"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isSpecialTerms'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('isPreviousClaims'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('isPreviousClaims'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Had claims in past 5 years"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('isPreviousClaims'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_claims_details">
+
+								 <?php echo $this->formLabel($workmenCompensationFieldset->get('claimsDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($workmenCompensationFieldset->get('claimsDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Claims details"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($workmenCompensationFieldset->get('claimsDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<script>
+ $(document).ready(function(){
+	 $("#div_regulation").hide();
+	 $("#div_is_sub_contractor").hide();
+	 $("#div_boiler_details").hide();
+	 $("#div_claims_details").hide();
+	 $("#div_acid_details").hide();
+	 $("#div_saw_details").hide();
+	 
+
+	 $("#isMaintenanceRegulation").change(function(){
+		 if($("#isMaintenanceRegulation").is(":checked")){
+			 $("#div_regulation").show();
+		 }else{
+			 $("#div_regulation").hide();
+			 }
+		 })
+		 
+		 
+		  $("#isPreviousClaims").change(function(){
+		 if($("#isPreviousClaims").is(":checked")){
+			 $("#div_claims_details").show();
+		 }else{
+			 $("#div_claims_details").hide();
+			 }
+		 })
+		 
+		 
+		 
+		  $("#isSaw").change(function(){
+		 if($("#isSaw").is(":checked")){
+			 $("#div_saw_details").show();
+		 }else{
+			 $("#div_saw_details").hide();
+			 }
+		 })
+		 
+		 
+		 
+		  $("#isAcidExplosiveMaterials").change(function(){
+		 if($("#isAcidExplosiveMaterials").is(":checked")){
+			 $("#div_acid_details").show();
+		 }else{
+			 $("#div_acid_details").hide();
+			 }
+		 })
+		 
+		 
+		  $("#isBoilers").change(function(){
+		 if($("#isBoilers").is(":checked")){
+			 $("#div_boiler_details").show();
+		 }else{
+			 $("#div_boiler_details").hide();
+			 }
+		 })
+
+
+		 $("#isInsureSubContractor").change(function(){
+		 if($("#isInsureSubContractor").is(":checked")){
+			 $("#div_is_sub_contractor").show();
+		 }else{
+			 $("#div_is_sub_contractor").hide();
+			 }
+		 })
+	 })
+</script>

@@ -1,0 +1,197 @@
+<?php
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->grouppersonalwagesdetails;
+?>
+
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('name'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('name'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('name'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('occupation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('occupation'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('occupation'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group" id="div_other_occupation">
+
+								 <?php echo $this->formLabel($field->get('otherOccupation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('otherOccupation'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('otherOccupation'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('numberOfEmployee'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('numberOfEmployee'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('numberOfEmployee'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('grossAnnualSalary'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('grossAnnualSalary'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('grossAnnualSalary'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('isDeath'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('isDeath'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Benefit for death case"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('isDeath'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('isLossOfLimbs'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('isLossOfLimbs'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Benefit for loss of limbs"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('isLossOfLimbs'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('isLossOfEyes'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('isLossOfEyes'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Benefit for loss of eyes"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('isLossOfEyes'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('temporaryDisablementTotal'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('temporaryDisablementTotal'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Amount payable for disablement"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('temporaryDisablementTotal'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('permanentDisablement'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('permanentDisablement'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="amount payable for permanent disablement"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('permanentDisablement'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('medicalExpenseLimit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('medicalExpenseLimit'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Limit on medical expenses"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('medicalExpenseLimit'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+		<a id="sending_data_button"
+			class="ajax_element btn btn-danger btn-xs pull-right"
+			data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+</div>
+
+<script type="text/javascript">
+
+// $(document).ready(function(){
+// 	$("#div_other_occupation").hide();
+
+// 	$("#occupation").change(function(){
+// 		if(("#occupation").val() == "1000"){
+// 			$("#div_other_occupation").show();
+// 			}else{
+// 				$("#div_other_occupation").hide();
+// 				}
+// 		})
+// })
+</script>

@@ -1,0 +1,51 @@
+<?php
+
+$proposalForm = $this->proposalForm;
+$proposalFieldset = $proposalForm->get('proposalFieldset');
+$proposalForm->setAttributes(array(
+    "action"=>$this->url("proposal/default", array("action"=>"editmainproposalajax"))
+))
+;
+$proposalForm->prepare();
+
+if ($this->identity() && $customerData != NULL) {
+    ?>
+
+<div class="row" ng-app="CustomerModule">
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Generate Proposal</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<!-- Enter the view helper heere -->
+			<?php  echo $this->form()->openTag($proposalForm);  ?>
+			 
+			 <?php  echo $this->partial('proposal-create-snipet', array('proposalFieldset'=>$proposalFieldset, 'customer'=>$customerData))?>
+				
+			
+<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-9">
+
+				
+				<?php
+    echo $this->formRow($proposalForm->get('csrf'));
+    echo $this->formRow($proposalForm->get('submit'));
+    // echo $this->formRow($proposalForm->get('reset'));
+    
+    ?>
+    </div>
+				<?php echo $this->form()->closeTag();?>
+
+			</div>
+		</div>
+	</div>
+
+
+</div>
+<?php  }?>

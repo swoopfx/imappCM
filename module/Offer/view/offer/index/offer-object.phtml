@@ -1,0 +1,124 @@
+<?php
+echo $this->headtitle('Object and Documents - New Offer Form ');
+$offerObjectForm = $this->offerObjectForm;
+$object = $this->allObjects;
+
+$objectField = $offerObjectForm->get('objectFieldset');
+
+$offerObjectForm->prepare();
+
+?>
+
+
+<div class="row" ng-app="OfferModule">
+	<div class="col-md-9 col-sm-9 col-xs-9">
+		<div class="x_panel">
+			<div class="x_title">
+			
+				<h2>Offer Object and Documents</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+					<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="text-center mtop20">
+				<a href="#" class="btn btn-sm btn-primary" data-toggle="modal"
+					data-target=".bs-example-modal-sm">Create Object</a> <a href="#"
+					data-toggle="modal" data-target=".bs-example-modal-sm1"
+					class="btn btn-sm btn-warning">Select Object</a>
+			</div>
+			<div class="x_content" ng-controller="selectObjectController">
+
+
+
+
+				<p>All Objects (property, motor etc.) intended for insuring</p>
+				<!-- start project list -->
+				<?php echo $this->form()->openTag($offerObjectForm);?>
+				
+				
+				<?php echo $this->partial('offer-object-selected', array('offerObjectForm'=>$offerObjectForm))?>
+				
+				
+				<!-- 				<div class="stepContainer"> -->
+				<!--               <a href="#" class="btn btn-success">Submit Selected Object</a></div> -->
+				<!--  Include Documents here -->
+				<!-- end project list -->
+							
+	
+							
+    <!-- Begin Object Creation -->
+				<div class="modal fade bs-example-modal-sm" tabindex="-1"
+					role="dialog" aria-hidden="true">
+					<div class="modal-dialog modal-xm">
+						<div class="modal-content">
+
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">X</span>
+								</button>
+								<h2 class="modal-title" id="myModalLabel2">New Object Form</h2>
+							</div>
+							<div class="modal-body" ng-controller="createObjectController">
+
+
+
+
+								
+										
+
+										
+
+										Create Object and its partials here
+										<?php echo $this->partial('new_object_partial',array('objectField'=>$objectField)); ?>
+
+
+
+									</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Create Object</button>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!--  End Object Creation  -->
+
+				<!-- Begin Selection Modal -->
+				<?php echo $this->partial('offer-object-modal-selection', array('allObject'=>$object, 'offerObjectForm'=>$offerObjectForm))?>
+				
+				<!--  End Selection Model  -->
+				
+				
+				<div class="ln_solid"></div>
+				<div class="form-group">
+					<h2>Upload Documents</h2>
+    <?php // echo $this->formrow($offerObjectForm->get('multiple-uploader')->get('file'));?>
+    </div>
+				<div class="ln_solid"></div>
+				<div class="form-group">
+					<div class="col-md-6 col-md-offset-3">
+							
+							<?php echo $this->formsubmit($offerObjectForm->get('reset'));?>
+							<?php echo $this->formsubmit($offerObjectForm->get('next'));?>
+						</div>
+				</div>
+							<?php  echo $this->form()->closeTag(); ?>
+
+						</div>
+		</div>
+	</div>
+</div>
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('angular/OfferModule.js'))
+    ->appendFile($this->basePath('angular/controllers/offerController.js'));
+?>

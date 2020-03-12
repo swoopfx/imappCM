@@ -1,0 +1,12 @@
+<?php echo $this->partial("message-form-snippet", array("messageForm"=>$messageForm))?>
+<hr>
+<div id="success"></div>
+<div id="error"></div>
+
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+
+<div id="sentmessage"></div>
+<?php  echo $this->customerMessageProposalHelper($proposalEntity)?>

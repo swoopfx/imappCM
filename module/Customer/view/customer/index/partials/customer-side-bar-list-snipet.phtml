@@ -1,0 +1,21 @@
+<?php $customers = $this->customers;
+$count = (count($customers) < 20 ? count($customers): 20);
+if ($customers != NULL){
+  for ($i=0; $i < $count ; $i++) { 
+//$info = $staff->getUser()->getBrokerChildProfile();
+?>
+
+<li class="media event">
+                            <a class="pull-left border-green profile_thumb">
+                              <i class="fa fa-user green"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="<?php echo $this->url("customer/default", array("action"=>"pre-profile", "id"=>$customers[$i]->getAccountId()))?>"><?php  echo $customers[$i]->getName() ?> </a>
+                              <p><strong>Created On: <?php echo $this->dateFormat($customers[$i]->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US");?></strong>  </p>
+<!--                               <p> <small>12 Sales Today</small>  </p> -->
+                             
+                              
+                            
+                            </div>
+                          </li>
+                          <?php }}?>

@@ -1,0 +1,89 @@
+<?php
+
+?>
+<div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Staff Details</h2>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
+
+                    
+
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        
+
+                        <tbody>
+                          <tr class="even pointer">
+                            
+                            <td class=" ">First Name</td>
+                            <td class=" "><?php  echo ($staffEntity->getFirstname() == NULL ? "" : $staffEntity->getFirstname())?></td>
+                            
+                          </tr>
+                          <tr class="odd pointer">
+                            
+                            <td class=" ">Last Name</td>
+                            <td class=" "><?php  echo ($staffEntity->getLastname() == NULL ? "" : $staffEntity->getLastname())?></td>
+                            
+                          </tr>
+                          <tr class="even pointer">
+                           
+                            <td class=" ">Identity</td>
+                            <td class=" "><?php  echo ($staffEntity->getBrokerChildUid() == NULL ? "" :  strtoupper($staffEntity->getBrokerChildUid()))?></td>
+                            
+                          </tr>
+                          <tr class="odd pointer">
+                            
+                            <td class=" ">Phone Number</td>
+                            <td class=" "><?php  echo ($staffEntity->getUser() == NULL ? "No User" : $staffEntity->getUser()->getUsername())?></td>
+                            
+                          </tr>
+                          <tr class="even pointer">
+                            
+                            <td class=" ">Email :</td>
+                            <td class=" "><?php  echo ($staffEntity->getUser() == NULL ? "No User" : $staffEntity->getUser()->getEmail())?></td>
+                            
+                          </tr>
+                          <tr class="odd pointer">
+                            
+                            <td class=" ">Created On </td>
+                            <td class=" "><?php  echo $this->dateFormat($staffEntity->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></td>
+                            
+                          </tr>
+                          <tr class="even pointer">
+                           
+                            <td class=" ">Modified On</td>
+                            <td class=" "><?php  echo $this->dateFormat($staffEntity->getModifiedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></td>
+                            
+                          </tr>
+<!--                           <tr class="odd pointer"> -->
+                            
+<!--                             <td class=" ">121000037</td> -->
+<!--                             <td class=" ">May 26, 2014 10:52:44 PM</td> -->
+                            
+<!--                           </tr> -->
+
+<!--                           <tr class="even pointer"> -->
+                            
+<!--                             <td class=" ">121000040</td> -->
+<!--                             <td class=" ">May 27, 2014 11:47:56 PM </td> -->
+                            
+<!--                           </tr> -->
+<!--                           <tr class="odd pointer"> -->
+                            
+<!--                             <td class=" ">121000039</td> -->
+<!--                             <td class=" ">May 28, 2014 11:30:12 PM</td> -->
+                            
+<!--                           </tr> -->
+                        </tbody>
+                      </table>
+                    </div>
+							
+						
+                  </div>
+                </div>
+              </div>

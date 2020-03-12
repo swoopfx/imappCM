@@ -1,0 +1,89 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate(\Application\Controller\IndexController::APP_TITLE))->setSeparator(' - ')->setAutoEscape(false)?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')?>
+
+        <!-- Le styles -->
+        <?php
+        
+        echo $this->headLink(array(
+            'rel' => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $this->basePath() . '/img/favicon.ico'
+        ))
+            ->prependStylesheet($this->basePath('css/custom.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))?>
+
+        <!-- Scripts -->
+        <?php
+        
+        echo $this->headScript()
+            ->prependFile($this->basePath('js/nprogress.js'))
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array(
+            'conditional' => 'lt IE 9'
+        ))
+            ->prependFile($this->basePath('js/html5shiv.min.js'), 'text/javascript', array(
+            'conditional' => 'lt IE 9'
+        ))
+            ->prependFile($this->basePath('js/imApp.js'))
+            ->prependFile($this->basePath('angular/lib/angular.js'));
+        ?>
+								
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/animate.min.css" rel="stylesheet">
+
+<!-- Custom styling plus plugins -->
+<link href="/css/custom.css" rel="stylesheet">
+<link href="/css/icheck/flat/green.css" rel="stylesheet">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+</head>
+<body class="nav-md">
+
+	<div class="container body">
+
+		<?php  echo $this->content?>
+		<!-- footer content -->
+	</div>
+
+	<div id="custom_notifications" class="custom-notifications dsp_none">
+		<ul class="list-unstyled notifications clearfix"
+			data-tabbed_notifications="notif-group">
+		</ul>
+		<div class="clearfix"></div>
+		<div id="notif-group" class="tabbed_notifications"></div>
+	</div>
+
+	<script src="/js/bootstrap.min.js"></script>
+
+	<!-- chart js -->
+	<script src="/js/chartjs/chart.min.js"></script>
+	<!-- bootstrap progress js -->
+	<script src="/js/progressbar/bootstrap-progressbar.min.js"></script>
+	<script src="/js/nicescroll/jquery.nicescroll.min.js"></script>
+	<!-- icheck -->
+	<script src="/js/icheck/icheck.min.js"></script>
+
+	<script src="/js/custom.js"></script>
+
+	<!-- /footer content -->
+</body>
+
+</html>

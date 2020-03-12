@@ -1,0 +1,191 @@
+<?php
+$customerFieldset = $this->customerFieldset?>
+
+
+<div class="form-group">
+							
+								<?php
+        $customerFieldset->get('user')
+            ->get('username')
+            ->setOptions(array(
+            'label' => 'Customer Phone No.'
+        ))
+            ->setAttributes(array(
+            'class' => 'form-control phone'
+        ));
+        echo $this->formLabel($customerFieldset->get('name'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('name'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($customerFieldset->get('name'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group" data-ng-show="isDob">
+							
+								<?php echo $this->formLabel($customerFieldset->get('dob'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('dob'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($customerFieldset->get('dob'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($customerFieldset->get('user')->get('username'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('user')->get('username'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($customerFieldset->get('user')->get('username'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php
+        $customerFieldset->get('user')
+            ->get('email')
+            ->setOptions(array(
+            'label' => 'Customer Email'
+        ));
+        echo $this->formLabel($customerFieldset->get('user')
+            ->get('email'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('user')->get('email'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($customerFieldset->get('user')->get('email'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($customerFieldset->get('address1'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('address1'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($customerFieldset->get('address1'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								 <?php echo $this->formLabel($customerFieldset->get('address2'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('address2'));?>
+									
+								</div>
+								<?php echo  $this->formElementErrors($customerFieldset->get('address2'));  // this defines the error?> 
+							</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($customerFieldset->get('city'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('city'));?>
+									
+								</div>
+								<?php echo $this->formElementErrors($customerFieldset->get('city'));  // this defines the error?> 
+							</div>
+
+<div class="form-group">
+	<?php
+
+$customerFieldset->get('country')->setAttributes(array(
+    'value' => 156
+))?>						
+								<?php echo $this->formLabel($customerFieldset->get('country'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('country'));?>
+									
+								</div>
+								<?php echo $this->formElementErrors($customerFieldset->get('country'));  // this defines the error?> 
+							</div>
+							
+							<div style='text-align: center;'>
+		<i id='loading' class='fa fa-lg'
+			style='display: none; text-align: center;'><img alt=''
+			src='<?php echo  $this->basePath('/processin.gif')  ?>' height=30>
+			<hr></i>
+		<div id="spread"></div>
+	</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($customerFieldset->get('state'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($customerFieldset->get('state'));?>
+									
+								</div>
+								<?php echo $this->formElementErrors($customerFieldset->get('state'));  // this defines the error?> 
+							</div>
+
+
+
+
+
+<div class="ln_solid"></div>
+
+
+<script>
+
+
+ function getStates(){
+	 $.ajax({
+		 type:"POST",
+		 data:{
+			 "service":$("#country").val(),
+		 },
+		 url:"/general/state",
+		 dataType:"html",
+		 beforeSend:function(){
+			 $("#loading").show();
+			 },
+		 success: function(data, status){
+			 $("#state").html(data);
+			 },
+		 error:function(){
+			 alert("We could not reterieve state");
+			 },
+			 complete:function(){
+				 $("#loading").hide();
+				 }
+			 
+		 
+		 });
+	 
+	 }
+	 
+	 $(document).ready(function(e) {
+        if($("#country").val() != ""){
+			getStates();
+		}
+		
+		$("#country").change(function(){
+			getStates()
+			});
+    });
+	 
+	 
+	 
+</script>

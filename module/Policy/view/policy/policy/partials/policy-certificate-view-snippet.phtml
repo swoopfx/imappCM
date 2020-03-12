@@ -1,0 +1,67 @@
+<?php
+
+
+use Policy\Service\PolicyService;
+
+$thisdate = new DateTime();
+if ($policy->getPolicyStatus()->getId() == PolicyService::POLICY_STATUS_INACTIVE) {
+    echo "<span class='btn btn-danger' style='width: 60%'>EXPIRED policy</span>";
+}elseif ($policy->getPolicyStatus()->getId() == PolicyService::POLICY_STATUS_SUSPENDED){
+    echo "<span class='btn btn-danger' style='width: 60%'>POILICY SUSPENDED</span>";
+}
+
+else {
+    ?>
+
+
+
+<div
+	style="border: 10px double #f50639; padding: 50px 30px 40px 30px; margin: 0px auto 10px auto; text-align: center; font-family: Helvetica, Arial, sans-serif; width: 800px;">
+
+
+	<p
+		style="font-family: 'Times New Roman', serif; font-size: 33px; font-weight: bold; color: #f50639 !important; margin: 30px;"><?php  echo $policy->getPolicyName()?></p>
+	<p style="font-size: 18px;">
+				 <?php  echo strtoupper($policy->getPolicyCode())?><br>
+
+	</p>
+	<p style="font-size: 13px;">
+				
+				 Effective from: <?php  echo $this->dateFormat($policy->getStartDate(), IntlDateFormatter::LONG, IntlDateFormatter::SHORT, "en_us")?> to <?php  echo $this->dateFormat($policy->getEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::SHORT, "en_us")?>
+			</p>
+
+	
+	
+		<p
+			style="font-family: 'Times New Roman', serif; font-size: 19px; font-weight: bold; color: #0096dc !important; margin: 35px;">Generated
+			For</p>
+		<p style="font-size: 16px;">
+			<i class="fa fa-user"></i> <?php  echo $policy->getCoverNote()->getCustomer()->getName()?><br>
+			<i class="fa fa-university"></i> <?php  echo $policy->getCoverNote()->getCustomer()->getFullAddress()?><br>
+			<i class="fa fa-phone"></i> <?php  echo $policy->getCoverNote()->getCustomer()->getUser()->getUsername();?></p>
+
+	<br>
+	<br>
+	<p
+			style="font-family: 'Times New Roman', serif; font-size: 19px; font-weight: bold; color: #0096dc !important; margin: 35px;">Insurer</p>
+	<p align="center" style="font-size: 16px;">
+				<img alt=""
+					src="<?php echo $this->insurerLogohelper($policy->getCoverNote()->getInsurer()->getId())?>"
+					class="img-circle   img-responsive" width=100>
+			</p>
+	
+<br>
+
+	<hr
+		style="margin: 20px 20px 20px 20px; border: double; color: #4CA2DD; height: 4px;">
+
+	<h3><?php  echo $this->covernote_service_type_helper($policy->getCoverNote());?></h3>
+	<h3>
+				<?php  echo $this->covernote_specific_service_type_helper($policy->getCoverNote())?>
+			</h3>
+
+
+
+	<br> <br>
+</div>
+<?php }?>

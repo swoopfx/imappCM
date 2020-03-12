@@ -1,0 +1,160 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+$machineBreakdownEntity = NULL;
+if($coverEntity->getMachineryBreakdown() == NULL){
+    $machineBreakdownEntity = $coverEntity->getPlantAllRisk();
+}else{
+    $machineBreakdownEntity = $coverEntity->getMachineryBreakdown();
+}
+
+
+?>
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Machine Id Identifier</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getMachineUniqueId() != NUll ? $this->escapehtml($machineBreakdownEntity->getMachineUniqueId()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed Cover Start Date</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getCoverStartDate() != NUll ? $this->dateFormat($machineBreakdownEntity->getCoverStartDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed Cover End Date</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getCoverEndDate() != NUll ? $this->dateFormat($machineBreakdownEntity->getCoverEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Purchase Date</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getPurchaseDate() != NUll ? $this->dateFormat($machineBreakdownEntity->getPurchaseDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Machine Description</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getMachineDesc() != NUll ? $this->escapehtml($machineBreakdownEntity->getMachineDesc()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Purchase Value Type</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getMachinePurchaseType() != NUll ? $this->escapehtml($machineBreakdownEntity->getMachinePurchaseType()->getValueType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>How machine is used</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getMachineUse() != NUll ? $this->escapehtml($machineBreakdownEntity->getMachineUse()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Last Service Date</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getLastServiceDate() != NUll ? $this->dateFormat($machineBreakdownEntity->getLastServiceDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Serviceing Company</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getServiceCompany() != NUll ? $this->escapehtml($machineBreakdownEntity->getServiceCompany()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Sum Insurred</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getSumInsured() != NUll ? $this->myCurrencyFormat($this->escapehtml($machineBreakdownEntity->getMachineUse())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Machine is covered for fire and/or buglary</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getIsFireBuglary() != NUll ? $this->trueFalseHelper($machineBreakdownEntity->getIsFireBuglary()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if($machineBreakdownEntity->getIsFireBuglary()):?>
+			<tr>
+
+				<th>Sum Insurred</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getFireBuglaryInsurer() != NUll ? $this->escapehtml($machineBreakdownEntity->getFireBuglaryInsurer()->getInsuranceName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Was previously declined by an insurer</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($machineBreakdownEntity->getIsPreviousDecline()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($machineBreakdownEntity->getIsPreviousDecline()):?>
+			<tr>
+
+				<th>Decline details</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getFireBuglaryInsurer() != NUll ? $this->escapehtml($machineBreakdownEntity->getDeclineDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Previously had loss</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getIsPreviousLoss() != NUll ? $this->trueFalseHelper($machineBreakdownEntity->getIsPreviousLoss()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($machineBreakdownEntity->getIsPreviousLoss()):?>
+			<tr>
+
+				<th>Loss details</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getPreviousLoss() != NUll ? $this->escapehtml($machineBreakdownEntity->getPreviousLoss()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Any other facts</th>
+				<td>
+				<?php  echo ($machineBreakdownEntity->getMaterialFacts() != NUll ? $this->escapehtml($machineBreakdownEntity->getMaterialFacts()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>

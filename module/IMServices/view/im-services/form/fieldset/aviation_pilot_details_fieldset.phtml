@@ -1,0 +1,99 @@
+<?php
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->aviationPilotDetails;
+?>
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('pilotName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('pilotName'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Pilot Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('pilotName'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('pilotDOb'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('pilotDOb'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Pilot Date Of Birth"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('pilotDOb'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('flyingHours'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('flyingHours'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Total Flying hours"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('flyingHours'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('licenceNumber'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('licenceNumber'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Pilot Licence Number"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('licenceNumber'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('isPreviousAccident'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('isPreviousAccident'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Has every been in accident"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('isPreviousAccident'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<?php  $json = json_encode(array(
+    "data"=>$countId 
+                ));
+?>
+	<div class="form-group">
+		<a id="sending_data_button" class="ajax_element btn btn-danger btn-xs pull-right"
+			 data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+</div>

@@ -1,0 +1,49 @@
+<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline margin-none">My Policy</h4>
+
+					</div>
+					<ul class="list-group">
+						
+						
+						
+					
+<?php
+$count = (count ( $policy ) < 5 ? count ( $policy ) : 5);
+if (count ( $policy ) == 0) {
+	echo "<li class='list-group-item media v-middle'><div class='media-body'>No policy issued yet</div></li>";
+} else {
+	for($i = 0; $i < $count; $i ++) {
+		?>
+<li class="list-group-item media v-middle">
+							<div class="media-body">
+							<div class="caption">
+									<span class="text-light">POLICY:</span> <a
+										href="<?php  echo $this->url("cus_policy/default", array("action"=>"view", "id"=>$policy[$i]->getPolicyUid())); ?>"><?php echo (count($policy[$i]->getPolicyCode()) == 0 ? " " : $policy[$i]->getPolicyCode()) ?></a>
+								</div>
+								<a href="<?php ?>"
+								
+									class="text-subhead list-group-link"><?php  echo ($policy[$i]->getPolicyName() == NULL ? "": $policy[$i]->getPolicyName())?></a>
+									<div class="text-light text-caption">
+                    Updated On 
+                     <i class="fa fa-clock-o fa-fw"></i> <?php echo $this->dateFormat($policy[$i]->getUpdatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, 'en_US')?>
+                  </div>
+							</div>
+							<div class="media-right">
+								<span class="badge badge-red"><?php echo $policy[$i]->getPolicyStatus()->getStatus()->getStatusWord()?></span>
+							</div>
+						</li>
+<?php
+	}
+}
+?>
+
+</ul>
+					<div class="panel-footer text-right">
+						<a href="<?php  echo $this->url("cus_policy")?>"
+							class="btn btn-white paper-shadow relative" data-z="0"
+							data-hover-z="1" data-animated href="#"> <?php  echo (count($policy) > 0 ? "View all": "")?></a>
+					</div>
+				</div>
+			</div>

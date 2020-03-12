@@ -1,0 +1,96 @@
+<?php
+echo $this->headTitle("Web Configuration");
+
+?>
+<div id="wasabi_modal"></div>
+<div class="row">
+	<div class='col-md-9 col-sm-9 col-xs-12'>
+		<br> <br>
+      <?php  //echo $this->partial("settings-navigation")?>
+      
+      <hr>
+		<div class="clearfix"></div>
+
+
+
+		<div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+			<div class="well profile_view text-center">
+				<div class="col-sm-12">
+					<br>
+					<h4>
+						<i>Web Connection </i>
+					</h4>
+					<br>
+					<div class="left col-xs-7"></div>
+
+				</div>
+				<div class="col-xs-12 bottom text-center">
+
+					<div class="col-xs-12 col-sm-12 emphasis">
+
+						<a id="btn2" data-ajax-loader="webconnection"
+							data-href="<?php  echo $this->url("settings/default", array("action"=>"webconnection"))?>"
+							style="width: 100%;" type="button"
+							class="btn btn-primary btn-xs ajax_element"> <i class="fa fa-eye"></i>
+							View
+						</a>
+						<div style="text-align: center;">
+							<i id="webconnection" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=27></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+			<div class="well profile_view text-center">
+				<div class="col-sm-12">
+					<br>
+					<h4>
+						<i>API Configuration</i>
+					</h4>
+					<br>
+					<div class="left col-xs-7"></div>
+
+				</div>
+				<div class="col-xs-12 bottom text-center">
+
+					<div class="col-xs-12 col-sm-12 emphasis">
+
+						<a id="btn2" data-ajax-loader="apiconfig"
+							data-href="<?php  echo $this->url("settings/default", array("action"=>"apiconfig"))?>"
+							style="width: 100%;" type="button"
+							class="btn btn-primary btn-xs ajax_element"> <i class="fa fa-eye"></i>
+							View
+						</a>
+						<div style="text-align: center;">
+							<i id="apiconfig" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=27></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+	</div>
+	<div class="col-md-3 col-xs-1">
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner2.jpg")?>">
+			</div>
+		</div>
+	</div>
+</div>

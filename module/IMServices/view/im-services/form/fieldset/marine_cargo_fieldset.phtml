@@ -1,0 +1,326 @@
+<?php
+$marineCargoFieldset = $form->get("marineCargoFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('nameOfVessel'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('nameOfVessel'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the vessel"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('nameOfVessel'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('typeOfVessel'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('typeOfVessel'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('typeOfVessel'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_otherVesselType">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('otherVesselType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('otherVesselType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Define the vessel"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('otherVesselType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('cargoNature'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('cargoNature'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Describe the nature of the cargo"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('cargoNature'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('experienceYears'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('experienceYears'));?>
+									
+								</div>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+								years
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How many year of experience does entity have"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('experienceYears'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('packagingType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('packagingType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Types of packaging"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('packagingType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_otherPackages">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('othersPackage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('othersPackage'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other packages not defines above"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('othersPackage'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('transitMode'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('transitMode'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Mode of transmission"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('transitMode'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('coverType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('coverType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of cover"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('coverType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('cargoValue'))?>
+								
+								<div class="col-md-3 col-sm-3 col-xs-3">
+								<?php echo $this->formElement($marineCargoFieldset->get('currency'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="approximate cargo value"></i>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+								<?php echo $this->formElement($marineCargoFieldset->get('cargoValue'));?>
+									
+								</div>
+	
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('cargoValue'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('maxSumInsured'))?>
+								<div class="col-md-3 col-sm-3 col-xs-3">
+								<?php echo $this->formElement($marineCargoFieldset->get('currency'));?>
+									
+								</div>
+	<div class="col-md-4 col-sm-4 col-xs-4">
+								<?php echo $this->formElement($marineCargoFieldset->get('maxSumInsured'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Maximum sum insured"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('maxSumInsured'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('expectedPremium'))?>
+								 <div class="col-md-3 col-sm-3 col-xs-3">
+								<?php echo $this->formElement($marineCargoFieldset->get('currency'));?>
+									
+								</div>
+
+	<div class="col-md-4 col-sm-4 col-xs-4">
+	
+								<?php echo $this->formElement($marineCargoFieldset->get('expectedPremium'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Approximate expected premium"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('expectedPremium'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('voyageFrom'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('voyageFrom'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Where is the cargo coming from"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('voyageFrom'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('voyageTo'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('voyageTo'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Where is the cargo going to "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('voyageTo'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('isContainized'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('isContainized'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if goods ar in a container"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('isContainized'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was previously declined, canceled and renegotiated terms by an insurer"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineCargoFieldset->get('declineReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineCargoFieldset->get('declineReason'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Give Reason/Details of insurer decision"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($marineCargoFieldset->get('declineReason'));  // this defines the error?> 
+							</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#div_otherVesselType").hide();
+	$("#div_otherPackages").hide();
+
+	$("#typeOfVessel").change(function(){
+		if($("#typeOfVessel").val() == "1000"){
+			$("#div_otherVesselType").show();
+			}else{
+				$("#div_otherVesselType").hide();
+				}
+	})
+
+	$("#packagingType").change(function(){
+// 		alert();
+		if($("#packagingType").val() == "100"){
+			$("#div_otherPackages").show();
+			}else{
+				$("#div_otherPackages").hide();
+				}
+		})
+})
+</script>

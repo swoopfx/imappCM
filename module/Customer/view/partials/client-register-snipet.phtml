@@ -1,0 +1,212 @@
+<?php
+
+$customerFieldset = $this->customerFieldset?>
+
+
+<div class="form-group">
+	<div class="form-control-material">	
+								<?php
+        $customerFieldset->get('user')
+            ->get('username')
+            ->setOptions(array(
+            'label' => 'Phone.'
+            ))->setOptions(array(
+            		'label_attributes'=>array(
+            				'class'=>''
+            		),
+            ))
+            ->setAttributes(array(
+            'class' => 'form-control phone',
+            'placeholder' => '07010101010'
+        ));
+        
+            $customerFieldset->get('name')->setOptions(array(
+            		'label_attributes'=>array(
+            				'class'=>''
+            ),
+            ));
+            
+            $customerFieldset->get('dob')->setOptions(array(
+            		'label_attributes'=>array(
+            				'class'=>''
+            		),
+            ));
+            
+            $customerFieldset->get('city')->setOptions(array(
+            		'label_attributes'=>array(
+            				'class'=>''
+            		),
+            ));
+            
+            $customerFieldset->get('country')->setOptions(array(
+            		'label_attributes'=>array(
+            				'class'=>''
+            		),
+            ));
+        ?>
+							<?php echo $this->formElement($customerFieldset->get('name'));?>
+							<?php echo $this->formLabel($customerFieldset->get('name'))?>
+													
+								
+	<div style="font-size: 9px; color: red;">
+	
+								<?php echo  $this->formElementErrors($customerFieldset->get('name'));  // this defines the error?> 
+							</div>
+
+
+	</div>
+</div>
+
+
+<div class="form-group">
+	<div class="form-control-material" data-ng-show="isDob">	
+
+								<?php echo $this->formElement($customerFieldset->get('dob'));?>
+								<?php // echo $this->formLabel($customerFieldset->get('dob'))?>
+									
+						
+	<div style="font-size: 9px; color: red;">
+	
+								<?php echo $this->formElementErrors($customerFieldset->get('dob'));  // this defines the error?> 
+							</div>
+
+	</div>
+</div>
+
+
+
+<div class="form-group">
+	<div class="form-control-material">
+							<?php echo $this->formElement($customerFieldset->get('user')->get('username'));?>
+								<?php echo $this->formLabel($customerFieldset->get('user')->get('username'))?> 
+								
+								
+								
+									
+								
+	<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($customerFieldset->get('user')->get('username'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+
+
+
+<div class="form-group">
+	<div class="form-control-material">	
+							
+								<?php
+        $customerFieldset->get('user')
+            ->get('email')
+            ->setOptions(array(
+            'label' => 'Email',
+            		'label_attributes'=>array(
+            				'class'=>''
+        )
+        ));
+        ?> 
+								
+							
+								<?php echo $this->formElement($customerFieldset->get('user')->get('email'));?>
+								<?php echo $this->formLabel($customerFieldset->get('user')->get('email'));?>	
+							
+	<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($customerFieldset->get('user')->get('email'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="form-control-material">
+		<?php
+$customerFieldset->get('user')
+    ->get('password')
+    ->setOptions(array(
+    'label' => 'PIN',
+    		'label_attributes'=>array(
+    				'class'=>''
+)
+));
+?>
+							<?php echo $this->formElement($customerFieldset->get('user')->get('password'));?>
+								<?php echo $this->formLabel($customerFieldset->get('user')->get('password'))?> 
+								
+								
+								
+									
+								
+	<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($customerFieldset->get('user')->get('username'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+
+
+<!-- <div class="form-group"> -->
+<!-- <div class="form-control-material">	 -->
+
+<?php //echo $this->formLabel($customerFieldset->get('address1'))?> 
+								
+							
+								<?php // echo $this->formElement($customerFieldset->get('address1'));?>
+									
+								
+								
+								<?php //echo $this->formElementErrors($customerFieldset->get('address1'));  // this defines the error?>
+<!-- 							</div></div> -->
+
+<!-- <div class="form-group"> -->
+
+<?php // echo $this->formLabel($customerFieldset->get('address2'))?>
+
+<!-- 								<div class="col-md-9 col-sm-9 col-xs-12"> -->
+<?php // echo $this->formElement($customerFieldset->get('address2'));?>
+
+<!-- 								</div> -->
+<?php // echo  $this->formElementErrors($customerFieldset->get('address2'));  // this defines the error?>
+<!-- 							</div> -->
+<div class="form-group">
+	<div class="form-control-material">	
+							<?php echo $this->formElement($customerFieldset->get('city'));?>
+								<?php echo $this->formLabel($customerFieldset->get('city'))?> 
+								
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($customerFieldset->get('city'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="form-control-material">	
+	<?php echo $this->formElement($customerFieldset->get('state'));?>
+		<?php // echo $this->formLabel($customerFieldset->get('state'))?> 
+						<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($customerFieldset->get('state'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+
+
+<div class="form-group">
+	<div class="form-control-material">	
+	<?php
+
+$customerFieldset->get('country')->setAttributes(array(
+    'value' => 156
+))?>						<?php echo $this->formElement($customerFieldset->get('country'));?>
+								<?php // echo $this->formLabel($customerFieldset->get('country'))?> 
+									
+									
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($customerFieldset->get('country'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="ln_solid"></div>

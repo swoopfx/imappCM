@@ -1,0 +1,384 @@
+<?php
+$motorInsuranceFieldset = $form->get("motorinsuranceFieldset");
+// $nonStandardCollecton = $motorInsuranceFieldset->get('nonStandardAccesory');
+?>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isSoleOwner'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isSoleOwner'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is Insured the sole owner of the vehicle?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isSoleOwner'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="owner_group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('owner'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('owner'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The name of the owner of the vehicle "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('owner'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isLimitedToOnlyMe'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isLimitedToOnlyMe'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The insurance policy only cover a specific person"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isLimitedToOnlyMe'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group" id="peopleDrivingCar_group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('peopleDrivingCar'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('peopleDrivingCar'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide a list of other people has access/drive vehicle"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('peopleDrivingCar'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group"></div>
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"motornonstandard")) ?>">
+		Add Car Accessories</a>
+</div>
+
+<div class="form-group" id="div_non_standard_fieldset"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;">
+<?php  //echo $this->partial("imservice_motor_non_standard_inner", array("nonStandardCollecton"=>$nonStandardCollecton))?>
+</div>
+<div class="form-group">
+	<div id="motorNonStandard"></div>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('purposeOfUse'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('purposeOfUse'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Purpose of using vehichle"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('purposeOfUse'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_commercial">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isCommercialGoods'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isCommercialGoods'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top"
+			title=" Carriage of goods in connection with any business"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isCommercialGoods'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isCommercialTraveling'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isCommercialTraveling'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top"
+			title="Commercial traveling or in connection with any reward"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isCommercialTraveling'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_commercial_details">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('commercialDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('commercialDetails'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Brief description of the commercial use"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('commercialDetails'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('extraPurposeOfUse'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('extraPurposeOfUse'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('extraPurposeOfUse'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isPreviousClaims'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isPreviousClaims'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Define if the insurered had a previous claim on this property"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isPreviousClaims'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isLockedUp'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isLockedUp'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is the car usually locked up in a garage at night"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isLockedUp'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isSafetyDevice'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isSafetyDevice'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does vehichle have a safety/security device?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isSafetyDevice'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isDriverLicense'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isDriverLicense'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does insured hold a driver license ?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isDriverLicense'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isDecline'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isDecline'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was there a previous Claim on trhis property?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isDecline'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="declineDetails_group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('declineDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('declineDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Detail and reason for the decline?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('declineDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('isCancel'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('isCancel'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if a previous policy has been canceled?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('isCancel'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="cancelReason_group">
+
+								 <?php echo $this->formLabel($motorInsuranceFieldset->get('cancelReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorInsuranceFieldset->get('cancelReason'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if a previous policy has been canceled?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorInsuranceFieldset->get('cancelReason'));  // this defines the error?> 
+							</div>
+</div>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+        	$("#owner_group").hide();
+        	$("#peopleDrivingCar_group").hide();
+        	$("#cancelReason_group").hide();
+        	$("#declineDetails_group").hide();
+        	$("#div_commercial").hide();
+        	$("#div_commercial_details").hide();
+            $("#service-type").change(function(){
+             
+                $.ajax({
+                    type:"POST",
+                    data: { 
+                        'service':$("#service-type").val() , 
+//                         'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+                    },
+                    url:"/package/service",
+                    dataType:"html",
+                    success:function(data, status){
+                        $("#specific-service").html(data)
+                    },
+                    error:function(){
+                        alert("we could not retrive the cover details")
+                    }
+                })
+            	//$("#pack_cover").html("<option value='303'>PUM PUM </option>");
+            })
+            
+
+
+
+            $("#isSoleOwner").change(function(){
+                
+				if($("#isSoleOwner").is(":checked")){
+					$("#owner_group").hide();
+					
+				}else{
+					$("#owner_group").show();
+				}
+			});
+
+             $("#purposeOfUse").change(function(){
+                
+				if($("#purposeOfUse").val() == "2"){
+					$("#div_commercial").show()
+					
+				}else{
+					$("#div_commercial").hide();
+				}
+			});
+
+			$("#isLimitedToOnlyMe").change(function(){
+				if($("#isLimitedToOnlyMe").is(":checked")){
+					$("#peopleDrivingCar_group").hide();
+				}else{
+					$("#peopleDrivingCar_group").show();
+				}
+			})
+			
+			$("#isCommercialTraveling, #isCommercialGoods").change(function(){
+				if($("#isCommercialTraveling").is(":checked")){
+					$("#div_commercial_details").show();
+				}else if($("#isCommercialGoods").is(":checked")){
+					$("#div_commercial_details").show();
+					}else{
+					$("#div_commercial_details").hide();
+					}
+				})
+
+			$("#isCancel").change(function(){
+				if($("#isCancel").is(":checked")){
+					$("#cancelReason_group").show();
+				}else{
+					$("#cancelReason_group").hide();
+				}
+			})
+
+			$("#isDecline").change(function(){
+				if($("#isDecline").is(":checked")){
+					$("#declineDetails_group").show();
+				}else{
+					$("#declineDetails_group").hide();
+				}
+			})
+           
+
+        });
+
+       
+
+</script>
+

@@ -1,0 +1,58 @@
+<?php
+echo $this->headtitle("Forgot Password");
+$broker = $this->broker;
+if ($broker != NULL) {
+    $brokerName = $broker->getBrokerName();
+    echo $this->headtitle($brokerName . " ");
+    
+    $form->prepare();
+    ?>
+	<?php  echo $this->partial("general-error-ponters")?>
+
+
+
+
+<h2 class="text-display-1 text-center margin-bottom-none">Forgotten
+	Password</h2>
+<h4><?php  echo $brokerName?></h4>
+<?php if($broker->getCompanyLogo() == NULL){?>
+<img alt="company logo"
+	src="<?php echo $this->customer_login_broker_logo_helper($broker) ?>"
+	height="80" class="img-circle width-80">
+<?php }?>
+                 <?php  echo $this->form()->openTag($form)?>
+<div class="panel-body">
+	<div class="form-group">
+		
+                 <?php $ele = $form->get('forgottenPasswordField');   echo $this->formElement($ele->get('usernameoremail'))?>
+               
+             
+		<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formelementerrors($ele->get('usernameoremail'))?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group text-center">
+ <?php echo $this->formRow($form->get('submit'))?>
+ </div>
+
+
+</div>
+
+<?php  echo $this->form()->closeTag()?>
+
+<?php
+    
+    echo $this->headScript()->appendFile($this->basePath('js/jquery.numpad.js'))?>
+    
+ 
+
+    <?php  }else{?>
+<a
+	href="<?php // echo $this->url("client_login", array("brokerid"=>$broker->getBrokerUid()))?>"
+	class="btn btn-default">Login</a>
+<?php }?>
+

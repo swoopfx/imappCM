@@ -1,0 +1,164 @@
+<?php
+use Zend\Session\Container;
+use GeneralServicer\Service\GeneralService;
+
+echo $this->headtitle("Broker Bank Account Setup");
+$accountForm->prepare();
+$accountNameForm->prepare();
+
+?>
+
+<div class="row">
+
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Company Bank Account</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+				<div class="col-xs-3">
+					<!-- required for floating -->
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs tabs-left">
+						<li class="active"><a href="#home" data-toggle="tab"><strong>Why
+									you must setup an account</strong></a></li>
+						<li><a href="#profile" data-toggle="tab"><strong>Available Payment
+									Channels</strong></a></li>
+						<!-- 		<li><a href="#messages" data-toggle="tab"><strong>Transactions -->
+						<!-- 					Security Level</strong></a></li> -->
+					</ul>
+				</div>
+
+				<div class="col-xs-6">
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="home">
+
+							<p>
+							
+							
+							<ul>
+								<li><strong style="color: red">The first registered account
+										would be used as the default e-payment account</strong></li>
+								<li><strong style="color: red">These bank accounts would be
+										available information for your customers as payment medium. </strong></li>
+							</ul>
+							</p>
+						</div>
+						<div class="tab-pane" id="profile">
+							<ul>
+								<li><strong style="color: red">E-Payment {The limit for
+										electronic payment is usually dependent on customers card
+										limit at times it is usually between &#8358;250,000 and
+										&#8358;1,000,000)</strong></li>
+								<li><strong style="color: red">Bank Deposit</strong></li>
+								<li><strong style="color: red">Bank Transfer</strong></li>
+								<li><strong style="color: red">Cash</strong></li>
+							</ul>
+						</div>
+						<!-- 		<div class="tab-pane" id="messages"></div> -->
+
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<br>
+ <?php  echo $this->partial("general-error-ponters") ?>
+ <?php
+
+if ($brokerEntity->getBrokerBankAccount() != NULL) {
+    $brokerBankAccount = $brokerEntity->getBrokerBankAccount();
+    ?>
+ <div class="col-md-3 col-xs-12 widget widget_tally_box">
+					<div class="x_panel ui-ribbon-container">
+
+						<div class="x_title">
+							<h2>Bank Account</h2>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+
+
+
+							<h5><?php  //echo $brokerBankAccount->get ?></h5>
+							<h4>Bank</h4>
+							<p><?php  echo $brokerBankAccount->getBankName()->getBankName(); ?></p>
+							<hr>
+							
+							<h4>Bank Account No</h4>
+							<p><?php  echo $this->escapehtml($brokerBankAccount->getBankAccountNo());?></p>
+							<hr>
+							
+							<h4>Bank Address</h4>
+							<p><?php  echo ($brokerBankAccount->getBankAddress() != NULL ? $this->escapehtml($brokerBankAccount->getBankAddress()) : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+							
+							<hr>
+							<h4>Bank SortCode</h4>
+							<p><?php  echo ($brokerBankAccount->getSortCode() != NULL ? $this->escapehtml($brokerBankAccount->getSwiftCode()) : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+
+							<hr>
+							
+							<h4>Bank Swift Code</h4>
+							<p><?php  echo ($brokerBankAccount->getSwiftCode() != NULL ? $this->escapehtml($brokerBankAccount->getSortCode()) : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+
+							<hr>
+							<div class="divider"></div>
+
+							<p><?php  echo ($brokerBankAccount->getBankAddress() != NULL ? $this->escapehtml($brokerBankAccount->getBankAddress()) : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+
+						</div>
+					</div>
+				</div>
+ 
+ <?php }else{?>
+ 
+ 
+ 
+ 
+				
+				<?php  echo $this->form()->openTag($accountForm)?>
+				
+				<?php echo $this->partial('broker-bank-account-snipet', array('form'=>$accountForm->get('brokerBankAccountFieldset')));?>
+				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+					<br>
+ <?php echo $this->formrow($accountForm->get('submit'))?>
+ </div>
+ <?php  echo $this->form()->closeTag(); ?>
+ <?php }?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php //echo $this->partial("setting-account-list-of-account")?>
+<?php
+
+echo $this->headScript()->appendFile($this->basePath('js/jquery.mask.min.js'))?>
+
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+            
+            $('#accountno').mask('0000000000');
+           // $('.url').mask('http://#.#', {'translation': {
+              //  A: {pattern: /[A-Za-z0-9]/},
+              //  S: {pattern: /[A-Za-z]/}
+               
+             // }
+        //});
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

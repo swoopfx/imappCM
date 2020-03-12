@@ -1,0 +1,64 @@
+<?php
+$claimsMotorDriverDetails = $this->claimMotor->get('driverDetails');
+?>
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorDriverDetails->get('driverName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorDriverDetails->get('driverName'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the driver"></i>
+								<?php echo $this->formElementErrors($claimsMotorDriverDetails->get('driverName'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorDriverDetails->get('driverAge'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorDriverDetails->get('driverAge'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Age of the driver "></i>
+								<?php echo $this->formElementErrors($claimsMotorDriverDetails->get('driverAge'))?> 
+								
+							</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorDriverDetails->get('drivingLicenceNo'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorDriverDetails->get('drivingLicenceNo'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Drivers License number"></i>
+								<?php echo $this->formElementErrors($claimsMotorDriverDetails->get('drivingLicenceNo'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorDriverDetails->get('licenceIssueDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorDriverDetails->get('licenceIssueDate'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="License Issue date"></i>
+								<?php echo $this->formElementErrors($claimsMotorDriverDetails->get('licenceIssueDate'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorDriverDetails->get('licenceExpireDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorDriverDetails->get('licenceExpireDate'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="License End date"></i>
+								<?php echo $this->formElementErrors($claimsMotorDriverDetails->get('licenceExpireDate'))?> 
+								
+							</div>

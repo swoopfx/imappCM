@@ -1,0 +1,277 @@
+<?php
+$travelInsuraceFieldset = $form->get("travelInsuranceFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('coverStartDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('coverStartDate'));?>
+									
+								</div><i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed Cover start date "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('coverStartDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('coverEndDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('coverEndDate'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed cover end date"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('coverEndDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('departure'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('departure'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="City of departure"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('departure'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('destination'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('destination'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="City and destination of travel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('destination'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('coverageSum'))?>
+								 <div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('currency'));?>
+									
+								</div>
+
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('coverageSum'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Estimated cover sum"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('coverageSum'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('isLostBaggage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('isLostBaggage'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide cover for lost baggage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('isLostBaggage'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_lost_baggage">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('lostBaggageCoverage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('lostBaggageCoverage'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Condition for lost baaggage, if left blank it is assumed to be for the duration of the cover and full "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('lostBaggageCoverage'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('lostBaggageSum'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('lostBaggageSum'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Value sum to cover on lost baggage "></i>
+		
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('lostBaggageSum'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('isTravelInteruptionCover'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('isTravelInteruptionCover'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide cover for interupted travel "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('isTravelInteruptionCover'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_travel_interuption">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('travelInteruptionCoverage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('travelInteruptionCoverage'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Interupted travel condition "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('travelInteruptionCoverage'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('travelInteruptionSum'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('travelInteruptionSum'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Sum to be covered in iterupted travel"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('travelInteruptionSum'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('coverageTeritory'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('coverageTeritory'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Territory to cover "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('coverageTeritory'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('isPackage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('isPackage'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Identifies if it is a custom package by insurance company "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('isPackage'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_package_name">
+
+								 <?php echo $this->formLabel($travelInsuraceFieldset->get('packageName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($travelInsuraceFieldset->get('packageName'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the package"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($travelInsuraceFieldset->get('packageName'));  // this defines the error?> 
+							</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#div_lost_baggage").hide();
+	$("#div_travel_interuption").hide();
+	$("#div_package_name").hide();
+
+	 $("#isLostBaggage").change(function(){
+         
+			if($("#isLostBaggage").is(":checked")){
+				$("#div_lost_baggage").show();
+				
+			}else{
+				$("#div_lost_baggage").hide();
+			}
+		});
+
+		
+
+	 $("#isTravelInteruptionCover").change(function(){
+         
+			if($("#isTravelInteruptionCover").is(":checked")){
+				$("#div_travel_interuption").show();
+				
+			}else{
+				$("#div_travel_interuption").hide();
+			}
+		});
+
+	 $("#isPackage").change(function(){
+         
+			if($("#isPackage").is(":checked")){
+				$("#div_package_name").show();
+				
+			}else{
+				$("#div_package_name").hide();
+			}
+		});
+		
+})
+</script>

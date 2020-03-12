@@ -1,0 +1,11 @@
+<?php
+$form->setAttributes(array(
+    
+    "id" => "simpleForm",
+    "class" => "form-horizontal form-label-left ajax_element",
+    "data-ajax-loader" => "myLoader",
+    "action"=>$this->url("proposal/default", array("action"=>"coverdetailsmodal"))
+));
+echo $this->im_service_form($coverId, $form);
+?>
+

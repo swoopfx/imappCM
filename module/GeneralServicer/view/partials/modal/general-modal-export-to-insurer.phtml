@@ -1,0 +1,65 @@
+<div class="alert alert-warning alert-dismissible fade in" role="alert">
+	<p style="color: #000;">
+		<strong> <i class="fa fa-warning"></i> All Information provided by the
+			customer would be sent to the insurer for processing, please preview
+			the content of this proposal and make sure it meets insurer minimum
+			requirements
+		</strong>
+	</p>
+
+</div>
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg"
+		style="display: none; text-align: center;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=50>
+	<hr></i>
+</div>
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$exportToInsurerFieldset = $form->get("exportToInsurerFieldset")?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($exportToInsurerFieldset->get('insurer1'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($exportToInsurerFieldset->get('insurer1'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($exportToInsurerFieldset->get('insurer1'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($exportToInsurerFieldset->get('insurer2'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($exportToInsurerFieldset->get('insurer2'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($exportToInsurerFieldset->get('insurer2'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($exportToInsurerFieldset->get('insurer3'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($exportToInsurerFieldset->get('insurer3'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($exportToInsurerFieldset->get('insurer3'));  // this defines the error?> 
+							</div>
+</div>
+<hr>
+
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>

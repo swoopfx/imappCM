@@ -1,0 +1,12 @@
+<?php $pinCodeForm->prepare()?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<?php  echo $this->form()->openTag($pinCodeForm)?>
+                      
+                      <?php echo $this->partial("customer-client-pincode-form", array("ele"=>$pinCodeForm->get("pinCodeFieldset")))?>
+                       <?php  //echo $this->formrow($pinCodeForm->get("csrf"))?>
+                      <?php  echo $this->formrow($pinCodeForm->get("submit"))?>
+                     
+                   <?php  echo $this->form()->closeTag()?>

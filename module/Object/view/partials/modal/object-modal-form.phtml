@@ -1,0 +1,15 @@
+<?php
+$objectPreForm->prepare();
+echo $this->form()->openTag($objectPreForm);
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+ <?php echo $this->partial("object-form-snipet", array("objectField"=>$objectPreForm->get("objectFieldset")));?>
+                       
+			
+                         <?php  echo $this->formrow($objectPreForm->get('csrf'))?>
+                         <?php  echo $this->formrow($objectPreForm->get('submit'))?>
+                       
+                        <?php  echo $this->form()->closeTag()?>

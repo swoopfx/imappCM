@@ -1,0 +1,67 @@
+<?php
+$objectFieldsets = $this->objectFieldsets;
+$cat = $this->cat;
+
+?>
+<li class="list-group-item">
+	<div class="media v-middle">
+
+		<div class="form-group">
+		<?php
+
+$objectType = $objectFieldsets->get("objectType");
+$objectType->setAttributes(array(
+    'value' => $cat,
+    "disabled" => "disabled"
+))?>
+		<?php  echo $this->formelement($objectFieldsets->get("objectType"))?>
+		<?php // echo $this->formlabel($objectFieldsets->get("objectType"))?>
+<!-- 			<input type="email" class="form-control" id="exampleInputEmail1" -->
+			<!-- 				placeholder="Enter email"> <label for="exampleInputEmail1">Email -->
+			<!-- 				address</label> -->
+		</div>
+	</div>
+</li>
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+$currency = $objectFieldsets->get("currency");
+$currency->setOptions(array(
+    "label_attributes"=>array(
+        "class"=>""
+)
+));
+$currency->setAttributes(array(
+    
+   
+    "class" => "form-control"
+))?>
+		<div class="form-group">
+		<?php  echo $this->formlabel($currency)?>
+		<?php echo $this->formElement($currency)?>
+		
+		</div>
+	</div>
+</li>
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+$value = $objectFieldsets->get("value");
+$value->setOptions(array(
+    "label_attributes"=>array(
+        "class"=>""
+)
+));
+$value->setAttributes(array(
+    
+   
+    "class" => "form-control"
+))?>
+		<div class="form-group form-control-material static required">
+		<?php echo $this->formElement($value)?>
+		<?php  echo $this->formlabel($value)?>
+		</div>
+	</div>
+</li>

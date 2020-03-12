@@ -1,0 +1,76 @@
+<?php  echo $this->headtitle("All Objects")?>
+<div class="row">
+	<div class="col-md-8 col-sm-8 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>ALL OBJECT</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+				</ul>
+				<div class="clearfix"></div>
+
+			</div>
+<?php echo $this->partial("general-error-ponters")?>
+
+<?php
+$allObject = $this->allObject;
+?>
+<div class="x_content">
+				<table class="table table-hover">
+                                     <?php
+                                    
+                                    if (count($allObject) == 0) {
+                                        echo "<span>No Object registerted</span>";
+                                    } else {
+                                        ?>
+                                        <thead>
+						<tr>
+							<th>OBJECT NAME</th>
+							<th>OBJECT DESCRIPTION</th>
+							<th>VALUE</th>
+							<th>Status</th>
+							<th>DATE CREATED</th>
+
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+                                       
+                                            <?php foreach ($allObject as $object){?>
+                                          
+                                            <tr>
+							<th scope="row"><?php echo ($object->getObjectName() == NULL ? "" : $object->getObjectName()); ?></th>
+							<td><?php echo $object->getObjectInfo()?></td>
+							<td> <?php echo $this->myCurrencyFormat((float)$object->getObjectValue(), 'NGN', 'en_NG', true)?></td>
+							<td><?php echo  ($object->getObjectStatus() != NULL?$this->statusHelper($object->getObjectStatus()->getObjectStatus()): 'No Status' )  ?></td>
+							<td><?php
+                                            
+                                            echo $this->dateFormat($object->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></td>
+							<td>
+								<ul class="nav navbar-right panel_toolbox">
+
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown" role="button" aria-expanded="false"><i
+											class="fa fa-cogs"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a
+												href="<?php echo $this->url('object/default', array('action' => 'view-object', 'inf' =>$object->getId()));?>">View
+													Object</a></li>
+											<li><a href="<?php echo $this->url('offer');?>">Edit Object </a></li>
+
+
+										</ul></li>
+
+								</ul>
+							</td>
+
+						</tr>
+                                            <?php   }}?>   
+                                        </tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</div>

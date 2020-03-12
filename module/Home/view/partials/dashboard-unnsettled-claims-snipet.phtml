@@ -1,0 +1,74 @@
+<?php
+$claims = $this->unsettledClaims;
+$count = (count($claims) < 10 ? count($claims) : 10);
+?>
+
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2>Unsettled Claims</h2>
+			<ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+
+
+
+		<div class="x_content">
+			<div class="table-responsive">
+				<table class="table table-hover">
+                                    <?php
+                                    
+                                    if (count($claims) == 0) {
+                                        echo "<span> No  Unsettled Claims</span>";
+                                    } else {
+                                        ?>
+                                        <thead>
+						<tr>
+							<th>CLAIMS</th>
+							<th>CUSTOMER</th>
+							<th>POLICY</th>
+
+
+
+
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+                                         <?php for($i=0; $i < $count ; $i++){?>
+                                            <tr>
+
+							<th scope="row"><?php echo strtoupper($claims[$i]-> getClaimUid());?><br>
+                                          Title :  <?php  echo $claims[$i]->getClaimTopic();?><br>
+								<small> Created On: <?php echo  $this->dateFormat($claims[$i]->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?> </small></th>
+							<td><a
+								href="<?php  echo $this->url("customer/default", array("action"=>"pre-profile", "id"=>$claims[$i]->getPolicy()->getCoverNote()->getCustomer()->getAccountId()))?>"><?php echo $claims[$i]->getPolicy()->getCoverNote()->getCustomer()->getName();?></a></td>
+							<td><?php echo $claims[$i]->getPolicy()->getPolicyCode();?></td>
+
+
+
+
+
+
+							<td>
+								<!-- 									<a href="#" class="btn btn-primary">Send Reminder</a> -->
+							</td>
+						</tr>
+                                             <?php   }}?>
+                                        </tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<a
+			href="<?php echo $this->url("claims/default", array("action"=>"all"));?>"
+			class="btn btn-default"> View All</a>
+	</div>
+</div>
+

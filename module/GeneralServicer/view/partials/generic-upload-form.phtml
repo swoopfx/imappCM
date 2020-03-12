@@ -1,0 +1,19 @@
+<?php
+// var_dump($uploadForm);
+$uploadForm->prepare();
+
+echo $this->form()->openTag($uploadForm);
+echo $this->formrow($uploadForm->get("uploadField")
+    ->get("file"));
+?>
+
+<?php
+echo $this->form()->closeTag();
+
+?>
+
+
+ <?php
+
+// echo $this->headLink()->appendStylesheet($this->basePath('vendors/dropzone/dist/min/dropzone.min.css'));
+// echo $this->headScript()->appendFile($this->basePath('vendors/dropzone/dist/min/dropzone.min.js')) ?>

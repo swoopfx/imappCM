@@ -1,0 +1,174 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+$workmenCompensationEntity = $coverEntity->getWorkmenCompensation();
+
+?>
+<div class="x_content table-responsive">
+	<table class="table table-hover ">
+
+		<tbody>
+		
+		<tr>
+		
+		<th>Employee Decree List</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Employee Category</th>
+								<th>Number of employee</th>
+								<th>Cash Compensation</th>
+								
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($workmenCompensationEntity->getDecreeList() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getEmployeeCategoree() != NUll ? $this->escapehtml($risk->getEmployeeCategoree()->getClass()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getNumberOfEmployee() != NUll ? $this->escapehtml($risk->getNumberOfEmployee()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getCashCompensation() != NUll ? $this->myCurrencyFormat($risk->getCashCompensation()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+		</tr>
+
+			<tr>
+
+				<th>Total amount of wages, salaries and other earning paid to employees list in the past twelve months</th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getTotal12monthwages() != NUll ? $this->myCurrencyFormat($workmenCompensationEntity->getTotal12monthwages()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Require indemnity in respect of Medical Expenses</th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsMedicalIndemnity() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsMedicalIndemnity()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Insure your liability under the Workmen Compensation Decree to the Workmen of
+sub-contractor</th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsInsureSubContractor() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsInsureSubContractor()) : "Not Specified") ?>
+				</td>
+			</tr>
+<!-- 			Sub Contractors List Here -->
+			<tr>
+
+				<th>Total provisional annual premium</th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getTotalProvisionalAnnualPremium() != NUll ? $this->myCurrencyFormat($workmenCompensationEntity->getTotalProvisionalAnnualPremium()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Include all persons in your service </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsAllPersonsInservice() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsAllPersonsInservice()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Include all sub-contractors </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsAllSubContractors() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsAllSubContractors()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Is there Regulation governing the conduct or maintenance of such premises </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsMaintenanceRegulation() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsMaintenanceRegulation()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($workmenCompensationEntity->getIsMaintenanceRegulation() == TRUE){?>
+			<tr>
+
+				<th>Name such Decree or Regulation </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getRegulation() != NUll ? $workmenCompensationEntity->getRegulation() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Have you carried out all the obligations imposed on you by such Decree or Regulation </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsCarriedOutObligation() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsCarriedOutObligation()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Are machinery plant and ways properly fenced and guarded </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsFenceMachine() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsFenceMachine()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Machinery Contains Saw </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsSaw() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsSaw()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Was previously Insured </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsPreviouslyInsured() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsPreviouslyInsured()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php  if($workmenCompensationEntity->getIsPreviouslyInsured() == TRUE){?>
+			<tr>
+
+				<th>Was declined by previous insurer </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsPreviousDecline()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Previous insurer provided special terms </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsSpecialTerms() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsSpecialTerms()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Previous insurer provided special terms </th>
+				<td>
+				<?php  echo ($workmenCompensationEntity->getIsSpecialTerms() != NUll ? $this->trueFalseHelper($workmenCompensationEntity->getIsSpecialTerms()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+		</tbody>
+	</table>
+</div>

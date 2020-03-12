@@ -1,0 +1,100 @@
+<?php
+$electronicEquipmentEntity = $coverEntity->getElectonicEquipment();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+		<tr>
+
+				<th>Insure all Device in Premises</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsInsureAll() != NUll ?$this->trueFalseHelper($electronicEquipmentEntity->getIsInsureAll()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>All device was acquired New</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsAllNew() != NUll ?$this->trueFalseHelper($electronicEquipmentEntity->getIsAllNew()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Total Approximate Value</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getEstimatedSumTotal() != NUll ? $this->myCurrencyFormat($electronicEquipmentEntity->getEstimatedSumTotal()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Business Type</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getBusinesType() != NUll ? $electronicEquipmentEntity->getBusinesType() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Location Of Equipment</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getEquipmentLocation() != NUll ? $this->escapehtml($electronicEquipmentEntity->getBusinesType()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Devices were previously insured</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsPreviouslyInsured() != NUll ?$this->trueFalseHelper($electronicEquipmentEntity->getIsPreviouslyInsured()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th> Prefered Cover Start Date</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getCoverStartDate() != NUll ? $this->dateFormat($electronicEquipmentEntity->getCoverStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Device is maintained according to manufactureres specification </th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsMaintenaceSpec() != NUll ?$this->trueFalseHelper($electronicEquipmentEntity->getIsMaintenaceSpec()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th> Available trained operators</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsTrainedOperators() != NUll ?$this->trueFalseHelper($electronicEquipmentEntity->getIsTrainedOperators()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th> Include risk for theft</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsTheftRIsk() != NUll ? $this->trueFalseHelper($electronicEquipmentEntity->getIsTheftRIsk()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th> Premises contains Dengerous materials  e.g Acid</th>
+				<td>
+				<?php  echo ($electronicEquipmentEntity->getIsDangerousMaterial() != NUll ? $this->trueFalseHelper($electronicEquipmentEntity->getIsDangerousMaterial()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</div>

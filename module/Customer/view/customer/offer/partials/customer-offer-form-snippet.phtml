@@ -1,0 +1,49 @@
+<?php
+
+
+?>
+
+
+<div class="form-group">
+								<?php echo $this->formLabel($offerFieldset->get('offerName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('offerName'))?>  
+								</div>
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($offerFieldset->get('offerName'))?> 
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<?php echo $this->formLabel($offerFieldset->get('idPreferdInsurer'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('idPreferdInsurer'))?>  
+								</div>
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($offerFieldset->get('idPreferdInsurer'))?> 
+								</div>
+							</div>
+							
+							
+							
+						
+						
+						<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('offerServiceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('offerServiceType'))?> 
+								</div>
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($offerFieldset->get('offerServiceType'))?> 
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('offerSpecificService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('offerSpecificService'))?> 
+								</div>
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($offerFieldset->get('offerSpecificService'))?> 
+								</div>
+							</div>

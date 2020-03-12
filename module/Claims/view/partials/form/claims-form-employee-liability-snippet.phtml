@@ -1,0 +1,277 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsEmployerLiabilityFieldset = $form->get("claimsEmployerLiabilityFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsEmployerLiabilityFieldset->get("claims")
+));
+?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('injuredName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('injuredName'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the injured person"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('injuredName'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('injuredAge'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('injuredAge'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Age of the injured person"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('injuredAge'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('injuredAddress'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('injuredAddress'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Address of the injured person"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('injuredAddress'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('isInjuredDirectEmploy'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('isInjuredDirectEmploy'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if the injured person is a direct employee"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('isInjuredDirectEmploy'))?> 
+								</div>
+</div>
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('injuredPeriodInService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('injuredPeriodInService'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How long has the injured been  in service "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('injuredPeriodInService'))?> 
+								</div>
+</div>
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('accidentDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('accidentDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date accident occured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('accidentDate'))?> 
+								</div>
+</div>
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('accidentDesc'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('accidentDesc'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Information about the accident "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('accidentDesc'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('whomAccidentWasReported'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('whomAccidentWasReported'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Who was the accident reported to "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('whomAccidentWasReported'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('accidentWitness'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('accidentWitness'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Witnes of the accident"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('accidentWitness'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('isConnectedToMachinery'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('isConnectedToMachinery'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if accident is connected to machinery"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('isConnectedToMachinery'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('machineryName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('machineryName'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Machinery involved in accident"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('machineryName'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('isInjuryResultToDeath'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('isInjuryResultToDeath'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="inidcate if the injury resulted to death"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('isInjuryResultToDeath'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('isInjuredIntoxicated'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('isInjuredIntoxicated'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if  accident was caused by intoxication"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('isInjuredIntoxicated'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('intoxicationDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('intoxicationDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the intoxication"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('intoxicationDetails'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('isDueToNegelence'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('intoxicationDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is accient due to neglegence"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('isDueToNegelence'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('neglegenceDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('neglegenceDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about neglegence"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('neglegenceDetails'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsEmployerLiabilityFieldset->get('disablementPeriod'))?> 
+								<div class="col-md-5 col-sm-5 col-xs-11">
+									<?php echo $this->formElement($claimsEmployerLiabilityFieldset->get('disablementPeriod'))?>  
+								</div>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">
+								<strong>weeks</strong>
+								</div>
+								
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Estimeted period injured might be disabled"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsEmployerLiabilityFieldset->get('disablementPeriod'))?> 
+								</div>
+</div>
+
+<?php 
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>

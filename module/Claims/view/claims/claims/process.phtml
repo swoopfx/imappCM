@@ -1,0 +1,268 @@
+<?php
+echo $this->headTitle("Process Claims");
+
+?>
+<div id="wasabi"></div>
+
+<div class="page-title">
+	<div class="title_left">
+		<p>
+			<strong>CLAIMS TOPIC : </strong><?php  echo ($claimsEntity->getClaimTopic() != NULL ? $claimsEntity->getClaimTopic() : "")?> <small> <?php  echo ($claimsEntity->getClaimUid() != "" ? strtoupper($claimsEntity->getClaimUid()) : " " )?></small>
+		</p>
+
+	</div>
+
+	<div class="title_right">
+		<!--                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search"> -->
+		<!--                   <div class="input-group"> -->
+		<!--                     <input type="text" class="form-control" placeholder="Search for..."> -->
+		<!--                     <span class="input-group-btn"> -->
+		<!--                       <button class="btn btn-default" type="button">Go!</button> -->
+		<!--                     </span> -->
+		<!--                   </div> -->
+		<!--                 </div> -->
+	</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="row">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div id="row"></div>
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>
+					Claims Comments <i class="fa fa-info-circle" data-toggle="tooltip"
+						data-placement="top" title="Documents activity on the policy"></i>
+				</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="dashboard-widget-content">
+
+					<?php echo $this->commentViewHelper($claimsEntity->getComments())?>
+				</div>
+				<div class="col-xs-12 bottom text-center">
+					<div class="col-xs-12 col-sm-6 emphasis"></div>
+					<div class="col-xs-12 col-sm-12 emphasis">
+					<?php  echo $this->partial("comment-form", array("commentForm"=>$commentForm))?>
+					
+					<div style="text-align: center;">
+							<i id="commentajax" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=30></i>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+<?php
+// var_dump($claimsEntity->getIsSettled());
+// $rejected = "";
+$approved = ($claimsEntity->getIsSettled() == TRUE ? "disabled" : "");
+$rejected = ($claimsEntity->getIsSettled() === FALSE ? "disabled" : "");
+$approvedindicator = ($claimsEntity->getIsSettled() == TRUE ? "<span class='badge bg-green'>approved</span>" : "");
+$rejectedIndicator = ($claimsEntity->getIsSettled() === FALSE ? "<span class='badge bg-red'>declined</span>" : "");
+?>
+<!-- <div id="app">{{message}} -->
+		<!-- <a v-on:click="loan">Click</a> -->
+		<!-- </div> -->
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+
+							<div style="text-align: center;">
+								<i id="buttonAction" class="fa  fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=30></i>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a id="btn2" style="width: 100%"
+									class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("claims/default", array("action"=>"policydetails"))?>"><i
+									class="fa fa-eye" data-toggle="tooltip" data-placement="top"
+									title="View the content of the policy"></i>Policy Details</a>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a id="btn2" style="width: 100%"
+									class=" ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("claims/default", array("action"=>"claimdetailsmodal"))?>"><i
+									class="fa fa-eye-slash" data-toggle="tooltip"
+									data-placement="top" title="View claims details"></i>Claims
+									Details</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a id="btn2" <?php echo $approved; echo $rejected ?>
+									style="width: 100%" class=" ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("claims/default", array("action"=>"exportclaimsdetailsmodal"))?>"><i
+									class="fa fa-external-link" data-toggle="tooltip"
+									data-placement="top" title="Export Claims details to Insurer"></i>Export
+									Details</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a <?php echo $approved; echo $rejected; ?> id="btn2"
+									style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("claims/default", array("action"=>"approveclaimconfirm"))?>"><?php echo $approvedindicator ?><i
+									class="fa fa-thumbs-up" data-toggle="tooltip"
+									data-placement="top"
+									title="Click this button to when insurer has approved claims"></i>Approve
+									Claim</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a <?php echo $approved; echo $rejected; ?> id="btn2"
+									style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("claims/default", array("action"=>"rejectconfirmation"))?>"><?php  echo  $rejectedIndicator ?><i
+									class="fa fa-thumbs-down" data-toggle="tooltip"
+									data-placement="top"
+									title="Click this button to when insurer has rejected claims"></i>Reject
+									Claim</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a id="btn2" style="width: 100%"
+									class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("claims/default", array("action"=>"closeclaimsconfirmation"))?>"><i
+									class="fa fa-close" data-toggle="tooltip" data-placement="top"
+									title="Click this button to close the claims"></i>Close Claims</a>
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+<?php
+
+echo $this->partial("claims_ispproved_claims_snippet", array(
+    "claimsEntity" => $claimsEntity,
+    "dropZoneForm" => $dropZoneForm
+));
+
+echo $this->partial("claims_is_rejected_claims_snippet", array(
+    "claimsEntity" => $claimsEntity,
+    "dropZoneForm" => $dropZoneForm
+));
+
+?>
+
+		<div class="row">
+
+
+			<!-- Start to do list -->
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Uploaded Documents</h2>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+
+						<div class="">
+                      <?php echo $this->claimsDocumentListHelper($claimsEntity)?>
+<!--                         <ul class="to_do"> -->
+							<!-- 								<li> -->
+							<!-- 									<p> -->
+							<!-- 										<input type="checkbox" class="flat"> Schedule meeting with new -->
+							<!-- 										client -->
+							<!-- 									</p> -->
+							<!-- 								</li> -->
+
+							<!-- 							</ul> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End to do list -->
+
+			<!-- start of weather widget -->
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Uploader</h2>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<div class="row">
+							<div class="col-sm-12">
+							<?php
+
+$dropZoneForm->setAttributes(array(
+        // "id" => "simpleForm",
+        // "class" => "ajax_element",
+        "action" => $this->url("claims/default", array(
+            "action" => "uploaddoc"
+        ))
+    ));
+    ?>
+                          <?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+                        </div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!-- end of weather widget -->
+		</div>
+
+
+
+
+
+	</div>
+	<div id="row">
+		<div class="col-md-12 col-xs-12">
+
+			<div class="x_panel">
+
+				<div class="x_content">
+					<img alt="" style='width: 100%;'
+						src="<?php echo $this->basepath("imappadd/bannerHor.jpg")?>">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+var vm = new Vue({
+	 el: '#app',
+	data:{
+		message:"NOOOO"
+	},
+	methods:{
+		loan:function(){
+			this.message = "YEEESSSSSS"
+			}
+		}
+})
+</script>

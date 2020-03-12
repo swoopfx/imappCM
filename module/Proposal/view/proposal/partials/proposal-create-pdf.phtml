@@ -1,0 +1,24 @@
+<?php
+/**
+ * This file provides the template for creating proposal pdf files 
+ * if proposal detals is not empty  diplay it 
+ * if Invoice is not null display it 
+ *  if propoerty list is not null display it 
+ *  if policy ids not null display it 
+ *  
+ *  
+ *  else display out standing function/entity
+ */
+$invoice  = $proposalEntity->getInvoice()
+
+?>
+<?php if($proposalEntity->getCustomer() != NULL):?>
+<?php  endif; ?>
+<?php if($proposalEntity != NULL):?>
+ <?php echo $this->partial("proposal-view-proposal", array("proposal"=>$proposalEntity))?>
+<?php endif;?>
+<?php if($proposalEntity->getInvoice() != NULL):?>
+<?php echo $this->partial("transaction-invoice-preview-snipet", array("invoice"=>$invoice, "broker"=>$broker));?>
+<?php endif;?>
+
+

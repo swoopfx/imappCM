@@ -1,0 +1,15 @@
+
+
+<div class="form-group">
+
+<?php echo $this->formLabel($smsunit->get('smsUnit'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($smsunit->get('smsUnit'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($smsunit->get('smsUnit'));  // this defines the error?> 
+							</div>
+</div>

@@ -1,0 +1,162 @@
+<?php
+$motorEntity = $coverEntity->getMotorInsurance();
+?>
+
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+
+				<!--                           <th>Last Name</th> -->
+				<!--                           <th>Username</th> -->
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+
+				<th>Purpose Of Use</th>
+				<td><?php  echo ($motorEntity->getPurposeOfUse() != NUll ? $motorEntity->getPurposeOfUse()->getMotorPurpose() : "Not Specified") ?></td>
+
+			</tr>
+			<?php if($motorEntity->getPurposeOfUse()->getId() == "2"){?>
+			<tr>
+
+				<th>Commercial carriage Of Goods</th>
+				<td>
+				<?php  echo ($motorEntity->getIsCommercialGoods() != NUll ? $this->trueFalseHelper($motorEntity->getIsCommercialGoods()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Commercial Travelling</th>
+				<td>
+				<?php  echo ($motorEntity->getIsCommercialTraveling() != NUll ? $this->trueFalseHelper($motorEntity->getIsCommercialTraveling()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Commercial Details</th>
+				<td>
+				<?php  echo ($motorEntity->getCommercialDetails() != NUll ? $motorEntity->getCommercialDetails() : "Not Specified") ?>
+				</td>
+
+			</tr>
+			<?php }?>
+
+			<tr>
+
+				<th>Alternative Purpose</th>
+				<td><?php  echo ($motorEntity->getExtraPurposeOfUse() != NUll ? $motorEntity->getExtraPurposeOfUse() : "Not Specified") ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Sole Ownership</th>
+				<td><?php  echo ($motorEntity->getIsSoleOwner() != NUll ? $this->trueFalseHelper($motorEntity->getIsSoleOwner()) : "Not Specified") ?></td>
+
+			</tr>
+                        <?php if($motorEntity->getIsSoleOwner() == FALSE){?>
+                         <tr>
+
+				<td>Vehicle Owner</td>
+				<td><?php  echo ($motorEntity->getOwner() != NUll ? $motorEntity->getIsSoleOwner() : "Not Specified") ?></td>
+
+			</tr>
+                        <?php }?>
+             <tr>
+
+				<th>Vehicle Has Safety Device</th>
+				<td><?php  echo ($motorEntity->getIsSafetyDevice() != NUll ? $this->trueFalseHelper($motorEntity->getIsSafetyDevice()) : "Not Specified") ?></td>
+
+			</tr>
+				<?php if(count($motorEntity->getNonStandardAccesory()) > 0){?>
+				<tr>
+
+				<th>Accessory</th>
+				<td>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($motorEntity->getNonStandardAccesory() as $acc){?>
+					<tr>
+
+								<td> <?php echo ($acc->getAccessoryName() != NUll ? $acc->getAccessoryName() : "Empty") ;?>
+								</td>
+
+								<td>	&#8358; <?php echo ($acc->getAccessoryValue() != NUll ? $acc->getAccessoryValue() : "Empty") ;?></td>
+
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+
+			</tr>
+				<?php }?>
+
+				<tr>
+
+				<th>Driver has a license</th>
+				<td><?php  echo ($motorEntity->getIsDriverLicense() != NUll ? $this->trueFalseHelper($motorEntity->getIsDriverLicense()) : "Not Specified") ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Exclusively Driven By insured</th>
+				<td><?php  echo ($motorEntity->getIsLimitedToOnlyMe() != NUll ? $this->trueFalseHelper($motorEntity->getIsLimitedToOnlyMe()) : "Not Specified") ?></td>
+
+			</tr>
+			<?php if($motorEntity->getIsLimitedToOnlyMe() == FALSE){?>
+			<tr>
+
+				<th>Other Driver</th>
+				<td><?php  echo ($motorEntity->getPeopleDrivingCar() != NUll ? $motorEntity->getPeopleDrivingCar() : "Not Specified") ?></td>
+
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Used in Nigeria alone</th>
+				<td><?php  echo ($motorEntity->getIsUsageInNigeria() != NUll ? $this->trueFalseHelper($motorEntity->getIsUsageInNigeria()) : "Not Specified") ?></td>
+
+			</tr>
+			
+			<?php if($motorEntity->getIsUsageInNigeria() == TRUE){?>
+			<tr>
+
+				<th>Other Countries</th>
+				<td><?php  echo ($motorEntity->getOountrieOfUse() != NUll ?$motorEntity->getCountrieOfUse() : "Not Specified") ?></td>
+
+			</tr>
+			<?php }?>
+			
+			<!--                         <tr> -->
+
+			<!--                           <td>Jacob</td> -->
+			<!--                           <td>Thornton</td> -->
+			<!--                           <td>@fat</td> -->
+			<!--                         </tr> -->
+			<!--                         <tr> -->
+			<!--                           <th scope="row">3</th> -->
+			<!--                           <td>Larry</td> -->
+			<!--                           <td>the Bird</td> -->
+			<!--                           <td>@twitter</td> -->
+			<!--                         </tr> -->
+		</tbody>
+	</table>
+
+</div>

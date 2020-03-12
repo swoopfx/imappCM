@@ -1,0 +1,32 @@
+<?php
+
+
+// $motorInsuranceFieldset = $form->get("motorinsuranceFieldset");
+// $nonStandardCollecton = $motorInsuranceFieldset->get('nonStandardAccesory');
+// echo $this->formLabel($motorInsuranceFieldset->get('isSoleOwner'));
+//$nonStandardCollecton = $form->get("motorinsuranceFieldset")->get("nonStandardAccesory");
+// var_dump($nonStandardCollecton);
+// if(  is_object($nonStandardCollecton)){
+//     var_dump("KIII");
+//     echo $this->formlabel($nonStandardCollecton);
+// }else{
+//     var_dump("MOMOM");
+// }
+
+foreach ($nonStandardCollecton as $collect){
+//     var_dump("PRPRO");
+//     $accessoryName = $collect->get("accessoryName");
+//     $accessoryName->setAttributes(array(
+//         "name"=>"motor".($key + 1)
+//     ));
+echo "#$";
+    echo $this->partial("motor_non_standard_fiedlset", array("motorNonStandarFieldset"=>$collect));
+}
+
+?>
+
+
+
+
+
+ 

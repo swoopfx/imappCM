@@ -1,0 +1,214 @@
+<?php
+$electonicEquipmentFieldset = $form->get("electonicEquipmentFieldset");
+
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isInsureAll'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isInsureAll'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if  all electronic device in building should be insured"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isInsureAll'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isAllNew'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isAllNew'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if  all electronic was acquired new"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isAllNew'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('estimatedSumTotal'))?>
+								<div class="col-md-1 col-sm-1 col-xs-2">
+								&#8358;
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('estimatedSumTotal'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="An estimated cost of the total device"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('estimatedSumTotal'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('businesType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('businesType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Business type operated"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('businesType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('equipmentLocation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('equipmentLocation'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Address and location of the devices"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('equipmentLocation'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isPreviouslyInsured'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isPreviouslyInsured'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If devices where previously covered"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isPreviouslyInsured'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('coverStartDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('coverStartDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date cover begins"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('coverStartDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isMaintenaceSpec'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isMaintenaceSpec'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Maintenace is carried out within manufacturers specification"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isMaintenaceSpec'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isTrainedOperators'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isTrainedOperators'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Device has trained operators"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isTrainedOperators'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isTheftRIsk'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isTheftRIsk'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include theft cover"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isTheftRIsk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('isDangerousMaterial'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('isDangerousMaterial'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="indicate if premises contain dangerous materials like acid"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('isDangerousMaterial'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($electonicEquipmentFieldset->get('scopeOfCover'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($electonicEquipmentFieldset->get('scopeOfCover'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="indicate if premises contain dangerous materials like acid"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($electonicEquipmentFieldset->get('scopeOfCover'));  // this defines the error?> 
+							</div>
+</div>
+
+<script> 
+
+$("#scopeOfCover").chosen({
+	width:"100%"
+	})
+	
+	$(document).ready(function(){
+		
+		})
+</script>

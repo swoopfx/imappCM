@@ -1,0 +1,303 @@
+<?php
+use Policy\Service\PolicyService;
+
+?>
+
+
+
+<?php
+$renewPolicyForm->prepare();
+echo $this->form()->openTag($renewPolicyForm);
+$renewFieldset = $renewPolicyForm->get("renewPolicyFeildset");
+$renewFieldset->get("premium")->setAttributes(array(
+    "value" => PolicyService::getPremiumPayable($policyEntity)
+));
+$renewFieldset->get("manualPayment")
+    ->get("amountPaid")
+    ->setAttributes(array(
+    "value" => PolicyService::getPremiumPayable($policyEntity),
+    "disabled" => "disabled"
+));
+
+$renewFieldset->get("microPAymentFieldset")
+    ->get("microPayment")
+    ->setOptions(array(
+    "label" => "Micro Payment Spread"
+));
+?>
+<div class="form-group">
+	<?php echo  $this->formLabel($renewFieldset->get("insurer"))?> 
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<img alt=""
+			src="<?php echo $this->insurerLogohelper($policyEntity->getCoverNote()->getInsurer()->getId())?>"
+			class="img-circle   img-responsive" width=60>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="control-label col-md-4 col-sm-4 col-xs-12">Present
+		premium</label>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<?php  echo $this->myCurrencyFormat(PolicyService::getPremiumPayable($policyEntity)); ?>
+		</div>
+</div>
+<div class="form-group">
+		<?php echo  $this->formLabel($renewFieldset->get("expiringDate"))?> 
+		<div class="col-md-6 col-sm-6 col-xs-12">
+		<?php  echo $this->dateFormat($policyEntity->getEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::SHORT, "en_us"); ?>
+		</div>
+</div>
+<hr>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("specificDate"))?>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("specificDate"))?> 
+								</div>
+	<strong style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Indicate how to calculate policy expiry date"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("specificDate"))?> 
+								</div>
+</div>
+
+<div id="div_selectDate" class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("selectDate"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Select the specific policy expiry date"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("selectDate"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("selectDate"))?> 
+								</div>
+</div>
+
+<div id="div_renewDuration" class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("renewDuration"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="The insurance Company providing service"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("renewDuration"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("renewDuration"))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("isChangePremium"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Click if you want to change the value of the premium "></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("isChangePremium"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("isChangePremium"))?> 
+								</div>
+</div>
+
+
+
+
+<div id="div_isChangePremium">
+	<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("premium"))?> <strong
+			style="color: red">*</strong><i class="fa fa-info-circle"
+			data-toggle="tooltip" data-placement="top"
+			title="Define the premium payable if it has changed from the ave present premium"></i>
+		<div class="col-md-1 col-sm-1 col-xs-2">
+			<strong>&#8358;</strong>
+		</div>
+		<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($renewFieldset->get("premium"))?> 
+								</div>
+
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("premium"))?> 
+								</div>
+	</div>
+
+	<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("changeReason"))?> <strong
+			style="color: red">*</strong><i class="fa fa-info-circle"
+			data-toggle="tooltip" data-placement="top"
+			title="Reason for the change in premium"></i>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("changeReason"))?> 
+								</div>
+
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("changeReason"))?> 
+								</div>
+	</div>
+
+
+
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("isMicro"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Click if you want payment spread out "></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("isMicro"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("isMicro"))?> 
+								</div>
+</div>
+
+<div id="div_microPaymentSpread">
+	<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("microPAymentFieldset")->get("microPayment"))?> <strong
+			style="color: red">*</strong><i class="fa fa-info-circle"
+			data-toggle="tooltip" data-placement="top"
+			title="Click if you want a micro-payment spread out "></i>
+		<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("microPAymentFieldset")->get("microPayment"))?> 
+								</div>
+
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("microPAymentFieldset")->get("microPayment"))?> 
+								</div>
+	</div>
+	<div style='text-align: center;'>
+		<i id='loading' class='fa fa-lg'
+			style='display: none; text-align: center;'><img alt=''
+			src='<?php echo  $this->basePath('/processin.gif')  ?>' height=30>
+			<hr></i>
+		<div id="spread"></div>
+	</div>
+</div>
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($renewFieldset->get("isPaid"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Is premium been paid"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($renewFieldset->get("isPaid"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($renewFieldset->get("isPaid"))?> 
+								</div>
+</div>
+<div id="div_manualPayment">
+<?php echo $this->partial("transaction-manul-payment-fieldset", array("manualPaymentFieldset"=>$renewFieldset->get("manualPayment")));?>
+
+</div>
+<?php
+echo $this->formsubmit($renewPolicyForm->get("submit"));
+
+echo $this->form()->closeTag();
+?>
+<br>
+<div style="text-align: center;">
+							<i id="renewPolicy" class="fa  fa-lg"
+								style="display: none;"><img alt=""
+								src="<?php  echo $this->basepath("/processin.gif")?>" height=25></i>
+						</div>
+<script>
+
+
+function getmicrodetails(){
+	$.ajax({
+		 type:"POST",
+	        data: { 
+	            'divisor':$("#payment_period").val() , 
+	            'premium':$("#premium").val()
+	             },
+	             url:"/general/microdetails",
+	             dataType:"html",
+	             beforeSend:function(){
+		             $("#loading").show();
+		             },
+	             success:function(data, status){
+	            	 $("#spread").html(data);
+		             },
+		             
+	             error:function(){},
+	             complete:function(){
+		             $("#loading").hide();
+		             }
+		});
+
+
+}
+
+$(document).ready(function(){
+	$("#div_isChangePremium").hide();
+	$("#div_microPaymentSpread").hide();
+	$("#div_manualPayment").hide();
+	$("#div_selectDate").hide();
+// 	$("premium").val("344400");
+
+	$("#specificDate").change(function(){
+		if($("#specificDate").is(":checked")){
+			$("#div_selectDate").show();
+			$("#div_renewDuration").hide();
+		}else{
+			$("#div_selectDate").hide();
+			$("#div_renewDuration").show();
+			}
+			
+		})
+
+	$("#isChangePremium").change(function(){
+		if($("#isChangePremium").is(":checked")){
+			$("#div_isChangePremium").show();
+			
+		}else{
+			$("#div_isChangePremium").hide();
+			}
+		})
+
+		$("#isMicro").change(function(){
+		if($("#isMicro").is(":checked")){
+			$("#div_microPaymentSpread").show();
+		}else{
+			$("#div_microPaymentSpread").hide();
+			}
+		})
+		
+		
+		
+		$("#isPaid").change(function(){
+		if($("#isPaid").is(":checked")){
+			$("#div_manualPayment").show();
+		}else{
+			$("#div_manualPayment").hide();
+			}
+		})
+
+		$("#payment_period").change(function(){
+			getmicrodetails()
+			})
+
+// 			$("#premium").change(function(){
+// 				$("amount_paid").val(3000);
+// 				})
+})
+</script>

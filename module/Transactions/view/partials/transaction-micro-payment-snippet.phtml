@@ -1,0 +1,40 @@
+
+<?php
+$microPaymentForm->prepare();
+
+echo $this->form()->openTag($microPaymentForm);
+?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($microPaymentForm->get("microPayment"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($microPaymentForm->get("microPayment"))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($microPaymentForm->get("microPayment"))?> 
+								
+							</div>
+
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+			<?php  echo $this->formrow($microPaymentForm->get("submit"))?>
+			</div>
+
+<?php
+
+echo $this->form()->closeTag();
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+
+<div id="microdetails"></div>
+<i id="ver_loader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt="" src="<?php  echo $this->basepath("/ver_loader.gif")?>"
+	height=150></i>
+<div id="success"></div>
+<div id="error"></div>
+

@@ -1,0 +1,50 @@
+<?php $thisdate = new DateTime()?>
+<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline margin-none">My Cover Note</h4>
+
+					</div>
+					<ul class="list-group">
+						
+						
+						
+					
+<?php
+$count = (count ( $coverNote ) < 5 ? count ( $coverNote ) : 5);
+if (count ( $coverNote ) == 0) {
+	echo "<li class='list-group-item media v-middle'><div class='media-body'>No coverNote issued yet</div></li>";
+} else {
+	for($i = 0; $i < $count; $i ++) {
+		?>
+<li class="list-group-item media v-middle">
+							<div class="media-body">
+							<div class="caption">
+									<span class="text-light">COVERNOTE:</span> <a
+										href="<?php  echo $this->url("cus_policy/default", array("action"=>"view-cover-note", "id"=>$coverNote[$i]->getCoverUid())); ?>"><?php echo  strtoupper(count($coverNote[$i]->getCoverUid()) == 0 ? " " : $coverNote[$i]->getCoverUid()) ?></a>
+								</div>
+								<a href="<?php ?>"
+								
+									class="text-subhead list-group-link" style="color: red; font-size: 9px;"><?php  echo $thisdate->diff($coverNote[$i]->getDueDate())->format("%a")." days left" ?></a>
+									<div class="text-light text-caption">
+                    Created On 
+                     <i class="fa fa-clock-o fa-fw"></i> <?php echo $this->dateFormat($coverNote[$i]->getDateCreated(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, 'en_US')?>
+                  </div>
+							</div>
+							<div class="media-right">
+								<span class="badge badge-red"><?php echo $coverNote[$i]->getCoverStatus()->getStatus()->getStatusWord()?></span>
+							</div>
+						</li>
+<?php
+	}
+}
+?>
+
+</ul>
+					<div class="panel-footer text-right">
+						<a href="<?php  echo $this->url("cus_policy")?>"
+							class="btn btn-white paper-shadow relative" data-z="0"
+							data-hover-z="1" data-animated href="#"> <?php  echo (count($coverNote) > 0 ? "View all": "")?></a>
+					</div>
+				</div>
+			</div>

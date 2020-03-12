@@ -1,0 +1,47 @@
+<?php
+echo $this->headtitle("My Transaction");
+?>
+
+<div class="row">
+	<div class="col-md-9">
+
+		<div class="panel panel-default">
+			<!-- Data table -->
+			<div class="table-responsive">
+
+				 <table id="myTable"  class="table v-middle">
+					<thead>
+						<tr>
+							<th>Invoice No</th>
+
+							<th>Transaction Status</th>
+							<th>Amount</th>
+							
+							<th></th>
+
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Invoice No.</th>
+
+							<th>TransactIonStatus</th>
+							<th>Amount</th>
+							
+							<th></th>
+						</tr>
+					</tfoot>
+					<tbody>
+
+<?php // echo $this->partial("customer-invoices-all-snipet");?>
+
+					</tbody>
+				</table>
+				<!-- // Data table -->
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+	<?php  echo $this->partial("customer-board-featured-packages")?>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('Insurer Portal'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+        
+            echo $this->headlink()->prependStylesheet($this->basePath('insureportal/css/neat.min.css?v=1.0'))->prependStylesheet($this->basePath('css/wasabi.gritter.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.modal.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.suggest.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.wizard.css'));
+            
+            echo $this->headScript()
+           
+            ->prependFile($this->basePath('chosen/chosen.jquery.js'))
+            ->prependFile($this->basePath('js/wasabi.gritter.js'))
+            ->prependFile($this->basePath('js/wasabi.suggest.js'))
+            ->prependFile($this->basePath('js/wasabilib.min.js'))
+            
+//             ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array(
+                'conditional' => 'lt IE 9'
+            ))
+        ?>
+
+       
+
+    </head>
+
+<body>
+	 <div class="o-page">
+      <header class="c-navbar u-mb-large">
+       
+
+      </header>
+
+      <?php echo $this->content ?>
+    </div><!-- // .o-page -->
+    
+        <script src="/insureportal/js/neat.min.js?v=1.0"></script>                  
+    </body>
+</html>

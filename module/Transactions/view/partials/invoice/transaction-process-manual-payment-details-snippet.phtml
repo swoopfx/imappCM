@@ -1,0 +1,73 @@
+<?php
+use Transactions\Service\InvoiceService;
+?>
+
+<?php
+/**
+ * This file shows the link to process the manual payment
+ */
+$processForm->prepare();
+$manualPayment = $invoiceEntity->getManualProcess();
+if (count($manualPayment) != 0 && $invoiceEntity->getStatus()->getId() != InvoiceService::INVOICE_PAID_STATUS) {
+    
+    // var_dump($processForm);
+    ?>
+<hr>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2>Manual payment Proceesing</h2>
+			 <div class="clearfix"></div>
+			
+		</div>
+		<div class="x_content bs-example-popovers">
+
+			<div class="alert alert-success alert-dismissible fade in"
+				role="alert">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-label="Close">
+					<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				</button>
+				<strong><?php echo $manualPayment->getPaymentMode()->getPaymentMode()?> has been made</strong>
+			</div>
+
+
+		</div>
+		<div class="x_content">
+		
+		
+			
+			<div class="col-md-9 col-sm-9 col-xs-12">
+			<?php  echo $this->form()->openTag($processForm)?>
+			<div class="x_panel">
+				<div class="col-md-5 col-sm-5 col-xs-12">
+					<h4>Payment(s) Made</h4>
+	<?php echo $this->transactionInvoiceManualPaymentDetails($manualPayment)?>
+	</div>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<div class="radio">
+						<label>
+			<?php  echo $this->formelement($processForm->get("processCondition"))?>
+			</label>
+					</div>
+					<hr>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+			<?php  echo $this->formrow($processForm->get("submit"))?>
+			</div>
+				</div>
+			</div>
+			<?php echo $this->form()->closeTag()?>
+		</div>
+		
+		<div class="col-md-2 col-sm-2 col-xs-12">
+			<div class="x_panel">
+		<!-- Put messagin here -->
+		</div>
+		
+		</div>
+	</div>
+	</div>
+</div>
+<?php }?>
+

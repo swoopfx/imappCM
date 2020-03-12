@@ -1,0 +1,765 @@
+<?php
+$newOfferForm = $this->newOfferForm;
+$todaysDate = date('Y/M/d');
+$newOfferForm->prepare();
+$newOfferForm->setAttributes(array(
+    'class' => 'form-horizontal form-label-left'
+));
+
+$newOfferForm->get('offerFieldset')
+    ->get('presentDate')
+    ->setAttributes(array(
+    
+    'class' => 'form-control',
+    'placeholder' => $todaysDate,
+    'disabled' => 'disabled'
+))
+    ->setLabelAttributes(array(
+    'class' => 'control-label col-md-3 col-sm-3 col-xs-12'
+));
+
+?>
+
+<div class="row" ng-app="OfferModule">
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<div class="x_panel">
+			<div class="x_title">
+
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+
+				<!-- Smart Wizard -->
+
+
+				<div id="wizard" class="form_wizard wizard_horizontal">
+					<ul class="wizard_steps">
+						<li><a href="#step-1"> <span class="step_no">1</span> <span
+								class="step_descr"><small>Offer Information</small> </span>
+						</a></li>
+						<li><a href="#step-2"> <span class="step_no">2</span> <span
+								class="step_descr"> <small>Object and Properties</small>
+							</span>
+						</a></li>
+						<li><a href="#step-3"> <span class="step_no">3</span> <span
+								class="step_descr"> <small>Estimated Premium</small>
+							</span>
+						</a></li>
+						<li><a href="#step-4"> <span class="step_no">3</span> <span
+								class="step_descr"> <small>CheckOut</small>
+							</span>
+						</a></li>
+
+					</ul>
+					<?php echo  $this->form()->openTag($newOfferForm);?>
+					<div id="step-1" ng-controller="offerInfoController">
+					<?php $offerData = $newOfferForm->get('offerFieldset')?>
+						
+
+							<div class="form-group">
+							
+								<?php echo $this->formLabel($offerData->get('offerStatuses'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerData->get('offerStatuses'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerData->get('offerStatuses'));  // this defines the error?> 
+							</div>
+
+
+
+
+						<div class="form-group">
+								<?php echo $this->formLabel($offerData->get('offerName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('offerName'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($offerData->get('offerName'))?> 
+								
+							</div>
+
+						<div class="form-group">
+								<?php echo $this->formLabel($offerData->get('idPreferdInsurer'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('idPreferdInsurer'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($offerData->get('idPreferdInsurer'))?> 
+								
+							</div>
+
+						<div class="ln_solid"></div>
+						<p style="padding: 0px 200px;">
+								 
+								
+									<?php echo $this->formElement($newOfferForm->get('requireBroker'))?>  
+								<?php echo $this->formLabel($newOfferForm->get('requireBroker'))?>
+								
+								</p>
+
+						<div data-ng-show="brokerForm">
+							<div class="form-group">
+								<?php echo $this->formLabel($offerData->get('idInsuranceBroker'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('idInsuranceBroker'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerData->get('idInsuranceBroker'))?> 
+								
+							</div>
+						</div>
+
+
+						<div class="ln_solid"></div>
+
+
+
+
+						<div class="form-group">
+								<?php echo  $this->formLabel($offerData->get('offerServiceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('offerServiceType'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerData->get('offerServiceType'))?> 
+								
+							</div>
+
+						<div class="form-group">
+								<?php echo  $this->formLabel($offerData->get('offerSpecificService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('offerSpecificService'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerData->get('offerSpecificService'))?> 
+								
+							</div>
+
+
+
+						<!-- Begin Motor non Commercial form  -->
+						<div data-ng-show="motor_com_service">
+							<div class="ln_solid"></div>
+
+							<div class="form-group">
+								<?php echo  $this->formLabel($offerData->get('offerServiceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('offerServiceType'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerData->get('offerServiceType'))?> 
+								
+							</div>
+
+						</div>
+						<!-- End Motor non Commercial form  -->
+
+						<!-- Begin Motor  Commercial form  -->
+						<div data-ng-show="motor_non_com_service">
+							<div class="ln_solid"></div>
+							<h2>
+								<i class="fa fa-bars"></i> Motor Insurance offer/ Proposal (Non
+								Commercial)
+							</h2>
+							<br> <br>
+
+							<div class="form-group">
+								<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('typeOfVehicle'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('typeOfVehicle'))?> 
+								</div>
+								<?php echo $this->formElementErrors($newOfferForm->get('motor_comprehensive_non_com')->get('typeOfVehicle'))?> 
+								
+							</div>
+							<p style="padding: 0px 200px;">
+								<br>
+								
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('isLimitedToOnlyMe'))?>
+									<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('isLimitedToOnlyMe'))?> 
+									<br>
+							</p>
+							<div class="form-group" ng-show="onlyMeDrive">
+								<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('peopleDrivingCar'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('peopleDrivingCar'))?> 
+								</div>
+								<?php echo $this->formElementErrors($newOfferForm->get('motor_comprehensive_non_com')->get('peopleDrivingCar'))?> 
+								
+							</div>
+
+							<div class="form-group">
+								<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('purposeOfUse'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('purposeOfUse'))?> 
+								</div>
+								<?php echo $this->formElementErrors($newOfferForm->get('motor_comprehensive_non_com')->get('purposeOfUse'))?> 
+								
+							</div>
+
+							<div class="form-group">
+								<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('vehicleValueType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('vehicleValueType'))?> 
+								</div>
+								<?php echo $this->formElementErrors($newOfferForm->get('motor_comprehensive_non_com')->get('vehicleValueType'))?> 
+								
+							</div>
+							<p style="padding: 0px 200px;">
+
+								<br>
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('isUsageInNigeria'))?>
+									<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('isUsageInNigeria'))?> 
+									<br> 
+									
+									
+								
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('isGeneralInfo'))?>
+									<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('isGeneralInfo'))?> 
+									
+									<br>
+							</p>
+							<!-- Begin General Info fields -->
+
+							<div ng-show="ginfo">
+								<div class="ln_solid"></div>
+								<h2>General Info form</h2>
+
+
+								<p style="padding: 0px 200px;">
+								
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('isCarParked'))?>
+									<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('isCarParked'))?><br>
+									<br>  
+								
+								<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('isSoleOwner'))?>
+									<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('isSoleOwner'))?><br>
+									<br>
+									
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('isCarHired'))?>
+									<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('isCarHired'))?><br>
+									<br>
+
+
+								</p>
+								<div class="form-group" ng-show="ishire">
+								<?php echo  $this->formLabel($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('financeCompany'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('financeCompany'))?> 
+								</div>
+								<?php echo $this->formElementErrors($newOfferForm->get('motor_comprehensive_non_com')->get('comprehensive_general_info')->get('financeCompany'))?> 
+								
+							</div>
+
+
+							</div>
+							<!-- End Of General Info Fields -->
+
+
+						</div>
+						<!-- End Motor  Commercial form  -->
+
+						<!-- Begin Third Party Motor form  -->
+						<div data-ng-show="thirdParty_motor">
+							<div class="ln_solid"></div>
+							<h2>
+								<i class="fa fa-bars"></i> Third Party offer/Proposal
+							</h2>
+							<br> <br>
+
+							<div class="form-group">
+								<?php echo  $this->formLabel($offerData->get('offerServiceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerData->get('offerServiceType'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerData->get('offerServiceType'))?> 
+								
+							</div>
+
+						</div>
+						<!-- End Third Party form  -->
+
+
+					</div>
+
+					<!-- Begin Object Span -->
+					
+					<?php $objectData = $newOfferForm->get('object_fieldset'); ?>
+					<div id="step-2" ng-controller="selectObjectController">
+						<div class="x_content" ng-controller="selectObjectController">
+
+							<p>All Objects (property, motor etc.) intended for insuring</p>
+							<!-- start project list -->
+							<table class="table table-striped projects">
+								<thead>
+									<tr>
+										<th style="width: 1%">#</th>
+										<th style="width: 20%">Object ID</th>
+										<th style="width: 20%">Object Name</th>
+
+										<th>Object Value</th>
+										<th>Status</th>
+										<th style="width: 20%"></th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr ng-repeat="obj in selectedObject">
+										<td>#</td>
+										<td><a data-ng-bind="obj.id"></a> <br /> <small
+											data-ng-bind="obj.datecreated"></small></td>
+										<td>
+											<p data-ng-bind="obj.name"></p>
+										</td>
+										<td>{{obj.value | currency : "&#8358;" : 2}}</td>
+										<td>
+											<button type="button" class="btn btn-danger btn-xs">{{obj.status}}</button>
+										</td>
+										<td><a href="#" class="btn btn-primary btn-xs"><i
+												class="fa fa-folder"></i> View </a> <a href="#"
+											class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>
+												Delete </a></td>
+									</tr>
+
+
+
+								</tbody>
+							</table>
+
+							<table class="table table-striped projects">
+
+								<tr>
+
+									<td style="width: 20%"></td>
+
+									<td>
+										<!-- /.col -->
+										<div class="col-xs-6">
+
+											<div class="table-responsive">
+												<table class="table">
+													<tbody>
+														<tr>
+															<th style="width: 50%">Subtotal:</th>
+															<td>&#8358;250.30</td>
+														</tr>
+														<tr>
+															<th>Tax (9.3%)</th>
+															<td>&#8358;10.34</td>
+														</tr>
+														<tr>
+															<th>Shipping:</th>
+															<td>&#8358;5.80</td>
+														</tr>
+														<tr>
+															<th>Total:</th>
+															<td>&#8358;265.24</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div> <!-- /.col -->
+									</td>
+								</tr>
+							</table>
+							<!-- end project list -->
+
+						</div>
+						<div class="text-center mtop20">
+							<a href="#" class="btn btn-sm btn-primary" data-toggle="modal"
+								data-target=".bs-example-modal-sm">Create Object</a> <a href="#"
+								data-toggle="modal" data-target=".bs-example-modal-sm1"
+								class="btn btn-sm btn-warning">Select Object</a>
+						</div>
+
+
+
+						<div class="modal fade bs-example-modal-sm" tabindex="-1"
+							role="dialog" aria-hidden="true">
+							<div class="modal-dialog modal-xm">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">X</span>
+										</button>
+										<h2 class="modal-title" id="myModalLabel2">New Object Form</h2>
+									</div>
+									<div class="modal-body">
+
+
+
+										<p></p>
+										<div class="form-group">
+												<?php  echo  $this->formLabel($objectData->get('objectName'));?>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+												<?php  echo  $this->formElement($objectData->get('objectName'));?>
+												</div>
+												<?php echo $this->formElementErrors($objectData->get('objectName'));?>
+												</div>
+
+										<div class="form-group">
+												<?php  echo  $this->formLabel($objectData->get('objectInfo'));?>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+												<?php  echo  $this->formElement($objectData->get('objectInfo'));?>
+												</div>
+												<?php echo $this->formElementErrors($objectData->get('objectInfo'));?>
+												</div>
+
+										<div class="form-group">
+												<?php  echo  $this->formLabel($objectData->get('objectValue'));?>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+												<?php  echo  $this->formElement($objectData->get('objectValue'));?>
+												</div>
+												<?php echo $this->formElementErrors($objectData->get('objectValue'));?>
+												</div>
+
+										<div class="form-group">
+												<?php  echo  $this->formLabel($objectData->get('objectType'));?>
+												<div class="col-md-6 col-sm-6 col-xs-12">
+												<?php  echo  $this->formElement($objectData->get('objectType'));?>
+												</div>
+												<?php echo $this->formElementErrors($objectData->get('objectType'));?>
+												</div>
+
+
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<!-- Begin the Selection Modal view  -->
+
+						<div class="modal fade bs-example-modal-sm1" tabindex="-1"
+							role="dialog" aria-hidden="true">
+							<div class="modal-dialog modal-xm">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">X</span>
+										</button>
+										<h2 class="modal-title" id="myModalLabel2">Search for
+											pre-registered Objects</h2>
+									</div>
+									<div class="modal-body">
+
+
+
+
+
+
+										<div class="modal-footer">
+											<button type="button" class="btn btn-primary">More</button>
+										</div>
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<!-- End of the selection modal view  -->
+						<div class="ln_solid"></div>
+						<br>
+
+
+						<h2>Services</h2>
+						<div class="form-group">
+								
+								<?php
+        
+        /**
+         * Place the zervices required here
+         */
+        
+        ?>
+								</div>
+
+					</div>
+
+
+					<!--  End Object Span  -->
+					<div id="step-3">
+						<h2 class="StepTitle">Step 3 Content</h2>
+
+						<div class="x_content">
+
+							<section class="content invoice">
+								<!-- title row -->
+								<div class="row">
+									<div class="col-xs-12 invoice-header">
+										<h1>
+											<i class="fa fa-globe"></i> Invoice. <small
+												class="pull-right">Date: 16/08/2016</small>
+										</h1>
+									</div>
+									<!-- /.col -->
+								</div>
+								<!-- info row -->
+								<div class="row invoice-info">
+									<div class="col-sm-4 invoice-col">
+										From
+										<address>
+											<strong>Iron Admin, Inc.</strong> <br>795 Freedom Ave, Suite
+											600 <br>New York, CA 94107 <br>Phone: 1 (804) 123-9876 <br>Email:
+											ironadmin.com
+										</address>
+									</div>
+									<!-- /.col -->
+									<div class="col-sm-4 invoice-col">
+										To
+										<address>
+											<strong>John Doe</strong> <br>795 Freedom Ave, Suite 600 <br>New
+											York, CA 94107 <br>Phone: 1 (804) 123-9876 <br>Email:
+											jon@ironadmin.com
+										</address>
+									</div>
+									<!-- /.col -->
+									<div class="col-sm-4 invoice-col">
+										<b>Invoice #007612</b> <br> <br> <b>Order ID:</b> 4F3S8J <br>
+										<b>Payment Due:</b> 2/22/2014 <br> <b>Account:</b> 968-34567
+									</div>
+									<!-- /.col -->
+								</div>
+								<!-- /.row -->
+
+								<!-- Table row -->
+								<div class="row">
+									<div class="col-xs-12 table">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>Qty</th>
+													<th>Product</th>
+													<th>Serial #</th>
+													<th style="width: 59%">Description</th>
+													<th>Subtotal</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Call of Duty</td>
+													<td>455-981-221</td>
+													<td>El snort testosterone trophy driving gloves handsome
+														gerry Richardson helvetica tousled street art master
+														testosterone trophy driving gloves handsome gerry
+														Richardson</td>
+													<td>$64.50</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>Need for Speed IV</td>
+													<td>247-925-726</td>
+													<td>Wes Anderson umami biodiesel</td>
+													<td>$50.00</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>Monsters DVD</td>
+													<td>735-845-642</td>
+													<td>Terry Richardson helvetica tousled street art master,
+														El snort testosterone trophy driving gloves handsome
+														letterpress erry Richardson helvetica tousled</td>
+													<td>$10.70</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>Grown Ups Blue Ray</td>
+													<td>422-568-642</td>
+													<td>Tousled lomo letterpress erry Richardson helvetica
+														tousled street art master helvetica tousled street art
+														master, El snort testosterone</td>
+													<td>$25.99</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- /.col -->
+								</div>
+								<!-- /.row -->
+
+								<div class="row">
+									<!-- accepted payments column -->
+									<div class="col-xs-6">
+										<p class="lead">Payment Methods:</p>
+										<img src="images/visa.png" alt="Visa"> <img
+											src="images/mastercard.png" alt="Mastercard"> <img
+											src="images/american-express.png" alt="American Express"> <img
+											src="images/paypal2.png" alt="Paypal">
+										<p class="text-muted well well-sm no-shadow"
+											style="margin-top: 10px;">Etsy doostang zoodles disqus
+											groupon greplin oooj voxy zoodles, weebly ning heekya
+											handango imeem plugg dopplr jibjab, movity jajah plickers
+											sifteo edmodo ifttt zimbra.</p>
+									</div>
+									<!-- /.col -->
+									<div class="col-xs-6">
+										<p class="lead">Amount Due 2/22/2014</p>
+										<div class="table-responsive">
+											<table class="table">
+												<tbody>
+													<tr>
+														<th style="width: 50%">Subtotal:</th>
+														<td>$250.30</td>
+													</tr>
+													<tr>
+														<th>Tax (9.3%)</th>
+														<td>$10.34</td>
+													</tr>
+													<tr>
+														<th>Shipping:</th>
+														<td>$5.80</td>
+													</tr>
+													<tr>
+														<th>Total:</th>
+														<td>$265.24</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<!-- /.col -->
+								</div>
+								<!-- /.row -->
+
+								<!-- this row will not appear when printing -->
+								<div class="row no-print">
+									<div class="col-xs-12">
+										<button class="btn btn-default" onclick="window.print();">
+											<i class="fa fa-print"></i> Print
+										</button>
+										<button class="btn btn-success pull-right">
+											<i class="fa fa-credit-card"></i> Submit Payment
+										</button>
+										<button class="btn btn-primary pull-right"
+											style="margin-right: 5px;">
+											<i class="fa fa-download"></i> Generate PDF
+										</button>
+									</div>
+								</div>
+							</section>
+						</div>
+
+					</div>
+					<!-- Begin Checkout  -->
+					<div id="step-4">
+						<h2>This is check out</h2>
+					</div>
+					<!-- End Checkout  -->
+					
+<?php $this->form()->closeTag(); ?>
+				</div>
+				<!-- End SmartWizard Content -->
+
+
+
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- Begining of premium adverts  -->
+
+	<div class="col-md-3 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Premium Brokers</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="dashboard-widget-content">
+
+					<ul class="list-unstyled timeline widget">
+
+						<li>
+							<div class="block">
+								<div class="block_content">
+									<h2 class="title">
+										<a>Hilltop Insurance Brokers</a>
+									</h2>
+
+									<p class="excerpt">
+										Film festivals used to be do-or-die moments for movie makers.
+										They were where you met the producers that could fund your
+										project, and if the buyers liked your flick, they’d pay to
+										Fast-forward and… <a>Read&nbsp;More</a>
+									</p>
+								</div>
+							</div>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- End of Premium Advert  -->
+
+</div>
+
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/wizard/jquery.smartWizard.js'))
+    ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('angular/OfferModule.js'))
+    ->appendFile($this->basePath('angular/controllers/offerController.js'));
+?>
+
+<script type="text/javascript">
+ 
+
+       $(document).ready(function () {
+            // Smart Wizard 	
+            $('#wizard').smartWizard();
+
+            function onFinishCallback() {
+                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
+                //alert('Finish Clicked');
+            }
+        });
+
+        $(document).ready(function () {
+            // Smart Wizard	
+            $('#wizard_verticle').smartWizard({
+                transitionEffect: 'slide'
+            });
+
+            $('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.phone').mask('0-000-000-0000');
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

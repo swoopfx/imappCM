@@ -1,0 +1,83 @@
+<?php
+$cashInTransitEntity = $coverEntity->getCashInTransitInsurance();
+?>
+
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+
+				<th>Single Carry Limit</th>
+				<td><?php  echo ($cashInTransitEntity->getCurrency() != NUll && $cashInTransitEntity->getSingleCarryLimit() != NUll ? $this->myCurrencyFormat( ($cashInTransitEntity->getSingleCarryLimit() != NUll ? $cashInTransitEntity->getSingleCarryLimit() : "Not Specified"), $cashInTransitEntity->getCurrency()->getCode()) : "Not Specified") ?> </td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Annual Turnover </th>
+				<td><?php  echo ($cashInTransitEntity->getCurrency() != NUll && $cashInTransitEntity->getAnnualTurnover() != NUll ? $this->myCurrencyFormat( ($cashInTransitEntity->getAnnualTurnover() != NUll ? $cashInTransitEntity->getSingleCarryLimit() : "Not Specified"), $cashInTransitEntity->getCurrency()->getCode()) : "Not Specified") ?> </td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Convey Method </th>
+				<td><?php  echo ($cashInTransitEntity->getConveyMethod() != NUll ? $cashInTransitEntity->getConveyMethod() : "Not Specified") ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Other materials being conveyed </th>
+				<td><?php  echo ($cashInTransitEntity->getOtherTransit() != NUll ? $cashInTransitEntity->getOtherTransit() : "Not Specified") ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Conveyors have Fidelity Gaurantee </th>
+				<td><?php  echo ($cashInTransitEntity->getIsEmployeeHasFidelityGuaratee() != NUll ? $this->trueFalseHelper($cashInTransitEntity->getIsEmployeeHasFidelityGuaratee()) : "Not Specified") ?></td>
+
+			</tr>
+			<?php  if($cashInTransitEntity->getIsEmployeeHasFidelityGuaratee() == TRUE){?>
+			<tr>
+
+				<th>Fidelity Gaurantee Insurer </th>
+				<td><?php  echo ($cashInTransitEntity->getFidelityInsurer() != NUll ? $cashInTransitEntity->getFidelityInsurer()->getInsuranceName() : "Not Specified") ?></td>
+
+			</tr>
+			<?php }?>
+			<tr>
+
+				<th>Weekly Frequency of Transit</th>
+				<td><?php  echo ($cashInTransitEntity->getFrequencyOfTransit() != NUll ?$cashInTransitEntity->getFrequencyOfTransit()." <strong> times a week </strong>" : "Not Specified") ?> </td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Daily Frequency of Transit</th>
+				<td><?php  echo ($cashInTransitEntity->getDailyFrequency() != NUll ?$cashInTransitEntity->getDailyFrequency()." <strong> times a daily </strong>" : "Not Specified") ?> </td>
+
+			</tr>
+			
+			
+			<tr>
+
+				<th>Material accompanied by armed guards</th>
+				<td><?php  echo ($cashInTransitEntity->getIsArmedGaurd() != NUll ? $this->trueFalseHelper($cashInTransitEntity->getIsArmedGaurd()) : "Not Specified") ?></td>
+
+			</tr>
+			
+			
+		
+		</tbody>
+	</table>
+
+</div>

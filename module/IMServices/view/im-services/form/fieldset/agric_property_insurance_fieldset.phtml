@@ -1,0 +1,240 @@
+<?php
+$agricpropertyInsuranceFieldset = $form->get("agricProductFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('isCoverProperty'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('isCoverProperty'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there should be a cover for the agricultural property, this include warehouse, factory, silo e.t.c."></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('isCoverProperty'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('isCoverAgriculturalProduce'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('isCoverAgriculturalProduce'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there should be a cover for the agricultural products, this include grains"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('isCoverAgriculturalProduce'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"agricproductlist")) ?>">
+		Add Property</a>
+</div>
+
+<div class="form-group" id="div_agric_list"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;">
+<?php  //echo $this->partial("imservice_motor_non_standard_inner", array("nonStandardCollecton"=>$nonStandardCollecton))?>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('totalCoverValue'))?>
+								<div class="col-md-1 col-sm-1 col-xs-2">
+								<strong>&#8358;</strong>
+								</div>
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('totalCoverValue'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The estimated total value "></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('totalCoverValue'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('isRegularlyInspected'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('isRegularlyInspected'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Properties are regularly inspected"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('isRegularlyInspected'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_regularly_inspected">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('lastDateInspected'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('lastDateInspected'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Properties are regularly inspected"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('lastDateInspected'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('inspectionDuration'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('inspectionDuration'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Properties are regularly inspected"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('inspectionDuration'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('isPreviousClaim'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('isPreviousClaim'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Properties are regularly inspected"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('isPreviousClaim'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Properties are regularly inspected"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group" id="div_decline_details">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('declineDetails'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('declineDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Properties are regularly inspected"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('declineDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('isCanceled'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('isCanceled'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Properties are regularly inspected"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('isCanceled'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="divcancelDetails">
+
+								 <?php echo $this->formLabel($agricpropertyInsuranceFieldset->get('cancelDetails'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($agricpropertyInsuranceFieldset->get('cancelDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Properties are regularly inspected"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($agricpropertyInsuranceFieldset->get('cancelDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+	$("#div_decline_details").hide();
+	$("#divcancelDetails").hide();
+	$("#div_regularly_inspected").show();
+
+	$("#isCanceled").change(function(){
+		if($("#isCanceled").is(":checked")){
+			$("#divcancelDetails").show();
+			}else{
+				$("#divcancelDetails").hide();
+				}
+		})
+
+
+
+		$("#isPreviousDecline").change(function(){
+		if($("#isPreviousDecline").is(":checked")){
+			$("#div_decline_details").show();
+			}else{
+				$("#div_decline_details").hide();
+				}
+		})
+
+
+		$("#isRegularlyInspected").change(function(){
+		if($("#isRegularlyInspected").is(":checked")){
+			$("#div_regularly_inspected").show();
+			}else{
+				$("#div_regularly_inspected").hide();
+				}
+		})
+
+		//
+	
+})
+
+</script>

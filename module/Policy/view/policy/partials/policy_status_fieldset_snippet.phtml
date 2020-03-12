@@ -1,0 +1,18 @@
+<?php
+
+?>
+
+<div id="div_renewDuration" class="form-group">
+								<?php echo  $this->formLabel($fieldset->get("status"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Select  Staus the policy would maintain"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($fieldset->get("status"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($fieldset->get("status"))?> 
+								</div>
+</div>

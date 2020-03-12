@@ -1,0 +1,146 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+?>
+
+<tr>
+
+	<th>Date of Theft</th>
+	<td>
+<?php  echo ($details->getTheftDate() != NUll ? $this->dateformat( $details->getTheftDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Information about the buglary</th>
+	<td>
+<?php  echo ($details->getTheftEntryDesc() != NUll ? $this->escapehtml( $details->getTheftEntryDesc()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Buglary Suspect</th>
+	<td>
+<?php  echo ($details->getTheftSuspect() != NUll ? $this->escapehtml( $details->getTheftSuspect()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+
+<tr>
+
+	<th>Date Theft was discoverd</th>
+	<td>
+<?php  echo ($details->getDateTheftDiscovered() != NUll ? $this->dateformat( $details->getDateTheftDiscovered(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Date Police was notified</th>
+	<td>
+<?php  echo ($details->getDatePoliceNotify() != NUll ? $this->dateformat( $details->getDatePoliceNotify(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Details of police station</th>
+	<td>
+<?php  echo ($details->getStationPoliceNotify() != NUll ? $this->escapehtml( $details->getStationPoliceNotify()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Apartment was occupied during buglary</th>
+	<td>
+<?php  echo ($details->getIsOccupiedAtBurglary() != NUll ? $this->trueFalseHelper( $details->getIsOccupiedAtBurglary()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<?php if($details->getIsOccupiedAtBurglary() == FALSE):?>
+<tr>
+
+	<th>Days building was unoccupied</th>
+	<td>
+<?php  echo ($details->getUnOccupiedDuration() != NUll ? $this->escapehtml( $details->getUnOccupiedDuration())." days" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<?php  endif;?>
+
+<tr>
+
+	<th>Apartment has security</th>
+	<td>
+<?php  echo ($details->getIsAvailableSecurity() != NUll ? $this->trueFalseHelper( $details->getIsAvailableSecurity()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<?php if($details->getIsAvailableSecurity()):?>
+<tr>
+
+	<th>Type of security</th>
+	<td>
+<?php  echo ($details->getSecurityType() != NUll ? $this->escapehtml( $details->getSecurityType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<?php  endif;?>
+
+<?php  if(count($details->getListLoss()) > 0):?>
+
+<th>LIst of Loss</th>
+<td>
+
+	<table class="table table-hover ">
+		<thead>
+			<tr>
+				<th>Employee Category</th>
+				<th>Number of Employee</th>
+				<th>Estimated Wages</th>
+
+			</tr>
+		</thead>
+		<tbody>
+					<?php //foreach ($employeeLiabilityEntity->getEmployeeDetails() as $staff){?>
+					<tr>
+
+				<td> <?php //echo ($staff->getEmployeeDescription() != NUll ? $staff->getEmployeeDescription() : GeneralService::GENERAL_EMPTY_FIELD) ;?>
+								</td>
+
+				<td>	 <?php //echo ($staff->getNumbersOfEmployee() != NUll ? $staff->getNumbersOfEmployee() : GeneralService::GENERAL_EMPTY_FIELD) ;?></td>
+				<td>	 <?php //echo ($staff->getEstimatedPeriodWage() != NUll ? $this->myCurrencyFormat($staff->getEstimatedPeriodWage()) : GeneralService::GENERAL_EMPTY_FIELD) ;?></td>
+
+
+
+			</tr>
+						
+					<?php //}?>
+					</tbody>
+	</table>
+
+</td>
+
+<?php  endif; ?>
+
+
+<tr>
+
+	<th>Had previous loss</th>
+	<td>
+<?php  echo ($details->getIsPreviousLoss() != NUll ? $this->trueFalseHelper( $details->getIsPreviousLoss()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+<?php  if($details->getIsPreviousLoss()):?>
+<tr>
+
+	<th>Days building was unoccupied</th>
+	<td>
+<?php  echo ($details->getPreviousLoss() != NUll ? $this->escapehtml( $details->getPreviousLoss())." days" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+<?php endif; ?>

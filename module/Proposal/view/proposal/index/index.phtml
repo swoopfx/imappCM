@@ -1,0 +1,14 @@
+<strong>Module:</strong>        Proposal &raquo;
+<strong>Controller:</strong>    Index &raquo;
+<strong>Action:</strong>        index
+<div class="highlight" style="min-height: 40px">
+<span id="element_simple_form"></span>
+</div>
+
+ <form id="simpleForm" class="ajax_element" action="<?php  echo $this->url("proposal/default", array("action"=>"sert"))?>" method="POST"
+    data-ajax-loader="myLoader">
+
+    <input type="text" name="written_text">
+    <input type="submit" value="try it">
+    <i id="myLoader" class="fa fa-spinner fa-pulse fa-lg" style="display: none;"></i>
+    </form>

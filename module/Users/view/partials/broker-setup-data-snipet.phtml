@@ -1,0 +1,295 @@
+<?php
+$brokerForm = $this->form;
+?>
+
+<?php  //echo $this->basePath('img/default.jpg')?>
+
+<div class="form-group">
+							<?php
+    
+    // $brokerForm->get('idInduranceBoker')->setAttributes(array(
+    // 'value' => 30
+    // )) ?>
+								<?php echo $this->formLabel($brokerForm->get('idInduranceBoker'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('idInduranceBoker'));?>
+									
+								</div>
+								<strong
+		style="color: red">*</strong>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Select you insurance broking firm"></i>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($brokerForm->get('idInduranceBoker'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('brokerProfile'))?> 
+								<br>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('brokerProfile'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide a brief description of your company"></i>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($brokerForm->get('brokerProfile'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('brokerEmail'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('brokerEmail'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Company official email, this would be the default contact email for your customers"></i>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($brokerForm->get('brokerEmail'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('officialPhone'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('officialPhone'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Company officail phone number"></i>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($brokerForm->get('officialPhone'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('brokerWebsite'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('brokerWebsite'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Company official website"></i>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($brokerForm->get('brokerWebsite'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php // echo $this->formLabel($brokerForm->get('rbaCode'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php // echo $this->formElement($brokerForm->get('rbaCode'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php // echo $this->formElementErrors($brokerForm->get('rbaCode'));  // this defines the error?> 
+							</div>
+							<?php  // echo $this->partial('broker-telephone-snipet', array('form'=>$form->get('brokerTelephone'))); // this partial handles the Telephone?>
+							</div>
+
+
+
+
+<div class="ln_solid"></div>
+
+<?php // echo $this->partial('broker-address-snipet', array('form'=>$brokerForm)); // this partial handles the address?>
+
+<h2>Broker Address</h2>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('address1'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('address1'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Head office address"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($brokerForm->get('address1'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('address2'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('address2'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($brokerForm->get('address2'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							<?php
+    
+    $brokerForm->get('country')->setAttributes(array(
+        'value' => 156
+    ))?>
+								<?php echo $this->formLabel($brokerForm->get('country'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('country'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Country"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($brokerForm->get('country'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+<?php
+
+$brokerForm->get('state')->setAttributes(array(
+    'value' => 2412
+))?>
+							
+								<?php echo $this->formLabel($brokerForm->get('state'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('state'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="State head office resides"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($brokerForm->get('state'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($brokerForm->get('zipCode'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($brokerForm->get('zipCode'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Company postal code if available"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($brokerForm->get('zipCode'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<?php //  echo $this->partial('broker-bank-account-snipet', array('form'=>$brokerForm->get('bankAccount'))); // this handles the bank account?>
+
+<?php
+
+echo $this->headScript()
+    
+//     ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('js/jquery.form.js'));
+?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+             $('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.phone').mask('+000-000-000-0000');
+//             $('.url').mask('http://AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.SSS', {'translation': {
+//                 A: {pattern: /[A-Za-z0-9]*/},
+//                 S: {pattern: /[A-Za-z]*/}
+               
+//               }
+//         });
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+//         	$("#isTemredValue").hide();
+//         		$('#ajaxStatus')
+//         		.ajaxStart(function() {
+//         		$(this).show();
+//         		})
+//         		.ajaxStop(function() {
+//         		$(this).hide();
+//         		});
+            // $('.money').mask('000,000,000,000,000.0', {reverse: true});
+//             $('.phone').mask('0-000-000-0000');
+            $("#country_id").change(function(){
+                //alert("The index chosen is ");
+               //$("#pack_cover").val(303);
+                $.ajax({
+                    type:"POST",
+                    data: { 
+                        'service':$("#country_id").val() , 
+//                         'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+                    },
+                    url:"/general/state",
+                    dataType:"html",
+                    success:function(data, status){
+                        $("#state_id").html(data)
+                    },
+                    error:function(){
+                        alert("we could not retrive the State/Territory list")
+                    }
+                })
+            	//$("#pack_cover").html("<option value='303'>PUM PUM </option>");
+            })
+            
+
+//             if($("#coverduration").val() == "100"){
+//               	 $("#isTemredValue").show();
+//                }else{
+//               	 $("#isTemredValue").hide();
+//                }
+
+//             $("#coverduration").change(function(){
+// 				if($("#coverduration").val() == "100"){
+// 					$("#isTemredValue").show();
+// 				}else{
+// 					$("#isTemredValue").hide();
+// 				}
+// 			});
+           
+
+        });
+
+        $(document).ready(function(){
+            
+       	 //$("#isTemredValue").hide();
+        
+         
+        })
+
+        
+
+        
+    
+
+</script>

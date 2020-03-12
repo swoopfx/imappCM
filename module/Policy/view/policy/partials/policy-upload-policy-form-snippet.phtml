@@ -1,0 +1,207 @@
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get('policyName'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Name of the policy to upload"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get('policyName'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get('policyName'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get('policyCode'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Number/Code of the policy to upload"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get('policyCode'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get('policyCode'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get("coverNote")->get('insurer'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="The insurance Company providing service"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get("coverNote")->get('insurer'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get("coverNote")->get('insurer'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get("coverNote")->get("policyFloat")->get('serviceType'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Policy being provided"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get("coverNote")->get("policyFloat")->get('serviceType'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get("coverNote")->get("policyFloat")->get('serviceType'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get("coverNote")->get("policyFloat")->get('specificService'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top" title="Specific cover type"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get("coverNote")->get("policyFloat")->get('specificService'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get("coverNote")->get("policyFloat")->get('specificService'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get("coverNote")->get('premiumPayable'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Amount of premium to be paid"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get("coverNote")->get('premiumPayable'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get("coverNote")->get('premiumPayable'))?> 
+								</div>
+</div>
+
+<hr>
+
+
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get('isAutoRenew'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Signify if yo prefer micro payment"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get('isAutoRenew'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get('isAutoRenew'))?> 
+								</div>
+</div>
+<hr>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get('startDate'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Signify if yo prefer micro payment"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get('startDate'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get('startDate'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($uploadPolicyFieldset->get('endDate'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Signify if yo prefer micro payment"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($uploadPolicyFieldset->get('endDate'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($uploadPolicyFieldset->get('endDate'))?> 
+								</div>
+</div>
+<?php
+
+echo $this->headScript()->
+appendFile($this->basePath('js/jquery.maskMoney.js'));
+?>
+
+
+<script type="text/javascript">
+
+function getservice(){
+	 $.ajax({
+         type:"POST",
+         data: { 
+             'service':$("#float_service").val() , 
+//              'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+         },
+         url:"/package/service",
+         dataType:"html",
+         success:function(data, status){
+             $("#float_specific_service").html(data)
+//          	alert("HEy");
+         },
+         error:function(){
+             alert("we could not retrive the cover details")
+         }
+     })
+}
+
+$(function() {
+    $('#premium').maskMoney();
+  })
+        $(document).ready(function () {
+
+            if($("serviceType").val() != ""){
+                getservice();
+            }
+        	
+        		$('#ajaxStatus')
+        		.ajaxStart(function() {
+        		$(this).show();
+        		})
+        		.ajaxStop(function() {
+        		$(this).hide();
+        		});
+            // $('.money').mask('000,000,000,000,000.0', {reverse: true});
+            $('.phone').mask('0-000-000-0000');
+            $("#float_service").change(function(){
+               getservice();
+            	//$("#pack_cover").html("<option value='303'>PUM PUM </option>");
+            })
+            
+
+        });
+
+        // for the type of customer
+
+       
+        //function add_category() {
+        	
+
+           
+
+//             return false;
+//         }
+    
+
+</script>

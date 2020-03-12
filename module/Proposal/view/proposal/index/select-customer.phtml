@@ -1,0 +1,41 @@
+<?php
+$this->headtitle('Select A Customer');
+
+//$selectCustomerForm = $this->selectCustomerForm;
+//$selectCustomerForm->prepare();
+?>
+<div class="row" ng-app="CustomerModule">
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Select A Customer</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<!-- Enter the view helper heere -->
+			<?php //echo $this->form()->openTag($selectCustomerForm); ?>
+			 
+			 <?php // echo $this->partial('customer-new', array('customerFieldset'=>$customerFieldset))?>
+				
+			
+            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-10">
+			
+				<?php
+   // echo $this->formRow($selectCustomerForm->get('csrf'));
+   // echo $this->formRow($selectCustomerForm->get('submit'));
+   // echo $this->formRow($selectCustomerForm->get('reset'));
+   // echo $this->form()->closeTag();
+    ?>
+           </div>
+
+			</div>
+		</div>
+	</div>
+
+
+</div>

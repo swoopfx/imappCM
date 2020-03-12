@@ -1,0 +1,36 @@
+<?php
+
+?>
+<div  class="form-group">
+								<?php echo  $this->formLabel($fieldset->get("premiumPayable"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Premium Value"></i>
+		<div class="col-md-1 col-sm-1 col-xs-2">
+								 &#8358;
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($fieldset->get("premiumPayable"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($fieldset->get("premiumPayable"))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($fieldset->get("premiumChangeReason"))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Reason form change"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($fieldset->get("premiumChangeReason"))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($fieldset->get("premiumChangeReason"))?> 
+								</div>
+</div>

@@ -1,0 +1,101 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsContractAllRiskFieldset = $form->get("claimsContractorAllRisk");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsContractAllRiskFieldset->get("claims")
+));
+
+?>
+<hr>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($claimsContractAllRiskFieldset->get('lossDate'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($claimsContractAllRiskFieldset->get('lossDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date of loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($claimsContractAllRiskFieldset->get('lossDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($claimsContractAllRiskFieldset->get('locationOfLoss'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($claimsContractAllRiskFieldset->get('locationOfLoss'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Loss location"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($claimsContractAllRiskFieldset->get('locationOfLoss'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($claimsContractAllRiskFieldset->get('lossCircumstances'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($claimsContractAllRiskFieldset->get('lossCircumstances'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Circumstances leading to loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($claimsContractAllRiskFieldset->get('lossCircumstances'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($claimsContractAllRiskFieldset->get('isSuspiciousDamage'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($claimsContractAllRiskFieldset->get('isSuspiciousDamage'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Loss is suspecious"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($claimsContractAllRiskFieldset->get('isSuspiciousDamage'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($claimsContractAllRiskFieldset->get('suspeciousDetails'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($claimsContractAllRiskFieldset->get('suspeciousDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about suspecion"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($claimsContractAllRiskFieldset->get('suspeciousDetails'));  // this defines the error?> 
+							</div>
+</div>
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa  fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#lossDate").hide();
+})
+</script>

@@ -1,0 +1,22 @@
+
+
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div id="res">
+<?php
+
+$policyFloatForm->prepare();
+echo $this->form()->openTag($policyFloatForm);
+echo $this->partial("policy_upload_policy_form_snippet", array(
+    "uploadPolicyFieldset" => $policyFloatForm->get("policyFieldset")
+));
+// echo $this->formrow($policyUploadForm->get("reset"))
+echo $this->formrow($policyFloatForm->get("submit"));
+echo $this->form()->closeTag();
+
+?>
+</div>
+<div id="success"></div>
+<div id="error"></div>

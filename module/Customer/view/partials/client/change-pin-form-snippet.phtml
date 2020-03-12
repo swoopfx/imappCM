@@ -1,0 +1,74 @@
+<?php
+?>
+ <?php
+echo $this->headLink()
+    ->appendStylesheet($this->basePath('css/jquery.numpad.css'))
+    ->appendStylesheet($this->basePath('css/bootstrap-pincode-input.css'));
+echo $this->headScript()->appendFile($this->basePath('js/jquery.numpad.js'));
+?>
+<script>
+        $(document).ready(function() {
+            $('#pincode-input1').pincodeInput({hidedigits:false,complete:function(value, e, errorElement){
+            	
+            	$("#pincode-callback").html("This is the 'complete' callback firing. Current value: " + value);
+            	
+            	// check the code
+            	if(value!="1234"){
+            		$(errorElement).html("The code is not correct. Should be '1234'");
+            	}else{
+            		alert('code is correct!');
+            	}
+            	
+            }});
+            $('#pincode-input4').pincodeInput({hidedigits:false,inputs:4});
+            $('#pincode-input3').pincodeInput({hidedigits:false,inputs:5});
+            $('#pincode-input2').pincodeInput({hidedigits:false,inputs:6,complete:function(value, e, errorElement){
+            	$("#pincode-callback").html("Complete callback from 6-digit test: Current value: " + value);
+            }});
+            
+            
+        });
+    </script>
+<div class="form-group">
+	<!-- 		<div class="form-control-material"> -->
+               <?php
+            $ele->get("pin")->setAttributes(array(
+                "class" => "pin",
+                "id" => "#pincode-input4"
+            ));
+            echo $this->formElement($ele->get('pin'))?>
+                <?php // echo $this->formlabel($ele->get('pin'))?> 
+               
+		<!-- 		</div> -->
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formelementerrors($ele->get('pin'))?> 
+							</div>
+</div>
+<?php
+
+// echo $this->headScript()
+//     ->appendFile($this->basePath('js/jquery.numpad.js'))
+//     ->appendFile($this->basePath('js/jquery.mask.min.js'))
+//     ->appendFile($this->basePath('js/bootstrap-pincode-input.js'))
+?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+             //$('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.pin').mask('0000');
+            
+
+        });
+
+      
+    
+
+</script>
+
+<script type="text/javascript">
+	// Initialize the numpad
+	$('.pin').numpad();
+</script>

@@ -1,0 +1,1 @@
+var CustomerModule = angular.module('CustomerModule', [])

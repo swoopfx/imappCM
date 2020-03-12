@@ -1,0 +1,245 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+$marineHullEntity = $coverEntity->getMarineHull()?>
+
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Name of Vessel</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselName() != NUll ? $this->escapehtml($marineHullEntity->getVesselName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Type of Vessel</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselType() != NUll ? $this->escapehtml($marineHullEntity->getVesselType()->getType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  if($marineHullEntity->getVesselType()->getType() == "1000"):?>
+			
+			<tr>
+
+				<th>Specifc Vessel Name</th>
+				<td>
+				<?php  echo ($marineHullEntity->getOtherVesselType() != NUll ? $this->escapehtml($marineHullEntity->getOtherVesselType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Vessel Builders</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselBuilders() != NUll ? $this->escapehtml($marineHullEntity->getVesselBuilders()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vessel port of registery</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselPortOfRegistry() != NUll ? $this->escapehtml($marineHullEntity->getVesselPortOfRegistry()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Vessel port of entry</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselPortOfRegistry() != NUll ? $this->escapehtml($marineHullEntity->getVesselPortOfRegistry()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vessel Identification</th>
+				<td>
+				<?php  echo ($marineHullEntity->getIdentificationNo() != NUll ? $this->escapehtml($marineHullEntity->getIdentificationNo()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			
+			<tr>
+
+				<th>Year vessel was built</th>
+				<td>
+				<?php  echo ($marineHullEntity->getDateOfBuilt() != NUll ? $this->dateFormat($marineHullEntity->getDateOfBuilt(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_us" ): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Year vessel was purchased</th>
+				<td>
+				<?php  echo ($marineHullEntity->getDateOfPurchase() != NUll ? $this->dateFormat($marineHullEntity->getDateOfPurchase(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_us" ): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th> Amount Paid</th>
+				<td>
+				<?php  echo ($marineHullEntity->getPricePaid() != NUll ? $this->myCurrencyFormat($this->escapehtml($marineHullEntity->getPricePaid())): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vessel Length</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselLength() != NUll ? $this->escapehtml($marineHullEntity->getVesselLength())." meters" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vessel Beam</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselBeam() != NUll ? $this->escapehtml($marineHullEntity->getVesselBeam()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vessel Make and/or model</th>
+				<td>
+				<?php  echo ($marineHullEntity->getMakeNModel() != NUll ? $this->escapehtml($marineHullEntity->getMakeNModel()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			
+			<tr>
+
+				<th>Number of Engine</th>
+				<td>
+				<?php  echo ($marineHullEntity->getEngineCount() != NUll ? $this->escapehtml($marineHullEntity->getEngineCount()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Type of Engine</th>
+				<td>
+				<?php  echo ($marineHullEntity->getEngineType() != NUll ? $this->escapehtml($marineHullEntity->getEngineType()->getType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  if($marineHullEntity->getEngineType()->getId() == "1000"):?>
+			<tr>
+
+				<th>Specific Engine Type</th>
+				<td>
+				<?php  echo ($marineHullEntity->getOtherEngineType() != NUll ? $this->escapehtml($marineHullEntity->getOtherEngineType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  endif; ?>
+			<tr>
+
+				<th>Capacity in Tonnes</th>
+				<td>
+				<?php  echo ($marineHullEntity->getTonnage() != NUll ? $this->escapehtml($marineHullEntity->getTonnage())." tonnes" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vessel is surveyed by professionals</th>
+				<td>
+				<?php  echo ($marineHullEntity->getIsProfessionalSurveyed() != NUll ? $this->trueFalseHelper($this->escapehtml($marineHullEntity->getIsProfessionalSurveyed())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  if($marineHullEntity->getIsProfessionalSurveyed()):?>
+			<tr>
+
+				<th>Survey Report</th>
+				<td>
+				<?php  echo ($marineHullEntity->getSurveyReport() != NUll ? $this->escapehtml($marineHullEntity->getSurveyReport()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif; ?>
+			
+			<tr>
+
+				<th>Present vessel estimated value</th>
+				<td>
+				<?php  echo ($marineHullEntity->getVesselValue() != NUll ?$this->myCurrencyFormat($this->escapehtml($marineHullEntity->getIsProfessionalSurveyed()), $marineHullEntity->getVesselCurrency()->getCode()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Trailer value</th>
+				<td>
+				<?php  echo ($marineHullEntity->getTrailerValue() != NUll ?$this->myCurrencyFormat($this->escapehtml($marineHullEntity->getTrailerValue()), $marineHullEntity->getvesselCurrency()->getCode()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Total Insured Value</th>
+				<td>
+				<?php  echo ($marineHullEntity->getTotalInsuredValue() != NUll ?$this->myCurrencyFormat($this->escapehtml($marineHullEntity->getTotalInsuredValue())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Total Insured Value</th>
+				<td>
+				<?php  echo ($marineHullEntity->getTotalInsuredValue() != NUll ?$this->myCurrencyFormat($this->escapehtml($marineHullEntity->getTotalInsuredValue())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Hull Cover Type</th>
+				<td>
+				<?php  echo ($marineHullEntity->getHullCoverType() != NUll ? $this->escapehtml($marineHullEntity->getHullCoverType()->getType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Marine Territorial Limit</th>
+				<td>
+				<?php  echo ($marineHullEntity->getMarineTerritorialLimit() != NUll ? $this->escapehtml($marineHullEntity->getMarineTerritorialLimit()->getTerritory()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if($marineHullEntity->getMarineTerritorialLimit()->getId() == "1000"):?>
+			<tr>
+
+				<th>Specific Territory</th>
+				<td>
+				<?php  echo ($marineHullEntity->getOtherTerritorialLimit() != NUll ? $this->escapehtml($marineHullEntity->getOtherTerritorialLimit()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+				
+			</tr>
+			<?php  endif;?>
+			<tr>
+
+				<th>Include Third party cover</th>
+				<td>
+				<?php  echo ($marineHullEntity->getIsThirdParty() != NUll ? $this->trueFalseHelper($this->escapehtml($marineHullEntity->getIsThirdParty())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Include water skier liability</th>
+				<td>
+				<?php  echo ($marineHullEntity->getIsWaterSkierLiability() != NUll ? $this->trueFalseHelper($this->escapehtml($marineHullEntity->getIsWaterSkierLiability())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,33 @@
+
+<?php
+
+if(count($packages) == 0){
+	?>
+	 <h4>There is no active Package available</h4>
+	<?php 
+}else{
+foreach ($packages as $package){
+?>
+
+  <li class="list-group-item media v-middle">
+                <div class="media-left">
+               
+                   <img alt="" src="<?php echo $this->insurerLogohelper($package->getPackages()->getPackagedInsurer()->getId())?>" class="img-circle width-80">
+                 
+                </div>
+                <div class="media-body">
+                  <h4 class="text-subhead margin-none">
+                    <a href="<?php  echo $this->url("cus_pack/default", array("action"=>"con-acquire", "id"=>$package->getId()))?>" class="link-text-color"><?php  echo $package->getPackages()->getPackageName() ?></a>
+                  </h4>
+                  <div class="text-light text-caption">
+                   Last Updated
+                     &nbsp; | <i class="fa fa-clock-o fa-fw"></i> <?php  echo $this->dateFormat($package->getUpdatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?>
+                  </div>
+                </div>
+                <div class="media-right">
+                   <a href="<?php  echo $this->url("cus_pack/default", array("action"=>"con-acquire", "id"=>$package->getId()))?>" class="btn btn-white btn-flat"><i class="fa fa-pencil fa-fw"></i>Process</a>  <a href="" class="btn btn-white btn-flat"><i class="fa fa-close fa-fw"></i> Delete</a>
+                </div>
+              </li>
+
+
+<?php }}?>

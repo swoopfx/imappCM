@@ -1,0 +1,17 @@
+<?php
+
+
+foreach ($packages as $package){
+    ?>
+    <tr>
+							<td><?php echo ($package->getPackageName() == NULL ? "No Package Name": $package->getPackageName())?></td>
+							<td>Accountant</td>
+							<td>Tokyo</td>
+							<td>63</td>
+							<td>2011/07/25</td>
+							<td>$170,750</td>
+						</tr>
+    <?php 
+}
+
+?>

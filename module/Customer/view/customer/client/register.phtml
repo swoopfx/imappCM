@@ -1,0 +1,102 @@
+<?php
+echo $this->headtitle("Registration");
+?>
+
+<?php
+if ($broker != NULL) {
+    $brokerName = $broker->getBrokerName();
+    echo $this->headtitle($brokerName . "");
+}
+$form = $this->form;
+$myCustomers = $this->myCustomers;
+$form->prepare();
+$flashMessenger = $this->flashMessenger()
+    ->setMessageOpenFormat('<div%s>
+     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+         &times;
+     </button>
+     <ul><li>')
+    ->setMessageSeparatorString('</li><li>')
+    ->setMessageCloseString('</li></ul></div>');
+?>
+<?php echo $flashMessenger->render('error',   array('alert', 'alert-dismissable', 'alert-danger')); ?>
+ <?php echo $flashMessenger->render('info',    array('alert', 'alert-dismissable', 'alert-info')); ?>
+ <?php echo $flashMessenger->render('default', array('alert', 'alert-dismissable', 'alert-warning')); ?>
+ <?php echo $flashMessenger->render('success', array('alert', 'alert-dismissable', 'alert-success')); ?>
+
+<h1 class="text-display-1">Register</h1>
+<?php if($broker->getCompanyLogo() == NULL){?>
+<img alt="company logo" src="<?php ?>" height="80"
+	class="img-circle width-80">
+<?php }?>
+
+<div class="panel-body">
+
+	<!-- Signup -->
+            <?php
+            
+            echo $this->form()->openTag($form);
+            $customerFieldset = $form->get('customerFieldset');
+            
+            ?>
+<?php echo $this->formElement($form->get('individual'));?>
+								<?php echo $this->formLabel($form->get('individual'))?>
+
+<?php echo $this->partial('client-register-snipet', array('customerFieldset'=>$customerFieldset))?>
+
+              
+             
+	<div class="form-group text-center">
+		<div class="checkbox">
+			<?php  echo $this->formElement($form->get('terms'));?> <label for="agree">* I Agree
+				with <a href="#">Terms &amp; Conditions!</a>
+			</label>
+		</div>
+	</div>
+	
+	<div class="form-group text-center">
+		<?php  echo $this->formRow($form->get('csrf'));?> 
+	</div>
+	
+	<div class="form-group text-center">
+		<a href="<?php  echo $this->url("client_login", array('brokerid'=>$broker->getBrokerUid()))?>">Login</a>
+	</div>
+	<div class="text-center">
+	<?php echo $this->formRow($form->get('submit')); ?>
+		
+	</div>
+            <?php
+            
+            // echo $this->formRow($customerForm->get('reset'));
+            echo $this->form()->closeTag();
+            ?>
+            <!-- //Signup -->
+
+</div>
+<br>
+<!--/row-->
+
+
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('angular/CustomerModule.js'))
+    ->appendFile($this->basePath('angular/controllers/customerController.js'));
+?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+             $('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.phone').mask('00000000000');
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>
+

@@ -1,0 +1,481 @@
+<?php
+$marineHullFieldset = $form->get("marineHullFieldset");
+
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselName'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The name assigned to the vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselName'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The type of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_other_vessel_type">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('otherVesselType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('otherVesselType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The type of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('otherVesselType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselBuilders'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselBuilders'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Builders of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselBuilders'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselPortOfRegistry'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselPortOfRegistry'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Builders of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselPortOfRegistry'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('identificationNo'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('identificationNo'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Builders of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('identificationNo'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('dateOfBuilt'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('dateOfBuilt'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Builders of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('dateOfBuilt'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('dateOfPurchase'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('dateOfPurchase'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Builders of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('dateOfPurchase'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('pricePaid'))?>
+<!-- 								<div class="col-md-8 col-sm-8 col-xs-10"> -->
+		<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($marineHullFieldset->get('currency'));?>
+									
+								</div>
+		<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($marineHullFieldset->get('pricePaid'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Builders of vessel"></i>
+<!-- 	</div> -->
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('pricePaid'));  // this defines the error?> 
+							</div>
+</div>
+
+<hr>
+<h4>Vessel Details</h4>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselLength'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselLength'));?>
+									
+								</div>
+	<strong>meters</strong> <i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="How long is the vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselLength'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselBeam'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselBeam'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How long is the vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselBeam'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('makeNModel'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('makeNModel'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Make and Model of vessel"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('makeNModel'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('engineCount'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('engineCount'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Amount of Engines"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('engineCount'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('engineType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('engineType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of Engine"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('engineType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_otherEngineType" class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('otherEngineType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('otherEngineType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Specific Engine Type"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('otherEngineType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('tonnage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('tonnage'));?>
+									
+								</div>
+	<strong>tonnes</strong> <i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top" title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('tonnage'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('isProfessionalSurveyed'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('isProfessionalSurveyed'));?>
+									
+								</div>
+	<i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top" title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('isProfessionalSurveyed'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_survet_report">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('surveyReport'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('surveyReport'));?>
+									
+								</div>
+	 <i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top" title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('surveyReport'));  // this defines the error?> 
+							</div>
+</div>
+<hr>
+<h4>VALUE TO BE INSURED:</h4>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('vesselValue'))?>
+								
+								
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselCurrency'));?>
+									
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselValue'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('vesselValue'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('trailerValue'))?>
+								
+								
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($marineHullFieldset->get('vesselCurrency'));?>
+									
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($marineHullFieldset->get('trailerValue'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('trailerValue'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('personalEffects'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('personalEffects'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="These are items not sold with the vessel but limited to N5000"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('personalEffects'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('totalInsuredValue'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('totalInsuredValue'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('totalInsuredValue'));  // this defines the error?> 
+							</div>
+</div>
+
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('isCoverDroppingOff'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('isCoverDroppingOff'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('isCoverDroppingOff'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('hullCoverType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('hullCoverType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('hullCoverType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('marineTerritorialLimit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('marineTerritorialLimit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Vessel tonnage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('marineTerritorialLimit'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('isThirdParty'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('isThirdParty'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Requires Third Party Limit"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('isThirdParty'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($marineHullFieldset->get('isWaterSkierLiability'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($marineHullFieldset->get('isWaterSkierLiability'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Requires water skier liability"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($marineHullFieldset->get('isWaterSkierLiability'));  // this defines the error?> 
+							</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#div_other_vessel_type").hide();
+	$("#div_survet_report").show();
+	$("#div_otherEngineType").hide();
+
+	$("#isProfessionalSurveyed").change(function(){
+		if($("#isProfessionalSurveyed").is(":checked")){
+			$("#div_survet_report").show();
+			
+		}else{
+			$("#div_survet_report").hide();
+		}
+	})
+
+	$("#vesselType").change(function(){
+		if($("#vesselType").val() == "1000"){
+		$("#div_other_vessel_type").show();
+		}else{
+			$("#div_other_vessel_type").hide();
+		}
+		})
+
+
+		$("#engineType").change(function(){
+		if($("#engineType").val() == "1000"){
+			alert("KKK");
+		$("#div_otherEngineType").show();
+		}else{
+			$("#div_otherEngineType").hide();
+		}
+		})
+
+		
+})
+</script>

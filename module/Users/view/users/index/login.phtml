@@ -1,0 +1,125 @@
+
+<?php
+$the_background = "/images/bg2.jpg";
+// $the_background = " "
+// echo $this->partial('csn-user/layout/nav-menu', array('navMenu' => $this->navMenu)); ?>
+<div class="jumbotron" style="background-image: url(<?php echo $the_background; ?>);">
+	<div class="container">
+		<div class="form-div">
+
+			<a href="<?php //echo $this->url('home') ?>"><img
+				src="/img/myBroker200.png" alt="Insurance Manager App" /></a>
+
+
+
+			<h4><?php echo $this->translate('Log In')?></h4>	
+ <?php
+$form = $this->form;
+// $form->setAttribute ( 'action',' ' /*$this->url('user-index', array('action' => 'login')) $this->url('login') */);
+// $form->setAttribute ( 'class', 'form-signin' );
+$form->prepare();
+
+$form->get('login_field')
+    ->get('usernameOrEmail')
+    ->setAttributes(array(
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Username or Email'),
+    'aria-describedby' => 'basic-addon1'
+));
+
+$form->get('login_field')
+    ->get('password')
+    ->setAttributes(array(
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Password'),
+    'aria-describedby' => 'basic-addon1'
+));
+
+$form->get('login_field')
+    ->get('rememberme')
+    ->setAttributes(array(
+    'class' => 'remember'
+));
+$form->get('login_field')
+    ->get('submit')
+    ->setAttributes(array(
+    'class' => 'btn btn btn-success btn-lg',
+    'value' => $this->translate('Log In')
+));
+
+?>
+<?php
+
+echo $this->form()->openTag($form);
+?>
+
+
+<div class="input-group inpt-form">
+				<span class="input-group-addon" id="basic-addon1"><?php echo $this->formlabel($form->get('login_field')->get('usernameOrEmail'))?></span>
+<?php echo $this->formElement()->render($form->get('login_field')->get('usernameOrEmail'));?>
+
+</div>
+			<div style="font-size: 9px; color: red;">
+<?php echo $this->formElementErrors($form->get('login_field')->get('usernameOrEmail')); ?></div>
+
+			<div class="input-group inpt-form">
+				<span class="input-group-addon" id="basic-addon1"><?php echo $this->formlabel($form->get('login_field')->get('password'))?></span>
+<?php echo $this->formElement()->render($form->get('login_field')->get('password'));?>
+
+</div>
+			<div style="font-size: 9px; color: red;">
+<?php echo $this->formElementErrors($form->get('login_field')->get('password')); ?></div>
+<?php
+echo '<br />';
+echo $this->formRow($form->get('login_field')
+    ->get('rememberme'));
+echo '<br />';
+
+?>
+			<div style="font-size: 9px; color: red;">
+<?php echo $this->formElementErrors($form->get('login_field')->get('password')); ?></div>
+
+<?php echo  $this->formSubmit($form->get('login_field')->get('submit'))?>
+
+					 
+
+
+			<div class="register">
+				<a
+					href="<?php  echo $this->url('user-register', array('action' => 'reset-password'))?>"><span
+					class="glyphicon glyphicon-star" aria-hidden="true"></span> Forgot
+					password </a> <a
+					href="<?php echo $this->url('user-register', array('action' => 'index'))?>"
+					id="mws-jui-dialog-mdl-btn"><span
+					class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+					Register for a new account </a>
+
+
+			</div>
+	
+<?php
+
+if ($this->messages) {
+    echo '<div style="font-size: 14px; color: red;">' . $this->messages . '</div>';
+    echo '<div style="font-size: 14px; color: red;">' . $this->error . '</div>';
+}
+;
+?>
+
+ <?php
+echo $this->formRow($form->get('csrf'));
+echo $this->form()->closeTag();
+?>  
+
+</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+

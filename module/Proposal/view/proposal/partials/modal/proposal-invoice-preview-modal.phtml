@@ -1,0 +1,18 @@
+<?php
+
+echo $this->partial("transaction-invoice-preview-snipet");
+?>
+<br>
+<hr>
+
+<?php 
+			if ($invoice != NULL) {
+			    ?>
+				<button id="btn3" data-json='{"type":"standard"}'
+					data-href="<?php  echo $this->url("proposal/default", array("action"=>"customerpaymentmodal"))?>"
+					class="ajax_element btn btn-app" style="width: 100%">
+					<i class="fa fa-money 2x "></i> ENTER CUSTOMER PAYMENT
+				</button>
+				  <?php 
+			}
+			?>

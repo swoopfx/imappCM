@@ -1,0 +1,372 @@
+<?php
+$buglaryFieldset = $form->get("buglaryFieldset");
+?>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isResidential'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isResidential'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isResidential'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_property_type">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('propertyType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('propertyType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('propertyType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_otherProperty">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('otherProperty'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('otherProperty'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('otherProperty'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isAlwaysOccupied'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isAlwaysOccupied'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isAlwaysOccupied'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_notOccupiedDuaration">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('notOccupiedDuaration'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('notOccupiedDuaration'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('notOccupiedDuaration'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isSoleOccupier'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isSoleOccupier'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isSoleOccupier'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_other_occupier">
+								<?php echo $this->formLabel($buglaryFieldset->get('otherOccupier'))?> 
+								<div class="col-md-8 col-sm-8 col-xs-12">
+									<?php echo $this->formElement($buglaryFieldset->get('otherOccupier'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($buglaryFieldset->get('otherOccupier'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo $this->formLabel($buglaryFieldset->get('occupyDuration'))?> 
+								<div class="col-md-8 col-sm-8 col-xs-12">
+									<?php echo $this->formElement($buglaryFieldset->get('occupyDuration'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($buglaryFieldset->get('occupyDuration'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isDomesticServants'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isDomesticServants'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isDomesticServants'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isSafe'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isSafe'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isSafe'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_safe_details_form">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"buglarysafedetails")) ?>">
+			Add Safe Details</a>
+	</div>
+
+	<div class="form-group" id="div_safe_details"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+	<hr>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isDaySecurity'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isDaySecurity'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isDaySecurity'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isNightSecurity'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isNightSecurity'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isNightSecurity'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isTradeOnPremises'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isTradeOnPremises'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isTradeOnPremises'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isTradeOnPremises'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isTradeOnPremises'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isTradeOnPremises'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isTradeAroundPremises'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isTradeAroundPremises'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isTradeAroundPremises'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isPreviousProposal'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isPreviousProposal'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isPreviousProposal'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_previous_insured">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isSufferedLoss'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isSufferedLoss'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isSufferedLoss'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('isDeclinedInsurer'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12 checkbox">
+								<?php echo $this->formElement($buglaryFieldset->get('isDeclinedInsurer'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('isDeclinedInsurer'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_decline_reason">
+
+								 <?php echo $this->formLabel($buglaryFieldset->get('declineReason'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($buglaryFieldset->get('declineReason'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($buglaryFieldset->get('declineReason'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+								<?php echo $this->formLabel($buglaryFieldset->get('expectedPremium'))?> 
+								<div class="col-md-8 col-sm-8 col-xs-12">
+									<?php echo $this->formElement($buglaryFieldset->get('expectedPremium'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($buglaryFieldset->get('expectedPremium'))?> 
+								</div>
+</div>
+
+
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	 $("#div_decline_reason").hide();
+	 $("#div_previous_insured").hide();
+	 $("#div_notOccupiedDuaration").hide();
+	 $("#div_property_type").hide();
+	 $("#div_otherProperty").hide();
+	 $("#div_other_occupier").hide();
+	 $("#div_decline_reason").hide();
+	 $("#div_safe_details_form").hide();
+
+
+	 $("#isSafe").change(function(){
+		 if($("#isSafe").is(":checked")){
+			 $("#div_safe_details_form").show()
+			 }else{
+				 $("#div_safe_details_form").hide();
+				 }
+		 })
+
+	 $("#isResidential").change(function(){
+		 if($("#isResidential").is(":checked")){
+			 $("#div_property_type").hide();
+			 $("#div_otherProperty").hide();
+			 }
+
+			 else{
+				 $("#div_property_type").show();
+				
+				 }
+		 })
+
+
+		 $("#propertyType").change(function(){
+			 if($("#propertyType").val() == "1000"){
+				 $("#div_otherProperty").show();
+				 }else{
+					 $("#div_otherProperty").hide();
+					 }
+				 });
+
+
+	 $("#isAlwaysOccupied").change(function(){
+		 if($("#isAlwaysOccupied").is(":checked")){
+			 $("#div_notOccupiedDuaration").hide();
+			 }else{
+				 $("#div_notOccupiedDuaration").show();
+				 }
+		 })
+
+
+		 $("#isPreviousProposal").change(function(){
+			 if($("#isPreviousProposal").is(":checked")){
+				 $("#div_previous_insured").show();
+				 }else{
+					 $("#div_previous_insured").hide()
+					 }
+			 });
+
+	 $("#isDeclinedInsurer").change(function(){
+		 if($("#isDeclinedInsurer").is(":checked")){
+			 $("#div_decline_reason").show();
+			 }else{
+				 $("#div_decline_reason").hide();
+				 }
+		
+		 })
+	 
+	 
+	 });
+</script>
+

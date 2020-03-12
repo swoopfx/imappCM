@@ -1,0 +1,521 @@
+<?php
+$fireAndSpecialPerilFieldset = $form->get("fireAndSpecialPerilFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('buildingType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('buildingType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Define if building is residential or commercial use"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('buildingType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('wallType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('wallType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What type of wall"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('wallType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_otherWallType">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('otherWallType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('otherWallType'));?>
+									
+								</div>
+								
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('otherWallType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('roofType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('roofType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What type of roof "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('roofType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_otherRoofType">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('otherRoofType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('otherRoofType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('otherRoofType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('floorType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('floorType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Define floor type"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('floorType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_otherFloorType">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('otherFloorType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('otherFloorType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('otherFloorType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('numberOfStories'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('numberOfStories'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Building story level"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('numberOfStories'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('ageOfBuilding'))?>
+								
+								<div class="col-md-4 col-sm-4 col-xs-6">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('ageOfBuilding'));?>
+									
+								</div>
+	<div class="col-md-4 col-sm-4 col-xs-6">
+		<strong>Years</strong>
+		<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Building age in years "></i>
+
+	</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('ageOfBuilding'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isManufacturing'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isManufacturing'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is building used for manufacturing purpose"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isManufacturing'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_manufacturing">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('manufacturing'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('manufacturing'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('manufacturing'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('powerType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('powerType'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What are the sources of power supply"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('powerType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isHazardousGoods'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isHazardousGoods'));?>
+									
+								</div>
+								
+<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does building contain harzardous goods"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isHazardousGoods'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isFireAlarmSystem'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isFireAlarmSystem'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does building have a fire alarm system"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isFireAlarmSystem'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_fireALarmSystem">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('fireALarmSystem'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('fireALarmSystem'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of fire alarm system available"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('fireALarmSystem'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isFireProtectionSystem'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isFireProtectionSystem'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Building contains fire protection system"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isFireProtectionSystem'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_fireProtectionSystem">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('fireProtectionSystem'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('fireProtectionSystem'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of fire protection system on building"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('fireProtectionSystem'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isGoodCondition'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isGoodCondition'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is building in good condition"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isGoodCondition'));  // this defines the error?> 
+							</div>
+		</div>
+		
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Previously declined by an insurance company"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+		</div>
+		
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isSpecialPeril'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isSpecialPeril'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage on special peril"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isSpecialPeril'));  // this defines the error?> 
+							</div>
+		</div>		
+
+<div id="div_is_special_peril" class="row">
+<hr>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		
+
+		
+
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isAircraft'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isAircraft'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by aircraft"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isAircraft'));  // this defines the error?> 
+							</div>
+		</div>
+
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isExplosion'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isExplosion'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by explosion"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isExplosion'));  // this defines the error?> 
+							</div>
+		</div>
+
+
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isRiotNdStrike'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isRiotNdStrike'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by riot and strike"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isRiotNdStrike'));  // this defines the error?> 
+							</div>
+		</div>
+		
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isImpact'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isImpact'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by riot and strike"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isImpact'));  // this defines the error?> 
+							</div>
+		</div>
+		
+		
+		
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isMaliciousDamage'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isMaliciousDamage'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by malicious damage"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isMaliciousDamage'));  // this defines the error?> 
+							</div>
+		</div>
+
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isBushFire'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isBushFire'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by bush fire"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isBushFire'));  // this defines the error?> 
+							</div>
+		</div>
+
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isTornado'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isTornado'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by tornado"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isTornado'));  // this defines the error?> 
+							</div>
+		</div>
+
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isFlood'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isFlood'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by flood"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isFlood'));  // this defines the error?> 
+							</div>
+		</div>
+		
+		<div class="form-group">
+
+								 <?php echo $this->formLabel($fireAndSpecialPerilFieldset->get('isBurstPipes'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fireAndSpecialPerilFieldset->get('isBurstPipes'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include loss /damage caused by burst pipes"></i>
+			<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fireAndSpecialPerilFieldset->get('isBurstPipes'));  // this defines the error?> 
+							</div>
+		</div>
+
+		
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#div_fireProtectionSystem").hide();
+	$("#div_fireALarmSystem").hide();
+	$("#div_otherWallType").hide();
+	$("#div_otherRoofType").hide();
+	$("#div_otherFloorType").hide();
+	$("#div_manufacturing").hide();
+	$("#div_is_special_peril").hide();
+
+	$("#wallType").change(function(){
+// 		alert($("#wallType").val());
+		if($("#wallType").val() == "100"){
+			$("#div_otherWallType").show();
+			}else{
+				$("#div_otherWallType").hide();
+				}
+		})
+
+
+		$("#roofType").change(function(){
+// 		alert($("#roofType").val());
+		if($("#roofType").val() == "100"){
+			$("#div_otherRoofType").show();
+			}else{
+				$("#div_otherRoofType").hide();
+				}
+		})
+
+
+		$("#floorType").change(function(){
+// 		alert($("#floorType").val());
+		if($("#roofType").val() == "100"){
+			$("#div_otherFloorType").show();
+			}else{
+				$("#div_otherFloorType").hide();
+				}
+		})
+
+		$("#isManufacturing").change(function(){
+			if($("#isManufacturing").is(":checked")){
+				$("#div_manufacturing").show();
+				}else{
+					$("#div_manufacturing").hide();
+					}
+			})
+
+			$("#isSpecialPeril").change(function(){
+			if($("#isSpecialPeril").is(":checked")){
+				$("#div_is_special_peril").show();
+				}else{
+					$("#div_is_special_peril").hide();
+					}
+			})
+})
+</script>

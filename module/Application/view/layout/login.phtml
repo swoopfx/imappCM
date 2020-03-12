@@ -1,0 +1,64 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate(\Application\Controller\IndexController::APP_TITLE))->setSeparator(' - ')->setAutoEscape(false)?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')?>
+
+        <!-- Le styles -->
+        <?php
+        
+        echo $this->headLink(array(
+            'rel' => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $this->basePath() . '/img/favicon.ico'
+        ))
+            ->prependStylesheet($this->basePath('css/wasabi.gritter.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.modal.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.suggest.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.wizard.css'))
+            ->appendStylesheet($this->basePath('vendors/bootstrap/dist/css/bootstrap.min.css'))
+            ->appendStylesheet($this->basePath('vendors/font-awesome/css/font-awesome.min.css'))
+            ->appendStylesheet($this->basePath('vendors/nprogress/nprogress.css'))
+            ->appendStylesheet($this->basePath('vendors/animate.css/animate.min.css'))
+            ->appendStylesheet($this->basePath('build/css/custom.min.css'))?>
+        
+        
+
+        <!-- Scripts -->
+        <?php
+        
+        echo $this->headScript()
+        ->prependFile($this->basePath('js/wasabi.gritter.js'))
+        ->prependFile($this->basePath('js/wasabi.suggest.js'))
+        ->prependFile($this->basePath('js/wasabilib.min.js'))
+            ->appendFile($this->basePath('js/bootstrap.js'))
+            ->appendFile($this->basePath('js/jquery.min.js'));
+        
+        ?>
+<link rel="stylesheet" type="text/css" href="/css/form.css"
+	media="screen">
+</head>
+<body class="login">
+	<div>
+		<a class="hiddenanchor" id="signup"></a> <a class="hiddenanchor"
+			id="signin"></a>
+
+		<div class="login_wrapper">
+			<?php echo $this->content; ?>
+		</div>
+	</div>
+</body>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,24 @@
+<?php 
+
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<?php
+        $brokerForm->prepare();
+//         $brokerForm->setAttributes(array(
+//             "action" => $this->url("user_broker", array(
+//                 "action" => "info"
+//             ))
+//         ))
+        ?>
+        
+        <?php  echo $this->form()->openTag($brokerForm)?>
+                          <?php  echo $this->partial("broker-setup-data-snipet", array("form"=>$brokerForm->get('broker_setup_data')));?>
+                      	<?php
+        echo $this->formRow($brokerForm->get('csrf'));
+        echo $this->formRow($brokerForm->get('submit'));
+        echo $this->form()->closeTag();
+        
+        ?>

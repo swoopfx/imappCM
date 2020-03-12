@@ -1,0 +1,61 @@
+<?php
+echo $this->headtitle('My Policy');
+?>
+<div class="x_content">
+				<table class="table table-hover">
+                                     <?php
+                                    
+//                                     if (count($activeOffers) == 0) {
+//                                         echo "<span>No active Offer</span>";
+//                                     } else {
+                                        ?>
+                                        <thead>
+						<tr>
+							<th>Policy ID</th>
+							<th>Title</th>
+							<th>INSURER(S)</th>
+							<th>Status</th>
+							<th>Start Date</th>
+							<th>End Date</th>
+
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+                                       
+                                            <?php //foreach ($activeOffers as $offer){?>
+                                          
+                                            <tr>
+							<th scope="row"><?php //echo $offer->getOfferCode(); ?></th>
+							<td><?php //echo $offer->getOfferName()?></td>
+							<td><span class="label label-warning">Processing</span></td>
+							<td><?php
+                                            
+//echo $this->dateFormat($offer->getCreatedOn(), IntlDateFormatter::MEDIUM, // date
+//IntlDateFormatter::MEDIUM, // time
+//"en_US")?></td>
+
+							<td>
+								<ul class="nav navbar-right panel_toolbox">
+
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown" role="button" aria-expanded="false"><i
+											class="fa fa-cogs"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a
+												href="<?php// echo $this->url('offer/default', array('action' => 'view-offer', 'sess' =>$offer->getId()));?>">Policy Details</a></li>
+											
+
+
+										</ul></li>
+
+								</ul>
+							</td>
+						</tr>
+                                            <?php//   }}?>   
+                                        </tbody>
+				</table>
+
+			</div>
+
+

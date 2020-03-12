@@ -1,0 +1,319 @@
+<?php
+$machineBreakdownFieldset = $form->get("machineBreakdownFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('machineUniqueId'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('machineUniqueId'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Willing to insure valuable like gold, wristwatches in the house"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('machineUniqueId'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('purchaseDate'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('purchaseDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date machinery was purchased"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('purchaseDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('coverStartDate'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('coverStartDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed date for starting cover"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('coverStartDate'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('coverEndDate'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('coverEndDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed date for end cover"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('coverEndDate'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('machineDesc'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('machineDesc'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="A brief description of the machine"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('machineDesc'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('machinePurchaseType'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('machinePurchaseType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What state was the machine purchased"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('machinePurchaseType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('machineUse'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('machineUse'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What is the machine used for, and how it is being used"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('machineUse'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('lastServiceDate'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('lastServiceDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date last service occcured"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('lastServiceDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('serviceCompany'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('serviceCompany'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details of the servicing company including email and/or phone"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('serviceCompany'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('isCoverFoundation'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('isCoverFoundation'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Policy should also provide cover for the foundation of the machine"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('isCoverFoundation'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('isFireBuglary'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('isFireBuglary'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if fire and buglary is handled by another insurer"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('isFireBuglary'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_fireBuglaryInsurer" class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('fireBuglaryInsurer'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('fireBuglaryInsurer'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Insurer providing the cover"></i>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('fireBuglaryInsurer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is proposed ever been declined by any previous insurer"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_decline_details" class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('declineDetails'))?>
+								
+								<div class="col-md-7 col-md-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('declineDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Decline details including reason"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('declineDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('isPreviousLoss'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('isPreviousLoss'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is proposed had any loss in the past"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('isPreviousLoss'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_previous_loss" class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('previousLoss'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('previousLoss'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of accident and any details about the loss"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('previousLoss'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($machineBreakdownFieldset->get('materialFacts'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($machineBreakdownFieldset->get('materialFacts'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Any material fact that may assist this application"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($machineBreakdownFieldset->get('materialFacts'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<script>
+ $(document).ready(function(){
+	 $("#div_fireBuglaryInsurer").hide();
+	 $("#div_previous_loss").hide();
+	 $("#div_decline_details").hide();
+
+	 $("#isFireBuglary").change(function(){
+		 if($("#isFireBuglary").is(":checked")){
+			 $("#div_fireBuglaryInsurer").show();
+			 }else{
+				 $("#div_fireBuglaryInsurer").hide();
+				 }
+		 })
+
+
+		  $("#isPreviousLoss").change(function(){
+		 if($("#isPreviousLoss").is(":checked")){
+			 $("#div_previous_loss").show();
+			 }else{
+				 $("#div_previous_loss").hide();
+				 }
+		 })
+
+
+		  $("#isPreviousDecline").change(function(){
+		 if($("#isPreviousDecline").is(":checked")){
+			 $("#div_decline_details").show();
+			 }else{
+				 $("#div_decline_details").hide();
+				 }
+		 })
+	 })
+</script>

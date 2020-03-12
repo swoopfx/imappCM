@@ -1,0 +1,35 @@
+<?php
+$count = 200;
+$thisdate = new DateTime();
+$i = 0;
+if (count($coverNote) != 0) {
+    
+    while ($i < count($coverNote) && count($coverNote) < $count) {
+        // var_dump($coverNote[$i]);
+        ?>
+
+<tr>
+	<td>
+	<a
+		href="<?php echo $this->url("cover-note/default", array("action"=>"pre-view", "id"=>$coverNote[$i]->getId()))?>"><?php  echo strtoupper(($coverNote[$i]->getCoverUid() != NULL ? $coverNote[$i]->getCoverUid() : " No UID"))?></a><br>
+	<?php echo $this->covernote_soure_helper($coverNote[$i])?><br><img alt=""
+		src="<?php echo $this->insurerLogohelper($coverNote[$i]->getInsurer()->getId())?>"
+		class="img-circle   img-responsive" width=100><br>
+		Status : <?php  echo $this->statusHelper($coverNote[$i]->getCoverStatus()->getStatus())?>
+		</td>
+
+	<td><?php  echo ($coverNote[$i]->getCustomer() != NULL ? $coverNote[$i]->getCustomer()->getName() : " ")?><br>
+	  <?php  echo $coverNote[$i]->getCustomer()->getFullAddress()?>
+	  <br><br><a style="width: 100%"  target="_blank" class="ajax_element btn btn-success btn-xs" data-json='' href="<?php  echo $this->url("cover-note/default", array("action"=>"pdf", "id"=>$coverNote[$i]->getCoverUid()))?>" class="btn btn-success btn-xs"> <i class="fa fa-file-pdf-o"></i> PDF </a>
+	</td>
+	
+	
+	<td style="color: red; "><?php  echo $thisdate->diff($coverNote[$i]->getDueDate())->format("%a")." days Left" ?></td>
+
+	<td><a href="<?php echo $this->url("cover-note/default", array("action"=>"pre-view", "id"=>$coverNote[$i]->getId()))?>" title="View"  class="btn btn-success"><i class="fa fa-eye"></i></a></td>
+</tr>
+<?php
+        $i ++;
+    }
+}
+?>

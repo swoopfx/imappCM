@@ -1,0 +1,74 @@
+<?php
+$revokePolicyFieldset = $policyRevokeForm->get("revokePolicyFieldset");
+?>
+<div  class="form-group">
+<?php echo  $this->formLabel($revokePolicyFieldset->get('suspendedReason'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Reason for suspending policy"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($revokePolicyFieldset->get('suspendedReason'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($revokePolicyFieldset->get('suspendedReason'))?> 
+								</div>
+</div>
+
+
+
+
+
+
+
+<div id="div_othersuspension" class="form-group">
+<?php echo  $this->formLabel($revokePolicyFieldset->get('otherSuspension'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Specify if reason not in list"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($revokePolicyFieldset->get('otherSuspension'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($revokePolicyFieldset->get('otherSuspension'))?> 
+								</div>
+</div>
+
+
+
+
+
+
+
+<div  class="form-group">
+<?php echo  $this->formLabel($revokePolicyFieldset->get('reasonDescription'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="A clear description of the reason"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($revokePolicyFieldset->get('reasonDescription'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($revokePolicyFieldset->get('reasonDescription'))?> 
+								</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#div_othersuspension").hide();
+
+	$("#suspendedReason").change(function(){
+		
+		if($("#suspendedReason").val() == "1000"){
+			$("#div_othersuspension").show();
+			}else{
+				$("#div_othersuspension").hide();
+				}
+		})
+})
+</script>

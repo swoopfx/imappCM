@@ -1,0 +1,86 @@
+<?php
+/**
+ * This displays a row, list of the micr payment invoice 
+ */
+?>
+
+<?php
+if ($invoiceEntity->getIsMicro() == true) {
+    ?>
+<div class="panel panel-default" data-toggle="panel-collapse"
+	data-open="true">
+	<div class="panel-heading panel-collapse-trigger">
+		<h4 class="panel-title">Micro Payment List</h4>
+	</div>
+	<div class="panel-body">
+		<div class="expandable expandable-indicator-white expandable-trigger">
+			<div class="expandable-content">
+
+
+
+				<div
+					class="media media-grid media-paper-shadow margin-top-none s-container">
+					<div class="table-responsive">
+
+						<!-- Pricing table -->
+						<table class="table panel panel-default table-pricing">
+
+							<!-- Table heading -->
+							<thead>
+								<tr>
+									<th class="text-center">Date Due</th>
+									<th class="text-center">Amount</th>
+									<th class="text-center">Status</th>
+									
+								</tr>
+							</thead>
+							<!-- // Table heading END -->
+
+							<!-- Table body -->
+							<tbody>
+							<?php echo $this->customerPaymentMicroPaymentList($invoiceEntity)?>
+
+								<!-- Table row -->
+<!-- 								<tr> -->
+<!-- 									<td>Setup &amp; Installation</td> -->
+<!-- 									<td class="text-center text-success"><span -->
+<!-- 										class="fa fa-check-circle"><i></i></span></td> -->
+									
+<!-- 								</tr> -->
+								<!-- // Table row END -->
+
+								<!-- Table row -->
+<!-- 								<tr> -->
+<!-- 									<td>HTML Templates</td> -->
+<!-- 									<td class="text-center text-danger"><span -->
+<!-- 										class="fa fa-times-circle"><i></i></span></td> -->
+<!-- 									<td class="text-center text-danger"><span -->
+<!-- 										class="fa fa-times-circle"><i></i></span></td> -->
+<!-- 									<td class="text-center text-success"><span -->
+<!-- 										class="fa fa-check-circle"><i></i></span></td> -->
+<!-- 									<td class="text-center text-success"><span -->
+<!-- 										class="fa fa-check-circle"><i></i></span></td> -->
+<!-- 								</tr> -->
+								<!-- // Table row END -->
+
+								<!-- Table row -->
+								
+								<!-- // Table row END -->
+
+							</tbody>
+							<!-- // Table body END -->
+
+						</table>
+						<!-- // Pricing table END -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+
+
+	</div>
+</div>
+<?php
+}
+?>

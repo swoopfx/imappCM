@@ -1,0 +1,144 @@
+<?php
+?>
+
+<div class="form-group">
+<?php
+
+$offerFieldset->get('offerName')->setAttributes(array(
+    "disabled" => "disabled"
+))?>
+								<?php echo $this->formLabel($offerFieldset->get('offerName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('offerName'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($offerFieldset->get('offerName'))?> 
+								
+							</div>
+
+<div class="form-group">
+							<?php
+    
+    $offerFieldset->get('idPreferdInsurer')->setAttributes(array(
+        "disabled" => "disabled"
+    ))?>
+								<?php echo $this->formLabel($offerFieldset->get('idPreferdInsurer'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('idPreferdInsurer'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('idPreferdInsurer'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('valueType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('valueType'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('valueType'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('value'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('value'))?> 
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('value'))?> 
+								</div>
+</div>
+
+<div class="form-group" id="currencyform">
+								<?php echo  $this->formLabel($offerFieldset->get('currency'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('currency'))?> 
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('currency'))?> 
+								</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('offerServiceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('offerServiceType'))?> 
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('offerServiceType'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('offerSpecificService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('offerSpecificService'))?> 
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('offerSpecificService'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('coverDuration'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('coverDuration'))?> 
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('coverDuration'))?> 
+								</div>
+</div>
+<div data-ng-show="isTemredValue" id="termed">
+	<div class="form-group">
+								<?php echo  $this->formLabel($offerFieldset->get('termedDuration'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerFieldset->get('termedDuration'))?> 
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($offerFieldset->get('termedDuration'))?> 
+								</div>
+	</div>
+</div>
+
+<script>
+							$("#termed").hide();
+							$("#coverduration").change(function(){
+								if($("#coverduration").val() == "100"){
+									$("#termed").show();
+								}else{
+									$("#termed").hide();
+								}
+							});
+
+							$("#currencyform").hide();
+							$("#value_typer").change(function(){
+								if($("#value_typer").val() == "1"){
+									$("#currencyform").show();
+								}else{
+									$("#currencyform").hide();
+								}
+							});
+
+// 							$("#value_typer").change(function(){
+// 								if("#value_typer").val() == "10" ){
+								
+// 							}
+// 								})
+							</script>

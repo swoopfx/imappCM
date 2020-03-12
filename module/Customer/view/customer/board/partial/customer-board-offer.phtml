@@ -1,0 +1,45 @@
+
+<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline margin-none">My Active Quotes</h4>
+						
+					</div>
+					<ul class="list-group">
+						<?php
+						$count = (count ( $offer ) < 5 ? count ( $offer) : 5);
+if (count ( $offer) == 0) {
+	echo "<li class='list-group-item media v-middle'><div class='media-body'>No Active Offer</div></li>";
+} else {
+	for($i = 0; $i < $count; $i ++) {
+		
+		?>
+						<li class="list-group-item media v-middle">
+							<div class="media-body">
+							<div class="caption">
+									<span class="text-light">Quotes : </span> <a
+										href="<?php  echo $this->url("cus_offer/default", array("action"=>"view", "id"=>$offer[$i]->getId()))?>"><?php echo strtoupper((count($offer[$i]->getOfferCode()) == 0 ? " " : $offer[$i]->getOfferCode())) ?></a>
+								</div>
+								<h4 class="text-subhead margin-none">
+									<a href="<?php  echo $this->url("board")?>" class="list-group-link"><?php  echo ($offer[$i]->getOfferName() != NULL ? $offer[$i]->getOfferName() : "")?></a>
+								</h4>
+								<div class="caption">
+									<span class="text-light">Created On:</span> <a
+										href="<?php  echo $this->url("board")?>"><?php echo  $this->dateFormat($offer[$i]->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, 'en_US')?></a>
+								</div>
+							</div>
+							
+						</li>
+						<?php
+	}
+}
+?>
+						
+					</ul>
+					<div class="panel-footer">
+						<a href="<?php  echo $this->url("cus_offer/default", array("action"=>"active"))?>"
+							class="btn btn-primary paper-shadow relative" data-z="0"
+							data-hover-z="1" data-animated href="#"> View All</a>
+					</div>
+				</div>
+			</div>

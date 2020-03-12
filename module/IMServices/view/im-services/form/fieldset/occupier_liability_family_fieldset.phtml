@@ -1,0 +1,82 @@
+<?php
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->occupiersLiabityFamilyFieldset;
+?>
+
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('fullNamef'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('fullNamef'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Full Name of family member"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('fullNamef'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('relationship'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('relationship'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Relationship to the proposed"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('relationship'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('dob'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('dob'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Date of birth of family member"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('dob'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('sex'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('sex'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Sex of the family member"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('sex'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<?php
+
+$json = json_encode(array(
+    "data" => $countId
+));
+?>
+	<div class="form-group">
+		<a id="sending_data_button"
+			class="ajax_element btn btn-danger btn-xs pull-right"
+			data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+</div>

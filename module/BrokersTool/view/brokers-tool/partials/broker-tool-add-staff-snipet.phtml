@@ -1,0 +1,34 @@
+<?php
+
+$staffFieldset = $this->staffFieldset;
+?>
+
+<div class="form-group">
+<?php  $element = $staffFieldset->get('firstname')?>
+							
+								<?php echo $this->formLabel($element)?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($element);?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+	<br>
+								<?php echo $this->formElementErrors($element);  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+<?php  $element = $staffFieldset->get('lastname')?>
+							
+								<?php echo $this->formLabel($element)?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($element);?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+	<br>
+								<?php echo $this->formElementErrors($element);  // this defines the error?> 
+							</div>
+</div>

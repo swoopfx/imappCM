@@ -1,0 +1,116 @@
+<?php
+$groupLifeEntity = $coverEntity->getGroupLife();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Employee Class /Category</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getMemberClass() != NUll ? $this->escapehtml($groupLifeEntity->getMemberClass()->getClass())." Staff" : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Other Class /Category</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getOtherClass() != NUll ? $this->escapehtml($groupLifeEntity->getOtherClass())." Staff" : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Start Date</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getStartDate() != NUll ? $this->dateFormat($groupLifeEntity->getStartDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_Us") : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Organisation Retirement Age</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getRetirementAge() != NUll ? $groupLifeEntity->getRetirementAge() : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Previously Insured</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getIsPreviousinsurer() != NUll ?$this->trueFalseHelper($groupLifeEntity->getIsPreviousinsurer()) : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Previously Made Claim</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getIsPreviousClaims() != NUll ?$this->trueFalseHelper($groupLifeEntity->getIsPreviousClaims()) : "Empty") ;?>
+							</td>
+			</tr>
+			<?php  if($groupLifeEntity->getIsPreviousClaims() == TRUE){?>
+			
+			<tr>
+
+				<th>Previous Claims Details</th>
+				<td>
+				<?php  echo ($groupLifeEntity->getPreviousClaims() != NUll ? $this->escapehtml($groupLifeEntity->getPreviousClaims()) : "Empty") ;?>
+							</td>
+			</tr>
+			
+			
+			<?php }?>
+			
+			<?php  if(count($groupLifeEntity->getGroupLifeEmployeeList()) > 0){?>
+			<tr>
+
+				<th>Employee Details</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Employee Name</th>
+								<th>Beneficiary</th>
+								<th>Total Annual Emolument</th>
+								<th>Life Assurance Benefit</th>
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($groupLifeEntity->getGroupLifeEmployeeList() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getEmployeeName() != NUll ? $risk->getEmployeeName() : "Not Specified") ?>
+								</td>
+								
+								<td><?php  echo ($risk->getBeneficiary() != NUll ? $risk->getBeneficiary() : "Not Specified") ?>
+								</td>
+								
+								<td><?php  echo ($risk->getAnnualEmolument() != NUll ? "&#8358; ".$risk->getAnnualEmolument() : "Not Specified") ?>
+								</td>
+								
+								<td><?php  echo ($risk->getLifeAssuranceBenefit() != NUll ? " &#8358; ".$risk->getLifeAssuranceBenefit() : "Not Specified") ?>
+								</td>
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<?php }?>
+			
+		
+		</tbody>
+	</table>
+
+</div>

@@ -1,0 +1,29 @@
+<?php
+
+$object =  $this->ject;
+
+?>
+
+
+                      
+                            
+                              <h2>NAME: <?php echo $object->getObjectName();?></h2> <br>
+                              <p><strong>Object Code : </strong><?php  echo strtoupper($object->getObjectUid());?></p><br>
+                              <?php // $contact = $userInfo->getContact();?>
+                              <ul class="list-unstyled">
+                              <li><strong>Description : </strong> <?php echo ($object->getObjectInfo() != NULL ? $object->getObjectInfo() : 'No Object Information');?> </li> <br>
+                                <li><strong> Object Type : </strong>  <?php echo ($object->getObjectType() != NULL ? $object->getObjectType()->getObjectType() : '<i> No object Type selected </i> ') ?></li><br>
+                                <li> <strong>Date Created : </strong> <?php echo ($object->getCreatedOn() != NULL? $this->dateFormat($object->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US") : 'No date Of creation')?> </li><br>
+                                
+                                <li><strong>Object Status : </strong><?php echo ($object->getObjectStatus() != NULL ? $this->statusHelper($object->getObjectStatus()->getObjectStatus()): 'No Status' );?></li><br>
+                                <li><strong>Object Value : </strong> <?php echo($object->getObjectValue() != NULL?  $this->myCurrencyFormat((float)$object->getObjectValue(), 'NGN', 'en_NG', true) : 'No Value Available')?></li>
+                              </ul>
+                              <br>
+                          
+                           
+                       
+                          
+                       
+                              
+                       
+                   

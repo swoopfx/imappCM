@@ -1,0 +1,55 @@
+
+<div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-xm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">X</span>
+				</button>
+				<h2 class="modal-title" id="myModalLabel2">Search for pre-registered
+					Objects</h2>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover">
+			
+                                     <?php
+                                    if (count($this->allObject) == 0) {
+                                        echo "<span>No Object registerted</span>";
+                                    } else {
+                                        ?>
+                                        <thead>
+						<tr>
+							<th>OBJECT NAME</th>
+							<th>OBJECT DESCRIPTION</th>
+							<th>VALUE</th>
+
+							<th>DATE CREATED</th>
+
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+                                       
+                                            <?php foreach ($this->allObject as $object){?>
+                                          
+                                            <tr>
+							<th scope="row"><?php echo $object->getObjectName(); ?></th>
+							<td><?php echo $object->getObjectInfo()?></td>
+							<td>&#x20A6; <?php echo $object->getObjectValue()?></td>
+
+							<td><?php
+                                            
+                                            echo $this->dateFormat($object->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></td>
+
+
+						</tr>
+                                            <?php   }}?>   
+                                        </tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>

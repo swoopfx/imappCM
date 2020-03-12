@@ -1,0 +1,40 @@
+<?php
+
+$transferFieldset = $manualProcessForm->get("bankTransfer");
+
+?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($transferFieldset->get('bank'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($transferFieldset->get('bank'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($transferFieldset->get('bank'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($transferFieldset->get('transferFrom'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($transferFieldset->get('transferFrom'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($transferFieldset->get('transferFrom'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($transferFieldset->get('transferDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($transferFieldset->get('transferDate'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($transferFieldset->get('transferDate'))?> 
+								</div>
+</div>
+
+

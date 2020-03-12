@@ -1,0 +1,15 @@
+<div id="success"></div>
+	<div id="error"></div>
+
+	<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+		alt=""
+		src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+		height=100></i>
+<?php
+$objectMotorForm->prepare();
+echo $this->form()->openTag($objectMotorForm);
+echo $this->partial("object-motor-data-snipet", array("objectMotorData"=>$objectMotorForm->get("objectMotorFieldset")));
+echo $this->formrow($objectMotorForm->get("csrf"));
+echo $this->formsubmit($objectMotorForm->get("submit"));
+echo $this->form()->closeTag();
+?>

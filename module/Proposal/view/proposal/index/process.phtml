@@ -1,0 +1,501 @@
+<?php
+use Transactions\Service\InvoiceService;
+use function GuzzleHttp\json_encode;
+
+echo $this->headtitle("Process Proposals");
+if ($this->identity()) {
+
+    ?>
+<style>
+<!--
+.onoffswitch {
+	position: relative;
+	width: 90px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+	display: none;
+}
+
+.onoffswitch-label {
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	border: 2px solid #999999;
+	border-radius: 20px;
+}
+
+.onoffswitch-inner {
+	display: block;
+	width: 200%;
+	margin-left: -100%;
+	transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	font-size: 14px;
+	color: white;
+	font-family: Trebuchet, Arial, sans-serif;
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+	content: " Hide";
+	padding-left: 10px;
+	background-color: #34A7C1;
+	color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+	content: " Show";
+	padding-right: 10px;
+	background-color: #EEEEEE;
+	color: #999999;
+	text-align: right;
+}
+
+.onoffswitch-switch {
+	display: block;
+	width: 18px;
+	margin: 6px;
+	background: #FFFFFF;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 56px;
+	border: 2px solid #999999;
+	border-radius: 20px;
+	transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+	margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+	right: 0px;
+}
+-->
+</style>
+<div id="dialog"></div>
+<div id="message"></div>
+<div id="wasabi_modal"></div>
+
+<div id="micropayment"></div>
+<div class="row">
+	<?php  //echo $this->partial("proposal-process-upper-button")?>
+	<div class="clearfix"></div>
+
+</div>
+<div class="row">
+
+
+
+					
+					
+<?php  echo $this->partial("general-error-ponters")?>
+	<div class="col-md-9 col-xs-12">
+		<div class="col-md-12 col-xs-12">
+
+
+			<div class="col-md-9 col-sm-9 col-xs-12">	
+				
+			 <?php echo $this->partial("proposal-view-proposal", array("proposal"=>$proposalEntity))?>
+			 </div>
+			<div align="center" class="col-md-3 col-xs-12">
+				<div style="text-align: center;">
+					<i id="actionButton" class="fa  fa-lg" style="display: none;"><img
+						alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+						height=27></i>
+				</div>
+				<a class="btn btn-app" data-ajax-loader="actionButton"
+					data-json='{"type":"standard"}'
+					href="<?php  echo $this->url("proposal/default", array("action"=>"createpdf"))?>"
+					style='width: 100%;' target="_blank"> <!-- 		 <span class="badge bg-orange">12</span>  -->
+					<i class="fa fa-file-pdf-o" data-toggle="tooltip"
+					data-placement="top" title="Create a pdf version of the proposal"></i>
+					EXPORT PDF
+				</a> <a id="btn2" data-ajax-loader="actionButton"
+					class="ajax_element btn btn-app" data-json='{"type":"standard"}'
+					data-href="messages" style='width: 100%;'> <!-- 		 <span class="badge bg-orange">12</span>  -->
+					<i class="fa fa-send" data-toggle="tooltip" data-placement="top"
+					title="Sends a message to the customer"></i> Messages
+				</a> <br> <a data-ajax-loader="actionButton"
+					<?php echo ($proposalEntity->getInvoice() != NULL ? ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : ""): "")?>
+					id="btn2" class="ajax_element btn btn-app"
+					data-json='{"type":"standard"}' data-href="micropay"
+					style='width: 100%;'
+					<?php
+
+    echo ($proposalEntity->getInvoice() == NULL ? " " : ($proposalEntity->getInvoice()
+        ->getStatus()
+        ->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : ""));
+    echo ($proposalEntity->getInsurer() == NULL ? "disabled='disabled'" : "");
+    ?>> 		 <?php
+
+    if ($proposalEntity->getInvoice() != NULL) {
+        if ($proposalEntity->getInvoice()->getIsMicro()) {
+            ?><span class='badge bg-blue'>Micro</span><?php }}?>
+      <i class="glyphicon glyphicon-euro"></i>Activate Micro Payment
+				</a> <br>
+				<?php if( $proposalEntity->getServiceType() != NULL){?>
+				<a id="btn2" class="ajax_element btn btn-app"
+					data-ajax-loader="finalizeCover" data-json='{"type":"standard"}'
+					data-href="<?php  echo($proposalEntity->getCoverDetails() == NULL ? "coverdetailsmodal" : "getcoverdetailsmodal")?>"
+					style='width: 100%;'> <i class="fa fa-folder"></i><i
+					id="finalizeCover" class="fa fa-spinner fa-spin fa-lg"
+					style="display: none;"> </i> <?php echo ($proposalEntity->getCoverDetails() == NULL ? "Finalize Cover Details": "View Cover Details" )?>
+				</a> <br> 
+				
+				
+				<?php }?>
+				
+				
+				
+				
+<?php $checked =  ($proposalEntity->getIsVisibile() == TRUE ? "checked" : " ")?>
+<div class="onoffswitch">
+
+					<input <?php  echo $checked ?> type="checkbox" name="onoffswitch"
+						class="ajax_element onoffswitch-checkbox "
+						data-ajax-loader="showloader"
+						data-href="<?php echo ($proposalEntity->getIsVisibile() != TRUE ? $this->url("proposalmodal/default", array("action"=>"show")) : $this->url("proposalmodal/default", array("action"=>"hide")))?>"
+						id="myonoffswitch"> <label class="onoffswitch-label"
+						for="myonoffswitch"> <span class="onoffswitch-inner"></span> <span
+						class="onoffswitch-switch"></span>
+					</label>
+				</div>
+				<i id="showloader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+					alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+					height=20></i>
+
+
+			</div>
+
+			<a id="btn2" data-ajax-loader="updateButton"
+				<?php echo ($proposalEntity->getInvoice() != NULL ? ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : ""): "")?>
+				class="ajax_element btn btn-primary btn-sm"
+				data-json='{"type":"standard"}'
+				data-href='<?php   echo $this->url("proposal/default", array("action"=>"complete"))?>'
+				style='width: 100%;'> <!-- 		 <span class="badge bg-orange">12</span>  -->
+				<i class="fa fa-send"></i> Update Proposal Details
+			</a>
+
+			<div style="text-align: center;">
+				<i id="updateButton" class="fa  fa-lg" style="display: none;"><img
+					alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+					height=27></i>
+			</div>
+
+		</div>
+
+
+
+
+	</div>
+
+
+	<div class="col-md-3 col-xs-12 top_tiles">
+
+
+		<div class="col-md-12 col-xs-12 tile">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Estimated Premium</strong>
+
+					<div class="clearfix"></div>
+
+					<div class="x_content">
+						<br>
+						
+						<?php  echo $this->proposal_process_premium_helper($proposalEntity)?> 
+						<div style="text-align: center;">
+							<i id="procesPremium" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=27></i>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-12 col-xs-12 tile">
+			<div class="x_panel">
+
+				<div class="x_content">
+					<br>
+					<button data-ajax-loader="previewButton" id="btn3"
+						data-json='{"type":"standard"}'
+						<?php echo ($proposalEntity->getInvoice() != NULL ? ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : ""): "")?>
+						data-href='<?php  echo $this->url("proposal/default", array("action"=>"previewdetails"))?>'
+						class="ajax_element btn btn-app" style="width: 100%">
+						<i class="fa fa-play 2x "></i> PREVIEW
+					</button>
+					<div style="text-align: center;">
+						<i id="previewButton" class="fa  fa-lg" style="display: none;"><img
+							alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+							height=27></i>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+
+
+
+<?php
+
+    if ($proposalEntity->getCovernote() != NULL) {
+        if ($proposalEntity->getCovernote()->getPolicy() == NULL) {
+            ?>
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Cover Note</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+				
+			<?php
+            echo $this->proposal_process_covernote($proposalEntity);
+            ?>
+    
+			</div>
+				</div>
+			</div>
+
+		</div>
+		<?php
+        }
+    } else {
+        ?>
+		    <div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Cover Note</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+				
+			<?php
+        echo $this->proposal_process_covernote($proposalEntity);
+        ?>
+    
+			</div>
+				</div>
+			</div>
+
+		</div>
+		    <?php
+    }
+    ?>
+		
+	<?php if($proposalEntity->getCoverNote() != NULL){?>	
+		<?php if($proposalEntity->getCoverNote()->getPolicy() == NULL){?>
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Policy</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+						<br>
+
+						<p>
+							<a style="width: 100%;" id="btn3"
+								data-ajax-loader="generatePolicy"
+								class=" ajax_element btn btn-primary btn-xs"
+								data-json='{"type":"standard"}'
+								data-href="<?php echo $this->url("cover-note/default", array("action"=>"policymodalform"))?>">Generate
+								Policy</a>
+						</p>
+						<div style='text-align: center;'>
+							<i id='generatePolicy' class='fa fa-lg'
+								style='display: none; text-align: center;'><img alt=''
+								src='<?php echo  $this->basePath('/processin.gif')  ?>'
+								height=20>
+								<hr></i>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<?php }else{?>
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Policy</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+						<br>
+<?php
+
+            $jsonData = json_encode(array(
+                "data" => $proposalEntity->getCoverNote()
+                    ->getPolicy()
+                    ->getId()
+            ));
+
+            $jsonPolicyUid = json_encode(array(
+                "data" => $proposalEntity->getCoverNote()
+                    ->getPolicy()
+                    ->getPolicyUid()
+            ));
+            ?>
+						<p>
+							<a style="width: 100%;" id="sending_data_button"
+								data-ajax-loader="generatePolicy"
+								class=" ajax_element btn btn-primary btn-xs"
+								data-json='<?php echo $jsonData; ?>'
+								data-href="<?php echo $this->url("policy/default", array("action"=>"viewpolicymodal"))?>">View
+								Policy</a> <br> <a style="width: 100%;" id="sending_data_button"
+								data-ajax-loader="generatePolicy"
+								class=" ajax_element btn btn-danger btn-xs"
+								data-json='<?php echo $jsonPolicyUid; ?>'
+								data-href="<?php echo $this->url("policy/default", array("action"=>"premanagemodal"))?>">Manage
+								Policy</a>
+						
+						
+						<div style='text-align: center;'>
+							<i id='generatePolicy' class='fa fa-lg'
+								style='display: none; text-align: center;'><img alt=''
+								src='<?php echo  $this->basePath('/processin.gif')  ?>'
+								height=20>
+								<hr></i>
+						</div>
+						<?php  // echo $this->policy_document_list($proposalEntity->getCoverNote()->getPolicy())?>
+						</p>
+
+						<hr>
+						<div class="x_content">
+							<!-- 							<strong>Upload All Document related to this policy here</strong> -->
+				<?php  //echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+			</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<?php }}?>
+
+
+	</div>
+</div>
+<div class="row">
+	<?php  echo $this->partial("proposal-customer-create-side-snipet", array('customer'=>$proposalEntity->getCustomer()))?>
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<div class="x_panel">
+
+
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<!-- Begin Guideline to what needs to be done -->
+
+				<!--  End Begin what needs to be done  -->
+				<div class="row">
+					<!--  Begin What has been done -->
+			<?php  echo $this->partial("proposal-process-proposal-object-snipet")?>
+			<!--  End What has been done -->
+
+					<!-- Begin Uploaded Documents -->
+			<?php  echo $this->partial("proposal-create-proposal-uploaded-document-snipet", array("dropZoneForm"=>$dropZoneForm, "proposalEntity"=>$proposalEntity))?>
+			<div style="text-align: center;">
+						<i id="removeDoc" class="fa  fa-lg" style="display: none;"><img
+							alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+							height=27></i>
+					</div>
+					<!-- End Uploded Documents -->
+				</div>
+
+
+
+				<!-- End Invoice Button -->
+
+
+			</div>
+
+		</div>
+
+
+	</div>
+</div>
+</div>
+<!--  Begin proposal Form -->
+
+<!-- End Proposal Form -->
+
+
+
+
+<!--  Begin Proposal Veiw Information  -->
+
+<!--  End Proposal View Information -->
+
+
+<!--  Begin Select Property Form  -->
+
+<!--  End Select Property Form -->
+
+
+<!--  Begin Object FOrm -->
+
+
+
+
+
+<?php }?>
+<?php
+
+// echo $this->headScript()->appendFile($this->basePath('angular/controllers/ProposalController.js'));
+?>
+<!-- End Object form -->
+
+<script type="text/javascript">
+
+//  var sert = do
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+
+    var ele = document.getElementsByClassName('conV');
+    var confirmIt = function (e) {
+        if (!confirm('The proposal will be visible to the customer, and a notification would be sent to the customer. Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = ele.length; i < l; i++) {
+        ele[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+<script type="text/javascript">
+
+
+$("#chosen-select").chosen({width: "95%"});
+    
+  
+    </script>

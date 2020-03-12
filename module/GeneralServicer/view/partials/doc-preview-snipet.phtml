@@ -1,0 +1,29 @@
+<?php
+$doc = $this->doc;
+
+?>
+
+<div class="col-md-55">
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <img style="width: 100%; display: block;" src="images/media.jpg" alt="image" />
+                            <div class="mask no-caption">
+                              <div class="tools tools-bottom">
+                               
+                              </div>
+                            </div>
+                          </div>
+                          <div class="caption">
+                            <p><strong>Document</strong>
+                            </p>
+<!--                             <p>Snow and Ice Incoming</p> -->
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+                       <?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/fastclick/lib/fastclick.js'));
+?>

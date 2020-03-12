@@ -1,0 +1,465 @@
+<?php
+$fidelityGuarateeFieldset = $form->get("fidelityGuaranteeFieldset");
+
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('briefDescription'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('briefDescription'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide a brief description of the operations in the workplace, what you do "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('briefDescription'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isOtherInstruments'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isOtherInstruments'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="indicate if other instruments, articles or goods involved in your operation capable of conversion through fraud and dishonesty"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isOtherInstruments'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_otherInstrument" class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('otherInstrument'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('otherInstrument'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="State other instruments, articles or goods involved in your operation capable of conversion through fraud and dishonesty"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('otherInstrument'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isReferenceForm'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isReferenceForm'));?>
+									
+								</div>
+								
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Inidcate if all employee has submitted reference form"></i>
+		
+		
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isReferenceForm'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isPreviousInsure'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isPreviousInsure'));?>
+									
+								</div>
+								
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Inidcate if there has been any previous insurer"></i>
+		
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isPreviousInsure'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_previousInsure" class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('previousInsure'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('previousInsure'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the previous insurer"></i>
+		
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('previousInsure'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isPrevuiousLoss'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isPrevuiousLoss'));?>
+									
+								</div>
+								
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Inidcate if There has been any previous loss"></i>
+		
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isPrevuiousLoss'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_previousLoss">
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('lossNumberOfOccurence'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('lossNumberOfOccurence'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Number of occurence of loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('lossNumberOfOccurence'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('maxAmountOfLoss'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('maxAmountOfLoss'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Maximum amount of loss at any single instance"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('maxAmountOfLoss'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('previousLoss'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('previousLoss'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide information on any loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('previousLoss'));  // this defines the error?> 
+							</div>
+</div>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isUnamedBasis'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isUnamedBasis'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Generatee based on unamed basis"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isUnamedBasis'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_unamed_basis">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('unamedTotalNumberOfStaff'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('unamedTotalNumberOfStaff'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Total number of staff "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('unamedTotalNumberOfStaff'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('unamedAmountPerPerson'))?>
+<!-- 								<div class="row"> -->
+		<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('unamedAmountPerPerson'));?>
+									
+								</div>
+
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Amount per person "></i>
+		<!-- 			</div> -->
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('unamedAmountPerPerson'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('unamedTotalAmountGuarateed'))?>
+<!-- 								<div class="row"> -->
+		<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('unamedTotalAmountGuarateed'));?>
+									
+								</div>
+
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Total amount to be guaranteed"></i>
+		<!-- 			</div> -->
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('unamedTotalAmountGuarateed'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('unamedAggregatedAmountGaurateed'))?>
+<!-- 								<div class="row"> -->
+		<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('unamedAggregatedAmountGaurateed'));?>
+									
+								</div>
+
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Aggregate amount guaranteed "></i>
+		<!-- 			</div> -->
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('unamedAggregatedAmountGaurateed'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div id="div_named_basis">
+
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}'  data-ajax-loader="microFieldset"
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"fidelitygaurateeemploeelist")) ?>">
+			Employee List <i
+					id="microFieldset" class="fa fa-spinner  fa-pulse fa-lg"
+					style="display: none;"> </i></a>
+	</div>
+
+	<div class="form-group" id="div_employee_list"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('securityMeasure'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('securityMeasure'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Security measures taken to avert any loss "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('securityMeasure'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isEmployeePowerOnAcc'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isEmployeePowerOnAcc'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Indicate if employee has access to account"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isEmployeePowerOnAcc'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_employeeMaxAccPayout" class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('employeeMaxAccPayout'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('employeeMaxAccPayout'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="The maximum amount any employee has access to "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('employeeMaxAccPayout'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('fictiousPayroll'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('fictiousPayroll'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Aggregate amount guaranteed "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('fictiousPayroll'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('isAudit'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('isAudit'));?>
+									
+								</div>
+
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if audit frequntly occur "></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('isAudit'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_audit">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('auditDuration'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('auditDuration'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Duration of audit"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('securityMeasure'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('auditor'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('auditor'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Provide the name of the auditor and audit number "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('auditor'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($fidelityGuarateeFieldset->get('balanceBookFrequency'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($fidelityGuarateeFieldset->get('balanceBookFrequency'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Identify frequency in which your books are balanced"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($fidelityGuarateeFieldset->get('balanceBookFrequency'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+	$("#div_previousInsure").hide();
+	$("#div_otherInstrument").hide();
+	$("#div_audit").hide();
+	$("#div_previousLoss").hide();
+	$("#div_employeeMaxAccPayout").hide();
+	$("#div_named_basis").hide();
+	$("#div_unamed_basis").show();
+
+	$("#isOtherInstruments").change(function(){
+		if($("#isOtherInstruments").is(":checked")){
+			$("#div_otherInstrument").show();
+			}else{
+				$("#div_otherInstrument").hide();
+				}
+		})
+
+		$("#isPreviousInsure").change(function(){
+		if($("#isPreviousInsure").is(":checked")){
+			$("#div_previousInsure").show();
+			}else{
+				$("#div_previousInsure").hide();
+				}
+		})
+
+		$("#isPrevuiousLoss").change(function(){
+		if($("#isPrevuiousLoss").is(":checked")){
+			$("#div_previousLoss").show();
+			}else{
+				$("#div_previousLoss").hide();
+				}
+		})
+
+		$("#isUnamedBasis").change(function(){
+		if($("#isUnamedBasis").is(":checked")){
+			$("#div_unamed_basis").show();
+			$("#div_named_basis").hide();
+			}else{
+				$("#div_unamed_basis").hide();
+				$("#div_named_basis").show();
+				}
+		})
+
+
+		$("#isAudit").change(function(){
+		if($("#isAudit").is(":checked")){
+			$("#div_audit").show();
+			}else{
+				$("#div_audit").hide();
+				}
+		})
+
+		$("#isEmployeePowerOnAcc").change(function(){
+		if($("#isEmployeePowerOnAcc").is(":checked")){
+			$("#div_employeeMaxAccPayout").show();
+			}else{
+				$("#div_employeeMaxAccPayout").hide();
+				}
+		})
+})
+</script>

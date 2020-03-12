@@ -1,0 +1,291 @@
+<?php
+$form->prepare();
+
+echo $this->form()->openTag($form);
+$claimsGuarateeFieldset = $form->get("claimsGuarateeFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsGuarateeFieldset->get("claims")
+));
+?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultersName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultersName'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters Name"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultersName'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaulterAddress'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaulterAddress'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters Address"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaulterAddress'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaulterPhone'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaulterPhone'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters Phone"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaulterPhone'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultersAge'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultersAge'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters Age"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultersAge'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultDescoveryDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultDescoveryDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date discovery was made"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultDescoveryDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultersOccupation'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultersOccupation'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters Occupation"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultersOccupation'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultersNextOfKin'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultersNextOfKin'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters Next of kin details"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultersNextOfKin'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultDurationExplanation'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultDurationExplanation'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="For how long, and in what manner has the
+Default been carried on and concealed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultDurationExplanation'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultDescovery'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultDescovery'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What led to its discovery?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultDescovery'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaultAmount'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaultAmount'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What is the amount of the default as at present ascertained"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaultAmount'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('isPreviousIrregularity'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('isPreviousIrregularity'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has there been any previous irregularity ?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('isPreviousIrregularity'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('previousIrregularity'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('previousIrregularity'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Description of previous irregulaity"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('previousIrregularity'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('lastAuditDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('lastAuditDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date of last audit"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('lastAuditDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('otherSecurity'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('otherSecurity'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="These are other insurance policy for issues like this"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('otherSecurity'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('isDefaulterHasSalary'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('isDefaulterHasSalary'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulter is being paid salary"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('isDefaulterHasSalary'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('defaulterSalary'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('defaulterSalary'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defaulters salary amount"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('defaulterSalary'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('isDefaulterOtherSecurity'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('isDefaulterOtherSecurity'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is there any salary, commission or other
+remuneration or allowance due to him"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('isDefaulterOtherSecurity'))?> 
+								</div>
+</div>
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('isDefaulterSettlement'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('isDefaulterSettlement'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has a proposal for settlement been put forward by the defaulter"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('isDefaulterSettlement'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGuarateeFieldset->get('isDefaulterDischarged'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGuarateeFieldset->get('isDefaulterDischarged'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has a proposal for settlement been put forward by the defaulter"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGuarateeFieldset->get('isDefaulterDischarged'))?> 
+								</div>
+</div>
+
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+<div style="text-align: center;">
+	<i id="myLoader" class="fa  fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>

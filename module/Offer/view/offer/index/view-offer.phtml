@@ -1,0 +1,36 @@
+<?php
+$offerEntity = $this->offerInfo;
+$user = $this->user;
+$userInfo = $this->userInfo;
+echo $this->headtitle('Offer Id ' . $offerEntity->getId() . ' View');
+if ($this->identity()) {
+    ?>
+
+
+
+
+<div class="row">
+	<div class="col-md-6 col-xs-12">
+
+		<div class="x_panel">
+			<div class="x_title">
+
+				<h2><?php // echo "OFFER NAME:  ". $offerInfo->getOfferName()?></h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<?php  echo $this->partial("offer-view-snipet", array("offerEntity"=>$offerEntity))?>
+		</div>
+	</div>
+
+	
+
+		<?php  echo $this->partial("proposal-customer-snipet", array("customer"=>$offerEntity->getCustomer()));?>
+	
+	
+	</div>
+
+
+
+
+<?php }?>

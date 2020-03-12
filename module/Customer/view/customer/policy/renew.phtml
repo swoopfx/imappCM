@@ -1,0 +1,104 @@
+<?php
+echo $this->headtitle("Renew Policy");
+?>
+<div class="row">
+	<div class="col-lg-7 col-md-7">
+		<div class="page-section padding-top-none">
+            <div class="media media-grid v-middle">
+              <div class="media-left">
+                <span class="icon-block half bg-blue-300 text-white"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="media-body">
+                <h1 class="text-display-1 margin-none">POLICY: <?php  echo strtoupper($policy->getPolicyCode()) ?></h1>
+              </div>
+            </div>
+            <br/>
+            
+          </div>
+		
+		<div class="col-md-12">
+			
+			<div class="panel panel-default paper-shadow" data-z="0.5">
+
+				<div class="panel-body">
+				
+				<strong>INSURER : </strong> <?php   echo ($policy->getCoverNote()->getInsurer() == NULL ? "No Insurer Selected" : "<img alt='' src='".$this->insurerLogohelper($policy->getCoverNote()->getInsurer()->getId())."' class='img-circle   img-responsive' width=100 >");?>
+				<hr>
+				<strong>START DATE : </strong> <?php echo $this->dateFormat($policy->getStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?><br><br>
+				<strong>END DATE : </strong> <?php echo $this->dateFormat($policy->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?>
+				</div>
+			</div>
+
+		</div>
+		<br />
+
+		<div class="col-md-12">
+			<div class="panel panel-default paper-shadow" data-z="0.5">
+				<div class="panel-heading">
+					<h4 class="text-headline">
+						Certificates and Documents <small></small>
+					</h4>
+				</div>
+				<div class="panel-body">
+					<a
+						class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative"
+						data-hover-z="0.5" data-animated data-toggle="tooltip"
+						data-title="Name of Certificate"> <i class="fa fa-file-text"></i>
+					</a> <a
+						class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative"
+						data-hover-z="0.5" data-animated data-toggle="tooltip"
+						data-title="Name of Certificate"> <i class="fa fa-file-text"></i>
+					</a> <a
+						class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative"
+						data-hover-z="0.5" data-animated data-toggle="tooltip"
+						data-title="Name of Certificate"> <i class="fa fa-file-text"></i>
+					</a> <a
+						class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative"
+						data-hover-z="0.5" data-animated data-toggle="tooltip"
+						data-title="Name of Certificate"> <i class="fa fa-file-text"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+	
+
+
+
+	</div>
+	<div class="col-lg-5 col-md-5 col-sm-5">
+		<!-- .panel -->
+		<div class="panel panel-default paper-shadow" data-z="0.5"
+			data-hover-z="1" data-animated>
+			<div class="panel-heading">
+				<h4 class="text-headline"><?php // echo $package->getPackageName() ?></h4>
+			</div>
+			<div class="panel-body">
+				<p class="text-caption">
+					<!--                 <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp; -->
+
+					<i class="fa fa-calendar fa-fw"></i> <strong style="color: red"><?php // echo $this->dateFormat($package->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></strong>
+					<br /> <i class="fa fa-user fa-fw"></i> Service: <strong
+						style="color: red"> <?php // echo ($package->getServiceType() != NULL ? $package->getServiceType()->getInsuranceService() : "")?></strong>
+					<br /> <i class="fa fa-mortar-board fa-fw"></i> Premium Value: <strong
+						style="color: red"> <?php //  echo $this->package_value_representation($package->getValueType()->getId(), $package->getValue(), $package->getCurrency()->getCode())?></strong>
+					<br /> <i class="fa fa-check fa-fw"></i> Insurer: <img alt=""
+						src="<?php // echo $this->insurerLogohelper($package->getPackagedInsurer()->getId())?>"
+						class="img-circle width-80">
+				</p>
+			</div>
+			<hr class="margin-none" />
+			<div class="panel-body text-center">
+
+				<p>
+					<a class="btn btn-success btn-lg paper-shadow relative" data-z="1"
+						data-hover-z="2" data-animated
+						href="<?php  //echo $this->url("cus_pack/default", array("action"=>"preacquire", "id"=>$package->getId()))?>">RENEW NOW</a>
+				</p>
+				<!--               <p class="text-body-2">or <a href="#">buy course for $1</a></p> -->
+			</div>
+			
+		</div>
+		<!-- // END .panel -->
+      <?php //  echo $this->partial("customer-board-featured-packages")?></div>
+</div>

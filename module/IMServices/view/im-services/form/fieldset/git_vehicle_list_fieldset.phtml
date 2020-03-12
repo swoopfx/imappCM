@@ -1,0 +1,112 @@
+<?php
+use Zend\Session\Container;
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->gitvehiclelist;
+
+?>
+
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('regNo'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('regNo'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Vehicle Registration Number"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('regNo'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('carMake'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('carMake'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Car Make/ Model"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('carMake'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('otherMake'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('otherMake'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Car Make/ Model"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('otherMake'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('bodyType'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('bodyType'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Motor Body Type"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('bodyType'));  // this defines the error?> 
+							</div>
+	</div>
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('manuYear'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('manuYear'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Year of manufacture"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('manuYear'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('maxCapacity'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($field->get('maxCapacity'));?>
+									
+								</div> Tonnes
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Year of manufacture"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('maxCapacity'));  // this defines the error?> 
+							</div>
+	</div>
+
+<?php
+
+$json = json_encode(array(
+    "data" => $countId
+));
+?>
+
+<div class="form-group">
+	<a id="sending_data_button"
+		class="ajax_element btn btn-danger btn-xs pull-right"
+		data-json='<?php  echo $json ?>'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+</div>
+<hr>
+</div>

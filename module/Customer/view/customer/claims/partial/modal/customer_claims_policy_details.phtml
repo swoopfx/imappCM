@@ -1,0 +1,94 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+use Policy\Service\PolicyService;
+use Policy\Service\CoverNoteService;
+?>
+<div class="row" data-toggle="isotope">
+	<div class="item col-xs-12 col-lg-12">
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+			<div class="panel-heading">
+				<h4 class="text-headline margin-none"><?php echo ($policyEntity->getPolicyName() != NULL ? strtoupper($policyEntity->getPolicyName()) : GeneralService::GENERAL_EMPTY_FIELD)?></h4>
+				<p class="text-subhead text-light"><?php  echo ($policyEntity->getPolicyCode() != NULL ? strtoupper($policyEntity->getPolicyCode()) : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item media v-middle">
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+							INSURER
+						</h4>
+						<div class="caption">
+							<?php echo ($policyEntity->getCoverNote() != NULL ? $policyEntity->getCoverNote()->getInsurer()->getInsuranceName() : GeneralService::GENERAL_EMPTY_FIELD)?>
+						</div>
+					</div>
+					
+				</li>
+				<li class="list-group-item media v-middle">
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+						 POLICY START DATE
+						</h4>
+						<div class="caption">
+							<?php  echo ($policyEntity->getStartDate() != NULL ? $this->dateFormat($policyEntity->getStartDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD)?>
+						</div>
+					</div>
+					
+				</li>
+				<li class="list-group-item media v-middle">
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+							POLICY END DATE 
+						</h4>
+						<div class="caption">
+							<?php  echo ($policyEntity->getEndDate() != NULL ? $this->dateFormat($policyEntity->getEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD)?>
+					
+						</div>
+					</div>
+					
+				</li>
+				
+				<li class="list-group-item media v-middle">
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+							PREMIUM PAYABLE 
+						</h4>
+						<div class="caption">
+							<?php  echo $this->myCurrencyFormat(PolicyService::getPremiumPayable($policyEntity));
+//echo ($policyEntity->getEndDate() != NULL ? $this->dateFormat($policyEntity->getEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD)?>
+					
+						</div>
+					</div>
+					
+				</li>
+				
+				<li class="list-group-item media v-middle">
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+							INSURANCE SERVICE
+						</h4>
+						<div class="caption">
+							<?php  echo CoverNoteService::getServiceTypeName($policyEntity->getCoverNote()) 
+							//echo ($policyEntity->getEndDate() != NULL ? $this->dateFormat($policyEntity->getEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD)?>
+					
+						</div>
+					</div>
+					
+				</li>
+				
+				<li class="list-group-item media v-middle">
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+							COVER
+						</h4>
+						<div class="caption">
+							<?php   echo CoverNoteService::getSpecificTypeName($policyEntity->getCoverNote())
+							//echo ($policyEntity->getEndDate() != NULL ? $this->dateFormat($policyEntity->getEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD)?>
+					
+						</div>
+					</div>
+					
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+</div>

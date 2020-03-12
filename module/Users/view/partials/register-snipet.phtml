@@ -1,0 +1,51 @@
+<?php
+$registerFieldset = $this->registerFieldset;
+
+?>
+<?php echo $this->formElement($registerFieldset->get('role'))?>
+
+<div class="form-group">
+					<?php // $registerFieldset = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($registerFieldset->get('username'))?> <?php echo $this->formElement($registerFieldset->get('username'))?>
+					
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($registerFieldset->get('username'));  // this defines the error?> 
+							</div>
+					</div>
+				<div class="form-group">
+					<?php // $registerFieldset = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($registerFieldset->get('email'))?> <?php echo $this->formElement($registerFieldset->get('email'))?>
+					<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($registerFieldset->get('email'));  // this defines the error?> 
+							</div>
+					</div>
+				<div class="form-group">
+					<?php // $registerFieldset = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($registerFieldset->get('password'))?> <?php echo $this->formElement($registerFieldset->get('password'))?>
+					<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($registerFieldset->get('password'));  // this defines the error?> 
+							</div>
+					</div>
+				<div class="form-group">
+					<?php // $registerFieldset = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($registerFieldset->get('passwordVerify'))?> <?php echo $this->formElement($registerFieldset->get('passwordVerify'))?>
+					<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($registerFieldset->get('passwordVerify'));  // this defines the error?> 
+							</div>
+					</div>
+
+				<div class="form-group">
+					<?php  //  $registerFieldset = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($registerFieldset->get('question'))?> <?php echo $this->formElement($registerFieldset->get('question'))?>
+					<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($registerFieldset->get('question'));  // this defines the error?> 
+							</div>
+					</div>
+
+				<div class="form-group">
+					<?php // $registerFieldset = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($registerFieldset->get('answer'))?> <?php echo $this->formElement($registerFieldset->get('answer'))?>
+					<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($registerFieldset->get('answer'));  // this defines the error?> 
+							</div>
+					</div>

@@ -1,0 +1,382 @@
+<?php
+$publicLiabilityFieldset = $form->get("publicLiabilityFieldset");
+?>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}' data-ajax-loader="microFieldsetss"
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"publicliabilityemployeedetails")) ?>">
+		Add Employee Detail <i id="microFieldsetss"
+		class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i>
+	</a>
+</div>
+
+<div class="form-group" id="employee_details"
+	style="margin: 10px; padding: 10px; background: #f1d3f2;"></div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('ownPremisesTotalWages'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('ownPremisesTotalWages'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="state the estimated total annual wages (including remuneration of working partners and directors) for own premises"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('ownPremisesTotalWages'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('elsewhereTotalWages'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('elsewhereTotalWages'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="state the estimated total annual wages (including remuneration of working partners and directors) for else where"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('elsewhereTotalWages'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('ownSubContractorsPayment'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('ownSubContractorsPayment'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Estimated total annual payments to sub-contractors on own premises"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('ownSubContractorsPayment'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('elseSubContractorsPayment'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('elseSubContractorsPayment'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Estimated total annual payments to sub-contractors on else where"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('elseSubContractorsPayment'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isGoodState'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isGoodState'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Are all the premises in good state of repair?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isGoodState'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isGoodLifts'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isGoodLifts'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Have you any good lifts, cranes or hoists?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isGoodLifts'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isCraneRegularlyinspected'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isCraneRegularlyinspected'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Are such lifts, cranes or hoists regularly inspected to meet statutory requirement?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isCraneRegularlyinspected'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_inspection_by">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('inspectionBy'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('inspectionBy'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="By whom are the lifts, cranes or hoists inspected?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('inspectionBy'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isExplosiveMaterial'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isExplosiveMaterial'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Number Of employees?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isExplosiveMaterial'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('explosiveAcids'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('explosiveAcids'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Explosive and acids list"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('explosiveAcids'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('indemnityLimit'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('indemnityLimit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Limits of indemnity required?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('indemnityLimit'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isFoodpoison'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isFoodpoison'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include Food poisoning cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isFoodpoison'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isFireNExplosion'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isFireNExplosion'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include fire and explosion cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isFireNExplosion'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isSpecial'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isSpecial'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include other special explosion cover "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isSpecial'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_special_details">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('specialDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('specialDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details on the special explosion cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('specialDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isPreviousInsure'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isPreviousInsure'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was previously insured by an insurer"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isPreviousInsure'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_previous_insure">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isDeclined'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isDeclined'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Previous insurer declined cover"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isDeclined'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isRefusedRenew'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isRefusedRenew'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Previous insurer refused to renew"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isRefusedRenew'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('isPecialReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('isPecialReason'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Previous insurer requested a special condition "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('isPecialReason'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+
+	<div class="form-group" id="div_special_reason">
+
+								 <?php echo $this->formLabel($publicLiabilityFieldset->get('specialReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($publicLiabilityFieldset->get('specialReason'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Details about the special condition "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($publicLiabilityFieldset->get('specialReason'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<script>
+
+$(document).ready(function (){
+	$("#div_special_reason").hide();
+	$("#div_special_details").hide();
+	$("#div_previous_insure").hide();
+	$("#div_inspection_by").hide();
+	
+	$("#isPecialReason").change(function(){
+
+		if($("#isPecialReason").is(":checked")){
+			$("#div_special_reason").show();
+			}else{
+				$("#div_special_reason").hide();
+			}
+		})
+
+
+		$("#isPreviousInsure").change(function(){
+			if($("#isPreviousInsure").is(":checked")){
+				$("#div_previous_insure").show();
+			}else{
+				$("#div_previous_insure").hide();
+			}
+			})
+
+
+			$("#isSpecial").change(function(){
+				if($("#isSpecial").is(":checked")){
+					$("#div_special_details").show();
+				}else{
+					$("#div_special_details").hide();
+				}
+				})
+		
+	
+})
+</script>

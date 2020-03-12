@@ -1,0 +1,130 @@
+<?php
+$agricPropertyEntity = $coverEntity->getAgricPropertyInsurance();
+?>
+
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+
+				<!--                           <th>Last Name</th> -->
+				<!--                           <th>Username</th> -->
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+
+				<th>Provide Cover for property</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getIsCoverProperty() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsCoverProperty()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Provide Agric. Produce</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getIsCoverAgriculturalProduce() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsCoverAgriculturalProduce()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if(count($agricPropertyEntity->getPropertyList()) > 0){?>
+				<tr>
+
+				<th>Accessory</th>
+				<td>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Property Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($agricPropertyEntity->getPropertyList() as $acc){?>
+					<tr>
+
+								<td> <?php echo ($acc->getPropertyName() != NUll ? $acc->getPropertyName() : "Empty") ;?>
+								</td>
+
+								<td>	&#8358; <?php echo ($acc->getValue() != NUll ? $acc->getValue() : "Empty") ;?></td>
+
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+
+			</tr>
+				<?php }?>
+			
+			<tr>
+
+				<th>Total Cover Value</th>
+				<td>
+				<strong>&#8358;</strong> <?php  echo ($agricPropertyEntity->getTotalCoverValue() != NUll ? $agricPropertyEntity->getTotalCoverValue() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Regularly Inspected</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getIsRegularlyInspected() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsRegularlyInspected()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php  if($agricPropertyEntity->getIsRegularlyInspected() != NULL){
+			    if($agricPropertyEntity->getIsRegularlyInspected() == TRUE){?>
+			<tr>
+
+				<th>Last Date Inspected</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getLastDateInspected() != NUll ? $this->dateFormat($agricPropertyEntity->getLastDateInspected(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Inspection Frequency</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getInspectionDuration() != NUll ? $agricPropertyEntity->getInspectionDuration()->getMicroText() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php }}?>
+			
+			<tr>
+
+				<th>Has ever made Claim</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getIsPreviousClaim() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsPreviousClaim()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Declined by Previous Insurer</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsPreviousDecline()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Canceled by Previous Insurer</th>
+				<td>
+				<?php  echo ($agricPropertyEntity->getIsCanceled() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsCanceled()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+		</tbody>
+	</table>
+
+</div>

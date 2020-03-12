@@ -1,0 +1,16 @@
+<?php 
+ use Policy\Service\CoverNoteService;
+
+ echo $this->headtitle("Insurer Portal");
+ if($port->getType()->getId() == CoverNoteService::COVERNOTE_CATEGORY_PROPOSAL){
+     echo $this->partial("general-portal-proposal");
+ }elseif ($port->getType()->getId() == CoverNoteService::COVERNOTE_CATEGORY_OFFER){
+     
+ }elseif($port->getType()->getId() == CoverNoteService::COVERNOTE_CATEGORY_FLOAT_POLICY){
+     
+ }elseif ($port->getType()->getId() == CoverNoteService::COVERNOTE_CATEGORY_PACKAGES){
+     
+ }else{
+     
+ }
+?>

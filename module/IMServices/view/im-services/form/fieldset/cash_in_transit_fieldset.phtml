@@ -1,0 +1,186 @@
+<?php
+$cashInTransitFieldset = $form->get("cashInTransitFieldset");
+
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('singleCarryLimit'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($cashInTransitFieldset->get('currency'));?>
+									
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($cashInTransitFieldset->get('singleCarryLimit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Single carry limit to cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('singleCarryLimit'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('annualTurnover'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($cashInTransitFieldset->get('currency'));?>
+									
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($cashInTransitFieldset->get('annualTurnover'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Annual turnover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('annualTurnover'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('conveyMethod'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('conveyMethod'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Methods of conveyance"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('conveyMethod'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('noOfConveyor'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('noOfConveyor'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How many people are involved in the conveying"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('noOfConveyor'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('otherTransit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('otherTransit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="This gives details of other things bieng transited, like bonds , jewelry, revenue stamps"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('otherTransit'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group" id="">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('isEmployeeHasFidelityGuaratee'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('isEmployeeHasFidelityGuaratee'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does employee have fidelity gauratee insurance"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('isEmployeeHasFidelityGuaratee'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="employee_fidelity">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('fidelityInsurer'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('fidelityInsurer'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Insurer providing fidelity gauratee"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('fidelityInsurer'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('frequencyOfTransit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('frequencyOfTransit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="This defines how many days a week cash is carried"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('frequencyOfTransit'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('dailyFrequency'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('dailyFrequency'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="This defines how many days a week cash is carried"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('dailyFrequency'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInTransitFieldset->get('isArmedGaurd'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInTransitFieldset->get('isArmedGaurd'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Are funds accompanied by armed gaurds"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInTransitFieldset->get('isArmedGaurd'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<script type="text/javascript">
+ $(document).ready(function(){
+ $("#employee_fidelity").hide();
+
+ $("#isEmployeeHasFidelityGuaratee").change(function(){
+ if($("#isEmployeeHasFidelityGuaratee").is(":checked")){
+	 $("#employee_fidelity").show();
+ }else{
+	 $("#employee_fidelity").hide();
+	 }
+	 });
+	 });
+</script>

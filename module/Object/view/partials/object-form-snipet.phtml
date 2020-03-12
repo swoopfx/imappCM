@@ -1,0 +1,61 @@
+<?php
+
+
+?>
+<div class="form-group">
+								<?php echo $this->formLabel($objectField->get('objectName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($objectField->get('objectName'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of object, use any name that related to the property"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($objectField->get('objectName'))?> 
+								</div>
+							</div>
+<div class="form-group">
+								<?php echo $this->formLabel($objectField->get('objectType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($objectField->get('objectType'))?>  
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Category of property/object"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($objectField->get('objectType'))?> 
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<?php echo $this->formLabel($objectField->get('value'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($objectField->get('value'))?> 
+								</div> 
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="monetry value of property/object (if any)"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($objectField->get('value'))?> 
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<?php echo $this->formLabel($objectField->get('currency'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($objectField->get('currency'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($objectField->get('currency'))?> 
+								
+							</div>
+							
+							<?php
+
+echo $this->headScript()
+
+    ->appendFile($this->basePath('js/jquery.maskMoney.js'));
+?>
+
+<script>
+  $(function() {
+    $('#objectValue').maskMoney();
+  })
+</script>

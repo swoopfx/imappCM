@@ -1,0 +1,263 @@
+<?php
+$lifePolicyEntity = $coverEntity->getLifePolicy();
+?>
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+
+				<!--                           <th>Last Name</th> -->
+				<!--                           <th>Username</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+
+				<th>Customer Sex</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getSex() != NUll ? $lifePolicyEntity->getSex()->getSex() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Customer Marital Status</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getMaritalStatus() != NUll ? $lifePolicyEntity->getMaritalStatus()->getStatus() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if($lifePolicyEntity->getMaritalStatus() == "2" && $lifePolicyEntity->getSex() == "20"){?>
+			<tr>
+
+				<th>Husbands Name</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getHusbandsName() != NUll ? $lifePolicyEntity->getHusbandsName() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Customer is Pregnant</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsPregnant() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsPregnant()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+
+			<tr>
+
+				<th>Proposed Business Nature</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getBusinessNature() != NUll ? $lifePolicyEntity->getBusinessNature() : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Proposed is Self Employed</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsSelfEmployed() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsSelfEmployed()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed is Self Employed</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getEmployer() != NUll ? $lifePolicyEntity->getEmployer() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Business Name</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getSelfEmployedBusiness() != NUll ? $lifePolicyEntity->getSelfEmployedBusiness() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed change job in the last 3years</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsJobChangedIn3years() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsJobChangedIn3years()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Occupational Disease/Accident</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsAccidentOrDisease() != NUll ? $lifePolicyEntity->getIsAccidentOrDisease() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed makes frequent traveling</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsTravel() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsTravel()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php  if($lifePolicyEntity->getIsTravel() == TRUE){?>
+			<tr>
+
+				<th>Local travel frequency</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getLocalTravelDuration() != NUll ? $lifePolicyEntity->getLocalTravelDuration() : "Not Specified") ?> times per month
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>International Travel frequency</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getAbroadTravelDuration() != NUll ? $lifePolicyEntity->getAbroadTravelDuration() : "Not Specified") ?> times per year
+				</td>
+			</tr>
+			<?php }?>
+			
+			
+			
+			
+			<tr>
+
+				<th>Sum Assured</th>
+				<td>
+					&#8358; <?php  echo ($lifePolicyEntity->getSumAssured() != NUll ? $lifePolicyEntity->getSumAssured() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Include plan of assurance</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsPlanOfAssurance() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsPlanOfAssurance()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Include term of assurance</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsAssuranceTerm() != NUll ?$this->trueFalseHelper( $lifePolicyEntity->getIsAssuranceTerm()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Cover commencement date</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getCommencementDate() != NUll ? $this->dateFormat($lifePolicyEntity->getCommencementDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Include with profit</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsWithProfit() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsWithProfit()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Proposed has a personal physician</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsPhysician() != NUll ? $lifePolicyEntity->getIsPhysician() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($lifePolicyEntity->getIsPhysician() == TRUE){?>
+			<tr>
+
+				<th>Physician Name</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getPhysicianName() != NUll ? $lifePolicyEntity->getPhysicianName() : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Reason for consultation</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getConsultationReason() != NUll ? $lifePolicyEntity->getConsultationReason() : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Last treatment date</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getLastTreatmentDate() != NUll ? $this->dateFormat($lifePolicyEntity->getLastTreatmentDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_Us") : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			<tr>
+
+				<th>Has Respiratory disease</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsRespiratoryDisease() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsTravel()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Has Clinical Depression</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsClinicalDepresion() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsClinicalDepresion()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($lifePolicyEntity->getSex() == "20"){?>
+			<tr>
+
+				<th>Has Miscarriage</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsMisCarriage() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsMisCarriage()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			<tr>
+
+				<th>Has Insanity</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsInsanity() != NUll ?$this->trueFalseHelper( $lifePolicyEntity->getIsInsanity()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Has Diabetes</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsDiabetes() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsDiabetes()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Has heart dieases</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsHeartDisease() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsHeartDisease()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Has HIV</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsHiv() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsHiv()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Has Paralysis</th>
+				<td>
+				<?php  echo ($lifePolicyEntity->getIsParalysis() != NUll ? $this->trueFalseHelper($lifePolicyEntity->getIsParalysis()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+		</tbody>
+	</table>
+
+</div>

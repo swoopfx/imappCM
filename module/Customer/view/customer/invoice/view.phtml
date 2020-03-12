@@ -1,0 +1,10 @@
+<?php
+echo $this->headTitle("View Invoice");
+
+if($this->identity()){
+    echo $this->partial("customer-invoice-view-logged-snipet", array("invoiceEntity"=>$invoiceEntity));
+}else{
+    echo $this->partial("customer-invoice-not-logged-snipet",  array("invoiceEntity"=>$invoiceEntity));
+}
+?>
+

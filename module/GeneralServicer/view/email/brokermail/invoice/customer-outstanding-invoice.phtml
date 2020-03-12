@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>..</title>
+<link href="styles.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+
+<body itemscope itemtype="http://schema.org/EmailMessage">
+
+<table class="body-wrap">
+	<tr>
+		<td></td>
+		<td class="container" width="600">
+			<div class="content">
+				<table class="main" width="100%" cellpadding="0" cellspacing="0">
+					<tr>
+						<td class="content-wrap aligncenter">
+							<table width="100%" cellpadding="0" cellspacing="0">
+							<tr>
+									<td class="content-block">
+										<img src="<?php echo $logo ?>", width="150">
+									</td>
+								</tr>
+								<tr>
+									<td class="content-block">
+										<h1 class="aligncenter"><?php  echo $this->myCurrencyFormat(($invoice->getAmount() == NULL ? " " : $invoice->getAmount()), $invoice->getCurrency()->getCode() )?></h1>
+									</td>
+								</tr>
+								<tr>
+									<td class="content-block">
+										<h2 class="aligncenter">The payment for this invoice is outstanding</h2>
+									</td>
+								</tr>
+								<tr>
+									<td class="content-block aligncenter">
+										<table class="invoice">
+											<tr>
+												<td><?php  echo $invoice->getCustomer()->getName() ?><br>
+												<?php  echo ($this->invoice->getInvoiceUid() == NULL ? "NO UId Available" : strtoupper($invoice->getInvoiceUid()))?><br>
+												<?php  echo $this->dateFormat($invoice->getExpiryDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?><br> 
+												Being payment for <?php  echo ($invoice->getInvoiceCategory() == NULL ? " ..." : $invoice->getInvoiceCategory()->getCategory())?></td>
+											</tr>
+											<tr>
+												<td>
+													<table class="invoice-items" cellpadding="0" cellspacing="0">
+														<tr>
+															<td><?php  echo ($invoice->getInvoiceCategory() == NULL ? " No Category Available" : $invoice->getInvoiceCategory()->getCategory())?></td>
+															<td class="alignright"><?php  echo $this->myCurrencyFormat(($invoice->getAmount() == NULL ? " " : $invoice->getAmount()), $invoice->getCurrency()->getCode() )?></td>
+														</tr>
+														
+														<tr class="total">
+															<td class="alignright" width="80%">Total</td>
+															<td class="alignright"><?php  echo $this->myCurrencyFormat(($invoice->getAmount() == NULL ? " " : $invoice->getAmount()), $invoice->getCurrency()->getCode() )?></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td class="content-block aligncenter">
+										<a href="<?php echo $this->url("cus_invoice/default", array("action"=>"view", "id"=>$invoice->getInvoiceUid()))?>">View in browser</a>
+									</td>
+								</tr>
+								
+							</table>
+						</td>
+					</tr>
+				</table>
+				<div class="footer">
+					<table width="100%">
+						<tr>
+							<td class="aligncenter content-block">Questions? Email <a href="mailto:"><?php echo $broker->getBrokerEmail() ?></a></td>
+						</tr>
+						<tr valign="top">
+											<td class="aligncenter content-block">© <?php echo date('Y')?> Powered By <?php echo $broker->getBrokerName() ?>. All rights reserved.</td>
+										</tr>
+					</table>
+				</div></div>
+		</td>
+		<td></td>
+	</tr>
+</table>
+
+</body>
+</html>

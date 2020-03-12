@@ -1,0 +1,15 @@
+<?php
+
+$editProfileForm->prepare();
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<?php  echo $this->form()->openTag($editProfileForm)?>
+                      
+                      <?php  echo $this->partial("customer_board_edit_profile_snippet", array("customerFieldset"=>$editProfileForm->get("customerFieldset")))?>
+                      <?php  echo $this->formrow($editProfileForm->get("csrf"))?>
+                      <?php  echo $this->formrow($editProfileForm->get("submit"))?>
+                     
+                   <?php  echo $this->form()->closeTag()?>

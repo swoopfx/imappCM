@@ -1,0 +1,101 @@
+<?php
+use Object\Service\ObjectService;
+
+echo $this->headtitle("View Object");
+
+?>
+<div id="complete_object"></div>
+<div class="row">
+	
+<?php  echo $this->partial("general-error-ponters") ?>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Property Basic Information</h2>
+
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="x_content">
+			<?php  echo $this->partial("object-view-snipet", array("object"=>$object))?>
+			</div>
+			<div style="text-align: center;">
+							<i id="editProperty" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=35></i>
+						</div>
+			<a id='btn2' data-json='{"type":"standard"}' data-ajax-loader="editProperty"
+				data-href="<?php  echo $this->url("object/default", array("action"=>"editmodal"))?>"
+				class=' ajax_element btn btn-primary btn-xs' style='width: 100%;'>Edit</a>
+		</div>
+
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Property Details</h2>
+
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="x_content">
+			<div style="text-align: center;">
+							<i id="completeProperty" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=35></i>
+						</div>
+			<?php  if ($this->objectViewDetailsHelper($object)  == NULL ){?>
+			<hr>
+				<a id='btn3' data-json='{"type":"standard"}' data-ajax-loader="completeProperty"
+					data-href="<?php  echo $this->url("object/default", array("action"=>"completemodal"))?>"
+					class=' ajax_element btn btn-success btn-xs' style='width: 100%;'>Complete
+					Property</a>
+<?php
+
+} else { 
+    echo $this->objectViewDetailsHelper($object);
+    ?>
+<hr>
+
+				<a id='btn3' data-json='{"type":"standard"}' data-ajax-loader="completeProperty"
+					data-href="<?php  echo $this->url("object/default", array("action"=>"completemodal"))?>"
+					class=' ajax_element btn btn-success btn-xs' style='width: 100%;'>Edit
+					Property Details</a>
+					
+<?php  if(ObjectService::OBJECT_TYPE_LIFE_OR_PERSON){?>
+<div  class="row">
+<div class="col-md-4 col-sm-4 col-xs-12">
+<a class="btn btn-lg btn-danger">Medical History</a></div>
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+<div class="col-md-4 col-sm-4 col-xs-12"></div>
+</div>
+<?php }
+}?>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-md-3 col-sm-3 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Related Documents</h2>
+
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="x_content">
+			
+			<?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+			<hr>
+			<?php  echo $this->ObjectDocumentsListHelper($object)?>
+			</div>
+		</div>
+	</div>
+		
+
+			
+				<?php  echo $this->partial("proposal-customer-create-side-snipet", array('customer'=>$object->getCustomer()))?>
+			
+		
+	
+</div>

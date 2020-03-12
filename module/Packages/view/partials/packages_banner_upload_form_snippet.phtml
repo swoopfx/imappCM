@@ -1,0 +1,16 @@
+<?php
+
+$bannerUploadForm->prepare();
+$bannerUploadForm->setAttributes(array(
+    "action" => $this->url("packages/default", array(
+        "action" => "upload-banner"
+    ))
+    ))?>
+<?php echo $this->form()->openTag($bannerUploadForm)?>
+<div class="item form-group">
+<?php  echo $this->formrow($bannerUploadForm->get("file"))?>
+</div>
+<div class="item form-group">
+<?php  echo $this->formrow($bannerUploadForm->get("upload"))?>
+</div>
+<?php echo $this->form()->closeTag()?>

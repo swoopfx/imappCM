@@ -1,0 +1,56 @@
+<?php
+$this->headtitle("TEST");
+$date = new DateTime();
+$code = array(
+    "type"=>"info"
+);
+echo $date->format("Y-m-d");
+?>
+<div id="wasbi_modal"></div>
+
+<button id="sending_data_button" class="ajax_element"
+	data-href="sendingData" data-json="<?php  echo json_encode($code)?>">Send Hello
+	World</button>
+
+
+
+<div class="highlight" style="min-height: 40px">
+	<div id="inner_html_id1" class="container-fluid"></div>
+</div>
+
+<button id="inner_html_btn1" class="ajax_element"
+	data-href="innerHtmlExampleOne">Click</button>
+<div class="highlight" style="min-height: 40px">
+	<div id="wasabi_modal"></div>
+</div>
+
+<div class="highlight" style="min-height: 40px">
+	<div id="close_modal_id1" class="container-fluid"></div>
+</div>
+
+<button id="close_modal_btn1" class="ajax_element"
+	data-href=standardClose>Closed Uption</button>
+
+<div class="highlight" style="min-height: 40px">
+	
+	<div id="wasabi_modal_view"class="container-fluid"></div>
+</div>
+
+	
+
+
+<button id="btn2" 
+	class="ajax_element" data-ajax-loader="myLoader" data-href="info">Modal Info</button><i id="myLoader" class="fa fa-spinner fa-pulse fa-lg"
+		style="display: none;"></i>
+
+<div class="highlight" style="min-height: 40px">
+	<span id="element_simple_form"></span>
+	<div id="inner_html_id1" class="container-fluid"></div>
+</div>
+<form id="simpleForm" class="ajax_element" action="simpleFormExample"
+	method="POST" data-ajax-loader="myLoader">
+
+	<input type="text" name="written_text"> <input type="submit"
+		value="try it"> <i id="myLoader" class="fa fa-spinner fa-pulse fa-lg"
+		style="display: none;"></i>
+</form>

@@ -1,0 +1,1 @@
+var ObjectModule = angular.module('ObjectModule', []);

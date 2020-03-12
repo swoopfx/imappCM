@@ -1,0 +1,19 @@
+<?php
+
+    
+ foreach ($policys as $policy){ ?>
+ 
+ <tr>
+                  <td><?php  echo $policy->getPolicyName()?><br>
+                  <?php  echo $policy->getPolicyCode()?><br>
+                  Expires On: <?php echo $this->dateFormat($policy->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, 'en_US')?><br>
+                  Status : <span class="badge badge-red"><?php echo $policy->getPolicyStatus()->getStatus()->getStatusWord()?>
+                  </td>
+                 
+       
+                  <td><?php  echo $this->customerPolicyDocumentListHelper($policy->getDocuments())?></td>
+                  <td><?php  echo $this->customerPolicyAllActionButtonHelper($policy)?></td>
+                  
+                </tr>
+                
+                <?php  }?>

@@ -1,0 +1,178 @@
+<?php
+use Policy\Service\PolicyService;
+use GeneralServicer\Service\GeneralService;
+
+echo $this->headtitle("View Policy");
+?>
+<div class="row">
+	<div class="item col-xs-12 col-lg-4 col-sm-4 col-md-4">
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+			<div class="panel-heading">
+				<div class="media v-middle">
+					<div class="media-body">
+						<h4 class="text-headline margin-none">POLICY</h4>
+						<p class="text-subhead text-light"><?php  echo strtoupper($policy->getPolicyCode() != NULL ? $policy->getPolicyCode() : "") ?></p>
+					</div>
+
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table text-subhead v-middle">
+						<tbody>
+							<tr>
+								<td class="width-100 text-caption">
+									<div class="label label-grey-200 label-xs">Premium Payable </div>
+								</td>
+								<td><?php  echo (PolicyService::getPremiumPayable($policy) != NULL ? $this->myCurrencyFormat(PolicyService::getPremiumPayable($policy)) : GeneralService::GENERAL_EMPTY_FIELD)?></td>
+								
+							</tr>
+							<tr>
+								<td class="width-100 text-caption">
+									<div class="label label-grey-200 label-xs">Insurer</div>
+								</td>
+								<td><?php  echo (PolicyService::getInsurerName($policy) != NULL ? PolicyService::getInsurerName($policy) : GeneralService::GENERAL_EMPTY_FIELD)?></td>
+								
+							</tr>
+							<?php if($policy->getIsSpecialTerms()):?>
+							<tr>
+								<td class="width-100 text-caption">
+									<div class="label label-grey-200 label-xs">Has Special Terms</div>
+								</td>
+								<td><a data-href="<?php  echo $this->url("cus_policy/default", array("action"=>"specialtermsmodal"))?>"></a></td>
+								
+							</tr>
+							<?php endif;?>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="item col-xs-12 col-lg-4 col-sm-4 col-md-4">
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+			<div class="panel-heading">
+				<div class="media v-middle">
+					<div class="media-body">
+						<h4 class="text-headline margin-none">Earnings</h4>
+						<p class="text-subhead text-light">This Month</p>
+					</div>
+					<div class="media-right">
+						<a class="btn btn-white btn-flat"
+							href="website-instructor-earnings.html">Reports</a>
+					</div>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div id="line-holder" data-toggle="flot-chart-earnings"
+					class="flotchart-holder height-200"></div>
+			</div>
+			<hr />
+			<div class="panel-body">
+				<div class="row text-center">
+					<div class="col-md-6">
+						<h4 class="margin-none">Gross Revenue</h4>
+						<p class="text-display-1 text-warning margin-none">102.4k</p>
+					</div>
+					<div class="col-md-6">
+						<h4 class="margin-none">Net Revenue</h4>
+						<p class="text-display-1 text-success margin-none">55k</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="item col-xs-12 col-lg-4 col-sm-4 col-md-4">
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+			<div class="panel-heading">
+				<div class="media v-middle">
+					<div class="media-body">
+						<h4 class="text-headline margin-none">Earnings</h4>
+						<p class="text-subhead text-light">This Month</p>
+					</div>
+					<div class="media-right">
+						<a class="btn btn-white btn-flat"
+							href="website-instructor-earnings.html">Reports</a>
+					</div>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div id="line-holder" data-toggle="flot-chart-earnings"
+					class="flotchart-holder height-200"></div>
+			</div>
+			<hr />
+			<div class="panel-body">
+				<div class="row text-center">
+					<div class="col-md-6">
+						<h4 class="margin-none">Gross Revenue</h4>
+						<p class="text-display-1 text-warning margin-none">102.4k</p>
+					</div>
+					<div class="col-md-6">
+						<h4 class="margin-none">Net Revenue</h4>
+						<p class="text-display-1 text-success margin-none">55k</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+
+
+	<div class="col-md-9">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel-body">
+					<div class="panel panel-default paper-shadow" data-z="0.5">
+				
+<?php
+
+echo $this->partial("policy-modal-policy-certificate-modal", array(
+    "policyEntity" => $policy
+))?>
+</div>
+				</div>
+				<br />
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+			<div class="panel-heading">
+				<h4 class="text-headline">
+					Certificates and Documents <small></small>
+				</h4>
+			</div>
+			<div class="panel-body">
+				<?php  echo $this->customerPolicyDocumentListHelper($policy->getDocuments())?>
+				
+			</div>
+		</div>
+
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+
+			<div class="panel-body">
+
+				<strong>INSURER : </strong> <?php   echo ($policy->getCoverNote()->getInsurer() == NULL ? "No Insurer Selected" : "<img alt='' src='".$this->insurerLogohelper($policy->getCoverNote()->getInsurer()->getId())."' class='img-circle   img-responsive' width=100 >");?>
+				<h4><?php  echo PolicyService::getInsurerName($policy) ?></h4>
+				<hr>
+				<strong>START DATE : </strong> <?php echo $this->dateFormat($policy->getStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?><br>
+				<br> <strong>END DATE : </strong> <?php echo $this->dateFormat($policy->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?>
+				</div>
+
+		</div>
+
+
+
+
+		<br />
+		<?php  echo $this->partial("customer-policy-menu")?>
+
+	</div>
+
+</div>

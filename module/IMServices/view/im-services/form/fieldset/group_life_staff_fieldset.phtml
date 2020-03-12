@@ -1,0 +1,86 @@
+<?php
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->groupLifeStaffList;
+?>
+<div id="<?= $countId ?>">
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('employeeName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('employeeName'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Employee Full Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('employeeName'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('annualEmolument'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								 &#8358;
+								</div>
+								<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($field->get('annualEmolument'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Total Annual Emolument"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('annualEmolument'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('lifeAssuranceBenefit'))?>
+								
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								 &#8358;
+								</div>
+								<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($field->get('lifeAssuranceBenefit'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Benefit on life assurance"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('lifeAssuranceBenefit'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('beneficiary'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('beneficiary'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Beneficiary"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('beneficiary'));  // this defines the error?> 
+							</div>
+	</div>
+		<?php  $json = json_encode(array(
+    "data"=>$countId 
+                ));
+?>
+	<div class="form-group">
+		<a id="sending_data_button" class="ajax_element btn btn-danger btn-xs pull-right"
+			 data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+</div>

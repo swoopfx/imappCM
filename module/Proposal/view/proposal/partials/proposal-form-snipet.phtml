@@ -1,0 +1,177 @@
+<?php
+?>
+
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('proposalTitle'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('proposalTitle'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="A unique name that identifies the the proposal"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('proposalTitle'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('proposalDesc'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('proposalDesc'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="A description of the proposal, this gives the customer a quick understanding of the policy"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('proposalDesc'))?> 
+								</div>
+</div>
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('insurer'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('insurer'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed insurer providing service"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('insurer'))?> 
+								</div>
+</div>
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('serviceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('serviceType'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The Insurance policy "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('serviceType'))?> 
+								</div>
+
+
+</div>
+
+<div class="form-group" id="div_otherServiceType">
+								<?php echo $this->formLabel($proposalFieldset->get('otherServiceType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('otherServiceType'))?>  
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('otherServiceType'))?> 
+								</div>
+
+
+</div>
+
+
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('specificService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('specificService'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Specific cover"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('specificService'))?> 
+								</div>
+
+
+</div>
+
+<div class="form-group" id="div_otherSpecificService">
+								<?php echo $this->formLabel($proposalFieldset->get('otherSpecificService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('otherSpecificService'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('otherSpecificService'))?> 
+								</div>
+
+
+</div>
+
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('valueType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('valueType'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The type of premium calculator"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('valueType'))?> 
+								</div>
+
+
+</div>
+<div id="currency_id">
+	<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('currency'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('currency'))?>  
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Currency to present premium"></i>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('currency'))?> 
+								</div>
+
+
+	</div>
+</div>
+<div class="form-group">
+								<?php echo $this->formLabel($proposalFieldset->get('value'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('value'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Sum assured or percentage value of the premium to be paid"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($proposalFieldset->get('value'))?> 
+								</div>
+
+
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($proposalFieldset->get('coverDuration'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalFieldset->get('coverDuration'))?> 
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Duration of cover"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($proposalFieldset->get('coverDuration'))?> 
+								</div>
+							</div>
+<div id="isTemredValue">
+	<div class="form-group">
+								<?php echo  $this->formLabel($proposalFieldset->get('termedDuration'))?> 
+								<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($proposalFieldset->get('termedDuration'))?> 
+								</div>
+		<div class="col-md-1 col-sm-1 col-xs-2">
+			<strong>Years</strong>
+		</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Duration of termed cover "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($proposalFieldset->get('termedDuration'))?> 
+								</div>
+							</div>
+</div>
+
+<script>
+ $(document).ready(function(){
+ $("#div_otherServiceType").hide();
+ $("#div_otherSpecificService").hide();
+	 })
+</script>

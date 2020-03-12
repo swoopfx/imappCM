@@ -1,0 +1,24 @@
+<?php
+$staffs = $this->staffs;
+if ($staffs != NULL){
+  foreach ($staffs as $info) { 
+
+?>
+
+<li class="media event">
+                            <a class="pull-left border-green profile_thumb">
+                              <i class="fa fa-user green"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#"><?php  echo $info->getFirstName()." ".$info->getLastName()?></a>
+                              <p><strong>Created On: <?php echo $this->dateFormat($info->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US");?></strong>  </p>
+                              <p> <a class="btn btn-default btn-xs ajax_element" id="sendingData"
+									data-href="viewstaffmodal"
+									data-json='{"data":"<?= $info->getBrokerChildUid() ?>"}'><i
+										class="fa fa-eye"></i>View</a>  </p>
+                             
+                              
+                            
+                            </div>
+                          </li>
+                          <?php }}?>

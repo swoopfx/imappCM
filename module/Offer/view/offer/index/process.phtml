@@ -1,0 +1,416 @@
+<?php
+use Transactions\Service\InvoiceService;
+
+// $offerEntity = $this->offerEntity;
+$user = $this->user;
+$userInfo = $this->userInfo;
+$offerForm->prepare();
+echo $this->headtitle('Offer Id ' . $offerEntity->getId() . ' View');
+if ($this->identity()) {
+    ?>
+
+<div class="highlight" style="min-height: 40px">
+
+	<div id="wasabi_modal"></div>
+</div>
+
+
+
+<!-- <button id="btn2" class="ajax_element" data-json='{"type":"info"}' data-href="modal">Click</button> -->
+<!-- <button id="btn3" class="ajax_element" data-json='{"type":"standard"}' data-href="message">Click2</button> -->
+
+<?php // echo $this->partial("offer-message-snippet", array("messageForm"=>$messageForm))?>
+<div class="row">
+	<div id="micropayment"></div>
+	<div class="col-md-9 col-xs-12">
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+			<?php  echo $this->partial("general-error-ponters")?>
+				<div class="x_title">
+
+					<h2><?php  echo "OFFER NAME:  ". $offerEntity->getOfferName()?></h2>
+
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-9 col-xs-12">
+			<?php  echo $this->partial("offer-view-snipet", array("offerEntity"=>$offerEntity))?>
+			</div>
+				<div align="center" class="col-md-3 col-xs-12">
+					<button id="btn3" class="ajax_element btn btn-app"
+						data-json='{"type":"standard"}' data-href="message"
+						style='width: 100%;'>
+						<span class="badge bg-orange"><?php  echo count($unread)?></span>
+						<i class="fa fa-send"></i> Messages
+					</button>
+					<br>
+					<!-- 					<a id="btn2" data-ajax-loader="myLoader" data-href="messaging" -->
+					<!-- 						class="btn btn-app ajax_element"> <span class="badge bg-orange">12</span> -->
+					<!-- 						<i class="fa fa-envelope"></i> View Messages -->
+					<!-- 					</a> -->
+					<a
+						<?php  echo ($offerEntity->getInvoice() != NULL ? ($offerEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "") : "")?>
+						data-toggle='modal' data-target='.bs-recommend-modal-lg'
+						style='width: 100%;' class="btn btn-app"> <i
+						class="fa fa-institution (alias)"></i> Recommend An Insurer
+					</a><br> <a <?php  echo ($offerEntity->getInvoice() == NULL ?  "disabled='disabled'" : ($offerEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "") )?>  id="btn3" class="ajax_element btn btn-app"
+						data-json='{"type":"standard"}' data-href="micropay"
+						style='width: 100%;'> <i class="fa fa-euro"></i> Activate Micro
+						Payment
+					</a>
+				</div>
+			</div>
+		</div>
+		<?php  echo $this->partial("proposal-customer-snipet", array("customer"=>$offerEntity->getCustomer()));?>
+		<div class="col-md-4 col-xs-12">
+
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>Selected Properties</h2>
+
+					<div class="clearfix"></div>
+				</div>
+			<?php  echo $this->partial("offer-process-selected-objects", array("objects"=>$offerEntity))?>
+		</div>
+		</div>
+
+		<div class="col-md-4 col-xs-12">
+
+			<div class="x_panel">
+				<div class="x_title">
+
+					<h2>Documents</h2>
+
+					<div class="clearfix"></div>
+				</div>
+				<?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+<hr>
+<?php echo $this->offer_list_document_helper($offerEntity)?>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-md-3 col-xs-12 top_tiles">
+
+
+		<div class="col-md-12 col-xs-12 tile">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Estimated Premium</strong>
+
+					<div class="clearfix"></div>
+
+					<div class="x_content">
+						<br>
+						<?php echo $this->offer_process_estimated_premium($offerEntity)?>
+					</div>
+				</div>
+			<?php // echo $this->partial("offer-view-snipet", array())?>
+		</div>
+		</div>
+		
+		<div class="col-md-12 col-xs-12 tile">
+			<div class="x_panel">
+				
+					<div class="x_content">
+						<br>
+						<button id="btn3" data-json='{"type":"standard"}' data-href="<?php  echo $this->url("offer/default", array("action"=>"previewdetails"))?>" class="ajax_element btn btn-app" style="width: 100%"> <i class="fa fa-play 2x "></i> PREVIEW </button>
+					</div>
+				
+			<?php // echo $this->partial("offer-view-snipet", array())?>
+		</div>
+		</div>
+
+
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Generated Invoice</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+						<br>
+						<?php echo $this->offer_process_invoice_button_condition($offerEntity)?>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		
+		<?php  //echo $this->offer_manual_payment_helper($offerEntity)?>
+		<?php
+    
+    if ($offerEntity->getInvoice() != NULL) {
+        if (count($offerEntity->getInvoice()->getManualProcess()) != 0) {
+            ?>
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>MANUAL APYMENT MADE</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+						<a
+							<?php  echo ($offerEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "")?>
+							class="btn btn-xs btn-primary" style="width: 100%;"
+							href="<?php  echo $this->url("invoice/default", array("action"=>"view", "id"=>$offerEntity->getInvoice()->getId()))?>">PROCESS
+							PAYMENT</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<?php }}?>
+		
+		
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>OFFER PAYMENT STATUS</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+			<?php  echo $this->offer_process_payment_status($offerEntity);?>
+			</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Cover Note</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+			<?php
+    /**
+     * If status of the offer is not Paid
+     * The coverNote Buutonn is disabled
+     * And a notification is shown that it will only be active when offer is paid for
+     */
+    ?>
+    <?php  echo $this->offer_process_covernote_helper($offerEntity, $coverNoteForm)?>
+			</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>
+
+
+<div class="modal fade bs-manual-premium-modal-lg" tabindex="-1"
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Enter Premium</h4>
+			</div>
+			<div class="modal-body">
+                        
+                          <?php echo $this->partial("general-manual-premium-form", array("manualPremiumForm"=>$manualPremiumForm))?>
+                            
+                        </div>
+
+
+
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade bs-object-modal-lg" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		<?php
+    
+    $objectForm->setAttributes(array(
+        "action" => "/offer/object-form-process"
+    ))?>
+<?php echo  $this->form()->openTag($objectForm);?>
+                        <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">New Object Form</h4>
+			</div>
+			<div class="modal-body">
+                        
+                          <?php echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                            
+                        </div>
+			<div class="modal-footer">
+				
+                          <?php  echo $this->formrow($objectForm->get("csrf"))?>
+                          <?php echo $this->formrow($objectForm->get("submit"))?>
+                        </div>
+                        <?php  echo $this->form()->closeTag(); ?>
+
+                      </div>
+	</div>
+</div>
+
+<!--  Begin Select Property Form  -->
+<div class="modal fade select-property-modal-lg" tabindex="-1"
+	<?php
+    
+    $selectObjectForm->setAttributes(array(
+        "action" => $this->url("offer/default", array(
+            "action" => "select-object-process"
+        ))
+    ))?>
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Select A property</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+                          <?php  echo $this->partial("object-select-object-form-snipet",  array("selectObjectForm"=>$selectObjectForm)) ?>
+                         </div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+<!--  End Select Property Form -->
+
+
+<div class="modal fade bs-messages-modal-lg" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		<?php echo $this->partial("offer-message-snippet", array("messageForm"=>$messageForm, "offerEntity"=>$offerEntity))?>
+
+                      </div>
+	</div>
+</div>
+
+
+<div class="modal fade bs-recommend-modal-lg" tabindex="-1"
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Recommend an Insurer</h4>
+			</div>
+			<div class="modal-body">
+                       <?php  echo $this->partial("offer-recommend-insurer", array("recommendForm"=>$recommendForm))?>
+                          <?php // echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                            
+                        </div>
+
+
+
+		</div>
+	</div>
+</div>
+
+
+
+<?php  if($offerEntity->getInvoice() != NULL){?>
+<div class="modal fade bs-invoice-modal-lg" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Payment Invoice</h4>
+			</div>
+			<div class="modal-body">
+                       <?php  echo $this->partial("transaction-invoice-preview-snipet", array("invoice"=>$offerEntity->getInvoice(), "broker"=>$this->broker))?>
+                          <?php // echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                            
+                        </div>
+
+
+
+		</div>
+	</div>
+</div>
+<?php }?>
+
+<div class="modal fade bs-micropayment-modal-lg" tabindex="-1"
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Micro Payment</h4>
+			</div>
+			<div class="modal-body">
+                       <?php echo $this->partial("transaction-micro-payment-snipet", array("microPaymentForm"=>$microPaymentForm))?>
+                          <?php // echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                            
+                        </div>
+
+
+
+		</div>
+	</div>
+</div>
+
+<?php }?>
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('angular/OfferModule.js'))
+    ->appendFile($this->basePath('angular/controllers/offerController.js'));
+?>
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+<script type="text/javascript">
+
+
+$("#chosen-select").chosen({width: "95%"});
+
+$(function() {
+    $('#manual_premium').maskMoney();
+  })
+    
+    
+    </script>

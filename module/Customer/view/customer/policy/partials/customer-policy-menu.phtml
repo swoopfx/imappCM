@@ -1,0 +1,20 @@
+<?php
+
+
+?>
+
+<div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+            <div class="panel-heading panel-collapse-trigger">
+              <h4 class="panel-title">Policy Menu</h4>
+            </div>
+            <div class="panel-body list-group">
+              <ul class="list-group list-group-menu">
+                <li class="list-group-item"><a class="link-text-color" href="<?php echo $this->url("cus_policy")?>">Active Policy</a></li>
+                <li class="list-group-item"><a class="link-text-color" href="<?php  echo $this->url("cus_policy/default", array("action"=>"up-coming-renewals"))?>">Upcoming Renewals</a></li>
+                <li class="list-group-item"><a class="link-text-color" href="<?php  echo $this->url("cus_policy/default", array("action"=>"expired-policy"))?>">Expired Policy</a></li>
+                <li class="list-group-item"><a class="link-text-color" href="<?php  echo $this->url("cus_policy/default", array("action"=>"terminated-policy"))?>">Terminated Policy</a></li>
+                <li class="list-group-item"><a id="sending_data_button" data-json="" class="ajax_element link-text-color" data-href="<?php  echo $this->url("cus_policy/default", array("action"=>"message"))?>">Communicate with Broker</a></li>
+           
+              </ul>
+            </div>
+          </div>

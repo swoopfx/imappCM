@@ -1,0 +1,7 @@
+<?php  echo $this->form()->openTag($policyGenerationFporm)?>
+
+				<?php  echo $this->partial("policy-generate-policy-form-snippet", array("policyFieldset"=>$policyGenerationFporm->get("policyFieldset")))?>
+				 <?php echo $this->formrow($policyGenerationFporm->get("submit"))?>
+<?php  echo $this->form()->closeTag()?>
+
+<hr>

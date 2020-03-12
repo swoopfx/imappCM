@@ -1,0 +1,1 @@
+var offerModule = angular.module('OfferModule', []);

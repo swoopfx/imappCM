@@ -1,0 +1,72 @@
+<div id="success"></div>
+<div id="error"></div>
+
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/processin.gif")?>"
+	height=100></i>
+<?php $staffForm->prepare()?>
+
+<?php  echo $this->form()->openTag($staffForm);?>
+			<?php  // echo $this->partial('broker-tool-add-staff-snipet', array('staffFieldset'=>$staffForm->get('userBasicField')->get('brokerChild')->get('brokerChildProfile')))?>
+			<?php
+
+$staffFieldset = $staffForm->get('userBasicField')->get('brokerChild');
+?>
+
+<div class="form-group">
+<?php  $element1 = $staffFieldset->get('firstname')?>
+							
+								<?php echo $this->formLabel($element1)?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($element1);?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($element1);  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+<?php  $element2 = $staffFieldset->get('lastname')?>
+							
+								<?php echo $this->formLabel($element2)?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($element2);?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($element2);  // this defines the error?> 
+							</div>
+</div>
+<?php
+$staffForm->get('userBasicField')
+    ->get('username')
+    ->setOptions(array(
+    'label' => "Staff Phone Number"
+))
+    ->setAttributes(array(
+    'class' => 'form-control phone'
+
+));
+;
+echo $this->partial('csnuser-basic-info-snipet', array(
+    'userFieldset' => $staffForm->get('userBasicField')
+))?>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+				
+
+				
+				<?php
+    echo $this->formRow($staffForm->get('csrf'));
+    echo $this->formRow($staffForm->get('submit'));
+    // echo $this->formRow($customerForm->get('reset'));
+    
+    ?>
+    </div>
+<?php  echo $this->form()->closeTag();?>

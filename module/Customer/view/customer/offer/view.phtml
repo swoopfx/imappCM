@@ -1,0 +1,60 @@
+<?php
+echo $this->headtitle("View Offer");
+$offer = $this->offerInfo;
+?>
+
+<div class="row">
+
+	<div class="col-md-9">
+
+
+		<div class="page-section padding-top-none">
+			<div class="media media-grid v-middle">
+				<div class="media-left">
+					<span class="icon-block half bg-blue-300 text-white"><i
+						class="fa fa-folder-open"></i></span>
+				</div>
+				<div class="media-body">
+					<h1 class="text-display-1 margin-none">View Offer</h1>
+				</div>
+				<div class="media-right">
+					<a
+						href="<?php  echo $this->url("cus_offer", array("action"=>"edit", "id"=>""))?>"
+						class="btn btn-white paper-shadow relative" data-z="0.5"
+						data-hover-z="1" data-animated><i class="fa fa-fw fa-plus"></i>Edit
+						Offer</a>
+				</div>
+			</div>
+			
+			
+
+		</div>
+
+		<!--           <h5 class="text-subhead-2 text-light">Curriculum</h5> -->
+
+           <?php  echo $this->partial("customer-offer-view-premium")?>
+        <?php  echo $this->partial("customer-offer-view-main-offer-info", array("offer"=>$offer))?>
+        
+        <?php  echo $this->partial("customer-offer-view-object-docs-info")?>
+        
+        <?php echo $this->partial("customer-offer-view-comments")?>
+
+          
+
+          
+
+          <br />
+
+
+	</div>
+	<div class="col-md-3">
+ 
+         <?php  echo $this->partial("customer-offer-action")?>
+         <?php echo $this->partial("customer-offer-menu")?>
+
+         
+
+<?php  echo $this->partial("customer-board-featured-packages")?></div>
+
+</div>
+

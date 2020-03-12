@@ -1,0 +1,135 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+?>
+
+
+		
+<?php if($details->getDriverDetails() != NULL){?>
+<tr>
+
+				<th>Driver Name</th>
+				<td>
+<?php  echo ($details->getDriverDetails() != NUll ? $this->escapehtml($details->getDriverDetails()->getDriverName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Driver Age</th>
+				<td>
+<?php  echo ($details->getDriverDetails() != NUll ? $this->escapehtml($details->getDriverDetails()->getDriverAge())." years" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Driver License Number</th>
+				<td>
+<?php  echo ($details->getDriverDetails() != NUll ? $this->escapehtml($details->getDriverDetails()->getDrivingLicenceNo()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Driver License Issue Date</th>
+				<td>
+<?php  echo ($details->getDriverDetails() != NUll ? $this->dateformat($details->getDriverDetails()->getLicenceIssueDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Driver License Expires Date</th>
+				<td>
+<?php  echo ($details->getDriverDetails() != NUll ? $this->dateformat($details->getDriverDetails()->getLicenceExpireDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+		
+			<tr>
+
+				<th>Accident Witness One Name</th>
+				<td>
+<?php  echo ($details->getWitness1() != NUll ? $this->escapehtml($details->getWitness1()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Witness One Phone</th>
+				<td>
+<?php  echo ($details->getWitness1Phone() != NUll ? $this->escapehtml($details->getWitness1Phone()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Witness One Address</th>
+				<td>
+<?php  echo ($details->getWitness1Address() != NUll ? $this->escapehtml($details->getWitness1Address()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Accident Witness Two Name</th>
+				<td>
+<?php  echo ($details->getWitness2() != NUll ? $this->escapehtml($details->getWitness2()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Witness Two Address</th>
+				<td>
+<?php  echo ($details->getWitness2Address() != NUll ? $this->escapehtml($details->getWitness2Address()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Damage Details</th>
+				<td>
+<?php  echo ($details->getDamageDetails() != NUll ? $this->escapehtml($details->getDamageDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+		
+			
+			<tr>
+
+				<th>Repair Estimate</th>
+				<td>
+<?php  echo ($details->getRepairEstimate() != NUll ? $this->myCurrencyFormat($details->getRepairEstimate()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vehichle Repairer Name</th>
+				<td>
+<?php  echo ($details->getRepairerName() != NUll ? $this->escapehtml($details->getRepairerName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Vehichle Repairer Number</th>
+				<td>
+<?php  echo ($details->getRepairerPhone() != NUll ? $this->escapehtml($details->getRepairerPhone()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Present Motor Location</th>
+				<td>
+<?php  echo ($details->getMotorLocation() != NUll ? $this->escapehtml($details->getMotorLocation()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+		
+		

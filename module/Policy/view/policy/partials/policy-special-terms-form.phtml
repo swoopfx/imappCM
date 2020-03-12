@@ -1,0 +1,35 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+<?php echo  $this->formLabel($form->get("policySpecialTermsFieldset")->get('specialTerms'))?> <strong
+		style="color: red">*</strong><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="The special terms details"></i>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($form->get("policySpecialTermsFieldset")->get('specialTerms'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get("policySpecialTermsFieldset")->get('specialTerms'))?> 
+								</div>
+</div>
+<br>
+
+<div class="form-group">
+<?php echo $this->formsubmit($form->get("submit"));?>
+</div>
+
+<?php
+
+echo $this->form()->closeTag();
+
+?>
+
+<div style="text-align: center;">
+								<i id="specialTermsf" class="fa fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=50></i>
+							</div>

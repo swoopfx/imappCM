@@ -1,0 +1,22 @@
+<?php
+
+echo $this->escapehtml($details);
+
+ ?>
+ 
+ <hr>
+ <div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+  <a id="btn2" data-ajax-loader="specialTermButton" data-href="<?php  echo $this->url("policy/default", array("action"=>"specialterms"))?>" class="btn btn-sm btn-warning ajax_element" style="width: 100%" >Update Terms</a>
+  </div>
+  
+  <div class="col-md-6 col-sm-6 col-xs-12">
+  <a id="btn2"  data-ajax-loader="specialTermButton" data-href="<?php  echo $this->url("policy/default", array("action"=>"clearspecialterms"))?>" class="btn btn-sm btn-danger ajax_element" style="width: 100%" >Clear Terms</a>
+  </div>
+ </div>
+ <div style='text-align: center;'>
+	<i id='specialTermButton' class='fa fa-lg'
+		style='display: none; text-align: center;'><img alt=''
+		src='<?php echo  $this->basePath('/processin.gif')  ?>' height=30>
+		<hr></i>
+</div>

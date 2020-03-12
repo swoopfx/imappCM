@@ -1,0 +1,23 @@
+<?php
+
+?>
+
+<?php 
+echo $this->form()->openTag($paymentForm)?>
+              <div id="billing" class="tab-pane">
+            
+              <?php  echo $this->partial("transaction_user_card_payment_form", array("payForm"=>$paymentForm->get("card_payment")))?>
+               <i id="myLoader" class="fa  fa-pulse fa-lg"
+										style="display: none;"><img alt=""
+										src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+										height=100></i>
+
+									<hr />
+
+									<div class="media v-middle s-container">
+
+										<div class="media-right">
+										
+                  <?php
+            echo $this->formrow($paymentForm->get("csrf"));
+            echo $this->formrow($paymentForm->get("submit"))?>

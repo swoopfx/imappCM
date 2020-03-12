@@ -1,0 +1,80 @@
+
+<?php
+echo $this->headtitle("My Dashboard");
+if ($this->identity()) {
+    ?>
+
+<?php  //echo $this->partial("general-error-ponters")?>
+
+
+<div class="row">
+	 
+	<?php
+    echo $this->partial('customer-board-sidebar', array(
+        'offer' => $activeOffer,
+        'proposals' => $proposals,
+        'claims' => $claims,
+        'policy' => $policy,
+        'invoices' => $invoices,
+        "activePackage" => $activePackage
+    ))?>
+   
+	<div class="col-md-9">
+
+		
+
+		<div class="panel panel-default">
+			<div class="media v-middle">
+				<div class="media-left">
+					<div class="bg-red-400 text-white">
+						<div class="panel-body">
+							<i class="fa fa-file-text fa-fw fa-2x"></i>
+						</div>
+					</div>
+				</div>
+				<div class="media-body">
+
+					<a class="btn btn-white paper-shadow relative" data-z="0.5"
+						data-hover-z="1" data-animated
+						href="<?php  echo $this->url("cus_claims")?>"> View All Unsettled
+						Claims </a>
+					<button class="btn btn-warning btn-circle"><?php echo count($claims)?></button>
+				</div>
+
+
+
+				<!-- 				<div class="media-right media-padding"> -->
+
+				<!-- 				</div> -->
+			</div>
+		</div>
+
+		<div class="row" data-toggle="isotope">
+			<!-- MEssage View Helper go here -->
+			<?php  // echo $this->customer_board_message($messages)?>
+
+			<?php   echo $this->partial("customer-board-policy", array("policy"=>$policy))?>
+			<?php  echo $this->partial("customer-board-covernote", array("coverNote"=>$coverNote))?>
+
+			<?php  echo $this->partial("customer-board-proposal", array("proposals"=>$proposals))?>
+			
+			<?php  echo $this->partial("customer-board-invoice", array("invoices"=>$invoices))?>
+			
+			<?php echo $this->partial("customer-board-active-offer", array('offer'=>$activeOffer)) ?>
+
+			
+
+			<?php  // echo $this->partial("customer-board-active-package", array("activePackages"=>$activePackage))?>
+			
+		</div>
+
+		<br /> <br />
+
+	</div>
+
+
+</div>
+
+
+<?php }?>
+<!--  End Modal Forms -->

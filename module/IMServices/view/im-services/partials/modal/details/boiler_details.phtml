@@ -1,0 +1,175 @@
+<?php
+$boilerInsuranceEntity = $coverEntity->getBoilerInsurance();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Chief Engineer/ Plant Manager Name</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getChiefEngineer() != NUll ? $boilerInsuranceEntity->getChiefEngineer() : "Not Specified") ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Cover Start Date</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getStartDate() != NUll ? $this->dateFormat($boilerInsuranceEntity->getStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				
+				</td>
+			</tr>
+			<tr>
+
+				<th>Cover End Date</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getEndDate() != NUll ? $this->dateFormat($boilerInsuranceEntity->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				
+				</td>
+			</tr>
+			
+			
+			
+			<tr>
+
+				<th>Nature of business</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getNatureOfBusiness() != NUll ? $boilerInsuranceEntity->getNatureOfBusiness() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Boiler is in good condition</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getIsGoodCondition() != NUll ? $this->trueFalseHelper($boilerInsuranceEntity->getIsGoodCondition()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Is Previously Insured</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getIsPreviouslyInsured() != NUll ? $this->trueFalseHelper($boilerInsuranceEntity->getIsPreviouslyInsured()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if($boilerInsuranceEntity->getIsPreviouslyInsured() == true){}?>
+			<tr>
+
+				<th>Previously had an accident</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getIsPreviousAccident() != NUll ? $this->trueFalseHelper($boilerInsuranceEntity->getIsPreviousAccident()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if($boilerInsuranceEntity->getIsPreviousAccident() == true){?>
+			<tr>
+
+				<th>Measure taken to avert such accident again</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getAccidentMeasures() != NUll ? $boilerInsuranceEntity->getAccidentMeasures() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			
+			<tr>
+
+				<th>Provide Full Cover</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getIsCoverAll() != NUll ? $this->trueFalseHelper($boilerInsuranceEntity->getIsCoverAll()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php  if($boilerInsuranceEntity->getIsCoverAll() != TRUE){?>
+			
+			<tr>
+
+				<th>Excluded Parts(Not to be cvered) </th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getExcludedPart() != NUll ? $boilerInsuranceEntity->getExcludedPart() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Include main steam and feed water piping in the cover</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getIsIncludeSteam() != NUll ? $this->trueFalseHelper($boilerInsuranceEntity->getIsIncludeSteam()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>The specific part periodically inspected and requires attention</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getPartPeriodicallyinspected() != NUll ? $boilerInsuranceEntity->getPartPeriodicallyinspected() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Entity/Company that makes inspectionon part</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getInspectionBy() != NUll ? $boilerInsuranceEntity->getInspectionBy() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Last date of inspection</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getLastInspectionDate() != NUll ? $this->datFormat($boilerInsuranceEntity->getLastInspectionDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Maximum load on safety value  PSi</th>
+				<td>
+				<?php  echo ($boilerInsuranceEntity->getMaxSafetyLoadLevel() != NUll ? $boilerInsuranceEntity->getMaxSafetyLoadLevel()." psi" : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if(count($boilerInsuranceEntity->getCoverList()) > 0){?>
+			<tr>
+			<th>Insured Animal Details</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Item Name</th>
+								<th>Year Of Manufacture</th>
+								
+								<th>Market Value(&#8358;)</th>
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($boilerInsuranceEntity->getCoverList() as $list){?>
+					<tr>
+
+								<td> <?php echo ($list->getItemDescription() != NUll ? $list->getItemDescription() : "Empty") ;?>
+								</td>
+
+								<td>	 <?php echo ($list->getManuYear() != NUll ? $list->getManuYear() : "Empty") ;?></td>
+								<td>	 <?php echo ($list->getReplacementValue() != NUll ? $this->myCurrencyFormat($list->getReplacementValue()) : "Empty") ;?></td>
+
+								
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<?php }?>
+			
+		</tbody>
+	</table>
+</div>

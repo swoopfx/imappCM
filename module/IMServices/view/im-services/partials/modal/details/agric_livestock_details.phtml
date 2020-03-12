@@ -1,0 +1,254 @@
+<?php
+$agricLivestockInsuranceEntity = $coverEntity->getLivestockAgricInsurance();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Total Number of Livestock</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getNoOfLivestock() != NUll ? $agricLivestockInsuranceEntity->getNoOfLivestock() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>All Livestock is Insured</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getIsAllInsured() != NUll ? $this->trueFalseHelper($agricLivestockInsuranceEntity->getIsAllInsured()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if($agricLivestockInsuranceEntity->getIsAllInsured() == NULL || $agricLivestockInsuranceEntity->getIsAllInsured() == FALSE){?>
+			<tr>
+
+				<th>Insured Animal Details</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Animal Id</th>
+								<th>Breed</th>
+								<th>Age</th>
+								<th>Sex</th>
+								<th>Market Value(&#8358;)</th>
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($agricLivestockInsuranceEntity->getLivestockInsuredList() as $list){?>
+					<tr>
+
+								<td> <?php echo ($list->getAnimalId() != NUll ? $list->getAnimalId() : "Empty") ;?>
+								</td>
+
+								<td>	 <?php echo ($list->getBreed() != NUll ? $list->getBreed() : "Empty") ;?></td>
+								<td>	 <?php echo ($list->getAge() != NUll ? $list->getAge() : "Empty") ;?></td>
+
+								<td>	 <?php echo ($list->getSex() != NUll ? $list->getSex()->getSex() : "Empty") ;?></td>
+								<td> &#8358;	 <?php echo ($list->getMarketValue() != NUll ? $list->getMarketValue() : "Empty") ;?></td>
+
+
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<?php if(count($agricLivestockInsuranceEntity->getUseOfAnimals()) > 0){?>
+			<tr>
+
+				<th>Pupose Of Rearing</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Purpose</th>
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($agricLivestockInsuranceEntity->getUseOfAnimals() as $list){?>
+					<tr>
+
+								<td> For <?php echo ($list->getUse() != NUll ? $list->getUse() : "Empty") ;?>
+								
+
+
+							
+							
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Rearing Method</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getRearingMethod() != NUll ? $agricLivestockInsuranceEntity->getRearingMethod()->getMethod() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Other Rearing Method</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getOtherMethod() != NUll ? $agricLivestockInsuranceEntity->getOtherMethod() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Feeding Method/Source</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getFeedingMethodandSource() != NUll ? $agricLivestockInsuranceEntity->getFeedingMethodandSource() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Livestock has Vetenary Doctor</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getIsVetinaryDoctor() != NUll ? $this->trueFalseHelper($agricLivestockInsuranceEntity->getIsVetinaryDoctor()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if($agricLivestockInsuranceEntity->getIsVetinaryDoctor() == TRUE){?>
+			<tr>
+
+				<th>Doctors Name</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getVetName() != NUll ? $agricLivestockInsuranceEntity->getVetName() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Doctors Qualification</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getVetQualification() != NUll ? $agricLivestockInsuranceEntity->getVetQualification() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Providing Service for</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getVetYearResponsibleforFarm() != NUll ? $agricLivestockInsuranceEntity->getVetYearResponsibleforFarm() : "Not Specified") ?> years
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Veteray Contact Details</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getVetContactDetails() != NUll ? $agricLivestockInsuranceEntity->getVetContactDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Livestock Adminstered Vacination</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getVacinnation() != NUll ? $agricLivestockInsuranceEntity->getVacinnation() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Livestock Mortality Rate</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getMortalityRate() != NUll ? $agricLivestockInsuranceEntity->getMortalityRate() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Livestock Loss History</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getLossHistory() != NUll ? $agricLivestockInsuranceEntity->getLossHistory() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Livestock are in Good Condition</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getIsAnimalInGoodCondition() != NUll ? $this->trueFalseHelper($agricLivestockInsuranceEntity->getIsAnimalInGoodCondition()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($agricLivestockInsuranceEntity->getIsAnimalInGoodCondition() == FALSE){?>
+			<tr>
+
+				<th>Livestock Condition</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getConditionStatus() != NUll ? $agricLivestockInsuranceEntity->getVacinnation() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			
+			<tr>
+
+				<th>Livestock has other insurance</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getIsOtherInsurer() != NUll ? $this->trueFalseHelper($agricLivestockInsuranceEntity->getIsOtherInsurer()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($agricLivestockInsuranceEntity->getIsOtherInsurer() == TRUE){?>
+			<tr>
+
+				<th>Insurer</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getOtherInsurer() != NUll ? $agricLivestockInsuranceEntity->getOtherInsurer()->getInsuranceName() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Insurer</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getOtherInsurance() != NUll ? $agricLivestockInsuranceEntity->getOtherInsurance()->getInsuranceService() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Livestock is Subsidized </th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getIsSubsidizedInsurance() != NUll ? $this->trueFalseHelper($agricLivestockInsuranceEntity->getIsSubsidizedInsurance()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Livestock Condition</th>
+				<td>
+				<?php  echo ($agricLivestockInsuranceEntity->getConditionStatus() != NUll ? $agricLivestockInsuranceEntity->getVacinnation() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+
+
+		</tbody>
+	</table>
+
+</div>

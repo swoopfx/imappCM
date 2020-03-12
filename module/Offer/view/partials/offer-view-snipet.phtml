@@ -1,0 +1,86 @@
+<?php
+use Transactions\Service\InvoiceService;
+$json = array(
+    "type"=>"standard"
+);
+?>
+
+<div class="x_content">
+	<div class="table-responsive">
+		<table class="table table-hover">
+
+			<tbody>
+				<tr>
+					<th style="width: 25%">OFFER CODE</th>
+					<td><?php  echo strtoupper($offerEntity->getOfferCode());?></td>
+
+				</tr>
+				<tr>
+					<th>Offer STATUS</th>
+					<td> <?php  echo $this->statusHelper($offerEntity->getOfferStatuses()->getOfferStatusId())?></td>
+
+				</tr>
+				<tr>
+					<th>OFFER NAME</th>
+					<td><p>
+                          <?php  echo ($offerEntity->getOfferName() == NULL ? "" : $offerEntity->getOfferName())?>
+                          </p></td>
+
+				</tr>
+				<tr>
+					<th></th>
+					<td><p>
+					
+                         <?php  echo $this->offer_recommended_insurer_helper($offerEntity)?>
+                         
+                          </p>
+                          
+                          </td>
+
+				</tr>
+
+
+
+				<tr>
+					<th>DATE CREATED</th>
+					<td><?php  echo $this->dateFormat($offerEntity->getCreatedOn(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") ?></td>
+
+				</tr>
+				<tr>
+					<th>DATE UPDATED</th>
+					<td>
+                        <?php  echo $this->dateFormat($offerEntity->getUpdatedOn(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") ?></td>
+				</tr>
+
+				<tr>
+					<th>INSURANCE CATEGORY</th>
+					<td><?php   echo ($offerEntity->getOfferServiceType() == NULL ? "" : $offerEntity->getOfferServiceType()->getInsuranceService())?></td>
+				</tr>
+				<tr>
+					<th>INSURANCE SERVICE</th>
+					<td><?php  echo ($offerEntity->getOfferSpecificService() == NULL ? "" : $offerEntity->getOfferSpecificService()->getSpecificService())?></td>
+				</tr>
+				
+				<tr>
+					<th>PREMIUM RATE</th>
+					<td><?php  echo ($offerEntity->getValue() == NULL ? "<span style='color: red'>No Value inputed yet</span> <button id='btn3' class='ajax_element btn btn-primary btn-danger btn-xs'
+						data-json='".json_encode($json)."' data-href='".$this->url("offer/default", array("action"=>"completeoffer"))."'
+						style='width: 40%;'>Click to input Value</button>"  : $this->package_value_representation($offerEntity->getValueType()->getId(), $offerEntity->getValue(), "NGN"))?></td>
+				</tr>
+				<tr>
+					<th>COVER DURATION</th>
+					<td><?php  echo ($offerEntity->getCoverDuration() == NULL ? " "  : $offerEntity->getCoverDuration()->getDuration() )?></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+	<button id="btn3" class="ajax_element btn btn-primary"
+	<?php  echo ($offerEntity->getInvoice() != NULL ? ($offerEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "") : "")?> 
+						data-json='{"type":"standard"}' data-href="<?php echo $this->url("offer/default", array("action"=>"completeoffer"))?>"
+						style='width: 100%;'>
+						
+						Edit Offer Information
+					</button>
+
+</div>

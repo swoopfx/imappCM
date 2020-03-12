@@ -1,0 +1,210 @@
+<?php
+use function Zend\Mvc\Controller\identity;
+use CsnUser\Service\UserService;
+?>
+
+<?php
+$this->headtitle('Dashboard');
+
+$customers = $this->customers;
+$broker = $this->broker;
+$sub = $this->sub;
+$ap = $this->ap;
+$unsettledClaims = $this->unsettledClaims;
+$myExpiredInvoice = $this->myExpiredInvoice;
+$activeOffers = $this->activeOffers;
+$upcomingRenewal = NULL;
+
+if ($this->identity()) {
+
+    // var_dump($activeOffers);
+    ?>
+<div id="wasabi_modal"></div>
+<!-- top tiles -->
+<?php  echo $this->partial("general-error-ponters") ?>
+
+<?php  echo $this->dashboard_subscription_expire_alert(); ?>
+<?php // echo?>
+<div class="row tile_count">
+	<?php echo $this->dashboard_stats_helper($customers, $ap, $unsettledClaims, $activeOffers, $myExpiredInvoice)?>
+	
+
+</div>
+<!-- /top tiles -->
+
+<!-- Begin -->
+<?php if ($this->identity()->getRole()->getId() == UserService::USER_ROLE_BROKER){ ?>
+<div class="row">
+<?php
+
+echo $this->dashboard_sms_expire_notify($broker);
+
+//         echo $this->dashboard_info_ducker_helper($broker)?>
+	<?php echo $this->dashboard_broker_account_helper($broker); ?>
+
+
+	<?php  echo $this->dashboard_broker_sub_helper($sub)?>
+
+
+	<!-- Enter here -->
+
+
+	<div class='col-md-3 col-sm-3 col-xs-12 widget widget_tally_box'>
+		<div class='x_panel fixed_height_390'>
+
+			<div class='x_content'>
+				<div class='flex'>
+
+					<img alt="mobile Application"
+						src="<?php echo $this->basepath("img/mobileApp.png")?>">
+
+
+				</div>
+				<p>
+					<a id="btn2"
+						data-href="<?php  echo $this->url("dashboard/default", array("action"=>"goingmobile"))?>"
+						class="btn btn-danger ajax_element"> COMING SOON </a>
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<?php }?>
+
+<div class="row">
+
+<?php  echo $this->partial('dashboard-my-customer-snipet', array('customers'=>$customers))?>
+<?php echo $this->partial('dashboard-my-expired-invoice-snipet', array('expiringPolicy'=>$expiringPolicy)); // this maps expiring policy?>
+</div>
+
+<div class="row">
+
+	<?php  echo $this->partial('dashboard-my-proposal-snipet', array('ap'=>$ap));?>
+
+	<?php  echo $this->partial('dashboard-upcoming-renwal', array('expiringInvoice'=>$expiringInvoice))?>
+</div>
+<div class="row">
+	
+<?php  echo $this->partial('dashboard-active-offer-snipet', array('offer'=>$activeOffers));?>
+<?php  echo $this->partial('dashboard-unsettled-claims-snipet', array('unsettledClaims'=>$unsettledClaims));?>
+ <?php
+    // echo $this->chartjs($this->chart, [
+    // 'show_legend' => true,
+    // 'width' => 900,
+    // 'height' => 400,
+    // ]); ?>
+
+
+</div>
+
+<!-- Endof quick statistics  -->
+
+<!-- Begin Advert Widget  -->
+<!-- <div class="row"> -->
+<!-- 	<div class="col-md-12 col-sm-6 col-xs-12"> -->
+<!-- 		<div class="x_panel"> -->
+<!-- 			<div class="x_title"> -->
+<!-- 				<h2>Advert Widget</h2> -->
+
+<!-- 				<div class="clearfix"></div> -->
+<!-- 			</div> -->
+
+
+
+<!-- 		</div> -->
+<!-- 	</div> -->
+<!-- </div> -->
+<!-- End Advert Widgget -->
+<style>
+#uploadForm {
+	border-top: #F0F0F0 2px solid;
+	background: #FAF8F8;
+	padding: 10px;
+}
+
+#uploadForm label {
+	margin: 2px;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.demoInputBox {
+	padding: 5px;
+	border: #F0F0F0 1px solid;
+	border-radius: 4px;
+	background-color: #FFF;
+}
+
+#progress-bar {
+	background-color: #12CC1A;
+	height: 20px;
+	color: #FFFFFF;
+	width: 0%;
+	-webkit-transition: width .3s;
+	-moz-transition: width .3s;
+	transition: width .3s;
+}
+
+.btnSubmit {
+	background-color: #09f;
+	border: 0;
+	padding: 10px 40px;
+	color: #FFF;
+	border: #F0F0F0 1px solid;
+	border-radius: 4px;
+}
+
+#progress-div {
+	border: #0FA015 1px solid;
+	padding: 5px 0px;
+	margin: 30px 0px;
+	border-radius: 4px;
+	text-align: center;
+}
+
+#targetLayer {
+	width: 100%;
+	text-align: center;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function() { 
+	 $('#uploadForm').submit(function(e) {	
+		if($('#userImage').val()) {
+			e.preventDefault();
+			$('#loader-icon').show();
+			$(this).ajaxSubmit({ 
+				target:   '#targetLayer', 
+				beforeSubmit: function() {
+				  $("#progress-bar").width('0%');
+				},
+				uploadProgress: function (event, position, total, percentComplete){	
+					$("#progress-bar").width(percentComplete + '%');
+					$("#progress-bar").html('<div id="progress-status">' + percentComplete +' %</div>')
+				},
+				success:function (){
+					$('#loader-icon').hide();
+					window.location.reload(true);
+				},
+				resetForm: true 
+			}); 
+			return false; 
+		}
+	});
+}); 
+
+</script>
+
+
+<?php }?>
+<?php
+
+// echo $this->headScript()->appendFile($this->basePath('/js/jquery.js'));
+echo $this->headscript()->appendFile($this->basepath("/js/jquery.form.js"));
+?>
+
+
+

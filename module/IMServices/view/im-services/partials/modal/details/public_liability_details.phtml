@@ -1,0 +1,210 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+$publicLiabilityEntity = $coverEntity->getPublicLiability();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+		
+		
+		<tr>
+		<th>Employee Details</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Number of Employees</th>
+								<th>Nature of Work</th>
+								<th>Date of birth</th>
+								
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($publicLiabilityEntity->getEmployeeDetails() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getNoOfEmployees() != NUll ? $this->escapehtml($risk->getNoOfEmployees()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getNatureOfWork() != NUll ? $this->escapehtml($risk->getNatureOfWork()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getInsuranceConnection() != NUll ? $this->escapehtml($risk->getInsuranceConnection()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+		</tr>
+
+			<tr>
+
+				<th>Estimated total annual wages on own premises</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getOwnPremisesTotalWages() != NUll ? $this->myCurrencyFormat($this->escapehtml($publicLiabilityEntity->getOwnPremisesTotalWages())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Estimated total annual wages on other premises</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getElsewhereTotalWages() != NUll ? $this->myCurrencyFormat($this->escapehtml($publicLiabilityEntity->getElsewhereTotalWages())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th> Estimated total annual payments to sub-contractors on own premises</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getOwnSubContractorsPayment() != NUll ? $this->myCurrencyFormat($this->escapehtml($publicLiabilityEntity->getOwnSubContractorsPayment())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Estimated total annual payments to sub-contractors on other premises</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getElseSubContractorsPayment() != NUll ? $this->myCurrencyFormat($this->escapehtml($publicLiabilityEntity->getElseSubContractorsPayment())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Is all the premises in good state of repair </th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsGoodState() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsGoodState())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Available lift cranes, hoist in good state </th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsGoodLifts() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsGoodLifts())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Is such lifts, cranes or hoists regularly inspected to meet statutory requirements </th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsCraneRegularlyinspected() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsCraneRegularlyinspected())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Inspected By</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getInspectionBy() != NUll ?$this->escapehtml($publicLiabilityEntity->getInspectionBy()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Has acids, gases, chemicals, explosives or radio-active materials</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsExplosiveMaterial() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsExplosiveMaterial())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($publicLiabilityEntity->getIsExplosiveMaterial()):?>
+			 <tr>
+
+				<th> Acids, gases, chemicals, explosives or radio-active materials</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getExplosiveAcids() != NUll ? $this->escapehtml($publicLiabilityEntity->getExplosiveAcids()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Limits of indemnity required</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIndemnityLimit() != NUll ? $this->myCurrencyFormat($this->escapehtml($publicLiabilityEntity->getIndemnityLimit())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Include cover for food poisoning </th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsFoodpoison() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsFoodpoison())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Include cover for fire and explosion </th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsFireNExplosion() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsFireNExplosion())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Cover for other special requirement</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsSpecial() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsSpecial())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  if($publicLiabilityEntity->getIsSpecial()):?>
+			<tr>
+
+				<th>Details of special requirements</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getSpecialDetails() != NUll ? $this->escapehtml($publicLiabilityEntity->getSpecialDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  endif;?>
+			
+			<tr>
+
+				<th>Was previously insured</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsPreviousInsure() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsPreviousInsure())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if($publicLiabilityEntity->getIsPreviousInsure()):?>
+			<tr>
+
+				<th>Was declined by insurer</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsDeclined() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsDeclined())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Insurer refused to renew</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsRefusedRenew() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsRefusedRenew())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Insurer required special requirement for renewal</th>
+				<td>
+				<?php  echo ($publicLiabilityEntity->getIsPecialReason() != NUll ? $this->trueFalseHelper($this->escapehtml($publicLiabilityEntity->getIsPecialReason())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  endif;?>
+			
+
+		</tbody>
+	</table>
+</div>
+

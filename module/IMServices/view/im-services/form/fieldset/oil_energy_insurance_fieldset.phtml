@@ -1,0 +1,184 @@
+<?php
+$oilEnergyInsuranceFieldset = $form->get("oilEnergyFieldset");
+?>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('nonOilRisk'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('nonOilRisk'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Please indicate what class of non oil insurance to be purchased."></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('nonOilRisk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('othersNonoilRisk'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('othersNonoilRisk'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide if insurance is not listed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('othersNonoilRisk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('oilRisk'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('oilRisk'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Please indicate what class of oil insurance to be purchased."></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('oilRisk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('otherOilRisk'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('otherOilRisk'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="provide if insurance is not listed above"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('otherOilRisk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('noOfEmployees'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('noOfEmployees'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Number Of Employees"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('noOfEmployees'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('isPreviouslyInsured'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('isPreviouslyInsured'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Identify if there was a previous insurance"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('isPreviouslyInsured'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('isPreviousClaims'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('isPreviousClaims'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Identify if there was previously had claims"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('isPreviousClaims'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_lossDetails">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('lossDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('lossDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="State loss history in the past 5 years"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('lossDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If it was previously declined"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_decline_reason">
+
+								 <?php echo $this->formLabel($oilEnergyInsuranceFieldset->get('declineReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($oilEnergyInsuranceFieldset->get('declineReason'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is Insured the sole owner of the vehicle?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($oilEnergyInsuranceFieldset->get('declineReason'));  // this defines the error?> 
+							</div>
+</div>
+<!-- declineReason -->
+
+<script>
+$("#nonOilRisk").chosen({width: "95%"});
+$("#oilRisk").chosen({width: "95%"});
+ $(document).ready(function(){
+
+	 $("#div_lossDetails").hide();
+	 $("#div_decline_reason").hide();
+
+	 $("#isPreviousDecline").change(function (){
+		 if($("#isPreviousDecline").is(":checked")){
+			 $("#div_decline_reason").show();
+			 }else{
+				 $("#div_decline_reason").hide();
+				 }
+	 
+		 })
+
+		 $("#isPreviousClaims").change(function (){
+		 if($("#isPreviousClaims").is(":checked")){
+			 $("#div_lossDetails").show();
+			 }else{
+				 $("#div_lossDetails").hide();
+				 }
+	 
+		 })
+		 
+ })
+</script>

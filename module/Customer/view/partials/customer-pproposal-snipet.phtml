@@ -1,0 +1,52 @@
+<?php
+$proposals = $this->customerProposal;
+$count = (count($proposals) < 10 ? count($proposals) : 10);
+?>
+
+<div class="col-md-4 col-sm-12   col-xs-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Customer Proposals</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                     
+                      
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                   <div class="x_content">
+                  <ul  class="list-unstyled top_profiles scroll-view">
+                  <?php
+                
+if ($proposals == NULL) {
+                    echo "No Offer Smitted
+                 ";
+                } else {
+                    ?>
+                  <ul class="list-unstyled top_profiles scroll-view">
+                          <?php for($i=0; $i < $count ; $i++){?>
+                          <li class="media event"><a
+					class="pull-left border-blue profile_thumb"> <i
+						class="fa fa-edit blue"></i>
+				</a>
+					<div class="media-body">
+						<a class="title" href="<?php echo $this->url("proposal/default", array("action"=>'pre-process', 'id'=>$proposals[$i]->getProposalCode()))?>"> <?php echo strtoupper($proposals[$i]->getProposalCode())?></a>
+						<p>
+							 <?php echo ($proposals[$i]->getProposalTitle() == NULL ? "" : $proposals[$i]->getProposalTitle())?>
+						</p>
+						<p>
+							<small><?php  echo $this->dateFormat($proposals[$i]->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></small>
+						</p>
+					</div></li>
+                          <?php }?>
+                          
+                       
+                       
+                  
+                  </ul>
+                   <?php }?>
+                  </div>
+                </div>
+              </div>

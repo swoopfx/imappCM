@@ -1,0 +1,610 @@
+<?php
+$directorLiabilityFieldset = $form->get("directorLiabilityFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('businessActivity'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('businessActivity'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Activity carried out by company, describe the company business"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('businessActivity'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isNameChanged'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isNameChanged'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="identifies if the name of the parent company has changed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isNameChanged'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isAcquisition'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isAcquisition'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has any acquisition or merger taken place"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isAcquisition'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_acquisition_details">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('acquisitionDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('acquisitionDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the acquisition"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('acquisitionDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isCeasedTrading'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isCeasedTrading'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Any subsidiary company been sold or ceased trading"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isCeasedTrading'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isPendingMerger'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isPendingMerger'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="identifies if there is a pending merger"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isPendingMerger'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isAcquisitionProposal'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isAcquisitionProposal'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is the Company aware of any proposal relating to its
+Acquisition by another company?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isAcquisitionProposal'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isTendingNewOffering'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isTendingNewOffering'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is the Company intending a new public offering of
+securities within the next year in the RSA, UK, United
+States of America, ECOWAS countries or elsewhere?."></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isTendingNewOffering'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_company_offering">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('companyOffering'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('companyOffering'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the offering"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('companyOffering'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('companyStatus'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('companyStatus'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Company status"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('companyStatus'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_otherCompanyStatus">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('otherCompanyStatus'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('otherCompanyStatus'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If not listed above"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('otherCompanyStatus'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_foreignStockDetails">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('foriegnSeDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('foriegnSeDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the foreign stock exchange"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('foriegnSeDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('totalShareHolders'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('totalShareHolders'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total number of shareholders"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('totalShareHolders'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('totalSharesIssued'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('totalSharesIssued'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total number of shares issued"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('totalSharesIssued'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('totalDirectorShares'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('totalDirectorShares'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total number of shares held by Directors and Officers (both direct and beneficial)"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('totalDirectorShares'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isDirectorLiability'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isDirectorLiability'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does the Company or any Director or Officer have Directors
+& Officers Liability Insurance in force"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isDirectorLiability'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_is_directorLiability">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('insurer'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('insurer'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Insurer"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('insurer'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('indemnityLimit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('indemnityLimit'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Indemnity Limit"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('indemnityLimit'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('expiryDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('expiryDate'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Expiry Date"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('expiryDate'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isDecline'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isDecline'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isDecline'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_declineDetails">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('declineDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('declineDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('declineDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isDirectorResign'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isDirectorResign'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isDirectorResign'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_resignDetails" class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('resignDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('resignDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('resignDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isClaims'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isClaims'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isClaims'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group" id="div_claimDetails">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('claimsDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('claimsDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('claimsDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isEmploymentPracticeCover'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isEmploymentPracticeCover'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present state of the company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isEmploymentPracticeCover'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_isEmploymentPracticeCover">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isHumanResourceDept'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isHumanResourceDept'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isHumanResourceDept'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('deptNumberOfEmployee'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('deptNumberOfEmployee'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('deptNumberOfEmployee'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('hrFunctionHandled'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('hrFunctionHandled'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('hrFunctionHandled'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('sackedEmployees'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('sackedEmployees'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('sackedEmployees'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('sackedOfficers'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('sackedOfficers'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('sackedOfficers'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('isHRManual'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('isHRManual'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('isHRManual'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($directorLiabilityFieldset->get('procedureList'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($directorLiabilityFieldset->get('procedureList'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Present state of the company"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($directorLiabilityFieldset->get('procedureList'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$("#div_acquisition_details").hide();
+	$("#div_company_offering").hide();
+	$("#div_otherCompanyStatus").hide();
+	$("#div_foreignStockDetails").hide();
+	$("#div_is_directorLiability").hide();
+	$("#div_declineDetails").hide();
+	$("#div_resignDetails").hide();
+	$("#div_claimDetails").hide();
+	$("#div_isEmploymentPracticeCover").hide();
+
+	$("#isEmploymentPracticeCover").change(function(){
+		if($("#isEmploymentPracticeCover").is(":checked")){
+			$("#div_isEmploymentPracticeCover").show();
+			}else{
+				$("#div_isEmploymentPracticeCover").hide();
+				}
+		})
+
+		$("#isClaims").change(function(){
+		if($("#isClaims").is(":checked")){
+			$("#div_claimDetails").show();
+			}else{
+				$("#div_claimDetails").hide();
+				}
+		})
+
+		$("#isDirectorLiability").change(function(){
+		if($("#isDirectorLiability").is(":checked")){
+			$("#div_is_directorLiability").show();
+			}else{
+				$("#div_is_directorLiability").hide();
+				}
+		})
+
+		$("#isDirectorResign").change(function(){
+		if($("#isDirectorResign").is(":checked")){
+			$("#div_resignDetails").show();
+			}else{
+				$("#div_resignDetails").hide();
+				}
+		})
+
+		$("#isDecline").change(function(){
+		if($("#isDecline").is(":checked")){
+			$("#div_declineDetails").show();
+			}else{
+				$("#div_declineDetails").hide();
+				}
+		})
+
+		$("#companyStatus").change(function(){
+		if($("#companyStatus").val() == "600"){
+			$("#div_foreignStockDetails").show();
+			$("#div_otherCompanyStatus").hide();
+			}else if($("#companyStatus").val() == "1000"){
+		$("#div_otherCompanyStatus").show();
+		$("#div_foreignStockDetails").hide();
+				}else{
+				$("#div_foreignStockDetails").hide();
+				$("#div_otherCompanyStatus").hide();
+				}
+		})
+
+		$("#isTendingNewOffering").change(function(){
+		if($("#isTendingNewOffering").is(":checked")){
+			$("#div_company_offering").show();
+			}else{
+				$("#div_company_offering").hide();
+				}
+		})
+
+		
+
+		$("#isAcquisition").change(function(){
+			if($("#isAcquisition").is(":checked")){
+				$("#div_acquisition_details").show();
+				}else{
+					$("#div_acquisition_details").hide();
+					}
+			})
+		
+})
+</script>

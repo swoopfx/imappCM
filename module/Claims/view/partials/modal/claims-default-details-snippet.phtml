@@ -1,0 +1,12 @@
+<?php
+
+
+?>
+
+<tr>
+
+				<th>Claims Estimate</th>
+				<td>
+<?php  echo ($details->getEstimatedClaims() != NUll ? $this->myCurrencyFormat($details->getEstimatedClaims()) : "Not Specified") ?>
+				</td>
+			</tr>

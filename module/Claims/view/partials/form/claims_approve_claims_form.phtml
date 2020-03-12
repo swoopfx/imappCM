@@ -1,0 +1,82 @@
+<div class="alert alert-success">
+	<ul class="fa-ul">
+		<li><a class="alert-link">Only use this information whenever the
+				insurer has approved the submitted claims, enter the value and any
+				adjoining information </a>.</li>
+	</ul>
+</div>
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$approveClaimFieldset = $form->get("claimsApprovedFieldset");
+?>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($approveClaimFieldset->get('amountApproved'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358;</strong>
+	</div>
+	<div class="col-md-5 col-sm-5 col-xs-11">
+									<?php echo $this->formElement($approveClaimFieldset->get('amountApproved'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The amount approved by the insurer"></i>
+								
+								<?php echo $this->formElementErrors($approveClaimFieldset->get('amountApproved'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($approveClaimFieldset->get('dateApproved'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($approveClaimFieldset->get('dateApproved'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date approved by insurer"></i>
+								<?php echo $this->formElementErrors($approveClaimFieldset->get('dateApproved'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($approveClaimFieldset->get('information'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($approveClaimFieldset->get('information'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Extra information associated with the claims"></i>
+								<?php echo $this->formElementErrors($approveClaimFieldset->get('information'))?> 
+								
+							</div>
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag()?>
+
+<?php
+echo $this->headScript()->appendFile($this->basePath('js/jquery.mask.min.js'));
+?>
+<div style="text-align: center;">
+								<i id="approvedajax" class="fa  fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=30></i>
+							</div>
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+            
+            $('#amountApproved').mask('0000000000');
+           // $('.url').mask('http://#.#', {'translation': {
+              //  A: {pattern: /[A-Za-z0-9]/},
+              //  S: {pattern: /[A-Za-z]/}
+               
+             // }
+        //});
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

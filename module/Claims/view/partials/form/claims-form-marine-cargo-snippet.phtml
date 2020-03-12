@@ -1,0 +1,115 @@
+<?php
+
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsMarineCargoFieldset = $form->get("claimsMarineCargoFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsMarineCargoFieldset->get("claims")
+));
+
+?>
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('damageExtent'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('damageExtent'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The extent of the damage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('damageExtent'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('isThirdPartyInvoved'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('isThirdPartyInvoved'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is third party involved in in the loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('isThirdPartyInvoved'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('thirdPartyinvolved'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('thirdPartyinvolved'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is third party involved in in the loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('thirdPartyinvolved'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('causeOfDamage'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('causeOfDamage'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Possible or evident cause of damage/loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('causeOfDamage'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('dateOfLoss'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('dateOfLoss'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date loss Occured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('dateOfLoss'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('clearingAgent'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('clearingAgent'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details of the clearing agent if availaible"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('clearingAgent'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMarineCargoFieldset->get('lossDescription'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMarineCargoFieldset->get('lossDescription'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Decription about loss/damage"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsMarineCargoFieldset->get('lossDescription'))?> 
+								</div>
+</div>
+
+
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>

@@ -1,0 +1,779 @@
+<?php
+$lifePolicyFieldset = $form->get("lifePolicyFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('sex'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('sex'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Genital sex of the proposed"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('sex'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('maritalStatus'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('maritalStatus'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Marital status of the proposed "></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('maritalStatus'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_is_married_female">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('husbandsName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('husbandsName'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Husbands name"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('husbandsName'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isPregnant'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isPregnant'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="If the proposed is pregnant"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isPregnant'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('businessNature'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('businessNature'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the business of the proposed"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('businessNature'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isSelfEmployed'))?>
+								
+								<div class="col-md-6 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isSelfEmployed'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If the proposed is self employed"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isSelfEmployed'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('selfEmployedBusiness'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('selfEmployedBusiness'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Identify if proposed insured is self employed"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('selfEmployedBusiness'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isJobChangedIn3years'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isJobChangedIn3years'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If the job of the proposed has been changed in the past 3 years"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isJobChangedIn3years'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isAccidentOrDisease'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isAccidentOrDisease'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Are there any notable accidents and / diseases particularly associated with your occupation?"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isAccidentOrDisease'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isTravel'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isTravel'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does proposed insured travel frequently"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isTravel'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_isTravel">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('localTravelDuration'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($lifePolicyFieldset->get('localTravelDuration'));?>
+									
+								</div>
+		<div class="col-md-2 col-sm-2 col-xs-2">
+			<strong>Monthly</strong>
+		</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top"
+			title="The frequency of local travels made per month"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('localTravelDuration'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('abroadTravelDuration'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($lifePolicyFieldset->get('abroadTravelDuration'));?>
+									
+								</div>
+		<div class="col-md-2 col-sm-2 col-xs-2">
+			<strong>Yearly</strong>
+		</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top"
+			title="The average frequency of international travel done per year"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('abroadTravelDuration'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<hr>
+<h2>Cover Required</h2>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('sumAssured'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358; </strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($lifePolicyFieldset->get('sumAssured'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Sum Assured"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('sumAssured'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isPlanOfAssurance'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isPlanOfAssurance'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Siginify a plan of assurance"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isPlanOfAssurance'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isAssuranceTerm'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isAssuranceTerm'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Siginify a term of assurance"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isAssuranceTerm'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isWithProfit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isWithProfit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Signify with profit"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isWithProfit'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('commencementDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('commencementDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date of commencement"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('commencementDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<hr>
+<h2>Additional (Riders)</h2>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isPremiumWaiver'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isPremiumWaiver'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Signify if a waiver is on the premium"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isPremiumWaiver'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isAccidentalDeathBenefit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isAccidentalDeathBenefit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Siginfy if there should be accidental Death Benefit"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isAccidentalDeathBenefit'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isPersonalAccidentBenefit'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isPersonalAccidentBenefit'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Signify if there is personal accident benefit "></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isPersonalAccidentBenefit'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('provisionalPremium'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">
+		<strong>&#8358; </strong>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($lifePolicyFieldset->get('provisionalPremium'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Siginfy provisional premium benefit value "></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('provisionalPremium'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('paymentFrequency'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('paymentFrequency'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Siginfy provisional premium benefit value"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('paymentFrequency'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<hr>
+<h2>Medical Details</h2>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isPhysician'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isPhysician'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has personal physician"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isPhysician'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_personalPhysician">
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('physicianName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('physicianName'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Name of the physician"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('physicianName'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('consultationReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('consultationReason'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Reasons for seeing the physician"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('consultationReason'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('lastTreatmentDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('lastTreatmentDate'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Date of last treatment"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('lastTreatmentDate'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isMedicalCondition'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isMedicalCondition'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does proposed insured travel frequently"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isMedicalCondition'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_isMedical">
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isRespiratoryDisease'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isRespiratoryDisease'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isRespiratoryDisease'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isEpilepsy'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isEpilepsy'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isEpilepsy'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isClinicalDepresion'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isClinicalDepresion'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isClinicalDepresion'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_isMisCarriage">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isMisCarriage'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isMisCarriage'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isMisCarriage'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isInsanity'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isInsanity'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isInsanity'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isDiabetes'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isDiabetes'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isDiabetes'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isHeartDisease'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isHeartDisease'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isHeartDisease'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isHiv'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isHiv'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isHiv'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isParalysis'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isParalysis'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isParalysis'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isHbp'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isHbp'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isHbp'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('isOtherCondition'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('isOtherCondition'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('isOtherCondition'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_otherConditionDetails">
+
+								 <?php echo $this->formLabel($lifePolicyFieldset->get('conditionDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($lifePolicyFieldset->get('conditionDetails'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Does proposed insured travel frequently"></i>
+
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($lifePolicyFieldset->get('conditionDetails'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+
+<script>
+
+$(document).ready(function(){
+	$("#div_isMedical").hide();
+	$("#div_personalPhysician").hide();
+	$("#div_isTravel").hide();
+	$("#div_isMisCarriage").hide();
+	$("#div_otherConditionDetails").hide();
+	$("#div_is_married_female").hide();
+
+	$("#isMedicalCondition").change(function(){
+		if($("#isMedicalCondition").is(":checked")){
+			$("#div_isMedical").show();
+			}else{
+				$("#div_isMedical").hide();
+				}
+		})
+		
+		$("#isPhysician").change(function(){
+		if($("#isPhysician").is(":checked")){
+			$("#div_personalPhysician").show();
+			}else{
+				$("#div_personalPhysician").hide();
+				}
+		})
+
+
+		$("#isOtherCondition").change(function(){
+		if($("#isOtherCondition").is(":checked")){
+			$("#div_otherConditionDetails").show();
+			}else{
+				$("#div_otherConditionDetails").hide();
+				}
+		})
+
+		$("#maritalStatus, #sex").change(function(){
+		if($("#maritalStatus").val() == "20" && $("#sex").val() == "2"){
+			$("#div_is_married_female").show();
+			}else{
+				$("#div_is_married_female").hide();
+				}
+		})
+
+
+		$("#isTravel").change(function(){
+		if($("#isTravel").is(":checked")){
+			$("#div_isTravel").show();
+			}else{
+				$("#div_isTravel").hide();
+				}
+		})
+		
+		
+})
+</script>

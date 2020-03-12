@@ -1,0 +1,152 @@
+<?php
+echo $this->headtitle("My Offer");
+$offerForm->prepare();
+?>
+<div id="message"></div>
+<div class="row">
+<?php //  echo $this->partial("general-error-ponters")?>
+	<div class="col-lg-8 col-md-8">
+	<?php  if($offerEntity->getIdPreferdInsurer() == NULL){?>
+	
+	
+<div class="panel panel-default">
+			<div class="media v-middle">
+				<div class="media-left">
+					<div class="bg-red-400 text-white">
+						<div class="panel-body">
+							<i class="fa fa-exclamation-triangle fa-fw fa-2x"></i>
+						</div>
+					</div>
+				</div>
+				<div class="media-body">
+					This offer Information is incomplete, <span class="text-body-2"><?php  echo date("M ,Y")?></span>
+				</div>
+				<div class="media-right media-padding">
+					<a data-href="<?php  echo $this->url("cus_offer/default", array("action"=>"completeoffer"))?>" id="btn1" data-json='{"type":"standard"}' 
+						class=" ajax_element  btn btn-white paper-shadow relative" data-z="0.5"
+						data-hover-z="1" data-animated> Complete Offer Information </a>
+				</div>
+			</div>
+		</div>
+          <?php }else{?>
+		<?php  echo $this->partial("customer-offer-details-snippet");?>
+<?php }?>
+		<div class="page-section">
+			<div class="row">
+				<div class="col-md-7">
+					<h2 class="text-headline margin-none">My Property</h2>
+					<p class="text-subhead text-light">These are properties that would
+						be insured</p>
+					<ul class="list-group relative paper-shadow" data-hover-z="0.5"
+						data-animated>
+						<?php  echo $this->customer_offer_object_list($offerEntity->getObject())?>
+						
+					</ul>
+				</div>
+				<div class="col-md-5">
+
+					<div class="pull-right">
+						<a  data-href="<?php  echo $this->url("cus_offer/default", array("action"=>"send-message"))?>" id="btn3" data-json='{"type":"standard"}' class=" ajax_element  btn btn-white btn-circle paper-shadow relative"
+							 data-z="0.5"
+							data-hover-z="1" data-animated><i class="md md-add"></i></a>
+					</div>
+
+					<h2 class="text-headline margin-none">Messages</h2>
+					<p class="text-subhead text-light">Communicate with the Broker</p>
+					<div class="slick-basic slick-slider" data-items="1"
+						data-items-lg="1" data-items-md="1" data-items-sm="1"
+						data-items-xs="1">
+						
+						
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="col-lg-4 col-md-4">
+
+		<div class="page-section">
+
+			<?php  echo $this->partial("customer-offer-now-premium-details");?>
+			<hr>
+            <?php //echo $this->customer_offer_recommneded_insurer_condition($offerEntity)?>
+			<!-- .panel -->
+			<?php  echo $this->partial("customer-board-featured-packages")?>
+			<!-- // END .panel -->
+
+		</div>
+		<!-- // END .page-section -->
+
+	</div>
+</div>
+
+<!-- Begin Register Object -->
+<div class="modal grow modal-backdrop-white fade"
+	<?php
+
+$objectForm->setAttributes(array(
+    "action" => $this->url("cus_offer/default", array(
+        "action" => "object-form-process"
+    ))
+))?>
+	id="modal-register-object">
+	<div class="modal-dialog modal-lg">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">REGISTER A NEW PROPERTY</h4>
+				</div>
+				<div class="modal-body">
+                  <?php echo  $this->form()->openTag($objectForm);?>
+                  <?php echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                         
+                   
+                     <?php  echo $this->formrow($objectForm->get("csrf"))?>
+                          <?php echo $this->formrow($objectForm->get("submit"))?>
+                   <?php  echo $this->form()->closeTag(); ?>
+                  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--  End Register Object -->
+
+
+
+<!-- Message Form  -->
+<div class="modal grow modal-backdrop-white fade" id="modal-message">
+	<div class="modal-dialog modal-sm">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">SEND MESSAGE TO BROKER</h4>
+				</div>
+				<div class="modal-body">
+                  <?php echo $this->partial("customer-message-offer-form", array("messageForm"=>$messageForm, "offerEntity"=>$offerEntity))?>
+                  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Message Form -->
+
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>
+

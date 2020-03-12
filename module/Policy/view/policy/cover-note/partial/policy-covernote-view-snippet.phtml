@@ -1,0 +1,65 @@
+<?php use Policy\Service\CoverNoteService;
+ $thisdate = new DateTime();
+if($coverNote->getCoverStatus()->getId() == CoverNoteService::COVERNOTE_STATUS_EXPIRED){
+    echo "<span class='btn btn-danger' style='width: 60%'>EXPIRED COVERNOTE</span>";
+}else{
+?>
+
+<p align="center" style="color: red">
+			This covernote expires in <strong><?php  echo $thisdate->diff($coverNote->getDueDate())->format("%a")." days" ?></strong>
+		</p>
+		<?php }?>
+		<div
+			style="border: 10px double #4CA2DD; padding: 50px 30px 40px 30px; margin: 0px auto 10px auto; text-align: center; font-family: Helvetica, Arial, sans-serif; width: 800px;">
+
+
+			<p
+				style="font-family: 'Times New Roman', serif; font-size: 33px; font-weight: bold; color: #0096dc !important; margin: 30px;"><?php  echo $this->coverNoteName($coverNote)?></p>
+			<p style="font-size: 18px;">
+				 <?php  echo strtoupper($coverNote->getCoverUid())?><br>
+
+			</p>
+			<p style="font-size: 13px;">
+				
+				 Effective from: <?php  echo $this->dateFormat($coverNote->getDateCreated(), IntlDateFormatter::LONG, IntlDateFormatter::SHORT, "en_us")?>
+			</p>
+
+			<div class="col-md-6 col-sm-16 col-xs-12">
+				<p
+					style="font-family: 'Times New Roman', serif; font-size: 19px; font-weight: bold; color: #0096dc !important; margin: 35px;">Generated
+					By :</p>
+				<p style="font-size: 16px;"><?php echo $brokerEntity->getCompanyName()?></p>
+
+			</div>
+			<div class="col-md-6 col-sm-16 col-xs-12">
+				<p
+					style="font-family: 'Times New Roman', serif; font-size: 19px; font-weight: bold; color: #0096dc !important; margin: 35px;">Generated
+					For</p>
+				<p style="font-size: 16px;">
+					<i class="fa fa-user"></i> <?php  echo $coverNote->getCustomer()->getName()?><br>
+					<i class="fa fa-university"></i> <?php  echo $coverNote->getCustomer()->getFullAddress()?><br>
+					<i class="fa fa-phone"></i> <?php  echo $coverNote->getCustomer()->getUser()->getUsername();?></p>
+
+			</div>
+			<p align="center" style="font-size: 16px;">
+			<?php  echo $coverNote->getInsurer()->getInsuranceName() ?>
+				
+			</p>
+
+
+			<hr
+				style="margin: 20px 20px 20px 20px; border: double; color: #4CA2DD; height: 4px;">
+
+			<h3> <?php  echo $this->covernote_service_type_helper($coverNote);?></h3>
+			<h4>
+				::<?php  echo $this->covernote_specific_service_type_helper($coverNote)?>
+			</h4>
+
+
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<p><?php echo $this->covernote_soure_helper($coverNote)?></p>
+
+
+			</div>
+			<br> <br>
+		</div>

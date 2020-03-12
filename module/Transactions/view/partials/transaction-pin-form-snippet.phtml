@@ -1,0 +1,41 @@
+<?php
+$cardPinForm->prepare();
+echo $this->form()->openTag($cardPinForm);
+
+?>
+
+<div class="modal__container">
+
+	<div class="modal__content">
+		<h2>Your payment details</h2>
+		<br>
+
+		<ul class="form-list">
+			<li class="form-list__row"><label>Enter Card Pin</label>
+             <?php echo $this->formElement($cardPinForm->get('cc_pin'))?>
+            </li>
+		</ul>
+		 
+            <br>
+            <hr>
+           
+            <div class="row">
+            
+               <?php echo $this->formsubmit($cardPinForm->get('submit'))?>
+               </div>
+            
+         
+        
+      </div>
+	<!-- END: .modal__content -->
+</div>
+<!-- END: .modal__container -->
+<?php
+
+echo $this->form()->closeTag();
+echo $this->headScript()->appendFile($this->basePath('js/jquery.mask.min.js'));
+echo $this->headscript()->appendFile($this->basepath("/credit-card/js/index.js"));
+
+echo $this->headLink()->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css');
+echo $this->headLink()->appendStylesheet('/credit-card/css/style.css');
+?>

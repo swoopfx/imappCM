@@ -1,0 +1,62 @@
+
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+	<?php
+$manualPremiumForm->prepare();
+echo $this->form()->openTag($manualPremiumForm);
+$manualPremiumFieldset = $manualPremiumForm->get("manualPremiumFieldset");
+?>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($manualPremiumFieldset->get('premium'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPremiumFieldset->get('premium'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($manualPremiumFieldset->get('premium'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($manualPremiumFieldset->get('currency'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPremiumFieldset->get('currency'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($manualPremiumFieldset->get('currency'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+								<?php echo  $this->formLabel($manualPremiumFieldset->get('description'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPremiumFieldset->get('description'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($manualPremiumFieldset->get('description'))?> 
+								</div>
+</div>
+<hr>
+ <?php echo $this->formrow($manualPremiumForm->get("submit"))?>
+
+<?php 
+
+echo $this->form()->closeTag()
+
+?>
+
+<script>
+
+// $(function() {
+//     $('#manual_premium').maskMoney();
+//   }) 
+
+</script>

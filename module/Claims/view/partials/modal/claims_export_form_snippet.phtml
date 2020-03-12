@@ -1,0 +1,28 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsFieldset = $form->get("exportEmailFieldset");
+?>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsFieldset->get('exportEmail'))?> 
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Email information would be sent to"></i>
+								<div class="col-md-8 col-sm-8 col-xs-12">
+									<?php echo $this->formElement($claimsFieldset->get('exportEmail'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($claimsFieldset->get('exportEmail'))?> 
+								
+							</div>
+							
+							<hr>
+<?php 
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+<div style="text-align: center;">
+	<i id="exporttomailajax" class="fa  fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>
+

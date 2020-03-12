@@ -1,0 +1,43 @@
+<?php
+echo $this->headtitle("Generate Policy");
+$policyGenerationFporm->prepare()?>
+<div class="row">
+<?php  echo $this->partial("general-error-ponters")?>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>
+					Generate Policy Form <i class="fa fa-info-circle"
+						data-toggle="tooltip" data-placement="top"
+						title="Generate policy  details  and upload all documents "></i>
+				</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+<?php  echo $this->form()->openTag($policyGenerationFporm)?>
+
+				<?php  echo $this->partial("policy-generate-policy-form-snippet", array("policyFieldset"=>$policyGenerationFporm->get("policyFieldset")))?>
+				 <?php echo $this->formrow($policyGenerationFporm->get("submit"))?>
+<?php  echo $this->form()->closeTag()?>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Policy Certificate</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+
+				<!--  Place Cetificate here  -->
+
+			</div>
+		</div>
+	</div>
+</div>

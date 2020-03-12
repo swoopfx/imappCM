@@ -1,0 +1,17 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->partial("policy_status_fieldset_snippet", array('fieldset'=>$form->get("policyStatusFieldset")));
+?>
+<hr>
+<?php 
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+
+?>
+
+<div style="text-align: center;">
+							<i id="changepolicystatusmodal" class="fa  fa-lg"
+								style="display: none;"><img alt=""
+								src="<?php  echo $this->basepath("/processin.gif")?>" height=20></i>
+						</div>

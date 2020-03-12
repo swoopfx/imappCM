@@ -1,0 +1,162 @@
+<?php
+$this->headtitle('My Proposals');
+$proposals = $this->myProposals;
+$flashMessenger = $this->flashMessenger()
+    ->setMessageOpenFormat('<div%s>
+     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+         &times;
+     </button>
+     <ul><li>')
+    ->setMessageSeparatorString('</li><li>')
+    ->setMessageCloseString('</li></ul></div>');
+// $selectCustomerForm = $this->selectCustomerForm;
+// $selectCustomerForm->prepare();
+?>
+<div class="row" ng-app="CustomerModule">
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>My Proposals</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<?php echo $flashMessenger->render('error',   array('alert', 'alert-dismissable', 'alert-danger')); ?>
+ <?php echo $flashMessenger->render('info',    array('alert', 'alert-dismissable', 'alert-info')); ?>
+ <?php echo $flashMessenger->render('default', array('alert', 'alert-dismissable', 'alert-warning')); ?>
+ <?php echo $flashMessenger->render('success', array('alert', 'alert-dismissable', 'alert-success')); ?>
+			<div class="x_content">
+				<?php  echo $this->partial('proposal-my-proposal-snipet', array('proposal'=>$proposals))?>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3 col-xs-12">
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner1.jpg")?>">
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-buttons/js/dataTables.buttons.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-buttons/js/buttons.flash.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-buttons/js/buttons.html5.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-buttons/js/buttons.print.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-keytable/js/dataTables.keyTable.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-responsive/js/dataTables.responsive.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/datatables.net-scroller/js/datatables.scroller.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/jszip/dist/jszip.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/pdfmake/build/pdfmake.min.js') ?>"></script>
+<script
+	src="<?php echo $this->basePath('vendors/pdfmake/build/vfs_fonts.js') ?>"></script>
+<script>
+      $(document).ready(function() {
+        var handleDataTableButtons = function() {
+          if ($("#datatable-buttons").length) {
+            $("#datatable-buttons").DataTable({
+              dom: "Bfrtip",
+              buttons: [
+                {
+                  extend: "copy",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "csv",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "excel",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "pdfHtml5",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "print",
+                  className: "btn-sm"
+                },
+              ],
+              responsive: true
+            });
+          }
+        };
+
+        TableManageButtons = function() {
+          "use strict";
+          return {
+            init: function() {
+              handleDataTableButtons();
+            }
+          };
+        }();
+
+        $('#datatable').DataTable({
+        		ordering: false
+        });
+
+        $('#datatable-keytable').DataTable({
+          keys: true
+        });
+
+        $('#datatable-responsive').DataTable();
+
+        $('#datatable-scroller').DataTable({
+          ajax: "js/datatables/json/scroller-demo.json",
+          deferRender: true,
+          scrollY: 380,
+          scrollCollapse: true,
+          scroller: true
+        });
+
+        $('#datatable-fixed-header').DataTable({
+          fixedHeader: true
+        });
+
+        var $datatable = $('#datatable-checkbox');
+
+        $datatable.dataTable({
+          'order': [[ 1, 'desc' ]],
+          'columnDefs': [
+            { orderable: false, targets: [0] }
+          ]
+        });
+        $datatable.on('draw.dt', function() {
+          $('input').iCheck({
+            checkboxClass: 'icheckbox_flat-green'
+          });
+        });
+
+        TableManageButtons.init();
+      });
+    </script>

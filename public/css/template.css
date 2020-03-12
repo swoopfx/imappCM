@@ -1,0 +1,136 @@
+body {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+	background: #fff;
+}
+
+.navbar {
+	margin-bottom: 0px;
+	border-bottom: 1px solid #ffffff;
+	background: #ffffff;
+}
+
+.navbar-brand {
+	color: #000000 !important;
+	font-size: small;
+}
+
+.footer {
+	background: #cccccc;
+}
+
+.footer p {
+	text-align: center;
+	margin-top: 10px;
+	color: #000000;
+}
+
+.jumbotron {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+	margin-bottom: 0 !important; //
+	background-image: url(../images/bg2.jpg);
+	height: 600px;
+	padding: 30px 20px !important;
+	width: 100%;
+}
+
+.container form {
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+}
+
+.form-div {
+	float: right;
+	padding: 20px;
+	background: rgba(238, 238, 238, 0.9);
+	width: 320px;
+}
+
+.form-div-2 {
+	float: right;
+	padding: 20px;
+	background: rgba(238, 238, 238, 0.9);
+	margin-bottom: 10px;
+	width: 60%;
+}
+
+.form-div-2 h1 {
+	font-size: 20px;
+	margin-bottom: 0px;
+}
+
+.form-div h1 {
+	text-align: center;
+	font-size: 65px;
+}
+
+.inpt-form {
+	margin-bottom: 10px;
+}
+
+.remember {
+	margin: 10px 10px !important;
+}
+
+.register {
+	margin: 20px 10px;
+}
+
+.register a {
+	display: block;
+	color: #000000;
+	margin-bottom: 10px;
+}
+
+.reg {
+	
+}
+
+.ad {
+	border-right: 2px solid #ccc;
+}
+
+.ad .p-ad {
+	padding: 15px;
+	background: #ccc none repeat scroll 0 0;
+	margin-bottom: 15px;
+}
+
+.p-ad h3 {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 0 0 5px !important;
+	font-weight: bold;
+}
+
+.p-ad .desc {
+	font-size: 10px;
+	margin: 0 0 5px !important;
+}
+
+.p-ad .rating {
+	font-size: 10px;
+}
+
+ul {
+	padding-left: 0 !important;
+	margin: 0 0 5px !important;
+}
+
+.rating  li {
+	display: inline;
+	list-style-type: none;
+}
+
+@media screen and (max-width: 1020px) {
+	.ad {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.form-div-2 {
+		float: left;
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}

@@ -1,0 +1,99 @@
+<?php
+$object = $this->allObject;
+$offerObjectForm = $this->offerObjectForm;
+
+?>
+
+<!-- Begin Object Selection  -->
+<div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-xm">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">X</span>
+				</button>
+				<h2 class="modal-title" id="myModalLabel2">Search for pre-registered
+					Objects</h2>
+			</div>
+			<div class="modal-body">
+
+				<div class="table-responsive">
+					<table class="table table-striped jambo_table bulk_action">
+                                     <?php
+                                    
+                                   // if (count($allObject) == 0) {
+                                   //     echo "<span>No Object registerted</span>";
+                                 //   } else {
+                                        ?>
+                                         <?php
+                                            
+                                            $checkBox = $offerObjectForm->get('objects')
+                                               
+                                            
+                                            ?>
+                                        <p><?php echo $this->formElement($checkBox)?></p><br>
+                                        <thead>
+							<tr class="headings">
+								<th><input type="checkbox" id="check-all" class="flat"></th>
+								<th class="column-title">Object</th>
+								<th class="column-title">Value</th>
+								<th class="column-title">Status</th>
+								<th class="column-title">Date Created</th>
+								<!--                             <th class="column-title">Status </th> -->
+								<!--                             <th class="column-title">Amount </th> -->
+
+
+							</tr>
+						</thead>
+						<tbody>
+                                       
+                                            <?php //foreach ($allObject as $object){?>
+                                          <?php
+                                         
+                                         
+                                          
+                                          
+                                          ?>
+                                            <tr>
+                                           
+								<th scope="row"></th>
+								<td><?php // echo  $object->getObjectName(); ?></td>
+								<td> <?php // echo // $this->myCurrencyFormat((float)$object->getObjectValue(), 'NGN', 'en_NG', true)?></td>
+								<td><?php // echo  //($object->getObjectStatus() != NULL?$this->statusHelper($object->getObjectStatus()->getObjectStatus()): 'No Status' )  ?></td>
+								<td><?php
+                                            
+                                           // echo $this->dateFormat($object->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></td>
+
+
+							</tr>
+                                            <?php   //}
+//} ?>   
+                                        </tbody>
+					</table>
+				</div>
+
+
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">More</button>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Send Selected</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!--  End Object Selection  -->
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('js/fastclick/lib/fastclick.js'))?>
+

@@ -1,0 +1,215 @@
+<?php
+echo $this->headTitle("Acquire Package");
+$objectForm = $this->objectForm;
+$objectCategory = $this->objectCategory;
+$objects = $this->objects;
+
+?>
+
+<div class="row">
+<?php // echo $this->partial("general-error-ponters")?>
+	<div class="col-lg-8 col-md-8">
+
+		<div class="page-section">
+
+			<div class="panel panel-default paper-shadow" data-z="0.5"
+				data-hover-z="1" data-animated>
+				<div class="panel-body">
+
+					<div
+						class="expandable expandable-indicator-white expandable-trigger">
+						<div class="expandable-content">
+
+							<h3><?php echo $package->getPackages()->getPackageName() ?></h3>
+							<div
+								class="width-350 width-300-md width-100pc-xs paragraph-inline">
+								<div class="embed-responsive embed-responsive-16by9">
+									<img alt=""
+										src="<?php //echo $this->customer_packages_image_helper($package)?>">
+								</div>
+							</div>
+          <?php echo $package->getPackages()->getDescription()?>
+          
+                  <br />
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+<div class="page-section">
+			<div class="row">
+				<div class="col-md-7">
+					<h2 class="text-headline margin-none">My Property</h2>
+					<p class="text-subhead text-light">These are properties that would
+						be insured</p>
+					<ul class="list-group relative paper-shadow" data-hover-z="0.5"
+						data-animated>
+						<?php  echo $this->customer_package_object_list_helper($package->getObject())?>
+						
+					</ul>
+				</div>
+				<div class="col-md-5">
+
+					<div class="pull-right">
+						<a class="btn btn-white btn-circle paper-shadow relative"
+							 href="#modal-message" data-toggle="modal"
+						data-z="0.5"
+						data-hover-z="1" data-animated ><i class="md md-add"></i></a>
+					</div>
+
+					<h2 class="text-headline margin-none">Messages</h2>
+					<p class="text-subhead text-light">Communicate with the Broker</p>
+					<div class="slick-basic slick-slider" data-items="1"
+						data-items-lg="1" data-items-md="1" data-items-sm="1"
+						data-items-xs="1">
+						
+						<?php  echo $this->customerMessagesPackagesHelper($package)?>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+
+
+	<div class="col-lg-4 col-md-4 col-sm-4">
+		<!-- .panel -->
+		<div class="panel panel-default paper-shadow" data-z="0.5"
+			data-hover-z="1" data-animated>
+			<div class="panel-heading">
+				<h4 class="text-headline"><?php  echo $package->getPackages()->getPackageName() ?></h4>
+			</div>
+			<div class="panel-body">
+				<p class="text-caption">
+					<!--                 <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp; -->
+					<i class="fa fa-calendar fa-fw"></i> <strong style="color: red"><?php echo $this->dateFormat($package->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></strong>
+					<br /> <i class="fa fa-user fa-fw"></i> Service : <strong
+						style="color: red"><?php  echo ($package->getPackages()->getServiceType() != NULL ? $package->getPackages()->getServiceType()->getInsuranceService() : "")?></strong>
+					<br /> <i class="fa fa-mortar-board fa-fw"></i> Premium Value: <strong
+						style="color: red"> <?php  echo $this->customer_package_premium_viewhelper($package)?></strong>
+					<br /> <i class="fa fa-check fa-fw"></i> Insurer: <img alt=""
+						src="<?php echo $this->insurerLogohelper($package->getPackages()->getPackagedInsurer()->getId())?>"
+						class="img-circle width-80">
+				</p>
+			</div>
+			<hr class="margin-none" />
+			<div class="panel-body text-center">
+
+				<p>
+					<a class="btn btn-success btn-lg paper-shadow relative" data-z="1"
+						data-hover-z="2" data-animated <?php echo ($package->getInvoice() == NULL ? "disable='disable'" : "")?>
+						href="<?php  echo $this->url("cus_pack/default", array("action"=>"pre-payment"))?>">MAKE PAYMENT</a>
+				</p>
+				<!--               <p class="text-body-2">or <a href="#">buy course for $1</a></p> -->
+			</div>
+<!-- 			<ul class="list-group"> -->
+<!-- 				<li class="list-group-item"><a href="#" class="text-light"><i -->
+<!-- 						class="fa fa-facebook fa-fw"></i> Share on facebook</a></li> -->
+<!-- 				<li class="list-group-item"><a href="#" class="text-light"><i -->
+<!-- 						class="fa fa-twitter fa-fw"></i> Tweet this course</a></li> -->
+<!-- 			</ul> -->
+		</div>
+		<!-- // END .panel -->
+      <?php  echo $this->partial("customer-board-featured-packages")?></div>
+</div>
+
+<!--  Begin Modal Forms -->
+<div class="modal grow modal-backdrop-white fade"
+<?php  $objectForm->setAttributes(array(
+		    "action"=>$this->url("cus_pack/default", array("action"=>"object-form-process"))
+		))?>
+	id="modal-register-object">
+	<div class="modal-dialog modal-lg">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">REGISTER A NEW PROPERTY</h4>
+				</div>
+				<div class="modal-body">
+                  <?php echo  $this->form()->openTag($objectForm);?>
+                  <?php echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                         
+                   
+                     <?php  echo $this->formrow($objectForm->get("csrf"))?>
+                          <?php echo $this->formrow($objectForm->get("submit"))?>
+                   <?php  echo $this->form()->closeTag(); ?>
+                  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--  End Modal Forms -->
+
+<!-- Begin Select Object -->
+<div class="modal grow modal-backdrop-white fade"
+	id="modal-include-object">
+	<div class="modal-dialog modal-lg">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">SELECT PRE-REGISTERED PROPERTY</h4>
+				</div>
+				<?php $selectObjectForm->setAttributes(array(
+    "action"=>$this->url("cus_pack/default", array("action"=>"select-object-process")),
+));
+				$selectObjectForm->get('selectObjectfield')->get('object')->setAttributes(array(
+				    "class"=>"selectpicker"
+				))
+				?>
+				<div class="modal-body">
+                  <?php  echo $this->partial("object-select-object-form-snipet",  array("selectObjectForm"=>$selectObjectForm)) ?>
+                  <p></p>
+                  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--  End Select Object -->
+
+<!-- Message Form  -->
+<div class="modal grow modal-backdrop-white fade"
+	id="modal-message">
+	<div class="modal-dialog modal-sm">
+		<div class="v-cell">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">SEND MESSAGE TO BROKER</h4>
+				</div>
+				<div class="modal-body">
+                  <?php echo $this->partial("customer-message-offer-form", array("messageForm"=>$messageForm))?>
+                  </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Message Form -->
+
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>

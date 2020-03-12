@@ -1,0 +1,51 @@
+<?php
+echo $this->headTitle("Packages");
+$packages = $this->packages;
+?>
+<?php
+
+
+?>
+
+<div class="row">
+
+        <div class="col-md-9">
+<?php  echo $this->partial("customer_packages_list_snipet");?>
+          
+
+          
+          <br/>
+
+        </div>
+        <div class="col-md-3">
+
+         <?php  echo $this->partial("customer_packages_packges_category_menu")?>
+
+<!--           <div class="panel panel-default" data-toggle="panel-collapse" data-open="false"> -->
+<!--             <div class="panel-heading panel-collapse-trigger"> -->
+<!--               <h4 class="panel-title">Price</h4> -->
+<!--             </div> -->
+<!--             <div class="panel-body"> -->
+<!--               <div class="form-group input-group margin-none"> -->
+<!--                 <div class="row margin-none"> -->
+<!--                   <div class="col-xs-6 padding-none"> -->
+<!--                     <input class="form-control" type="text" placeholder="Min .." /> -->
+<!--                   </div> -->
+<!--                   <div class="col-xs-6 padding-none"> -->
+<!--                     <input class="form-control" type="text" placeholder="Max .." /> -->
+<!--                   </div> -->
+<!--                 </div> -->
+<!--                 <div class="input-group-btn"> -->
+<!--                   <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button> -->
+<!--                 </div> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+
+          
+          <?php echo $this->partial("customer-board-featured-packages");?>
+
+        </div>
+
+      </div>
+

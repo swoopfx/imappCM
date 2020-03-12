@@ -1,0 +1,48 @@
+<div>
+<?php
+// $form->prepare();
+
+// echo $this->form()->openTag($form);
+// $motorNonStandarFieldset = $form->get("motorNonStandardFieldset");
+?>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($motorNonStandarFieldset->get('accessoryName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($motorNonStandarFieldset->get('accessoryName'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Name of the accessory"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorNonStandarFieldset->get('accessoryName'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($motorNonStandarFieldset->get('accessoryValue'))?>
+								<div class="col-md-1 col-sm-1 col-xs-2"><strong>&#8358;</strong></div>
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($motorNonStandarFieldset->get('accessoryValue'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Name of the accessory"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($motorNonStandarFieldset->get('accessoryValue'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+</div>
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-danger btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default"
+// 		    ,  array("action"=>"motornonstandard")
+		    )?>">remove</a>
+</div>
+<hr>

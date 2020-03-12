@@ -1,0 +1,250 @@
+<?php
+echo $this->headtitle("Customer Acquired Packages")?>
+<div class="row">
+
+	<div class="col-md-9 col-xs-12">
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+			<?php  echo $this->partial("general-error-ponters")?>
+				<div class="x_title">
+
+					<h2><?php  echo "PACKAGE NAME:  ". $customerPackageEntity->getPackages()->getPackageName()?></h2>
+
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-9 col-xs-12">
+			<?php  echo $this->partial("packages-acquire-package-info-view")?>
+			</div>
+				<div align="center" class="col-md-3 col-xs-12">
+					<a href="" data-toggle='modal' data-target='.bs-messages-modal-lg'
+						style='width: 100%;' class="btn btn-app"> <!-- 						<span class="badge bg-orange">12</span>  -->
+						<i class="fa fa-send"></i> Messages
+					</a> <br>
+					<!-- 					<a id="btn2" data-ajax-loader="myLoader" data-href="messaging" -->
+					<!-- 						class="btn btn-app ajax_element"> <span class="badge bg-orange">12</span> -->
+					<!-- 						<i class="fa fa-envelope"></i> View Messages -->
+					<!-- 					</a> -->
+					<br> <a style='width: 100%;' class="btn btn-app"> <i
+						class="fa fa-euro"></i> Micro Payment Scheme
+					</a>
+				</div>
+			</div>
+		</div>
+		<?php  echo $this->partial("proposal-customer-snipet", array("customer"=>$customerPackageEntity->getCustomer()));?>
+		<div class="col-md-4 col-xs-12">
+
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>Selected Properties</h2>
+
+					<div class="clearfix"></div>
+				</div>
+				
+			<?php  echo $this->partial("acuired-package-process-selected-objects", array("customerPackageEntity"=>$customerPackageEntity))?>
+		</div>
+		</div>
+
+		<div class="col-md-4 col-xs-12">
+
+			<div class="x_panel">
+				<div class="x_title">
+
+					<h2>Documents</h2>
+
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-md-3 col-xs-12 top_tiles">
+
+
+		<div class="col-md-12 col-xs-12 tile">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Estimated Premium</strong>
+
+					<div class="clearfix"></div>
+
+					<div class="x_content">
+						<br>
+						<?php echo $this->acquiredPackagesEstimatedPremium($customerPackageEntity)?>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Generated Invoice</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+						<br>
+						<?php  echo $this->acquiredPackageInvoiceProcess($customerPackageEntity)?>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>PACKAGE PAYMENT STATUS</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+			<?php   echo $this->acquiredPackageStatusInvoice($customerPackageEntity);?>
+			</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-12 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+
+					<strong>Cover Note</strong>
+
+					<div class="clearfix"></div>
+					<div class="x_content">
+			<?php
+/**
+ * If status of the offer is not Paid
+ * The coverNote Buutonn is disabled
+ * And a notification is shown that it will only be active when offer is paid for
+ */
+?>
+    <?php  echo $this->acquiredPackagesProcessCoverNote($customerPackageEntity)?>
+			</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</div>
+
+<div class="modal fade bs-object-modal-lg" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		<?php
+
+$objectForm->setAttributes(array(
+    "action" => $this->url("acquired-packages/default", array(
+        "action" => "object-form-process"
+    ))
+))?>
+<?php echo  $this->form()->openTag($objectForm);?>
+                        <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">New Object Form</h4>
+			</div>
+			<div class="modal-body">
+                        
+                          <?php echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                            
+                        </div>
+			<div class="modal-footer">
+				
+                          <?php  echo $this->formrow($objectForm->get("csrf"))?>
+                          <?php echo $this->formrow($objectForm->get("submit"))?>
+                        </div>
+                        <?php  echo $this->form()->closeTag(); ?>
+
+                      </div>
+	</div>
+</div>
+
+
+<!--  Begin Select Property -->
+<div class="modal fade select-property-modal-lg" tabindex="-1"
+	<?php
+
+$selectObjectForm->setAttributes(array(
+    "action" => $this->url("acquired-packages/default", array(
+        "action" => "select-object-process"
+    ))
+))?>
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Select A property</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+                          <?php  echo $this->partial("object-select-object-form-snipet",  array("selectObjectForm"=>$selectObjectForm)) ?>
+                         </div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
+
+<!--  End SelectPropery -->
+
+<?php  if($customerPackageEntity->getInvoice() != NULL){?>
+<div class="modal fade bs-invoice-modal-lg" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class=" fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Payment Invoice</h4>
+			</div>
+			<div class="modal-body">
+                       <?php  echo $this->partial("transaction-invoice-preview-snipet", array("invoice"=>$customerPackageEntity->getInvoice(), "broker"=>$this->broker))?>
+                          <?php // echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                            
+                        </div>
+
+
+
+		</div>
+	</div>
+</div>
+<?php }?>
+
+<!-- Begin Message  -->
+<div class="modal fade bs-messages-modal-lg" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		<?php echo $this->partial("packages-acquired-package-message-snipet", array("messageForm"=>$messageForm, "customerPackageEntity"=>$customerPackageEntity))?>
+
+                      </div>
+	</div>
+</div>
+<!-- End Messaging  -->
+<script type="text/javascript">
+
+
+$("#chosen-select").chosen({width: "95%"});
+    
+    
+    </script>

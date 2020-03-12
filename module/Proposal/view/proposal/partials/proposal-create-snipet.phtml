@@ -1,0 +1,131 @@
+<?php
+$proposalField = $this->proposalFieldset ;
+
+?>
+<div class="form-group">
+							
+								 <?php echo $this->formLabel($proposalField->get('proposalStatus'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($proposalField->get('proposalStatus'));?>
+									
+								</div>
+								<?php echo  $this->formElementErrors($proposalField->get('proposalStatus'));  // this defines the error?> 
+							</div>
+
+<div class="form-group">
+							
+								<?php // echo $this->formLabel($proposalField->get('name'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formRow($proposalField->get('customer'));?>
+									
+								</div>
+
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($proposalField->get('proposalTitle'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($proposalField->get('proposalTitle'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($proposalField->get('proposalTitle'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($proposalField->get('insuranceCategory'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($proposalField->get('insuranceCategory'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($proposalField->get('insuranceCategory'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($proposalField->get('insurer'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($proposalField->get('insurer'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($proposalField->get('insurer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($proposalField->get('proposalDesc'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($proposalField->get('proposalDesc'));?>
+									
+								</div>
+								<?php echo  $this->formElementErrors($proposalField->get('proposalDesc'));  // this defines the error?> 
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($proposalField->get('serviceType'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($proposalField->get('serviceType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($proposalField->get('serviceType'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+								<?php echo  $this->formLabel($proposalField->get('coverDuration'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalField->get('coverDuration'))?> 
+								</div>
+								<?php echo $this->formElementErrors($proposalField->get('coverDuration'))?> 
+								
+							</div>
+<div data-ng-show="isTemredValue">
+<div class="form-group">
+								<?php echo  $this->formLabel($proposalField->get('termedDuration'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($proposalField->get('termedDuration'))?> 
+								</div>
+								<?php echo $this->formElementErrors($proposalField->get('termedDuration'))?> 
+								
+							</div>
+							</div>
+<!-- <div class="form-group"> -->
+							
+								<?php //echo $this->formLabel($proposalField->get('specificService'))?> 
+								
+<!-- 								<div class="col-md-9 col-sm-9 col-xs-12"> -->
+								<?php //echo $this->formElement($proposalField->get('specificService'));?>
+									
+<!-- 								</div> -->
+								<?php // echo $this->formElementErrors($proposalField->get('specificService'));  // this defines the error?> 
+<!-- 							</div> -->
+							
+							<div class="form-group">
+							
+								<?php //echo $this->formLabel($proposalField->get('object'))?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php //echo $this->formElement($proposalField->get('object'));?>
+									
+								</div>
+								<?php //echo $this->formElementErrors($proposalField->get('object'));  // this defines the error?> 
+							</div>
+
+
+
+<div class="ln_solid"></div>

@@ -1,0 +1,88 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+if ($claimsEntity->getIsSettled() == FALSE && $claimsEntity->getClaimsSettled() != NULL) :
+?>
+<div class="row">
+
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+
+			<div class="x_content">
+				<div class="dashboard-widget-content"
+					style="background-color: #eefef5;">
+
+					<div style="text-align: center;">
+						<i id="buttonAction" class="fa  fa-lg" style="display: none;"><img
+							alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+							height=30></i>
+					</div>
+
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Claims Approval Details</h2>
+
+								<div class="clearfix"></div>
+							</div>
+
+
+							<table class="table table-striped">
+
+								<tbody>
+									
+									<tr>
+
+										<td><strong>Rejection Reason</strong></td>
+										<td><?php  echo ($claimsEntity->getDeclineResason() != NULL ? $this->escapehtml($claimsEntity->getDeclineResason()) : GeneralService::GENERAL_EMPTY_FIELD)?></td>
+
+									</tr>
+									
+									<tr>
+
+										<td><strong>Rejection Reason</strong></td>
+										<td><a id="btn2" class="ajax_element btn btn-default btn-xs"  data-href="<?php  echo $this->url("claims/default", array("action"=>"rejectfulldetails"))?>">View Rejection Details</a></td>
+
+									</tr>
+									
+									<tr>
+
+										<td><strong>Rejection Doc.</strong> <i
+											class="fa fa-info-circle" data-toggle="tooltip"
+											data-placement="top"
+											title="Documents relating to the approval of the claims are uploaded and availaible here "></i>
+											<hr></td>
+										<td><div class="row">
+												<div class="col-sm-12">
+                          <?php
+    $dropZoneForm->setAttributes(array(
+        // "id" => "simpleForm",
+        // "class" => "ajax_element",
+        "action" => $this->url("claims/default", array(
+            "action" => "uploadsettledclaimdoc"
+        ))
+    ));
+    echo $this->partial("general-dropzone-upload-form-snippet", array(
+        "dropZoneUploadForm" => $dropZoneForm
+    ))?>
+                        </div>
+											</div></td>
+
+									</tr>
+								</tbody>
+							</table>
+
+
+						</div>
+					</div>
+
+					<div class="">
+						<label> . </label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<?php  endif;?>

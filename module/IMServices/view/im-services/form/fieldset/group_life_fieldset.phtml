@@ -1,0 +1,140 @@
+<?php
+$groupLifeFieldset = $form->get("groupLifeFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('memberClass'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('memberClass'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Class of the employee"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('memberClass'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('otherClass'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('otherClass'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other class if not specified above"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('otherClass'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('retirementAge'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('retirementAge'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Official retirement age"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('retirementAge'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('startDate'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('startDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed date of start of cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('startDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('isPreviousinsurer'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('isPreviousinsurer'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Signify if proposed ewas previously insured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('isPreviousinsurer'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('isPreviousClaims'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('isPreviousClaims'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Signify if proposed had previous claims"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('isPreviousClaims'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group" id="div_claims_details">
+
+								 <?php echo $this->formLabel($groupLifeFieldset->get('previousClaims'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($groupLifeFieldset->get('previousClaims'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the previous claims"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupLifeFieldset->get('previousClaims'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"grouplifestaffdetails")) ?>">
+		Add Staff Details</a>
+</div>
+
+<div class="form-group" id="div_group_life_staff_fieldset"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;">
+</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#div_claims_details").hide();
+
+	$("#isPreviousClaims").change(function(){
+		if($("#isPreviousClaims").is(":checked")){
+			$("#div_claims_details").hide();
+		}else{
+			$("#div_claims_details").show();
+			}
+		})
+})
+</script>

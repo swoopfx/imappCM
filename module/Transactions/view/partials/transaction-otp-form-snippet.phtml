@@ -1,0 +1,56 @@
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<?php
+$otpForm->prepare();
+echo $this->form()->openTag($otpForm);
+
+?>
+
+
+		
+
+		
+             <?php echo $this->formElement($otpForm->get('otp'))?>
+           
+		
+		<div class="row">
+
+
+			<div class="col-md-6 col-xs-12">
+				<a id="btn3"  class="ajax_element btn btn-default btn-block" data-href="<?php  echo $resendotp?>" 
+							data-json='{"type":"standard"}'>Resend OTP</a>
+
+			</div>
+
+			<div class="col-md-6 col-xs-12">
+
+
+				<a href="" class="btn btn-primary btn-block">Cancel Payment</a>
+
+			</div>
+		</div>
+           
+            
+            
+            <br>
+            <hr>
+           
+            <div class="row">
+            
+               <?php echo $this->formsubmit($otpForm->get('submit'))?>
+               </div>
+            
+         <div style="text-align:center;"><p><?php echo $message ?></p></div>
+        
+    
+<?php
+
+echo $this->form()->closeTag();
+echo $this->headScript()->appendFile($this->basePath('js/jquery.mask.min.js'));
+echo $this->headscript()->appendFile($this->basepath("/credit-card/js/index.js"));
+
+echo $this->headLink()->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css');
+echo $this->headLink()->appendStylesheet('/credit-card/css/style.css');
+?>

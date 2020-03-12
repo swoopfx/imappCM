@@ -1,0 +1,76 @@
+<?php
+$invoice = $this->invoice;
+$paymentForm = $this->payForm;
+$paymentForm->prepare();
+$payForm = $paymentForm;
+
+foreach ($invoice as $invoic) {
+    $invoices = $invoic->getInvoice();
+    ?>
+
+<tr>
+	<td><?= ($invoices->getInvoiceUid() == NULL ? "No ID": strtoupper($invoices->getInvoiceUid()))?></td>
+	<td><a><?php  echo $this->myCurrencyFormat($invoices->getAmount(), $invoices->getCurrency()->getCode())?></a>
+
+
+	</td>
+
+	<td class="project_progress">
+                            Invoice generated on <?php  echo $this->dateFormat($invoices->getGeneratedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US")?> being for <?php echo $invoices->getInvoiceCategory()->getCategory()?> 
+                          </td>
+	<td>
+                           <?php echo $this->statusHelper($invoices->getStatus()->getStatus())?>
+                          </td>
+	<td>
+                          <?php if( $invoices->getIsOpen() == True){?>
+                                                  <a  data-toggle="modal" data-target=".bs-example-modal-lg<?php echo $invoices->getId()?>" href="#"
+		class="btn btn-primary btn-xs"><i class="fa fa-paper-plane"></i> Make
+			Payment </a> <a href="#" class="btn btn-info btn-xs"><i
+			class="fa fa-trash-o"></i> Close Invoice</a>
+			
+			<!-- Modal Begin -->
+			<div class="modal fade bs-example-modal-lg<?php echo $invoices->getId()?>" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span>
+                          </button>
+                          <h4 class="modal-title" id="myModalLabel2">IMAPP Payment Gateway</h4>
+                        </div>
+                        <?php 
+                        $payForm->prepare();
+                        echo $this->form()->openTag($payForm) ?>
+                        <div class="modal-body">
+                        
+                        <h4> Payment For <?php echo $invoices->getInvoiceCategory()->getCategory()?></h4>
+                        
+                      <br>
+                      
+                        <?php echo $this->partial('transaction_user_card_payment_snipet', array('payForm'=>$payForm->get('card_payment'), 'invoice'=>$invoices))?>
+                       <br>
+                        <p> <strong>Amount  Due :</strong> <?php  echo $this->myCurrencyFormat($invoices->getAmount(), $invoices->getCurrency()->getCode())?></p>
+                        </div>
+                        <div class="modal-footer">
+                        <br>
+                          <?php echo $this->formrow($payForm->get('submit'))?>
+                          
+                        </div>
+                        <?php echo $this->form()->closeTag()?>
+
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!--  Modal End -->
+                    <?php } else{?>
+                    <a href="#" class="btn btn-danger btn-xs" disabled><i
+			class="fa fa-remove"></i> Closed Invoice </a> 
+                    <?php }?>
+<!--                             <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a> -->
+		<!--                             <a href="#" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a> -->
+		<!--                             <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a> -->
+	</td>
+</tr>
+
+<?php }?>

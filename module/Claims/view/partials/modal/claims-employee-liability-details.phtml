@@ -1,0 +1,146 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+?>
+
+<tr>
+
+	<th>Injured Person Name</th>
+	<td>
+<?php  echo ($details->getInjuredName() != NUll ? $this->escapehtml( $details->getInjuredName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Injured Person Age</th>
+	<td>
+<?php  echo ($details->getInjuredAge() != NUll ? $this->escapehtml( $details->getInjuredAge())." years" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Injured Person Address</th>
+	<td>
+<?php  echo ($details->getInjuredAddress() != NUll ? $this->escapehtml( $details->getInjuredAddress()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+<tr>
+
+	<th>Injured Person is Direct Employ</th>
+	<td>
+<?php  echo ($details->getIsInjuredDirectEmploy() != NUll ? $this->trueFalseHelper( $details->getIsInjuredDirectEmploy()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Period in Service</th>
+	<td>
+<?php  echo ($details->getInjuredPeriodInService() != NUll ? $this->escapehtml( $details->getInjuredPeriodInService())." weeks" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Date of Accident</th>
+	<td>
+<?php  echo ($details->getAccidentDate() != NUll ? $this->dateformat( $details->getAccidentDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Desciption of accident</th>
+	<td>
+<?php  echo ($details->getAccidentDesc() != NUll ? $this->escapehtml( $details->getAccidentDesc()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Whom accident was reported to</th>
+	<td>
+<?php  echo ($details->getWhomAccidentWasReported() != NUll ? $this->escapehtml( $details->getWhomAccidentWasReported()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Witness of accident</th>
+	<td>
+<?php  echo ($details->getAccidentWitness() != NUll ? $this->escapehtml( $details->getAccidentWitness()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Accident is caused by machinery</th>
+	<td>
+<?php  echo ($details->getIsConnectedToMachinery() != NUll ? $this->trueFalseHelper( $details->getIsConnectedToMachinery()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<?php  if($details->getIsConnectedToMachinery() == TRUE):?>
+
+<tr>
+
+	<th>Machinery involved in accident</th>
+	<td>
+<?php  echo ($details->getMachineryName() != NUll ? $this->escapehtml( $details->getMachineryName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+<?php  endif;?>
+<tr>
+
+	<th>Injury resulted to death</th>
+	<td>
+<?php  echo ($details->getIsInjuryResultToDeath() != NUll ? $this->trueFalseHelper( $details->getIsInjuryResultToDeath()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Injury is caused by intoxication</th>
+	<td>
+<?php  echo ($details->getIsInjuredIntoxicated() != NUll ? $this->trueFalseHelper( $details->getIsInjuredIntoxicated()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+<?php  if($details->getIsInjuredIntoxicated() == TRUE):?>
+<tr>
+
+	<th>Details about intoxication</th>
+	<td>
+<?php  echo ($details->getIntoxicationDetails() != NUll ? $this->escapehtml( $details->getIntoxicationDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+<?php  endif; ?>
+
+<tr>
+
+	<th>Accident is due to neglegence</th>
+	<td>
+<?php  echo ($details->getIsDueToNegelence() != NUll ? $this->trueFalseHelper( $details->getIsDueToNegelence()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<?php if($details->getIsDueToNegelence()):?>
+<tr>
+
+	<th>Details about Neglegence</th>
+	<td>
+<?php  echo ($details->getNeglegenceDetails() != NUll ? $this->escapehtml( $details->getNeglegenceDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+<?php endif;?>
+
+<tr>
+
+	<th>Period injured would be disabled</th>
+	<td>
+<?php  echo ($details->getDisablementPeriod() != NUll ? $this->escapehtml( $details->getDisablementPeriod())." weeks" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>

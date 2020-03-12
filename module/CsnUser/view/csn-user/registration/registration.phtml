@@ -1,0 +1,160 @@
+<?php
+echo $this->headtitle('Registration');
+/**
+ * CsnUser - Coolcsn Zend Framework 2 User Module
+ *
+ * @link https://github.com/coolcsn/CsnUser for the canonical source repository
+ * @copyright Copyright (c) 2005-2013 LightSoft 2005 Ltd. Bulgaria
+ * @license https://github.com/coolcsn/CsnUser/blob/master/LICENSE BSDLicense
+ * @author Stoyan Cheresharov <stoyan@coolcsn.com>
+ * @author Svetoslav Chonkov <svetoslav.chonkov@gmail.com>
+ * @author Nikola Vasilev <niko7vasilev@gmail.com>
+ * @author Stoyan Revov <st.revov@gmail.com>
+ * @author Martin Briglia <martin@mgscreativa.com>
+ */
+
+// echo $this->partial('csn-user/layout/nav-menu', array('navMenu' => $this->navMenu, 'user' => $this->identity()));
+$form = $this->form;
+
+/**
+ * Set form fields classes and placeholders here
+ */
+
+$form->setAttributes(array(
+    'class' => 'form'
+));
+
+$form->get('username')->setAttributes(array(
+    'class' => 'form-control inpt-form phone',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Phone Number E.g 09012121212')
+));
+
+$form->get('email')->setAttributes(array(
+    'class' => 'form-control',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Your Email')
+));
+
+$form->get('password')->setAttributes(array(
+    
+    'class' => 'form-control',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Password')
+));
+
+$form->get('passwordVerify')->setAttributes(array(
+    'class' => 'form-control',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Confirm Password')
+));
+
+$form->get('question')->setAttributes(array(
+    'class' => 'form-control'
+));
+
+$form->get('answer')->setAttributes(array(
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Type Your Answer')
+));
+
+$form->get('submit')->setAttributes(array(
+    'class' => 'btn  btn-success',
+    'value' => $this->translate('Sign Up'),
+    'style'=>"width: 80%"
+));
+
+$form->get('login')->setAttributes(array(
+    'class' => 'btn btn btn-warning',
+    'label' => $this->translate('Sign In')
+));
+
+
+
+$form->prepare();
+
+?>
+<?php  echo $this->partial("general-error-ponters")?>
+<div class="animate form login_form">
+	<section class="login_content">
+		<img src="<?php  echo $this->basepath("/images/cm.png")?>" width=150 />
+          <?php echo $this->form()->openTag($form); ?>
+              <h1>Create Account</h1>
+              <div class="alert alert-info alert-dismissible fade in" role="alert">
+                   
+                   Registered Insurance Brokers Only
+                  </div>
+		<div class="radio">
+         <?php //echo $this->formRadio($form->get('role'))?>
+         <div style="font-size: 9px; color: red;">
+              <?php
+            //echo $this->formElementErrors($form->get('role'));
+            ?>
+              </div>
+		</div>
+         <?php echo $this->partial('csnuser-register-snipet', array('form'=>$form));?>
+		
+		<div>
+                <?php echo  $this->formSubmit($form->get('submit'))?>
+              </div>
+
+		<div class="clearfix"></div>
+
+		<div class="separator">
+			<p class="change_link">
+				Already a member ? <a href="<?php  echo $this->url('user-index')?>"
+					class="to_register"> Log in </a>
+			</p>
+
+			<div class="clearfix"></div>
+			<br />
+
+			<div>
+				<!--                   <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1> -->
+				<!--                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p> -->
+			</div>
+		</div>
+              <?php
+            
+            if ($this->messages) {
+                echo '<div style="font-size: 14px; color: red;">' . $this->messages . '</div>';
+                echo '<div style="font-size: 14px; color: red;">' . $this->error . '</div>';
+            }
+            ;
+            ?>
+             <?php
+            echo $this->formRow($form->get('csrf'));
+            echo $this->form()->closeTag();
+            ?> 
+          </section>
+</div>
+
+<?php
+
+echo $this->headScript()->appendFile($this->basePath('js/jquery.mask.min.js'))?>
+
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+            
+            $('.phone').mask('00000000000');
+           // $('.url').mask('http://#.#', {'translation': {
+              //  A: {pattern: /[A-Za-z0-9]/},
+              //  S: {pattern: /[A-Za-z]/}
+               
+             // }
+        //});
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>
+

@@ -1,0 +1,16 @@
+<?php
+echo $this->headtitle("Login to activate");
+$activateLoginForm->prepare();
+?>
+<?php  echo $this->partial("general-error-ponters")?>
+<h4>Enter Login Details</h4>
+<?php  echo $this->form()->openTag($activateLoginForm)?>
+<div class="row">
+	<div class="col-md-6">
+		<?php echo $this->formlabel($activateLoginForm->get("details"))?> <?php  echo $this->formelement($activateLoginForm->get("details"))?>
+	</div>
+	<div class="col-md-6">
+	<?php  echo $this->formrow($activateLoginForm->get("submit"))?>
+	</div>
+</div>
+<?php  echo $this->form()->closeTag()?>

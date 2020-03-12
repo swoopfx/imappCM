@@ -1,0 +1,30 @@
+<?php
+echo $this->headTitle("Lay Claims");
+// var_dump($claimsForm);
+?>
+
+<div class="row">
+	<div class="col-md-9">
+	<a id="btn2" class="btn btn-default ajax_element btn btn-app"
+					data-json='{"type":"standard"}' data-href="<?php  echo $this->url("cus_claims/default", array("action"=>"policydetails"))?>"
+					style='width: 100%;'> <!-- 		 <span class="badge bg-orange">12</span>  -->
+					
+					POLICY DETAILS
+				</a>
+	
+	<hr>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+              <?php // echo $this->partial("claims-form-form-snippet", array("claimsForm"=>$claimsForm, "claimsEntity"=>$claimsEntity))?>
+             <?php  echo $this->claimsFormConditionHelper($claimsEntity, $claimsForm)?>
+            </div>
+		</div>
+	</div>
+	<div class="col-md-3">
+	<?php  //echo $this->partial("customer_claims_upload_accident_images_snippet", array("dropZoneForm"=>$dropZoneForm));?>
+	<?php echo $this->partial("customer_claims_menu")?>
+          <?php  echo $this->partial("customer-policy-menu")?>
+      <?php  echo $this->partial("customer-board-featured-packages")?>
+	</div>
+</div>

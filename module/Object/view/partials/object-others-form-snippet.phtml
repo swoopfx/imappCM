@@ -1,0 +1,126 @@
+<?php
+?>
+<hr>
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectothers->get('name'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('name'))?>
+							
+						</div>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectothers->get('name'));?>
+					</div>
+</div>
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectothers->get('objectType'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('objectType'))?>
+							
+						</div>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectothers->get('objectType'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectothers->get('description'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('description'))?>
+							
+						</div>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectothers->get('description'));?>
+					</div>
+</div>
+<hr>
+<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-1">
+<p>Do provide us with any extra information related to this property</p>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+
+	<table>
+		<thead>
+			<tr>
+				<th>Definition</th>
+
+				<th>Value</th>
+
+
+				<th></th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td cellpadding=10>
+					<div class="col-md-11 col-sm-11 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('infoDefnition1'))?>
+						</div>
+
+				</td>
+				<td cellpadding=10>
+						<?php echo $this->formElement($objectothers->get('information1'))?>
+							
+						</td>
+			</tr>
+			<tr>
+				<td cellpadding=10>
+					<div class="col-md-11 col-sm-11 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('infoDefnition2'))?>
+						</div>
+
+				</td>
+				<td cellpadding=10>
+						<?php echo $this->formElement($objectothers->get('information2'))?>
+							
+						</td>
+			</tr>
+			<tr>
+				<td cellpadding=10>
+					<div class="col-md-11 col-sm-11 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('infoDefnition3'))?>
+						</div>
+
+				</td>
+				<td cellpadding=10>
+						<?php echo $this->formElement($objectothers->get('information3'))?>
+							
+						</td>
+			</tr>
+			<tr>
+				<td cellpadding=10>
+					<div class="col-md-11 col-sm-11 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('infoDefnition4'))?>
+						</div>
+
+				</td>
+				<td cellpadding=10>
+						<?php echo $this->formElement($objectothers->get('information4'))?>
+							
+						</td>
+			</tr>
+			<tr>
+				<td cellpadding=10>
+					<div class="col-md-11 col-sm-11 col-xs-12">
+						<?php echo $this->formElement($objectothers->get('infoDefnition5'))?>
+						</div>
+
+				</td>
+				<td cellpadding=10>
+						<?php echo $this->formElement($objectothers->get('information5'))?>
+							
+						</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	<br>
+</div>

@@ -1,0 +1,73 @@
+<?php
+$aviationEntity = $coverEntity->getAviationInsurance();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Aircraft Usage</th>
+				<td>
+				<?php  echo ($aviationEntity->getAircraftUsage() != NUll ? $aviationEntity->getAircraftUsage() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Operational Geography</th>
+				<td>
+				<?php  echo ($aviationEntity->getGeographicalOperation() != NUll ? $aviationEntity->getGeographicalOperation()->getRegion() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Airline Background</th>
+				<td>
+				<?php  echo ($aviationEntity->getAirlineBackground() != NUll ? $aviationEntity->getAirlineBackground() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Aircraft Make N Type</th>
+				<td>
+				<?php  echo ($aviationEntity->getAircraftMakeNType() != NUll ? $aviationEntity->getAircraftMakeNType() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Aircraft Serial Number</th>
+				<td>
+				<?php  echo ($aviationEntity->getSerialNumber() != NUll ? $aviationEntity->getSerialNumber() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Has Regular Maintenance</th>
+				<td>
+				<?php  echo ($aviationEntity->getIsRegularMaintenance() != NUll ? $this->trueFalseHelper($aviationEntity->getIsRegularMaintenance()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Regularly Kept in Hanger</th>
+				<td>
+				<?php  echo ($aviationEntity->getIsRegularlyHangered() != NUll ? $this->trueFalseHelper($aviationEntity->getIsRegularlyHangered()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			
+
+
+		</tbody>
+	</table>
+
+</div>

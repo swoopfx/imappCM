@@ -1,0 +1,43 @@
+<?php
+$user = $this->user;
+$userInfo = $this->userInfo;
+?>
+
+
+<div class="profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h2 class="brief"><i>Users Profile</i></h2>
+                            <div class="ln_solid"></div>
+                            <div class="left col-xs-12">
+                              <h2><?php //echo $userInfo->getLastname()." ".$userInfo->getFirstname();?></h2><br>
+                              <p><strong>Email: </strong> <?php echo $user->getEmail();?> </p><br>
+                              <?php $contact = $userInfo->getContact();?>
+                              <ul class="list-unstyled">
+                                
+                                <li><i class="fa fa-phone"></i><strong> Phone #: </strong><?php echo ($contact->getPhoneNumber1() != NULL ? $contact->getPhoneNumber1() : '');?> </li><br>
+                                <li><i class="fa fa-building"></i><strong> Address: </strong><?php echo  $contact->getAddress1();?></li><br>
+                                <li><i class="fa fa-building"></i><strong> City: </strong><?php echo $contact->getStateProvince()->getZoneName();?></li><br>
+                                <li><i class="fa fa-building"></i><strong> Country: </strong><?php echo ($contact->getCountry()!= NULL ? $contact->getCountry()->getCountryName() : '<i>No Country Selected</i>');?></li><br>
+                                
+                              </ul>
+                              <br>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                              
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                              
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+<!--                               <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user"> -->
+<!--                                 </i> <i class="fa fa-comments-o"></i> </button> -->
+<!--                               <button type="button" class="btn btn-primary btn-xs"> -->
+<!--                                 <i class="fa fa-user"> </i> View Profile -->
+<!--                               </button> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>

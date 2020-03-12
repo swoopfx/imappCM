@@ -1,0 +1,71 @@
+<?php
+$this->headtitle("Broker Registeration");
+$brokerForm = $this->brokerRegisterForm;
+//$brokerForm = $brokerForm->get('broker_register_field');
+
+$role = $brokerForm->get('role')->setValue(3);
+$username = $brokerForm->get('username')->setLabel('Broker Username')->setAttributes(array('class' => 'form-control'));
+$email = $brokerForm->get('email')->setLabel('Broker Email')->setAttributes(array('class' => 'form-control'));
+$password = $brokerForm->get('password')->setLabel('Broker Password')->setAttributes(array('class' => 'form-control'));
+$passworConfirm = $brokerForm->get('passwordVerify')->setAttributes(array('class' => 'form-control'));
+$question = $brokerForm->get('question')->setAttributes(array('class' => 'form-control'));
+$question = $brokerForm->get('answer')->setAttributes(array('class' => 'form-control'));
+$brokerForm->prepare();
+?>
+
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-4">
+				<h1>Broker Registration Form</h1>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<!--breadcrumbs end-->
+
+<!--container start-->
+<div class="container">
+	<div class="row">
+		<!--blog start-->
+		<div class="col-lg-9 ">
+
+
+			<h2 id="forms-example">Broker Registration Form</h2>
+			<p>You are about to register as an Insurance Broker</p>
+			<div class="bs-example">
+			<?php  echo $this->form()->openTag($brokerForm); 
+			
+			echo $this->flashMessenger()->renderCurrent('error', array('alert', 'alert-danger'));
+			$this->flashMessenger()->getPluginFlashMessenger()->clearCurrentMessagesFromNamespace('error');
+?>
+			<hr>
+				
+					<?php  echo $this->partial('csnuser-register-snipet', array('form'=>$brokerForm ));?>
+					
+				<hr>	
+					<?php echo  $this->formelement($brokerForm->get('csrf'))?>
+					<?php  echo $this->formSubmit($brokerForm->get('submit'))?>
+					
+				
+			</div>
+			<!-- /example -->
+
+
+
+
+			<br>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="blog-side-item">Adverts Go here</div>
+		</div>
+
+		<!--blog end-->
+	</div>
+
+</div>
+<!--container end-->
+<?php  echo $this->form()->closeTag($brokerForm);?>

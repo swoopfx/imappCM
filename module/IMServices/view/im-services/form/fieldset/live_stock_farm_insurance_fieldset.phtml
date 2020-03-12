@@ -1,0 +1,477 @@
+<?php
+$liveStockFarmInsuranceFieldset = $form->get("liveStockFarmInsuranceFieldset");
+
+?>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('noOfLivestock'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('noOfLivestock'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total number of livestock in farm"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('noOfLivestock'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('slauterAge'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-10">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('slauterAge'));?>
+									
+								</div>
+	<div class="col-md-2 col-sm-2 col-xs-2"><strong>months</strong></div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Miinimum age in months before they can be sent to the slaugther house"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('slauterAge'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('isAllInsured'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('isAllInsured'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if all the animals would be insured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('isAllInsured'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_insured_number">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('noOfInsuredAnimals'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('noOfInsuredAnimals'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total number animals to be insured "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('noOfInsuredAnimals'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_insured_list">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"livestockinsurelist")) ?>">
+			Insured Live Stock</a>
+	</div>
+
+	<div class="form-group" id="div_livestock_insured_list"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;">
+<?php  ?>
+</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('useOfAnimals'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('useOfAnimals'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What purpose are the animals used for"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('useOfAnimals'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('rearingMethod'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('rearingMethod'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Method used to rear the animals"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('rearingMethod'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_other_method">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('otherMethod'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('otherMethod'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the chief engineer or plant managerOther rearing methods not listed above"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('otherMethod'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('feedingMethodandSource'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('feedingMethodandSource'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Feeding method and its relative source"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('feedingMethodandSource'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('isVetinaryDoctor'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('isVetinaryDoctor'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Identified if livestock are attended to by vetinary doctor"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('isVetinaryDoctor'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="id_vet_details">
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('vetName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('vetName'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the vetinary doctor"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('vetName'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('vetQualification'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('vetQualification'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Qualification of the vetinary doctor"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('vetQualification'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('vetYearResponsibleforFarm'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('vetYearResponsibleforFarm'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How long has the vetinary doctor been responsible for the livestock"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('vetYearResponsibleforFarm'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('vetContactDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('vetContactDetails'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Contact details of the vetinary doctro including email and phone number"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('vetContactDetails'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('vacinnation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('vacinnation'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Types of vacination administered"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('vacinnation'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('isAnimalInGoodCondition'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('isAnimalInGoodCondition'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Attest animals are in good condition"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('isAnimalInGoodCondition'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_animal_condition">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('conditionStatus'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('conditionStatus'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If not in god condition, what is their status"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('conditionStatus'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('isOtherInsurer'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('isOtherInsurer'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there are other policy on the farm"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('isOtherInsurer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_other_insurer">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('otherInsurer'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('otherInsurer'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="the insurance company invoiced in the farm"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('otherInsurer'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('otherInsurance'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('otherInsurance'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of policy provided by insurer above"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('otherInsurance'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('isSubsidizedInsurance'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('isSubsidizedInsurance'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Identify if gorvernment has provided subsidized insurance"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('isSubsidizedInsurance'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_subzidized_insurance">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('subsidizedInsurance'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('subsidizedInsurance'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Information about the subsidized insurance "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('subsidizedInsurance'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('mortalityRate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('mortalityRate'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details of animal mortality, rate at which they die"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('mortalityRate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($liveStockFarmInsuranceFieldset->get('lossHistory'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($liveStockFarmInsuranceFieldset->get('lossHistory'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide information about loss, detailing year, quantity loss, and cause"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($liveStockFarmInsuranceFieldset->get('lossHistory'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+$("#useOfAnimals").chosen({width: "100%"});
+    $(document).ready(function(){
+    	$("#id_vet_details").hide();
+    	$("#div_other_method").hide();
+    	$("#div_animal_condition").hide();
+    	$("#div_other_insurer").hide();
+    	$("#div_subzidized_insurance").hide();
+   	 $("#div_insured_list").hide();
+    	
+
+   	 $("#rearingMethod").change(function(){
+   	   	 if($("#rearingMethod").val() == "1000"){
+   	   	   	$("#div_other_method").show();
+   	   	 }else{
+   	   	   	$("#div_other_method").hide();
+   	   	 }
+   	   	 })
+   	   	 
+   	   	 
+   	   	 $("#noOfLivestock").change(function(){
+   	   	   	 if($("#isAllInsured").is(":checked")){
+   	   	   	   	 $("#noOfInsuredAnimals").val($("#noOfLivestock").val()); 
+   	   	   	   	 $("#div_insured_list").hide();
+   	   	   	   $("#div_insured_number").show();
+   	   	   	 }else{
+   	   	   	   $("#noOfInsuredAnimals").val(0);
+   	   	   	   $("#div_insured_number").hide();
+   	   	   	   $("#div_insured_list").show();
+   	   	   	   	 }
+   	   	   	 })
+   	   	   	 
+   	   	   	 
+   	   	  $("#isAllInsured").change(function(){
+   	   	   	 if($("#isAllInsured").is(":checked")){
+   	   	   	   $("#div_insured_list").hide();
+   	   	   	 $("#div_insured_number").show();
+   	   	   	 }else{
+   	   	   	   $("#div_insured_list").show();
+   	   	   	 $("#div_insured_number").hide();
+   	   	   	   	 }
+    		 })
+
+    	$("#isVetinaryDoctor").change(function(){
+			if($("#isVetinaryDoctor").is(":checked")){
+				$("#id_vet_details").show();
+			}else{
+				$("#id_vet_details").hide();
+			}
+		})
+
+
+		$("#isAnimalInGoodCondition").change(function(){
+			if($("#isAnimalInGoodCondition").is(":checked")){
+				$("#div_animal_condition").hide()
+			}else{
+				$("#div_animal_condition").show();
+			}
+		})
+
+
+		$("#isOtherInsurer").change(function(){
+			if($("#isOtherInsurer").is(":checked")){
+				$("#div_other_insurer").show()
+			}else{
+				$("#div_other_insurer").hide();
+			}
+		})
+
+
+		$("#isSubsidizedInsurance").change(function(){
+			if($("#isSubsidizedInsurance").is(":checked")){
+				$("#div_subzidized_insurance").show()
+			}else{
+				$("#div_subzidized_insurance").hide();
+			}
+		})
+
+		
+    })
+  
+    </script>

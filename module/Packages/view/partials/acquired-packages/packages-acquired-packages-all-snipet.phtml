@@ -1,0 +1,42 @@
+<?php
+$count = 500;
+$i = 0 ;
+if (count($customerPackages) != 0) {
+    
+    while ($i < count($customerPackages) && count($customerPackages) < $count ) {
+        //var_dump($customerPackages[$i]);
+        ?>
+
+<tr>
+	<td> </td>
+	<td><div class="media-body">
+						<strong><?php  echo ($customerPackages[$i]->getPackages() != NULL ? $customerPackages[$i]->getPackages()->getPackageName() : " ")?></strong>
+						<p>
+							Service :  <?php  echo ($customerPackages[$i]->getPackages()->getPackageCategory() != NULL ? $customerPackages[$i]->getPackages()->getPackageCategory()->getObjectType() : " ")?><br>
+							Rate : <?php  echo $this->package_value_representation($customerPackages[$i]->getPackages()->getValueType()->getId(), $customerPackages[$i]->getPackages()->getValue(), $customerPackages[$i]->getPackages()->getCurrency()->getCode())?>
+								</p>
+						
+					</div></td>
+	
+	<td><div class="media-body">
+						<strong><?php  echo ($customerPackages[$i]->getCustomer() != NULL ? $customerPackages[$i]->getCustomer()->getName() : " ")?></strong>
+						<p>
+							 <?php  echo ($customerPackages[$i]->getCustomer()->getUser() != NULL ? $customerPackages[$i]->getCustomer()->getUser()->getUserName() : " ")?><br>
+							 <?php  echo ($customerPackages[$i]->getCustomer()->getUser() != NULL ? $customerPackages[$i]->getCustomer()->getUser()->getEmail() : " ")?><br>
+							
+								</p>
+						
+					</div></td>
+	<td><?php echo ($customerPackages[$i]->getAcquiredPackageStatus() != NULL ? $this->statusHelper($customerPackages[$i]->getAcquiredPackageStatus()->getStatus()): 'No Status' )?></td>
+	<td><?php  echo ($customerPackages[$i]->getInvoice() == NULL ? "<i style='color: red; font-size: 9px;'>NO PREMIUM GENERATED YET</i>" : " ")?></td>
+	
+	<td>
+<!-- 	<a type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip left">Tooltip left</a> -->
+<?php  echo $this->package_acquired_package_list_button($customerPackages[$i])?>
+	</td>
+</tr>
+<?php
+    $i++ ;
+}
+}
+?>

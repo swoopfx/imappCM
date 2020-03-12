@@ -1,0 +1,271 @@
+<?php
+$boilerInsuranceFieldset = $form->get("boilerInsuranceFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('chiefEngineer'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('chiefEngineer'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the chief engineer or plant manager"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('chiefEngineer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('startDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('startDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Expected date for cover to start"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('startDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('endDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('endDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Expected date for cover to start"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('endDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"boilercoverdetals")) ?>">
+		Add Item</a>
+</div>
+
+<div class="form-group" id="div_cover_details_fieldset"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;">
+<?php  //echo $this->partial("imservice_motor_non_standard_inner", array("nonStandardCollecton"=>$nonStandardCollecton))?>
+</div>
+
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('natureOfBusiness'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('natureOfBusiness'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Nature of business description"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('natureOfBusiness'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('isIncludeSteam'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('isIncludeSteam'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include cover for  main steam and feed water piping"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('isIncludeSteam'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('isCoverAll'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('isCoverAll'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide full cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('isCoverAll'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('excludedPart'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('excludedPart'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide full cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('excludedPart'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('isGoodCondition'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('isGoodCondition'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide full cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('isGoodCondition'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('partPeriodicallyinspected'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('partPeriodicallyinspected'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide Part not in good condition, that is periodically inspected"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('partPeriodicallyinspected'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('inspectionBy'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('inspectionBy'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The firm who inspected the boiler"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('inspectionBy'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('lastInspectionDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('lastInspectionDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was boiler previously insured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('lastInspectionDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('maxSafetyLoadLevel'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-8">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('maxSafetyLoadLevel'));?>
+									
+								</div>
+	<strong>Psi</strong> <i class="fa fa-info-circle" data-toggle="tooltip"
+		data-placement="top" title="Was boiler previously insured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('maxSafetyLoadLevel'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('workingPressure'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-8">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('workingPressure'));?>
+									
+								</div>
+	<strong>bar</strong> <i class="fa fa-info-circle" data-toggle="tooltip"
+		data-placement="top" title="Was boiler previously insured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('workingPressure'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('isPreviouslyInsured'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('isPreviouslyInsured'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was boiler previously insured"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('isPreviouslyInsured'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_previous_insured">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('isPreviousAccident'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('isPreviousAccident'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Was boiler previously insured"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('isPreviousAccident'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($boilerInsuranceFieldset->get('accidentMeasures'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($boilerInsuranceFieldset->get('accidentMeasures'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Was boiler previously insured"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($boilerInsuranceFieldset->get('accidentMeasures'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#div_previous_insured").hide();
+	
+})
+</script>
+

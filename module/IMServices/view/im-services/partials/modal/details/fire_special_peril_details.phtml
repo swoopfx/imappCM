@@ -1,0 +1,224 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$fireNperilEntity = $coverEntity->getFireNSpecialPeril();
+?>
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+
+				<th>Building Type</th>
+				<td><?php  echo ($fireNperilEntity->getBuildingType() != NUll ? $this->escapehtml($fireNperilEntity->getBuildingType()->getType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Wall Type</th>
+				<td><?php  echo ($fireNperilEntity->getWallType() != NUll ? $this->escapehtml($fireNperilEntity->getWallType()->getWallType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php if($fireNperilEntity->getWallType()->getId() == 100):?>
+			<tr>
+
+				<th>Other Wall Type</th>
+				<td><?php  echo ($fireNperilEntity->getOtherWallType() != NUll ? $this->escapehtml($fireNperilEntity->getOtherWallType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Roof Type</th>
+				<td><?php  echo ($fireNperilEntity->getRoofType() != NUll ? $this->escapehtml($fireNperilEntity->getRoofType()->getRoofType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php if($fireNperilEntity->getRoofType()->getId() == 100):?>
+			<tr>
+
+				<th>Other Roof Type</th>
+				<td><?php  echo ($fireNperilEntity->getOtherRoofType() != NUll ? $this->escapehtml($fireNperilEntity->getOtherRoofType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th> Floor Type</th>
+				<td><?php  echo ($fireNperilEntity->getFloorType() != NUll ? $this->escapehtml($fireNperilEntity->getFloorType()->getFloorType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php if($fireNperilEntity->getFloorType()->getId() == 100):?>
+			<tr>
+
+				<th>Other Roof Type</th>
+				<td><?php  echo ($fireNperilEntity->getOtherFloorType() != NUll ? $this->escapehtml($fireNperilEntity->getOtherFloorType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php endif;?>
+			
+			
+			<tr>
+
+				<th> Number of story building</th>
+				<td><?php  echo ($fireNperilEntity->getNumberOfStories() != NUll ? $this->escapehtml($fireNperilEntity->getNumberOfStories())." Storey building" : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Age of Building</th>
+				<td><?php  echo ($fireNperilEntity->getAgeOfBuilding() != NUll ? $this->escapehtml($fireNperilEntity->getAgeOfBuilding())." year(s)" : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Building is used for manufacturing</th>
+				<td><?php  echo ($fireNperilEntity->getIsManufacturing() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsManufacturing()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<?php if($fireNperilEntity->getIsManufacturing()):?>
+			<tr>
+
+				<th> Manufacturing Details</th>
+				<td><?php  echo ($fireNperilEntity->getManufacturing() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsManufacturing()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php endif;?>
+			<tr>
+
+				<th> Type of power connection</th>
+				<td><?php  echo ($fireNperilEntity->getPowerType() != NUll ? $this->escapehtml($fireNperilEntity->getPowerType()->getPowerType()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Fire alarm systems are installed in building</th>
+				<td><?php  echo ($fireNperilEntity->getIsFireAlarmSystem() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsFireAlarmSystem()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<?php if($fireNperilEntity->getIsFireAlarmSystem()):?>
+			<tr>
+
+				<th> Fire alarm systems type and details</th>
+				<td><?php  echo ($fireNperilEntity->getFireALarmSystem() != NUll ? $this->escapehtml($fireNperilEntity->getFireALarmSystem()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th> Building has fire protection system</th>
+				<td><?php  echo ($fireNperilEntity->getIsFireProtectionSystem() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsFireProtectionSystem()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php if($fireNperilEntity->getIsFireProtectionSystem()):?>
+			<tr>
+
+				<th> Fire Protection type and details</th>
+				<td><?php  echo ($fireNperilEntity->getFireProtectionSystem() != NUll ? $this->escapehtml($fireNperilEntity->getFireProtectionSystem()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php  endif;?>
+			<tr>
+
+				<th> Was previously decline by an insurer</th>
+				<td><?php  echo ($fireNperilEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsPreviousDecline()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Has special peril</th>
+				<td><?php  echo ($fireNperilEntity->getIsSpecialPeril() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsSpecialPeril()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<?php if($fireNperilEntity->getIsSpecialPeril()):?>
+			<tr>
+
+				<th>Indemnity for aircraft accident</th>
+				<td><?php  echo ($fireNperilEntity->getIsAircraft() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsAircraft()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for explosion</th>
+				<td><?php  echo ($fireNperilEntity->getIsExplosion() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsAircraft()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for Riot and strike damages</th>
+				<td><?php  echo ($fireNperilEntity->getIsRiotNdStrike() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsRiotNdStrike()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for Malicious Damages</th>
+				<td><?php  echo ($fireNperilEntity->getIsMaliciousDamage() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsMaliciousDamage()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for bush fire accident</th>
+				<td><?php  echo ($fireNperilEntity->getIsBushFire() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsBushFire()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for explosion</th>
+				<td><?php  echo ($fireNperilEntity->getIsExplosion() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsAircraft()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for explosion</th>
+				<td><?php  echo ($fireNperilEntity->getIsExplosion() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsAircraft()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for flood</th>
+				<td><?php  echo ($fireNperilEntity->getIsFlood() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsFlood()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for Burst pipes</th>
+				<td><?php  echo ($fireNperilEntity->getIsBurstPipes() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsBurstPipes()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th> Indemnity for physical impact</th>
+				<td><?php  echo ($fireNperilEntity->getIsImpact() != NUll ? $this->trueFalseHelper($fireNperilEntity->getIsImpact()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<?php endif; ?>
+			
+
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,315 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$occupierLiabilityEntity = $coverEntity->getOccupiersLiability();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+		
+		
+		<tr>
+
+				<th>Use of Building</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getBuildingType() != NUll ? $this->escapehtml($occupierLiabilityEntity->getBuildingType()->getType(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getBuildingType()->getId() == "2"):?>
+			
+			<tr>
+
+				<th>Non Residential Use Type</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getNonResidetialType() != NUll ? $this->escapehtml($occupierLiabilityEntity->getNonResidetialType()->getType(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  endif;?>
+			
+			
+			
+			<tr>
+
+				<th>Occupation Decription</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getResidenceDesription() != NUll ? $this->escapehtml($occupierLiabilityEntity->getResidenceDesription(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+
+
+			<tr>
+
+				<th>Proposed Cover Start Date</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getCoverStartDate() != NUll ? $this->dateFormat($occupierLiabilityEntity->getCoverStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed Cover End Date</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getCoverEndDate() != NUll ? $this->dateFormat($occupierLiabilityEntity->getCoverEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Building in Good Condition</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsGoodState() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsGoodState()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getIsGoodState() == FALSE):?>
+			<tr>
+
+				<th>Details of bad condition</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getBadCondition() != NUll ? $this->escapehtml($occupierLiabilityEntity->getBadCondition()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Building Distance From ground</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getDistanceFromGround() != NUll ? $this->escapehtml($occupierLiabilityEntity->getDistanceFromGround())." meters" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Building is subject to flooding</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsSubjectToFlooding() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsSubjectToFlooding()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+
+			<tr>
+
+				<th>Building is subject to fire, Storm or quake</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsExposedToFireStormOrQuake() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsExposedToFireStormOrQuake()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  if($occupierLiabilityEntity->getIsExposedToFireStormOrQuake() == TRUE):?>
+			<tr>
+
+				<th>Specific Loss</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getLossType() != NUll ? $this->escapehtml($occupierLiabilityEntity->getLossType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Previoussly had loss</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsPreviousLoss() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsPreviousLoss()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getIsPreviousLoss() == TRUE):?>
+			<tr>
+
+				<th>Specific Loss</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getPreviousLoss() != NUll ? $this->escapehtml($occupierLiabilityEntity->getPreviousLoss()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			
+			<tr>
+
+				<th>Is building un-occupied at any time</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsUnoccupied() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsUnoccupied()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getIsUnoccupied() == TRUE):?>
+			<tr>
+
+				<th>Period it remains unoccupied</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getUnOccupiedPeriod() != NUll ? $this->escapehtml($occupierLiabilityEntity->getUnOccupiedPeriod())." months" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			
+			<tr>
+
+				<th>Was Previously declined by insurer</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsPreviousDeclined() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsPreviousDeclined()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getIsPreviousDeclined() == TRUE):?>
+			<tr>
+
+				<th>Decline Details</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getDeclineDetails() != NUll ? $this->escapehtml($occupierLiabilityEntity->getDeclineDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Building has paying rent</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsForRent() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsForRent()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getIsForRent() == TRUE):?>
+			<tr>
+
+				<th>How Many Paying guest</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getCountPayingGuest() != NUll ? $this->escapehtml($occupierLiabilityEntity->getCountPayingGuest())." guest" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			
+			
+			<tr>
+
+				<th>Building has domestic staff</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsDomesticStaff() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsDomesticStaff()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($occupierLiabilityEntity->getIsDomesticStaff() == TRUE):?>
+			<tr>
+
+				<th>Domestic Staffs</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Full Name</th>
+								<th>Nature Of Work</th>
+								<th>Annual Wages</th>
+								<th>Employment Duration</th>
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($occupierLiabilityEntity->getDomesticStaff() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getFullName() != NUll ? $this->escapehtml($risk->getFullName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getNatureOfWork() != NUll ? $this->escapehtml($risk->getNatureOfWork()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getWages() != NUll ?$this->myCurrencyFormat($this->escapehtml($risk->getWages())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								
+								
+								<td><?php  echo ($risk->getEmploymentDuration() != NUll ? $this->escapehtml($risk->getEmploymentDuration())." months" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<?php endif;?>
+			
+			
+			<tr>
+
+				<th>Has day security</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsDaySecurity() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsDaySecurity()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Has trading within building</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsTradeWithinBuilding() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsTradeWithinBuilding()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Has trading around building</th>
+				<td>
+				<?php  echo ($occupierLiabilityEntity->getIsTradeAroundBuilding() != NUll ? $this->trueFalseHelper($occupierLiabilityEntity->getIsTradeAroundBuilding()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if(count($occupierLiabilityEntity->getFamilyMembers()) > 0):?>
+			<tr>
+
+				<th>Domestic Staffs</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Full Name</th>
+								<th>Relationship</th>
+								<th>Date of birth</th>
+								<th>Gender</th>
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($occupierLiabilityEntity->getFamilyMembers() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getFullNamef() != NUll ? $this->escapehtml($risk->getFullNamef()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getRelationship() != NUll ? $this->escapehtml($risk->getRelationship()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								<td><?php  echo ($risk->getDob() != NUll ? $this->dateFormat($risk->getDob(),  IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+								
+								
+								
+								<td><?php  echo ($risk->getSex() != NUll ? $this->escapehtml($risk->getSex()->getSex()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+								</td>
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			<?php endif;?>
+
+
+		</tbody>
+	</table>
+</div>

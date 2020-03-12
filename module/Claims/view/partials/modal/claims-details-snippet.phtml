@@ -1,0 +1,30 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+?>
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+		<tbody>
+
+			<tr>
+
+				<th>Claims Title</th>
+				<td>
+<?php  echo ($claimsEntity->getClaimTopic() != NUll ? $this->escapehtml($claimsEntity->getClaimTopic()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Description</th>
+				<td>
+<?php  echo ($claimsEntity->getClaimInfo() != NUll ? $this->escapehtml($claimsEntity->getClaimInfo()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+<?php
+echo $this->claimsDetailsViewhelper($claimsEntity);
+
+?>
+</tbody>
+	</table>
+</div>
+

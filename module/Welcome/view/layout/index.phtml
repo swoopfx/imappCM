@@ -1,0 +1,997 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+       <?php echo $this->headTitle( $this->translate('IMAPP CM - Redifining Risk Management'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')?>
+            
+            <link
+	href='https://fonts.googleapis.com/css?family=Raleway:500,600,700,800,900,400,300'
+	rel='stylesheet' type='text/css'>
+
+<link
+	href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic'
+	rel='stylesheet' type='text/css'>
+
+<!-- Le styles -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"
+	rel="stylesheet" />
+        <?php
+        
+        echo $this->headLink(array(
+            'rel' => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $this->basePath() . '/img/favicon.ico'
+        ))
+            ->prependStylesheet($this->basePath('css/wasabi.gritter.css'))
+            ->prependStylesheet($this->basePath('welcome/css/responsive.css'))
+            ->prependStylesheet($this->basePath('welcome/css/animate.css'))
+            ->prependStylesheet($this->basePath('welcome/css/style.css'))
+            ->prependStylesheet($this->basePath('welcome/css/prettyPhoto.css'))
+            ->prependStylesheet($this->basePath('welcome/css/font-awesome.min.css'))
+            ->prependStylesheet($this->basePath('welcome/css/Pe-icon-7-stroke.css'))
+            ->prependStylesheet($this->basePath('welcome/css/owl.theme.css'))
+            ->prependStylesheet($this->basePath('welcome/css/owl.carousel.css'))
+            ->prependStylesheet($this->basePath('welcome/css/bootstrap.min.css'))?>
+          
+
+        <!-- Scripts -->
+        <?php
+        
+        echo $this->headScript()
+            ->prependFile($this->basePath('js/wasabi.gritter.js'))
+            ->prependFile($this->basePath('js/wasabi.suggest.js'))
+            ->prependFile($this->basePath('js/wasabilib.min.js'))
+            ->
+        // ->prependFile($this->basePath('js/nprogress.js'))
+        prependFile($this->basePath('js/nprogress.js'))
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array(
+            'conditional' => 'lt IE 9'
+        ))
+            ->prependFile($this->basePath('js/html5shiv.min.js'), 'text/javascript', array(
+            'conditional' => 'lt IE 9'
+        ))
+            ->prependFile($this->basePath('js/imApp.js'))
+            ->prependFile($this->basePath('angular/lib/angular.js'))
+            ->appendFile($this->basepath('fonts/css/font-awesome.min.css'))
+            ->appendFile($this->basepath('css/animate.min.css'));
+        ?>
+								
+
+
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+</head>
+<body>
+	<!-- PRELOADER -->
+	<div class="spn_hol">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+
+	<!-- END PRELOADER -->
+
+	<!-- =========================
+     START ABOUT US SECTION
+============================== -->
+	<section class="header parallax home-parallax page" id="HOME">
+		<h2></h2>
+		<div class="section_overlay">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse"
+							data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="<?php  echo $this->url("login")?>"> Login
+						</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse"
+						id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<!-- NAV -->
+							<li><a href="#HOME">HOME</a></li>
+							<li><a href="#ABOUT">ABOUT </a></li>
+							<li><a href="#FEATURES">FEATURES</a></li>
+							<!-- 							<li><a href="#SCREENS">SCREENS</a></li> -->
+							<!-- 							<li><a href="#DOWNLOAD">DOWNLOAD </a></li> -->
+							<li><a href="#CONTACT">CONTACT </a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container- -->
+			</nav>
+
+			<div class="container home-container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="logo text-center">
+							<!-- LOGO -->
+							<img width="155" src="<?php $this->basepath()?>/images/cm.png">
+							<!--                             <img width="125" height="55" src="images/logo.png" alt=""> -->
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-sm-8">
+						<div class="home_text">
+							<!-- TITLE AND DESC -->
+							<h1>Redefining RIsk Management</h1>
+							<p>Now manage your company with insight through proper analysis
+								of your data.</p>
+
+							<div class="download-btn">
+								<!-- BUTTON -->
+								<a class="btn home-btn wow fadeInLeft"
+									href="<?php echo $this->url("user-register")?>">Get Started</a>
+								<a class="tuor btn wow fadeInRight"
+									href="<?php echo $this->url("login")?>">Login<i
+									class="fa fa-angle-down"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-md-offset-1 col-sm-4">
+						<div class="home-iphone">
+							<img
+								src="<?php  echo $this->basepath('welcome/images/home.png')?>"
+								alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- END HEADER SECTION -->
+
+
+
+
+	<!-- =========================
+     START ABOUT US SECTION
+============================== -->
+
+
+	<section class="about page" id="ABOUT">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<!-- ABOUT US SECTION TITLE-->
+					<div class="section_title">
+						<h2>About Us</h2>
+						<p>IMAPP&#8482; CM is a process automations system for insurance
+							brokers and agents to be more efficient using acquired data for
+							proper consumer risk profiling.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="inner_about_area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="about_phone wow fadeInLeft" data-wow-duration="1s"
+							data-wow-delay=".5s">
+							<!-- PHONE -->
+							<img
+								src="<?php echo $this->basepath('welcome/images/home2.png') ?>"
+								alt="">
+						</div>
+					</div>
+					<div class="col-md-6  wow fadeInRight" data-wow-duration="1s"
+						data-wow-delay=".5s">
+						<!-- TITLE -->
+						<div class="inner_about_title">
+							<h2>
+								Why we are better <br> for your company
+							</h2>
+							<p>IMAPP&#8482; CM doesn't just gather data, we futher analyse
+								it.</p>
+						</div>
+						<div class="inner_about_desc">
+
+							<!-- SINGLE DESC -->
+							<div class="single_about_area fadeInUp wow"
+								data-wow-duration=".5s" data-wow-delay="1s">
+								<!-- ICON -->
+								<div>
+									<i class="pe-7s-timer"></i>
+								</div>
+								<!-- HEADING DESCRIPTION -->
+								<h3>Automate entire customer life cycle</h3>
+								<p>IMAPP&#8482; CM is a process management system assisting in
+									automations from invoice to payments and even renewals and
+									claims for insurance brokers and agents to be more efficient.</p>
+							</div>
+							<!-- END SINGLE DESC -->
+
+
+							<!-- SINGLE DESC -->
+							<div class="single_about_area fadeInUp wow"
+								data-wow-duration=".5s" data-wow-delay="1.5s">
+								<!-- ICON -->
+								<div>
+									<i class="pe-7s-target"></i>
+								</div>
+								<!-- HEADING DESCRIPTION -->
+								<h3>Customized mobile application</h3>
+								<p>IMAPP&#8482; CM provides multiple channels of communicating
+									with your customers including a downloadable and customized
+									mobile application</p>
+							</div>
+							<!-- END SINGLE DESC -->
+
+
+							<!-- SINGLE DESC -->
+							<div class="single_about_area fadeInUp wow"
+								data-wow-duration=".5s" data-wow-delay="2s">
+								<!-- ICON -->
+								<div>
+									<i class="pe-7s-stopwatch"></i>
+								</div>
+								<!-- HEADING DESCRIPTION -->
+								<h3>Total Cloud Storage</h3>
+								<p>With the efficiency and power of the cloud, you can work from
+									any where and at any time, without worry of server downtime or
+									huge maintenance cost as you do not need to worry about
+									hosting, backups or other software management related problems</p>
+							</div>
+							<!-- END SINGLE DESC -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="video_area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 wow fadeInLeftBig">
+						<!-- VIDEO LEFT TITLE -->
+						<div class="video_title">
+							<h2>
+								Our Offering 
+							</h2>
+							<p>With you coming aboard IMAPP&#8482; CM you will be able to
+								manage your business with insight rather than instinct with the
+								help of the integrated business intelligence, predictive
+								analysis and cognitive computing framework, which will assist in
+								the proper and insightful analysis of your data on the system.</p>
+
+						</div>
+						<div class="video-button">
+							<!-- BUTTON -->
+							<a class="btn btn-primary btn-video" href="#FEATURES"
+								role="button">Features</a>
+						</div>
+					</div>
+					<div class="col-md-6 wow fadeInRightBig">
+						<!-- VIDEO -->
+						<div class="video">
+							<iframe width="854" height="480"
+								src="https://www.youtube.com/embed/Bw4xhvnpfU0" frameborder="0"
+								allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Us -->
+
+
+
+
+	<!-- =========================
+     START TESTIMONIAL SECTION
+============================== -->
+
+	<section id="TESTIMONIAL" class="testimonial parallax">
+		<div class="section_overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow bounceInDown">
+						<div id="carousel-example-caption-testimonial"
+							class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-caption-testimonial"
+									data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-caption-testimonial"
+									data-slide-to="1"></li>
+								<li data-target="#carousel-example-caption-testimonial"
+									data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+								<div class="item active">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-12 text-center">
+												<!-- IMAGE -->
+												<!-- 												<img src="images/client_1.png" alt=""> -->
+												<div class="testimonial_caption">
+													<!-- DESCRIPTION -->
+													<h2>Helen Emore</h2>
+													<h4>
+														<span>Managing Director,</span> AVANTAGE PROJECT LIMTED
+													</h4>
+													<p>IMAPP is a good product and has a willing audience, the
+														team is flexible and very receptive on ways of improving
+														the product</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 								<div class="item"> -->
+								<!-- 									<div class="container"> -->
+								<!-- 										<div class="row"> -->
+								<!-- 											<div class="col-md-12 text-center"> -->
+								<!-- IMAGE -->
+
+								<!-- 												<div class="testimonial_caption"> -->
+								<!-- DESCRIPTION -->
+								<!-- 													<h2>Allie Kingsley</h2> -->
+								<!-- 													<h4> -->
+								<!-- 														<span>SR. Content Strategist,</span> Designscrazed -->
+								<!-- 													</h4> -->
+								<!-- 													<p>“Lorem ipsum dolor sit amet, consectetur adipisicing -->
+								<!-- 														elit, do eiusmod tempor incididunt ut labore et dolore -->
+								<!-- 														magna aliqua. Ut enim ad minim veniam, nostrud -->
+								<!-- 														exercitation ullamco laboris nisi ut aliquip ex ea commodo -->
+								<!-- 														consequat.”</p> -->
+								<!-- 												</div> -->
+								<!-- 											</div> -->
+								<!-- 										</div> -->
+								<!-- 									</div> -->
+								<!-- 								</div> -->
+								<!-- 								<div class="item"> -->
+								<!-- 									<div class="container"> -->
+								<!-- 										<div class="row"> -->
+								<!-- 											<div class="col-md-12 text-center"> -->
+								<!-- IMAGE -->
+
+								<!-- 												<div class="testimonial_caption"> -->
+								<!-- DESCRIPTION -->
+								<!-- 													<h2>Joel Mchale</h2> -->
+								<!-- 													<h4> -->
+								<!-- 														<span>SR. Developer,</span> Treehouse -->
+								<!-- 													</h4> -->
+								<!-- 													<p>“Lorem ipsum dolor sit amet, consectetur adipisicing -->
+								<!-- 														elit, do eiusmod tempor incididunt ut labore et dolore -->
+								<!-- 														magna aliqua. Ut enim ad minim veniam, nostrud -->
+								<!-- 														exercitation ullamco laboris nisi ut aliquip ex ea commodo -->
+								<!-- 														consequat.”</p> -->
+								<!-- 												</div> -->
+								<!-- 											</div> -->
+								<!-- 										</div> -->
+								<!-- 									</div> -->
+								<!-- 								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- END TESTIMONIAL SECTION -->
+
+
+
+	<!-- =========================
+     START FEATURES
+============================== -->
+	<section id="FEATURES" class="features page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<!-- FEATURES SECTION TITLE -->
+					<div class="section_title wow fadeIn" data-wow-duration="1s">
+						<h2>Features</h2>
+						<p>These features makes the application standout</p>
+					</div>
+					<!-- END FEATURES SECTION TITLE -->
+				</div>
+			</div>
+		</div>
+
+		<div class="feature_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 right_no_padding wow fadeInLeft"
+						data-wow-duration="1s">
+						<!-- FEATURE -->
+
+						<div class="left_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-note2"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								Automated Invoicing <span>/</span>
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+
+						<!-- END SINGLE FEATURE -->
+
+
+						<!-- FEATURE -->
+						<div class="left_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-id"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								Customer Management system <span>/</span>
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+
+
+						<!-- FEATURE -->
+						<div class="left_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-gleam"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								Insightful Reporting <span>/</span>
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+
+						<!-- FEATURE -->
+						<div class="left_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-news-paper"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								Policy Management System <span>/</span>
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+
+					</div>
+					<div class="col-md-4">
+						<div class="feature_iphone">
+							<!-- FEATURE PHONE IMAGE -->
+							<img class="wow bounceIn" data-wow-duration="1s"
+								src="<?php  echo $this->basepath("welcome/images/mobile.jpeg")?>"
+								alt="">
+						</div>
+					</div>
+					<div class="col-md-4 left_no_padding wow fadeInRight"
+						data-wow-duration="1s">
+
+						<!-- FEATURE -->
+						<div class="right_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-monitor"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								<span>/</span> Easy Integration to Your website
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+
+
+						<!-- FEATURE -->
+						<div class="right_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-phone"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								<span>/</span> Customized Mobile App
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+
+
+						<!-- FEATURE -->
+						<div class="right_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-graph2"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								<span>/</span> Business and Cognitive Intelligence
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+
+						<!-- FEATURE -->
+						<div class="right_single_feature">
+							<!-- ICON -->
+							<div>
+								<span class="pe-7s-graph1"></span>
+							</div>
+
+							<!-- FEATURE HEADING AND DESCRIPTION -->
+							<h3>
+								<span>/</span> Automated Reminder and Renewals 
+							</h3>
+							<!-- 							<p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do -->
+							<!-- 								eiusmod tempor incididunt</p> -->
+						</div>
+						<!-- END SINGLE FEATURE -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END FEATURES SECTION -->
+
+
+
+	<!-- =========================
+     START CALL TO ACTION
+============================== -->
+	<div class="call_to_action">
+		<div class="container">
+			<div class="row wow fadeInLeftBig" data-wow-duration="1s">
+				<div class="col-md-9">
+					<img src="<?php  echo $this->basepath("/images/infograph.jpg")?>" style="width: 100%">
+				</div>
+				<div class="col-md-3">
+					<a class="btn btn-primary btn-action"
+						href="<?php  echo $this->url("user-register");?>" role="button">GET
+						STARTED NOW</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- END CALL TO ACTION -->
+
+
+	<!-- =========================
+     Start APPS SCREEN SECTION
+============================== -->
+	<section class="apps_screen page" id="SCREENS">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 wow fadeInBig"
+					data-wow-duration="1s">
+					<!-- APPS SCREEN TITLE -->
+					<div class="section_title">
+						<h2>Supported By</h2>
+						<!-- 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed -->
+						<!-- 							do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut -->
+						<!-- 							enim ad minim veniam, quis nostrud exercitation ullamco laboris -->
+						<!-- 							nisi ut aliquip.</p> -->
+					</div>
+					<!-- END APPS SCREEN TITLE -->
+				</div>
+			</div>
+		</div>
+
+		<div class="screen_slider">
+			<div id="demo" class="wow bounceInRight" data-wow-duration="1s">
+				<div id="owl-demo" class="owl-carousel">
+
+
+					<div class="item">
+						<img src="<?php  echo $this->basepath('img/FMITI.png')?>"
+							width="60" height="60">
+					</div>
+					<div class="item">
+						<img src="<?php  echo $this->basepath('img/hiil.png')?>"
+							width="60" height="60">
+					</div>
+					<div class="item">
+						<img src="<?php  echo $this->basePath('img/mcros.png')?>"
+							width="60" height="60">
+					</div>
+					<div class="item">
+						<img src="<?php  echo $this->basePath('img/GEM.png')?>" width="60"
+							height="60">
+					</div>
+					<div class="item">
+						<img src="<?php  echo $this->basepath('img/oxfam.png')?>"
+							width="60" height="60">
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- ENS APPS SCREEN -->
+
+
+
+
+
+	<!-- =========================
+     Start FUN FACTS
+============================== -->
+
+
+	<!-- 	<section class="fun_facts parallax"> -->
+	<!-- 		<div class="section_overlay"> -->
+	<!-- 			<div class="container wow bounceInLeft" data-wow-duration="1s"> -->
+	<!-- 				<div class="row text-center"> -->
+	<!-- 					<div class="col-md-3"> -->
+	<!-- 						<div class="single_fun_facts"> -->
+	<!-- 							<i class="pe-7s-cloud-download"></i> -->
+	<!-- 							<h2> -->
+	<!-- 								<span class="counter_num">699</span> <span>+</span> -->
+	<!-- 							</h2> -->
+	<!-- 							<p>Downloads</p> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 					<div class="col-md-3"> -->
+	<!-- 						<div class="single_fun_facts"> -->
+	<!-- 							<i class="pe-7s-look"></i> -->
+	<!-- 							<h2> -->
+	<!-- 								<span class="counter_num">1999</span> <span>+</span> -->
+	<!-- 							</h2> -->
+	<!-- 							<p>Likes</p> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 					<div class="col-md-3"> -->
+	<!-- 						<div class="single_fun_facts"> -->
+	<!-- 							<i class="pe-7s-comment"></i> -->
+	<!-- 							<h2> -->
+	<!-- 								<span class="counter_num">199</span> <span>+</span> -->
+	<!-- 							</h2> -->
+	<!-- 							<p>Feedbacks</p> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 					<div class="col-md-3"> -->
+	<!-- 						<div class="single_fun_facts"> -->
+	<!-- 							<i class="pe-7s-cup"></i> -->
+	<!-- 							<h2> -->
+	<!-- 								<span class="counter_num">10</span> <span>+</span> -->
+	<!-- 							</h2> -->
+	<!-- 							<p>Awards</p> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</section> -->
+
+	<!-- END FUN FACTS -->
+
+
+
+
+	<!-- =========================
+     START DOWNLOAD NOW 
+============================== -->
+	<!-- 	<section class="download page" id="DOWNLOAD"> -->
+	<!-- 		<div class="container"> -->
+	<!-- 			<div class="row"> -->
+	<!-- 				<div class="col-md-10 col-md-offset-1"> -->
+	<!-- DOWNLOAD NOW SECTION TITLE -->
+	<!-- 					<div class="section_title"> -->
+	<!-- 						<h2>download now</h2> -->
+	<!-- 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed -->
+	<!-- 							do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut -->
+	<!-- 							enim ad minim veniam, quis nostrud exercitation ullamco laboris -->
+	<!-- 							nisi ut aliquip.</p> -->
+	<!-- 					</div> -->
+	<!--END DOWNLOAD NOW SECTION TITLE -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+
+	<!-- 		<div class="container"> -->
+	<!-- 			<div class="row"> -->
+	<!-- 				<div class="col-md-8 col-md-offset-2"> -->
+	<!-- 					<div class="download_screen text-center wow fadeInUp" -->
+	<!-- 						data-wow-duration="1s"> -->
+	<!-- 						<img src="images/download_screen.png" alt=""> -->
+	<!-- 					</div> -->
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+
+	<!-- 		<div class="available_store"> -->
+	<!-- 			<div class="container  wow bounceInRight" data-wow-duration="1s"> -->
+	<!-- 				<div class="col-md-6"> -->
+	<!-- 					<div class="available_title"> -->
+	<!-- 						<h2>Available on</h2> -->
+	<!-- 						<p>Sed do eiusmod tempor incididunt ut labore et dolore magna -->
+	<!-- 							aliqua.</p> -->
+	<!-- 					</div> -->
+	<!-- 				</div> -->
+
+	<!-- DOWNLOADABLE STORE -->
+	<!-- 				<div class="col-md-6"> -->
+	<!-- 					<div class="row"> -->
+	<!-- 						<a href=""> -->
+	<!-- 							<div class="col-md-4 no_padding"> -->
+	<!-- 								<div class="single_store"> -->
+	<!-- 									<i class="fa fa-apple"></i> -->
+	<!-- 									<div class="store_inner"> -->
+	<!-- 										<h2>iOS</h2> -->
+	<!-- 									</div> -->
+	<!-- 								</div> -->
+	<!-- 							</div> -->
+	<!-- 						</a> -->
+	<!-- 						<div class="col-md-4 no_padding"> -->
+	<!-- 							<a href=""> -->
+	<!-- 								<div class="single_store"> -->
+	<!-- 									<i class="fa fa-android"></i> -->
+	<!-- 									<div class="store_inner"> -->
+	<!-- 										<h2>ANDROID</h2> -->
+	<!-- 									</div> -->
+	<!-- 								</div> -->
+	<!-- 							</a> -->
+	<!-- 						</div> -->
+	<!-- 						<div class="col-md-4 no_padding"> -->
+	<!-- 							<a href=""> -->
+	<!-- 								<div class="single_store last"> -->
+	<!-- 									<i class="fa fa-windows"></i> -->
+	<!-- 									<div class="store_inner"> -->
+	<!-- 										<h2>WINDOWS</h2> -->
+	<!-- 									</div> -->
+	<!-- 								</div> -->
+	<!-- 							</a> -->
+	<!-- 						</div> -->
+	<!-- 					</div> -->
+	<!-- 				</div> -->
+	<!-- END DOWNLOADABLE STORE -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</section> -->
+	<!-- END DOWNLOAD -->
+
+	<!-- =========================
+     START CONTCT FORM AREA
+============================== -->
+	<section class="contact page" id="CONTACT">
+		<div class="section_overlay">
+			<div class="container">
+				<div class="col-md-10 col-md-offset-1 wow bounceIn">
+					<!-- Start Contact Section Title-->
+					<div class="section_title">
+						<h2>Get in touch</h2>
+						<!-- 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed -->
+						<!-- 							do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut -->
+						<!-- 							enim ad minim veniam, quis nostrud exercitation ullamco laboris -->
+						<!-- 							nisi ut aliquip.</p> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="contact_form wow bounceIn">
+				<div class="container">
+
+					<!-- START ERROR AND SUCCESS MESSAGE -->
+					<div class="form_error text-center">
+						<div class="name_error hide error">Please Enter your name</div>
+						<div class="email_error hide error">Please Enter your Email</div>
+						<div class="email_val_error hide error">Please Enter a Valid Email
+							Address</div>
+						<div class="message_error hide error">Please Enter Your Message</div>
+					</div>
+					<div class="Sucess"></div>
+					<!-- END ERROR AND SUCCESS MESSAGE -->
+
+					<!-- CONTACT FORM starts here, Go to contact.php and add your email ID, thats it.-->
+					<form role="form" action="contact.php">
+						<div class="row">
+							<div class="col-md-4">
+								<input type="text" class="form-control" id="name"
+									placeholder="Name"> <input type="email" class="form-control"
+									id="email" placeholder="Email"> <input type="text"
+									class="form-control" id="subject" placeholder="Subject">
+							</div>
+
+
+							<div class="col-md-8">
+								<textarea class="form-control" id="message" rows="25" cols="10"
+									placeholder="  Message Texts..."></textarea>
+								<button type="button"
+									class="btn btn-default submit-btn form_submit">SEND MESSAGE</button>
+							</div>
+						</div>
+					</form>
+					<!-- END FORM -->
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow bounceInLeft">
+						<div class="social_icons">
+							<ul>
+								<li><a href=""><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
+								<li><a href=""><i class="fa fa-behance"></i></a></li>
+								<li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END CONTACT -->
+
+	<!-- =========================
+     Start Subscription Form 
+============================== -->
+
+
+
+	<section class="subscribe parallax subscribe-parallax"
+		data-stellar-background-ratio="0.6" data-stellar-vertical-offset="20">
+		<div class="section_overlay wow lightSpeedIn">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+
+						<!-- Start Subscribe Section Title -->
+						<div class="section_title">
+							<h2>SUBSCRIBE TO NEWSLETTER</h2>
+							<!-- 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed -->
+							<!-- 								do eiusmod tempor incididunt ut labore et dolore magna aliqua. -->
+							<!-- 								Ut enim ad minim veniam, quis nostrud exercitation ullamco -->
+							<!-- 								laboris nisi ut aliquip.</p> -->
+						</div>
+						<!-- End Subscribe Section Title -->
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row  wow lightSpeedIn">
+					<div class="col-md-6 col-md-offset-3">
+						<!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+						<div class="subscription-success"></div>
+						<div class="subscription-error"></div>
+						<!-- Check this topic on how to add email subscription list, http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms -->
+						<form id="mc-form"
+							action="https://designscrazed.us8.list-manage.com/subscribe/post"
+							method="POST" class="subscribe_form">
+							<input type="hidden" name="u" value="6908378c60c82103f3d7e8f1c">
+							<input type="hidden" name="id" value="8c5074025d">
+							<div class="form-group">
+								<!-- EMAIL INPUT BOX -->
+								<input type="email" autocapitalize="off" autocorrect="off"
+									name="MERGE0" class="required email form-control"
+									id="mce-EMAIL" placeholder="Enter Email Address" value="">
+							</div>
+							<!-- SUBSCRIBE BUTTON -->
+							<button type="submit" class="btn btn-default subs-btn">Submit</button>
+						</form>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- END SUBSCRIPBE FORM -->
+
+
+	<!-- =========================
+     FOOTER 
+============================== -->
+
+	<section class="copyright">
+		<h2></h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="copy_right_text">
+						<!-- COPYRIGHT TEXT -->
+						<p>Copyright &copy; 2017. All Rights Reserved.</p>
+						<p>
+							Powered By <a href="#">I-Manager Solutions</a>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<div class="scroll_top">
+						<a href="#HOME"><i class="fa fa-angle-up"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END FOOTER -->
+
+
+	<!-- =========================
+     SCRIPTS 
+============================== -->
+
+	<script src="<?php  echo $this->basepath('welcome/js/jquery.min.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/bootstrap.min.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/owl.carousel.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/jquery.fitvids.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/smoothscroll.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcomejs/jquery.parallax-1.1.3.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/jquery.prettyPhoto.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/jquery.ajaxchimp.min.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/jquery.ajaxchimp.langs.js')?>"></script>
+	<script src="<?php  echo $this->basepath('welcome/js/wow.min.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcome/js/waypoints.min.js')?>"></script>
+	<script
+		src="<?php  echo $this->basepath('welcomejs/jquery.counterup.min.js')?>"></script>
+	<script src="<?php  echo $this->basepath('welcome/js/script.js')?>"></script>
+
+
+</body>
+
+
+</html>

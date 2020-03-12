@@ -1,0 +1,78 @@
+<?php
+$policy = $this->expiringPolicy;
+$count = (count($policy) < 10 ? count($policy) : 10);
+?>
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2>Expiring Policy</h2>
+			<ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+
+
+
+		<div class="x_content">
+			<div class="table-responsive">
+				<table class="table table-hover">
+                                    <?php
+
+                                    if (count($policy) == 0) {
+                                        echo "<span> No expiring policy</span>";
+                                    } else {
+                                        ?>
+                                        <thead>
+						<tr>
+							<th>POLICY</th>
+
+
+
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+                                         <?php
+
+for ($i = 0; $i < $count; $i ++) {
+                                            $json = json_encode(array(
+                                                "data" => $policy[$i]->getid()
+                                            ));
+                                            ?>
+                                         
+                                            <tr>
+							<th style="color: red" scope="row"><?php echo strtoupper($policy[$i]->getPolicyCode());?><br>
+								Policy Name: <?php  echo ($policy[$i]->getPolicyName() == NULL ? "NO NAME" : $policy[$i]->getPolicyName())?><br>
+								<small>Expires On : <?php echo $this->dateFormat($policy[$i]->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us")?></small>
+							</th>
+
+
+
+							<td><a id="sending_data_button"
+								data-ajax-loader="expiringpolicy"
+								data-json='<?php echo $json ?>'
+								data-href="<?php echo $this->url("dashboard/default", array("action"=>"send-policy-reminder"))?>"
+								class="ajax_element btn btn-app btn-xs"><i class="fa fa-send"></i>Send
+									Reminder</a>
+								<div style="text-align: center;">
+							<i id="expiringpolicy" class="fa fa-spinner fa-lg" style="display: none;"></i>
+						</div>
+								</td>
+						</tr>
+                                             <?php   }}?>
+                                        </tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<a
+			href="<?php echo $this->url("policy/default", array("action"=>"expired"));?>"
+			class="btn btn-default"> View All</a>
+	</div>
+</div>
+

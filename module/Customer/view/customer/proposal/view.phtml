@@ -1,0 +1,265 @@
+<?php
+use Transactions\Service\InvoiceService;
+$unread = array();
+echo $this->headtitle("View My Proposal");
+?>
+<div id="messagemodal"></div>
+<div id="wasabi_modal"></div>
+<div class="page-section">
+	<div class="row">
+<?php // echo $this->partial("general-error-ponters")?>
+		<div class="col-md-7">
+
+			<div class="page-section padding-top-none">
+				<div class="media media-grid v-middle">
+					<div class="media-left">
+						<span class="icon-block half bg-blue-300 text-white"><i
+							class="fa fa-eye"></i></span>
+					</div>
+					<div class="media-body">
+						<h1 class="text-display-1 margin-none"><?php echo ($proposalEntity->getProposalTitle() == NULL ? "No Title Available" : $proposalEntity->getProposalTitle()) ?></h1>
+					</div>
+				</div>
+				<br />
+				<?php echo ($proposalEntity->getProposalDesc() == NULL ? "" : $proposalEntity->getProposalDesc()) ?>
+			</div>
+
+			<!-- 			<div class="pull-right"> -->
+			<!-- 				<a class="btn btn-white btn-circle paper-shadow relative" -->
+			<!-- 					href="#modal-message" data-toggle="modal" data-z="0.5" -->
+			<!-- 					data-hover-z="1" data-animated><i class="md md-add"></i></a> -->
+			<!-- 			</div> -->
+
+
+			
+
+
+<hr>
+<div class="page-section">
+			<div class="row">
+				<div class="col-md-7">
+					<h2 class="text-headline margin-none">My Property</h2>
+					<p class="text-subhead text-light">These are properties that would
+						be insured</p>
+					<ul class="list-group relative paper-shadow" data-hover-z="0.5"
+						data-animated>
+						<?php  echo $this->customer_proposal_list_object($proposalEntity); ?>
+						
+						
+					</ul>
+					<p style='text-align: center;'>
+
+						<a id="btn2" <?php  echo ($proposalEntity->getInvoice() != NULL ? "disabled" : "")?>
+							class="ajax_element btn btn-xs btn-warning paper-shadow relative"
+							data-json='{"type":"standard"}'
+							data-href="<?php echo $this->url("cus_proposal/default", array("action"=>"selectproperty"))?>"
+							data-animated style='width: 100%'>Include a Property</a> <br> OR
+						<br> <a id="btn3" <?php  echo ($proposalEntity->getInvoice() != NULL ? "disabled" : "")?>
+							class="ajax_element btn btn-primary paper-shadow relative "
+							data-json='{"type":"standard"}'
+							data-href="<?php echo $this->url("cus_proposal/default", array("action"=>"registernewproperty"))?>"
+							data-z="0.5" data-hover-z="1" data-animated style='width: 100%'>Register
+							New Property</a>
+					</p>
+				</div>
+				<div class="col-md-5">
+
+					<div class="pull-right">
+						<a  data-href="<?php  echo $this->url("cus_proposal/default", array("action"=>"sendmessage"))?>" id="btn3" data-json='{"type":"standard"}' class=" ajax_element  btn btn-white btn-circle paper-shadow relative"
+							 data-z="0.5"
+							data-hover-z="1" data-animated><i class="md md-add"></i></a>
+					</div>
+
+					<h2 class="text-headline margin-none">Messages</h2>
+					<p class="text-subhead text-light">Communicate with the Broker</p>
+					<div class="slick-basic slick-slider" data-items="1"
+						data-items-lg="1" data-items-md="1" data-items-sm="1"
+						data-items-xs="1">
+						
+						
+
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<hr>
+		<div class="page-section">
+			<div class="row">
+				<div class="col-md-7">
+					<h2 class="text-headline margin-none">Doc. Uploader</h2>
+					<p class="text-subhead text-light">Upload all doument associated with this proposal here
+						be insured</p>
+					<ul class="list-group relative paper-shadow" data-hover-z="0.5"
+						data-animated>
+						<?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+						<?php  //echo $this->customer_offer_object_list($offerEntity->getObject())?>
+						
+					</ul>
+				</div>
+				<div class="col-md-5">
+
+					<div class="pull-right">
+						
+					</div>
+
+					<h2 class="text-headline margin-none">Uploaded Documents</h2>
+					<p class="text-subhead text-light">List of all uploaded doocuments</p>
+					<div class="slick-basic slick-slider" data-items="1"
+						data-items-lg="1" data-items-md="1" data-items-sm="1"
+						data-items-xs="1">
+						
+						<?php  echo $this->customerProposalDocListHelper($proposalEntity->getId())?>
+
+					</div>
+					<a id="btn3" class="btn btn-default ajax_element btn-xs" style="width: 100%;" data-href="<?php  echo $this->url("cus_proposal/default", array("action"=>"viewalldocumentmodal"))?>">View all Documents</a>
+
+				</div>
+			</div>
+
+		</div>
+
+
+			<br /> 
+			
+              
+              <br />
+
+		</div>
+		<div class="col-md-5">
+
+			<!-- .panel -->
+			<div class="panel panel-default paper-shadow" data-z="0.5"
+				data-hover-z="1" data-animated>
+				<div class="panel-heading">
+					<h4 class="text-headline"><?php  echo $proposalEntity->getProposalTitle() ?></h4>
+				</div>
+				<div class="panel-body">
+					<p class="text-caption">
+						<!--                 <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp; -->
+						<i class="fa fa-calendar fa-fw"></i> <strong style="color: red"><?php  echo $this->dateFormat($proposalEntity->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></strong>
+						<br /> <i class="fa fa-user fa-fw"></i> Insurance Service: <strong
+							style="color: red"> <?php  echo ($proposalEntity->getServiceType() == NULL ? "" : $proposalEntity->getServiceType()->getInsuranceService())?></strong>
+						<br /> <i class="fa fa-mortar-board fa-fw"></i> Premium Value
+						Rate: <strong style="color: red"> <?php  echo ($proposalEntity->getValue() == NULL ? "" : $this->package_value_representation($proposalEntity->getValueType()->getId(), $proposalEntity->getValue(), "NGN"))?></strong>
+						<br /> <i class="fa fa-gbp fa-fw"></i> Premium Value: <strong
+							style="color: red"> <?php   echo $this->customer_proposal_premium_viewhelper($proposalEntity)?></strong>
+						<br /> <i class="fa fa-institution fa-fw"></i> Insurer: <img
+							alt=""
+							src="<?php  echo ($proposalEntity->getInsurer() == NULL ? "" : $this->insurerLogohelper($proposalEntity->getInsurer()->getId()))?>"
+							class="img-circle width-80"> <br> Status : <?php echo $this->statusHelper($proposalEntity->getProposalStatus()->getStatus())?>
+					</p>
+				</div>
+				<hr class="margin-none" />
+				<div class="panel-body text-center">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+					
+					<?php
+    if ($proposalEntity->getInvoice() != NULL) {
+        $json = json_encode(array(
+            'data' => $proposalEntity->getInvoice()->getId()
+        ));
+        if ($proposalEntity->getInvoice()
+            ->getStatus()
+            ->getId() == InvoiceService::INVOICE_UNPAID_STATUS) {
+            if ($proposalEntity->getInvoice()->getIsMicro() == TRUE) {
+                
+                ?>
+            <a id='sending_data_button'
+							class='btn btn-success btn-xs ajax_element'
+							data-json='<?php echo $json ?>' style='width: 100%'
+							data-href="<?php  echo $this->url("cus_proposal/default", array("action"=>"viewmicropayment"))?>">View
+							Payment Spread</a>
+<?php }else{?>
+<a id='sending_data_button' class='btn btn-success btn-xs ajax_element'
+							data-json='<?php echo $json ?>' style='width: 100%'
+							data-href="<?php  echo $this->url("cus_proposal/default", array("action"=>"viewinvoicemodal"))?>">Invoice</a>
+    
+<?php }}}?>
+							</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<a id='btn2'
+							class='btn btn-info btn-xs ajax_element'
+							data-json='{"type":"standard"}' style='width: 100%'
+							data-href="<?php  echo $this->url("cus_proposal/default", array("action"=>"getcoverdetailsmodal"))?>">Cover
+							Details</a>
+					</div>
+					<br>
+					<!--               <p class="text-body-2">or <a href="#">buy course for $1</a></p> -->
+					<br>
+					<div class="col-md-12 col-sm-12 col-xs-12">
+				<a id='btn2'
+							class='btn btn-success btn-xs ajax_element'
+							data-json='{"type":"standard"}' style='width: 100%'
+							data-href="<?php  echo $this->url("cus_proposal/default", array("action"=>"getcoverdetailsmodal"))?>">GENERATE PDF</a>
+				</div>
+				</div>
+				
+				
+
+			</div>
+			<!-- // END .panel -->
+
+			<?php // echo $this->partial("customer-board-featured-packages")?>
+
+		</div>
+
+
+
+		<div class="col-md-5">
+
+			<!-- .panel -->
+			<div class="panel panel-default paper-shadow" data-z="0.5"
+				data-hover-z="1" data-animated>
+
+				<div class="panel-body">
+					
+					<?php
+    if ($proposalEntity->getInvoice() != NULL) {
+        if ($proposalEntity->getInvoice()
+            ->getStatus()
+            ->getId() == InvoiceService::INVOICE_UNPAID_STATUS) {
+            ?>
+            
+				
+					
+					<a class="btn btn-success btn-stroke" style='width: 100%'
+						href="<?php  echo $this->url("cus_proposal/default", array("action"=>"pre-payment"))?>">ACCEPT
+						AND PAY</a>
+							<?php }}?>
+				
+				</div>
+				<hr class="margin-none" />
+
+
+			</div>
+			<!-- // END .panel -->
+
+		</div>
+
+ 
+
+	</div>
+</div>
+
+
+
+
+<!-- Register Property Modal -->
+
+
+<!-- Include Property Modal -->
+
+
+
+
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>

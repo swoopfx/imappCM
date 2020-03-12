@@ -1,0 +1,31 @@
+
+<div class='panel-body'>
+                            <table class='table table-striped'>
+                              <thead>
+                                <tr>
+            
+                                  
+                                  <th>Amount Payable</th>
+                                  <th>Due Date</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+            
+                               <?php 
+                               if(count($datas) > 0){
+                               foreach ($datas as $data ){
+                               ?>
+                               <tr>
+            
+                                 
+                                  <td> <?php echo $this->myCurrencyFormat(number_format((float) $data->getValue(), 2, '.', ''), ($invoiceEntity != NULL ? $invoiceEntity->getCurrency()->getCode() : "NGN")) ?></td>
+                                  <td> <?php echo  $this->dateFormat($data->getDueDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") ?></td>
+                                      
+                                </tr>
+                               
+                               <?php 
+                               }}?>
+                              </tbody>
+                            </table>
+
+                          </div>

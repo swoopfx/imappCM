@@ -1,0 +1,18 @@
+<?php
+$form = $this->form;
+
+?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($form)?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form);?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form);  // this defines the error?> 
+							</div>
+</div>

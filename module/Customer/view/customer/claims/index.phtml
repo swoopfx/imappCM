@@ -1,0 +1,53 @@
+<?php
+echo $this->headTitle("My Claims");
+if($this->identity()){
+?>
+ <div class="row">
+	<div class="col-md-8 col-lg-9">
+		<div class="panel panel-default">
+			<!-- Progress table -->
+			<div  class="table-responsive">
+				<table id="myTable"  class="table v-middle">
+					<thead>
+						<tr>
+							
+							<th>Claims</th>
+							<th>Policy</th>
+							<th>Action</th>
+							
+							
+							
+						</tr>
+					</thead>
+					<tbody id="responsive-table-body">
+						<?php  echo $this->partial("customaer_claims_all_unsettled", array("unsettleClaims"=>$unsettleClaims))?>
+					</tbody>
+				</table>
+			</div>
+			<!-- // Progress table -->
+
+<!-- 			<div class="panel-footer padding-none text-center"> -->
+<!-- 				<ul class="pagination"> -->
+<!-- 					<li class="disabled"><a href="#">&laquo;</a></li> -->
+<!-- 					<li class="active"><a href="#">1</a></li> -->
+<!-- 					<li><a href="#">2</a></li> -->
+<!-- 					<li><a href="#">3</a></li> -->
+<!-- 					<li><a href="#">4</a></li> -->
+<!-- 					<li><a href="#">5</a></li> -->
+<!-- 					<li><a href="#">&raquo;</a></li> -->
+<!-- 				</ul> -->
+<!-- 			</div> -->
+		</div>
+
+	</div>
+
+<div class="col-lg-3 col-md-3 col-sm-3"> 
+        <!-- .panel -->
+          
+          <!-- // END .panel -->
+          <?php echo $this->partial("customer_claims_menu")?>
+          <?php  echo $this->partial("customer-policy-menu")?>
+      <?php  echo $this->partial("customer-board-featured-packages")?></div>
+      
+      <?php }?>
+</div>

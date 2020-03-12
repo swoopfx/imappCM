@@ -1,0 +1,24 @@
+<?php
+$customer = $this->customer;
+if ($customer != NUll) {
+    foreach ($customer as $cus) {
+        $cust = $cus->getCustomer();
+        ?>
+<tr>
+
+	<td><?php  echo ($cust->getAccountId() != NULL ? strtoupper($cus->getCustomer()->getAccountId()) : "")?></td>
+	<td><?php  echo ($cust->getName() != NULL ? strtoupper($cus->getCustomer()->getName()) : "")?></td>
+	<td><?php  echo ($cust->getCustomerCategory()->getId() != NULL ? $this->customer_category_type_view_helper($cus->getCustomer()->getCustomerCategory()->getId()) : "")?></td>
+	<td><?php  echo ($cust->getPhone() != NULL ? $cus->getCustomer()->getPhone(): '')?></td>
+	<td><?php  echo ($cust->getEmail() != NULL ? $cust->getEmail() : '')?></td>
+	<!-- 	<td>2011/07/25</td> -->
+	<!-- 	<td>$170,750</td> -->
+	<!-- 	<td>8422</td> -->
+	<td><?php  echo $this->assigned_child_broker_button_helper($cust->getId())?>
+		
+			</td>
+</tr>
+<?php
+    }
+}
+?>

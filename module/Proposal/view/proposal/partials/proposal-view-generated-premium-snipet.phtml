@@ -1,0 +1,35 @@
+<?php
+
+$objects = $this->jects;
+//var_dump($objects);
+?>
+<div class='col-md-3 col-xs-12 widget widget_tally_box'>
+		<div class='x_panel ui-ribbon-container fixed_height_390'>
+<!-- 			<div class='ui-ribbon-wrapper'> -->
+<!-- 				<div class='ui-ribbon'>30% Off</div> -->
+<!-- 			</div> -->
+			<div class='x_title'>
+				<h2>ESTIMATED PREMIUM</h2>
+				<div class='clearfix'></div>
+			</div>
+			<div class='x_content'>
+			
+<?php   if (count($objects) == 0){?>
+
+				<div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    
+                    <strong style="color: red">No Property Attached to this Proposal</strong> 
+                    <h3 class="name_title" >Select Property Below</h3>
+                  </div>
+                  
+<?php  }else{ ?>
+<div class='divider'></div>
+ <h3 class="name_title" ><a href="" class="btn btn-default"> Generate Premium</a></h3>
+				<p></p>
+
+<?php }?>
+				
+
+			</div>
+		</div>
+	</div>

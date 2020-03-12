@@ -1,0 +1,27 @@
+<?php
+use Zend\Session\Container;
+
+$avaialableCardSession = new Container("available_card_session");
+?>
+<i id="addcardLoader" class="fa fa-lg" style="display: none;"><img
+	alt="" src="<?php  echo $this->basepath("/ver_loader.gif")?>"
+	height=150></i>
+<div class="page-section padding-top-none">
+            <div class="media v-middle">
+              <div class="media-body">
+<!--                 <h1 class="text-display-1 margin-none">Forums</h1> -->
+<!--                 <p class="text-subhead text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, illo.</p> -->
+              </div>
+              <div class="media-right">
+              
+              <a id="btn3" class="ajax_element btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated
+					style="width: 100%" data-json='{"type":"standard"}'
+					data-ajax-loader="addcardLoader"
+					data-href="<?php  echo $this->url("board", array("action"=>"addcard"))?>"><i
+					class="fa fa-credit-card"></i> Edit Card</a>
+                
+              </div>
+            </div>
+          </div>
+          <?php  echo $this->transactionRavePreAuthCardHelper($this->identity())?>
+

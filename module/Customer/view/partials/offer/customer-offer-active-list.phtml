@@ -1,0 +1,38 @@
+<?php
+
+
+if(count($offer) > 0){
+    foreach ($offer as $off){ ?>
+    
+    <tr>
+							
+							<td><span class="label label-default"><?php  echo $this->dateFormat($off->getUpdatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></span></td>
+							<td><?php  echo ($off->getOfferName() == NULL ? "": $off->getOfferName())?></td>
+							<td><a href="<?php  echo $this->url("cus_offer", array())?>"><?php  echo ($off->getOfferCode() == NULL ? "": strtoupper($off->getOfferCode()))?></a></td>
+							
+							<td>
+								<span class="badge badge-red"><?php echo $off->getOfferStatuses()->getOfferStatusId()->getStatusWord()?></span>
+							</td>
+							<td class="text-right"><a href="<?php echo $this->url("cus_offer/default", array("action"=>"view", "id"=>$off->getId()))?>" class="btn btn-default btn-xs"
+								data-toggle="tooltip" data-placement="top" title="View"><i
+									class="fa fa-eye"></i></a>
+									 <a href="<?php  echo $this->url("cus_offer/default", array("action"=>"delete", "id"=>$off->getId()))?>"
+								class="btn btn-danger btn-xs confirmation" data-toggle="tooltip"
+								data-placement="top" title="Delete"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+ <?php        
+    }
+}
+
+?>
+
+<script type="text/javascript">
+    var elems = document.getElementsByClassName('confirmation');
+    var confirmIt = function (e) {
+        if (!confirm('Are you sure?')) e.preventDefault();
+    };
+    for (var i = 0, l = elems.length; i < l; i++) {
+        elems[i].addEventListener('click', confirmIt, false);
+    }
+</script>

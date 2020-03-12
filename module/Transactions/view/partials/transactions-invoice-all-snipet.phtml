@@ -1,0 +1,46 @@
+<?php
+$count = 200;
+$i = 0;
+if (count($invoices) != 0) {
+
+    while ($i < count($invoices) && count($invoices) < $count) {
+        // var_dump($invoices[$i]);
+        $json = json_encode(array(
+            "data" => $invoices[$i]->getInvoiceUid()
+        ));
+        ?>
+<div style='text-align: center;'>
+	<i id='invoicereminder' class='fa fa-lg'
+		style='display: none; text-align: center;'><img alt=''
+		src='<?php echo  $this->basePath('/processin.gif')  ?>' height=30>
+		<hr></i>
+</div>
+<tr>
+	<td><?php  echo strtoupper(($invoices[$i]->getInvoiceUid() != NULL ? $invoices[$i]->getInvoiceUid() : " "))?><br>
+	<?php  echo $this->statusHelper($invoices[$i]->getStatus()->getStatus())?>
+	</td>
+	<td><?php  echo ($invoices[$i]->getCustomer() != NULL ? $invoices[$i]->getCustomer()->getName() : " ")?></td>
+	<td><?php  echo ($invoices[$i]->getInvoiceCategory() != NULL ? $invoices[$i]->getInvoiceCategory()->getCategory() : " ")?></td>
+	<td><?php echo ($invoices[$i]->getAmount() != NULL ? $this->myCurrencyFormat($invoices[$i]->getAmount(), $invoices[$i]->getCurrency()->getCode()) :  $this->myCurrencyFormat("0", $invoices[$i]->getCurrency()->getCode()))?><br>
+	<?php echo (count($invoices[$i]->getManualProcess()) != 0 ? "<span class='btn btn-xs btn-info'>Payment Processed</span>" : "")?>
+	<br><?php echo ($invoices[$i]->getManualProcess() != NULL && $invoices[$i]->getStatus()->getId() != \Transactions\Service\InvoiceService::INVOICE_PAID_STATUS ? "<a class='btn btn-xs btn-success' href='".$this->url("invoice/default", array("action"=>"send-reminder", "id"=>$invoices[$i]->getId()))."'>Manul Payment Submited</a>": "");?>
+	</td>
+	<td><?php echo ($invoices[$i]->getExpiryDate() != NULL ? $this->dateFormat($invoices[$i]->getExpiryDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US") : "")?></td>
+	<td>
+	<?php if($invoices[$i]->getStatus()->getId() != \Transactions\Service\InvoiceService::INVOICE_PAID_STATUS){?>
+	<a
+		href="<?php echo $this->url("invoice/default", array("action"=>"view", "id"=>$invoices[$i]->getInvoiceUid()))?>"
+		title="View Invoice" alt="View Invoice" class="btn btn-danger btn-xs"><i
+			class="fa fa-eye"></i></a> <a id="sending_data_button"
+		data-json='<?php echo $json ?>' data-ajax-loader="invoicereminder"
+		data-href="<?php  echo $this->url("invoice/default", array("action"=>"send-reminder"))?>"
+		title="Send Reminder" alt="Send Reminder"
+		class="btn btn-info btn-xs ajax_element"><i class="fa fa-send"></i></a>
+			
+			<?php }?> </td>
+</tr>
+<?php
+        $i ++;
+    }
+}
+?>

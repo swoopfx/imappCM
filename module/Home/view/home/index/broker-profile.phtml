@@ -1,0 +1,94 @@
+<?php
+echo $this->headtitle("Broker Profile");
+$brokerForm = $this->brokerProfileForm;
+$brokerForm->prepare();
+?>
+<div class="row">
+	<div class="col-md-9 col-sm-9 col-xs-12">
+		<div class="row">
+<?php  echo $this->dashboard_info_ducker_helper()?>
+	<?php echo $this->dashboard_broker_account_helper($brokerProfileEntity); ?>
+
+
+	<?php  echo $this->dashboard_broker_sub_helper($brokerProfileEntity->getSubscription())?>
+</div>
+		<div class="row">
+
+			<div class="col-xs-12">
+
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Broker Profile</h2>
+
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+						</ul>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+			<?php  echo $this->partial("general-error-ponters") ?>		
+	
+                  
+					<?php  echo $this->form()->openTag($brokerForm)?>
+						
+                         <?php  echo $this->partial('broker-setup-data-snipet', array('form'=>$brokerForm->get('brokerProfileFieldset')))?>
+                        
+						
+							<?php  // echo $this->partial('broker-package-select-snipet', array('form'=>$brokerForm->get('broker_setup_data')->get('subscription')))?>
+							
+    <?php  // echo $this->partial('account-package-display-snipet', array('pack'=>$repo))?>
+    
+						
+					
+
+				<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-2">
+
+				
+				<?php
+    echo $this->formRow($brokerForm->get('csrf'));
+    echo $this->formRow($brokerForm->get('submit'));
+    // echo $this->formRow($customerForm->get('reset'));
+    echo $this->form()->closeTag()
+    ?>
+    </div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3 col-sm-3 col-xs-12">
+	<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner2.jpg")?>">
+			</div>
+		</div>
+		</div>
+</div>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+             $('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.phone').mask('+000-000-000-0000');
+           // $('.url').mask('http://#.#', {'translation': {
+              //  A: {pattern: /[A-Za-z0-9]/},
+              //  S: {pattern: /[A-Za-z]/}
+               
+             // }
+        //});
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

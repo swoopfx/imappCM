@@ -1,0 +1,18 @@
+<?php
+?>
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<a id="btn3" data-ajax-loader="export" style="width: 100%" class="ajax_element btn btn-success btn-xs"
+		data-href="<?php  echo $this->url("claims/default", array("action"=>"exporttomail"))?>">Send
+		To Email</a>
+</div>
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<a style="width: 100%" id="btn3" data-ajax-loader="export"
+		data-href="<?php  echo $this->url("claims/default", array("action"=>"pdfexport"))?>"
+		class="ajax_element btn btn-success btn-xs">Export to PDF</a>
+</div>
+
+<div style="text-align: center;">
+	<i id="export" class="fa  fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=25></i>
+</div>

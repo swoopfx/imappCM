@@ -1,0 +1,113 @@
+<?php
+
+use GeneralServicer\Service\GeneralService;
+
+?>
+
+
+<tr>
+
+	<th>Details about claims</th>
+	<td>
+<?php  echo ($details->getClaimnantDetails() != NUll ? $this->escapehtml( $details->getClaimnantDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+<tr>
+
+	<th>What Claimnant was Retained/Contracted to do</th>
+	<td>
+<?php  echo ($details->getRetainerReason() != NUll ? $this->escapehtml( $details->getRetainerReason()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Was retained contract put in writing</th>
+	<td>
+<?php  echo ($details->getIsEvidenced() != NUll ? $this->trueFalseHelper( $details->getIsEvidenced()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Date work that led to claims was performed</th>
+	<td>
+<?php  echo ($details->getWorkDate() != NUll ? $this->dateformat( $details->getWorkDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Who actually performed the work within the firm</th>
+	<td>
+<?php  echo ($details->getCompanyClaimPrincipal() != NUll ? $this->escapehtml( $details->getCompanyClaimPrincipal()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Principal Title/Designation</th>
+	<td>
+<?php  echo ($details->getPrincipalClaimTitle() != NUll ? $this->escapehtml( $details->getPrincipalClaimTitle()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Nature of Claim</th>
+	<td>
+<?php  echo ($details->getClaimNature() != NUll ? $this->escapehtml( $details->getClaimNature()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+
+<tr>
+
+	<th>Have legal proceedings commenced</th>
+	<td>
+<?php  echo ($details->getIsProceeding() != NUll ? $this->trueFalseHelper( $details->getIsProceeding()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+<tr>
+
+	<th>Date claimnant aware of claims circumstance</th>
+	<td>
+<?php  echo ($details->getClaimDate() != NUll ? $this->dateformat( $details->getClaimDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+
+
+<tr>
+
+	<th>First intimation of a claim was in writing</th>
+	<td>
+<?php  echo ($details->getIsClaimsInWriting() != NUll ? $this->trueFalseHelper( $details->getIsClaimsInWriting()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+
+
+<tr>
+
+	<th>Claims Amount</th>
+	<td>
+<?php  echo ($details->getClaimAmount() != NUll ? $this->myCurrencyFormat( $details->getClaimAmount()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+<tr>
+
+	<th>Claims Amount Details</th>
+	<td>
+<?php  echo ($details->getAmountDetails() != NUll ? $this->myCurrencyFormat( $details->getAmountDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+</tr>
+
+

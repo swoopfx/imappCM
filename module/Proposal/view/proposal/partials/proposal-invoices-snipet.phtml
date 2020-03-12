@@ -1,0 +1,47 @@
+<?php
+$invoices = $this->proposalInvoice;
+?>
+<div class="col-md-4 col-sm-4 col-xs-12">
+	<div class="x_panel">
+		<div class='x_title'>
+			<h2>INVOICE</h2>
+			<div class='clearfix'></div>
+		</div>
+		<div class="x_content">
+			<div class="table-responsive">
+				<table class="table table-hover">
+	<?php
+
+if ($invoices == NULL) {
+    echo "<span> No Invoice Generated yet</span><br>";
+    // if the staus of proposal is waiting for customers response
+    // hide generate invoice Button
+} else {
+    ?>
+		<thead>
+						<tr>
+							<th>Invoice Info</th>
+							<th></th>
+						</tr>
+
+					</thead>
+					<tbody>
+		
+		
+		
+			<tr>
+							<th><div class="media-body">
+				<?php echo $invoice->getInvoiceUid()?><br>
+								</div></th>
+							<td></td>
+
+
+						</tr>
+			<?php }?>
+			
+		</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

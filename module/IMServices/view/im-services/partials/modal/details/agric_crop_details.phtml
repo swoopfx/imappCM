@@ -1,0 +1,291 @@
+<?php
+$agricCropEntity = $coverEntity->getCropAgricIinsurance();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Cover Start Date</th>
+				<td>
+				<?php  echo ($agricCropEntity->getCoverStartDate() != NUll ? $this->dateFormat($agricCropEntity->getCoverStartDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Cover End Date</th>
+				<td>
+				<?php  echo ($agricCropEntity->getCoverEndDate() != NUll ? $this->dateFormat($agricCropEntity->getCoverEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Farm Address</th>
+				<td>
+				<?php  echo ($agricCropEntity->getFarmAddress() != NUll ? $agricCropEntity->getFarmAddress() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Nearest Village/Landmark</th>
+				<td>
+				<?php  echo ($agricCropEntity->getFarmNearestVillage() != NUll ?$agricCropEntity->getFarmNearestVillage() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>State</th>
+				<td>
+				<?php  echo ($agricCropEntity->getFarmState() != NUll ? $agricCropEntity->getFarmState()->getZoneName() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Farm Size (sqm)</th>
+				<td>
+				<?php  echo ($agricCropEntity->getFarmSize() != NUll ? $agricCropEntity->getFarmSize()." <strong> m<sup>2</sup></strong>" : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Planted Area</th>
+				<td>
+				<?php  echo ($agricCropEntity->getFarmAreaPlanted() != NUll ? $agricCropEntity->getFarmAreaPlanted() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+
+			<tr>
+
+				<th>Planting Date</th>
+				<td>
+				<?php  echo ($agricCropEntity->getCropPlantingDate() != NUll ? $this->dateFormat($agricCropEntity->getCropPlantingDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Estimated Harvest Date</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatedHarvetDate() != NUll ? $this->dateFormat($agricCropEntity->getEstimatedHarvetDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Cultivation Seaon Start</th>
+				<td>
+				<?php  echo ($agricCropEntity->getSeasonCommencement() != NUll ? $agricCropEntity->getSeasonCommencement() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Cultivation Season Ends</th>
+				<td>
+				<?php  echo ($agricCropEntity->getSeasonEnd() != NUll ? $agricCropEntity->getSeasonEnd() : "Not Specified") ?>
+				</td>
+			</tr>
+			<hr>
+			<tr>
+
+				<th>Estimated Land Clearing Cost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatedCostLandClearing() != NUll ? "&#8358;".$agricCropEntity->getEstimatedCostLandClearing() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Estimated planting Cost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatedCostPlanting() != NUll ? "&#8358;".$agricCropEntity->getEstimatedCostPlanting() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Estimated Irrigation Cost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatesCostIrrigation() != NUll ? "&#8358;".$agricCropEntity->getEstimatesCostIrrigation() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Estimated Pest/WeedCost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatedCostWeedPestControl() != NUll ? "&#8358;".$agricCropEntity->getEstimatedCostWeedPestControl() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Estimated Transportation Cost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstinmatedCostTransportation() != NUll ? "&#8358;".$agricCropEntity->getEstinmatedCostTransportation() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Interest On Loan</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatedCostInterestLoan() != NUll ? "&#8358;".$agricCropEntity->getEstimatedCostInterestLoan() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Estimated Harvesting Cost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstmatedCostHarvesting() != NUll ? "&#8358;".$agricCropEntity->getEstmatedCostHarvesting() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Misecellanous Cost</th>
+				<td>
+				<?php  echo ($agricCropEntity->getEstimatedCostMiscellanous() != NUll ? "&#8358;".$agricCropEntity->getEstimatedCostMiscellanous() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<hr>
+			<tr>
+
+				<th>Years In Business</th>
+				<td>
+				<?php  echo ($agricCropEntity->getYearInBusiness() != NUll ? $agricCropEntity->getYearInBusiness() : "Not Specified") ?> years
+				</td>
+			</tr>
+			<?php if(count($agricCropEntity->getStaffDetails()) > 0){?>
+			<tr>
+
+				<th>Staff Details</th>
+				<td>
+					
+						<table class="table table-hover ">
+							<thead>
+								<tr>
+									<th>Staff Position/Post</th>
+									<th>Staff Name</th>
+									<th>Qualification</th>
+									<th>Years In Service</th>
+								</tr>
+							</thead>
+							<tbody>
+					<?php foreach ($agricCropEntity->getStaffDetails() as $staff){?>
+					<tr>
+
+									<td> <?php echo ($staff->getPost() != NUll ? $staff->getPost() : "Empty") ;?>
+								</td>
+
+									<td>	 <?php echo ($staff->getName() != NUll ? $staff->getName() : "Empty") ;?></td>
+									<td>	 <?php echo ($staff->getQualification() != NUll ? $staff->getQualification() : "Empty") ;?></td>
+
+									<td>	 <?php echo ($staff->getYearsInService() != NUll ? $staff->getYearsInService() : "Empty") ;?> years</td>
+
+
+
+
+
+								</tr>
+						
+					<?php }?>
+					</tbody>
+						</table>
+					
+				</td>
+			</tr>
+			<?php }?>
+			
+			<?php if(count($agricCropEntity->getCropPerilCoverList()) > 0){?>
+			<tr>
+
+				<th>Crop Peril Cover</th>
+				<td>
+				<table class="table table-hover ">
+							<thead>
+								<tr>
+									<th>Peril</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+					<?php foreach ($agricCropEntity->getCropPerilCoverList() as $peril){?>
+					<tr>
+
+									<td> <?php echo ($peril->getPeril() != NUll ? $peril->getPeril() : "Empty") ;?>
+								</td>
+
+									
+
+
+
+								</tr>
+						
+					<?php }?>
+					</tbody>
+						</table>
+						</td>
+			</tr>
+			<?php }?>
+			
+			<?php if(count($agricCropEntity->getCropDetails()) > 0){?>
+			<tr>
+
+				<th>Crop Details</th>
+				<td>
+				<table class="table table-hover ">
+							<thead>
+								<tr>
+									<th>Crop Biggest Threat</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+					<?php foreach ($agricCropEntity->getCropDetails() as $detail){?>
+					<tr>
+
+									<td> <?php echo ($detail->getCropTypeInsured() != NUll ? $detail->getCropTypeInsured() : "Empty") ;?>
+								</td>
+								<td> <?php echo ($detail->getCropsBiggestThreat() != NUll ? $detail->getCropsBiggestThreat() : "Empty") ;?>
+								</td>
+								<td> <?php echo ($detail->getCropSeedVariety() != NUll ? $detail->getCropSeedVariety() : "Empty") ;?>
+								</td>
+
+									
+
+
+
+								</tr>
+						
+					<?php }?>
+					</tbody>
+						</table>
+						</td>
+			</tr>
+
+<?php }?>
+			
+		</tbody>
+	</table>
+
+</div>

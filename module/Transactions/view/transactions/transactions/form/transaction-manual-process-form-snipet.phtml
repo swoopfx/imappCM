@@ -1,0 +1,62 @@
+<?php
+// $manualProcessForm = "";
+$manualProcessForm->prepare();
+echo $this->form()->openTag($manualProcessForm);
+?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualProcessForm->get('paymentMode'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualProcessForm->get('paymentMode'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($manualProcessForm->get('paymentMode'))?> 
+								
+							</div>
+
+
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualProcessForm->get('currency'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualProcessForm->get('currency'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($manualProcessForm->get('currency'))?> 
+								
+							</div>
+
+<div data-ng-show="isAmount">
+	<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualProcessForm->get('amountPaid'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualProcessForm->get('amountPaid'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($manualProcessForm->get('amountPaid'))?> 
+								
+							</div>
+</div>
+
+<div data-ng-show="isBankDeposit">
+<?php  echo $this->partial("transaction-form-payment-bank-deposit-snipet", array('manualProcessForm'=>$manualProcessForm))?>
+							 </div>
+<div data-ng-show="isCash">
+							 <?php  echo $this->partial("transaction-form-payment-cash-snipet", array('manualProcessForm'=>$manualProcessForm))?>
+							</div>
+<div data-ng-show="isBankTransfer">
+							<?php  echo $this->partial("transaction-form-payment-bank-transfer", array("manualProcessForm"=>$manualProcessForm))?>
+</div>
+<hr>
+<?php echo $this->formrow($manualProcessForm->get("csrf"))?>
+<?php echo $this->formrow($manualProcessForm->get("submit"))?>
+<?php echo $this->form()->closeTag()?>
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('parsley/parsly.js'));
+?>

@@ -1,0 +1,102 @@
+<?php
+$this->headtitle("Broker SetUp Info");
+$brokerInfo = $this->brokerInfo;
+$brokerName =($brokerInfo->getIdInduranceBoker() == NULL ? "": $brokerInfo->getIdInduranceBoker()->getCompanyName());
+?>
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2><?php  echo $brokerName ?></h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+					<div class="profile_img">
+						<div id="crop-avatar">
+							<!-- Current avatar -->
+							<img class="img-responsive avatar-view" src="images/picture.jpg"
+								alt="Broker Logo" title="Change the avatar">
+						</div>
+					</div>
+					<h3><?php echo $brokerName ?></h3>
+
+					<ul class="list-unstyled user_data">
+						<li><i class="fa fa-map-marker user-profile-icon"></i>Broker
+							Address</li>
+
+						<li><i class="fa fa-briefcase user-profile-icon"></i><a href="">Company
+								Details</a></li>
+
+						<li><i class="fa fa-briefcase user-profile-icon"></i> <?php echo ($brokerInfo->getBrokerEmail() == NULL ? " ": $brokerInfo->getBrokerEmail() )?>
+						</li>
+
+						<li class="m-top-xs"><i
+							class="fa fa-external-link user-profile-icon"></i> <a
+							href="<?php echo ($brokerInfo->getBrokerWebsite() == NULL ? "#": $brokerInfo->getBrokerWebsite() )?>" target="_blank"><?php echo ($brokerInfo->getBrokerWebsite() == NULL ? "No Website Available ": $brokerInfo->getBrokerWebsite() )?></a></li>
+					</ul>
+
+					<a class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit
+						Profile</a> <br />
+
+					
+
+				</div>
+				<div class="col-md-9 col-sm-9 col-xs-12">
+
+					<div class="profile_title">
+						<div class="col-md-6">
+							<h2>User Activity Report</h2>
+						</div>
+						<div class="col-md-6">
+							<div id="reportrange" class="pull-right"
+								style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+								<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>  <b class="caret"></b>
+							</div>
+						</div>
+					</div>
+					<!-- start of user-activity-graph -->
+					<div id="graph_bar" style="width: 100%; height: 280px;"></div>
+					<!-- end of user-activity-graph -->
+
+					<div class="" role="tabpanel" data-example-id="togglable-tabs">
+						<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#tab_content1"
+								id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Payment
+									and Invoice Status</a></li>
+							<li role="presentation" class=""><a href="#tab_content2"
+								role="tab" id="profile-tab" data-toggle="tab"
+								aria-expanded="false">Subscription Status</a></li>
+							<li role="presentation" class=""><a href="#tab_content3"
+								role="tab" id="profile-tab2" data-toggle="tab"
+								aria-expanded="false">Third Party Services</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div role="tabpanel" class="tab-pane fade active in"
+								id="tab_content1" aria-labelledby="home-tab">
+
+								<!-- start Payment and invoice -->
+
+								<!-- end Payment and invoice-->
+
+							</div>
+							<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+								aria-labelledby="profile-tab">
+
+								<!-- start Subscription and its relativevity -->
+
+								<!-- end Subscription and its relativevity -->
+
+							</div>
+							<div role="tabpanel" class="tab-pane fade" id="tab_content3"
+								aria-labelledby="profile-tab">
+								<p>SMS, Adverts</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

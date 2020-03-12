@@ -1,0 +1,167 @@
+<?php
+$brokerInfo = $this->brokerInfo;
+$invoice = $this->invoice;
+$brokerSub = $this->sub;
+$paymentForm = $this->payForm;
+$paymentForm->prepare();
+$payForm = $paymentForm->get("card_payment");
+
+$startDate = $this->dateFormat($brokerSub->getStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US");
+$endDate = $this->dateFormat($brokerSub->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US");
+$word = 'This is a setup fee for <strong>' . $brokerInfo->getBrokerName() . '</strong><br>' . "Begins On  <strong>" . $startDate . "</strong><br> Expires By <strong>" . $endDate . "</strong>. <br> This Package comes with <strong>" . $brokerSub->getPackage()->getSms() . " SMS</strong>";
+
+?>
+
+<section class="content invoice">
+	<!-- title row -->
+	<div class="row">
+		<div class="col-xs-12 invoice-header">
+			<h1>
+				<img src="<?php echo $this->basepath()."/images/img.jpg"?>"> <small
+					class="pull-right">Date: <?php echo  date('d M, Y'); ?></small>
+			</h1>
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- info row -->
+	<div class="row invoice-info">
+                       <?php  echo $this->ImappInvoiceOfficeViewHelper()?>
+                        <!-- /.col -->
+		<div class="col-sm-4 invoice-col">
+			To:
+			<address>
+				<strong><?php echo $brokerInfo->getBrokerName()?></strong> <br><?php echo  $brokerInfo->getBrokerAddress(); ?>
+                                          <br><?php  echo $brokerInfo->getState()->getZoneName();?> <?php ?>
+                                          <br>Phone: <?php  echo $brokerInfo->getOfficialPhone()?> <br>Email: <?php echo $brokerInfo->getBrokerEmail() ?> 
+                                      </address>
+		</div>
+		<!-- /.col -->
+		<div class="col-sm-4 invoice-col">
+			Invoice Information :
+			<address>
+				<b>Invoice No.</b> <?php  echo ($invoice->getInvoiceUid() != NULL? strtoupper($invoice->getInvoiceUid()) : 'No Invoice Id Available')?><br>
+
+				<b>Payment Status:</b> <?php echo $this->statusHelper($invoice->getStatus()->getStatus())?> <br>
+				<b>Payment Due Date:</b> <?php  echo $this->dateFormat($invoice->getExpiryDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US"); ?> <br>
+			</address>
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+
+	<!-- Table row -->
+	<div class="row">
+		<div class="col-xs-12 table">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<!--                                 <th>Qty</th> -->
+						<th>Product</th>
+						<!--                                 <th>Serial #</th> -->
+						<th style="width: 45%">Description</th>
+						<th>Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+
+						<td> Being Invoice for  <?php echo $invoice->getInvoiceCategory()->getCategory()?> on <?php  echo $brokerSub->getPackage()->getPackageName(); ?> package</td>
+						<!--                                 <td>455-981-221</td> -->
+						<td> <?php echo $word?>
+                                </td>
+						<td> <?php
+						if($isSetup == TRUE){
+						    echo $this->myCurrencyFormat(39999, 'NGN')."<br><hr>";
+						    echo "VAT : ".$this->myCurrencyFormat((39999 * 5)/100, 'NGN');
+						}else{
+						    echo $this->myCurrencyFormat($invoice->getAmount(), 'NGN');
+						}
+						?></td>
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+
+	<div class="row">
+		<!-- accepted payments column -->
+		<div class="col-xs-6">
+			<!-- Include the payment mode view Helper here -->
+			<p class="lead">Payment(s) Method:</p>
+                          <?php  echo $this->paymentMethodViewHelper();?>
+
+		</div>
+		<!-- /.col -->
+		<div class="col-xs-6">
+
+			<div class="table-responsive">
+				<table class="table">
+					<tbody>
+
+
+
+						<tr>
+							<th>Total:</th>
+							
+							<td align="right"><?php  echo $this->myCurrencyFormat($invoice->getAmount(), 'NGN')?></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+
+	<!-- this row will not appear when printing -->
+	<div class="row no-print">
+		<div class="col-xs-12">
+
+			<button data-toggle="modal" data-target=".bs-example-modal-lg"
+				class="btn btn-success pull-right">
+				<i class="fa fa-credit-card"></i> Make Payment
+			</button>
+
+			<div class="modal fade bs-example-modal-lg" tabindex="-1"
+				role="dialog" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel2">IMAPP Payment Gateway</h4>
+						</div>
+						<?php echo $this->form()->openTag($paymentForm)?>
+						<div class="modal-body">
+
+							<h4> Payment For <?php echo $invoice->getInvoiceCategory()->getCategory()?></h4>
+							<br>
+                        <?php echo $this->partial('transaction_user_card_payment_snipet', array('payForm'=>$payForm, 'invoice'=>$invoice))?>
+                       <br>
+							<p>
+								<strong>Amount Due :</strong> <?php  echo $this->myCurrencyFormat($invoice->getAmount(), 'NGN')?></p>
+
+						</div>
+
+						<div class="modal-footer">
+							<br>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+								
+								<?php echo $this->formrow($paymentForm->get("submit"))?>
+							
+						</div>
+<?php  echo $this->form()->closeTag() ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

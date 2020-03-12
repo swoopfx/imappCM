@@ -1,0 +1,18 @@
+<div style=" text-align: center;">
+<i id="registerNewLoader" class="fa fa-lg" style="display: none; text-align: center;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/processin.gif")?>"
+	height=50><hr></i>
+	</div>
+<?php
+// this file shows the form required  to register new object
+$objectForm->prepare();
+?>
+ <?php echo  $this->form()->openTag($objectForm);?>
+                  <?php echo $this->partial("object-form-snipet", array("objectField"=>$objectForm->get("objectFieldset")))?>
+                         
+                   
+                     <?php  echo $this->formrow($objectForm->get("csrf"))?>
+                          <?php echo $this->formrow($objectForm->get("submit"))?>
+                   <?php  echo $this->form()->closeTag(); ?>
+                  

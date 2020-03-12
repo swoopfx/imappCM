@@ -1,0 +1,57 @@
+<?php
+
+
+?>
+<div class="form-group">
+
+<?php echo $this->formLabel($policyFieldset->get('policyName'))?> 
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($policyFieldset->get('policyName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($policyFieldset->get('policyName'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+<?php echo $this->formLabel($policyFieldset->get('policyCode'))?> 
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($policyFieldset->get('policyCode'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($policyFieldset->get('policyCode'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+<?php echo $this->formLabel($policyFieldset->get('startDate'))?> 
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($policyFieldset->get('startDate'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($policyFieldset->get('startDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+<?php echo $this->formLabel($policyFieldset->get('endDate'))?> 
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($policyFieldset->get('endDate'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		
+								<?php echo $this->formElementErrors($policyFieldset->get('endDate'));  // this defines the error?> 
+							</div>
+</div>

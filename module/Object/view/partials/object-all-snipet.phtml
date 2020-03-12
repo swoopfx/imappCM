@@ -1,0 +1,54 @@
+<?php
+$count = 5000;
+$i = 0;
+if (count($objects) != 0) {
+    
+    while ($i < count($objects) && count($objects) < $count) {
+        // var_dump($objects[$i]);
+        $json = json_encode(array("data"=>$objects[$i]->getId()));
+        ?>
+        
+<tr>
+	<td><a
+		href="<?php echo $this->url("object/default", array("action"=>"view", "inf"=>$objects[$i]->getId()))?>"><?php  echo strtoupper(($objects[$i]->getObjectUid() != NULL ? $objects[$i]->getObjectUid() : " No UID"))?></a><br>
+	<?php  echo $this->customerAllObjectStatus($objects[$i])?>
+	<td>
+
+		<div class="media-body">
+	<?php  echo ($objects[$i]->getObjectName() != NULL ? $objects[$i]->getObjectName() : " ")?><br>
+			<p>
+				<strong>Updated: </strong><small> <?php echo ($objects[$i]->getUpdateOn() == NULL ? "" : $this->dateFormat($objects[$i]->getUpdateOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US"))?></small><br>
+				<strong>Email:</strong> <?php  echo ($objects[$i]->getCustomer() == NULL ? "" : $objects[$i]->getCustomer()->getUser()->getEmail())?>
+			</p>
+		</div>
+	</td>
+	<td>
+		<div class="media-body">
+			<strong>Customer:</strong> <a class="title"
+				href="<?php  echo $this->url('customer/default', array('action'=>'profile', 'id'=>$objects[$i]->getCustomer()->getId()))?>"><?php  echo $objects[$i]->getCustomer()->getName()?></a>
+			<p>
+				<strong>Phome: </strong> <?php echo ($objects[$i]->getCustomer() == NULL ? "" : $objects[$i]->getCustomer()->getUser()->getUsername())?><br>
+				<strong>Email:</strong> <?php  echo ($objects[$i]->getCustomer() == NULL ? "" : $objects[$i]->getCustomer()->getUser()->getEmail())?></small>
+			</p>
+			<p></p>
+		</div>
+	</td>
+
+	<td><?php  echo  ($objects[$i]->getValue() == NULL ? $this->myCurrencyFormat(0) :  $this->myCurrencyFormat($objects[$i]->getValue(), $objects[$i]->getCurrency()->getCode()))?></td>
+
+	<td><a data-toggle='tooltip' data-placement='top' title='View Property'
+		href="<?php  echo $this->url("object/default", array("action"=>"view", "inf"=>$objects[$i]->getObjectUid()))?>"
+		title="View Property" alt="View Property"
+		class="btn btn-warning btn-xs"><i class="fa fa-eye"></i></a> <!-- 			 <a href="-->
+		<?php // echo $this->url("object/default", array("action"=>"view-object", "inf"=>$objects[$i]->getId()))?> <!-- 		"title="Edit Property" alt="edit Package" class="btn btn-info btn-xs"><i --> <!-- 			class="fa fa-pencil"></i></a> -->
+		<a  data-json='<?php  echo $json ?>' id="sending_data_button"
+		data-href="<?php echo $this->url("object/default", array("action"=>"deleteobjectconfirmmodal"))?>"
+		data-toggle='tooltip' data-placement='top' title='Delete Property'
+		class="btn btn-danger btn-xs ajax_element"><i class="fa fa-trash"></i></a> <?php // echo $this->objectCompleteObjectButtonHelper($objects[$i])?>
+		</td>
+</tr>
+<?php
+        $i ++;
+    }
+}
+?>

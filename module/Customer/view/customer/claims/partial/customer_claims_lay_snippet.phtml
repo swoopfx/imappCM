@@ -1,0 +1,32 @@
+<?php
+$claimsFieldset=$claimsPreForm->get("pre_claims_field");
+?>
+<div style="text-align: center;">
+							<i id="layClaimsSubmit" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=27></i>
+						</div>
+<?php $claimsPreForm->prepare()?>
+                  <?php echo $this->form()->openTag($claimsPreForm)?>
+<div class="form-group">
+								<?php echo $this->formLabel($claimsFieldset->get('claimTopic'))?>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsFieldset->get('claimTopic'))?>  
+								</div>
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsFieldset->get('claimTopic'))?> 
+								</div>
+							</div>
+<div class="form-group">
+								<?php echo $this->formLabel($claimsFieldset->get('policy'))?>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsFieldset->get('policy'))?>  
+								</div>
+								<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsFieldset->get('policy'))?> 
+								</div>
+							</div>
+							
+							 <?php // echo $this->formrow($offerForm->get("csrf"))?>
+                          <?php echo $this->formrow($claimsPreForm->get("submit"))?>
+                    <?php echo $this->form()->closeTag()?>

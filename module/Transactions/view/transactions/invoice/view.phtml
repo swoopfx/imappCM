@@ -1,0 +1,45 @@
+<?php
+
+echo $this->headtitle("View Invoice");
+if ($this->identity()){
+?>
+<div class="row">
+<?php  echo $this->partial("general-error-ponters") ?>
+	<!-- /.col -->
+	<div class="col-md-9 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Invoice No. <?php  echo strtoupper($invoice->getInvoiceUid())?></h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+<?php  echo $this->partial("transaction-invoice-preview-snipet")?>
+<?php  echo $this->partial("transaction-process-manual-payment-details-snipet", array("invoiceEntity"=>$invoice, "processForm"=>$processForm))?>
+<div class="row no-print">
+                        <div class="col-xs-12">
+                        <a href="" class="btn btn-success pull-right"><i class="fa fa-send"></i>Send Reminder</a>
+                         
+                        </div>
+                      </div>
+				
+			</div>
+		</div>
+		<!-- /.nav-tabs-custom -->
+	</div>
+	<!-- /.col -->
+
+	<div class="col-md-3 col-xs-12">
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner1.jpg")?>">
+			</div>
+		</div>
+	</div>
+
+</div>
+<?php }?>

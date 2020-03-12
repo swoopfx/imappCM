@@ -1,0 +1,47 @@
+<?php
+?>
+
+<!-- // install the package menu here  -->
+<!-- // also include the featured package here -->
+<?php
+// if($this->identity()){
+//var_dump($packages);
+?>
+<div class="row">
+
+	<div class="col-md-9">
+
+		<div class="row" data-toggle="isotope">
+		
+			<?php if (count($packages) == 0 ){?>
+			No Packages Available
+			<?php }else{
+			echo $this->partial("cuatomer_packages_grid_snipet", array('packages'=>$packages));
+			}?>
+			
+			
+			
+			
+			
+		</div>
+
+<!-- 		<ul class="pagination margin-top-none"> -->
+<!-- 			<li class="disabled"><a href="#">&laquo;</a></li> -->
+<!-- 			<li class="active"><a href="#">1</a></li> -->
+<!-- 			<li><a href="#">2</a></li> -->
+<!-- 			<li><a href="#">3</a></li> -->
+<!-- 			<li><a href="#">&raquo;</a></li> -->
+<!-- 		</ul> -->
+
+		<br /> 
+
+	</div>
+	<div class="col-md-3">
+<?php  echo $this->partial("customer_packages_packges_category_menu")?>
+<?php echo $this->partial("customer-board-featured-packages");?>
+</div>
+
+</div>
+
+
+<?php // }?>

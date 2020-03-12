@@ -1,0 +1,14 @@
+<?php
+$objectCategory = $this->cat;
+$objectForm = $this->objectForm;
+
+$objectForm->prepare();
+$objectFieldsets = $objectForm->get("objectFieldset");
+// var_dump($objectForm);
+echo $this->form()->openTag($objectForm);
+
+if($objectCategory == 1){ // means this is a motor
+    echo $this->partial("customer-package-object-motor-form", array("objectFieldsets"=>$objectFieldsets, "cat"=>$objectCategory));
+}
+
+echo $this->form()->closeTag()?>

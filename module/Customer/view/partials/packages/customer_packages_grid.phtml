@@ -1,0 +1,65 @@
+<?php
+$packages = $this->packages;
+foreach ( $packages as $package ) {
+	?>
+<div class="item col-xs-12 col-sm-6 col-lg-4">
+	<div class="panel panel-default paper-shadow" data-z="0.5">
+
+		<div class="cover overlay cover-image-full hover">
+			<span class="img icon-block height-150 bg-purple"></span> <a
+				href="website-course.html"
+				class="padding-none overlay overlay-full icon-block bg-purple"> <span
+				class="v-center"> <img alt=""
+					src="<?php echo $this->basePath("images/data.png")?>" height=150>
+			</span>
+			</a> <a href="website-course.html"
+				class="overlay overlay-full overlay-hover overlay-bg-white"> <span
+				class="v-center"> </span>
+			</a>
+
+		</div>
+
+		<div class="panel-body">
+			<h4>
+							<?php  echo ($package->getPackageName() == NULL ? " ": $package->getPackageName())?>
+						</h4>
+
+			<!-- 						<p class="small margin-none"> -->
+			<!-- 							<span class="fa fa-fw fa-star text-yellow-800"></span> <span -->
+			<!-- 								class="fa fa-fw fa-star text-yellow-800"></span> <span -->
+			<!-- 								class="fa fa-fw fa-star text-yellow-800"></span> <span -->
+			<!-- 								class="fa fa-fw fa-star-o text-yellow-800"></span> <span -->
+			<!-- 								class="fa fa-fw fa-star-o text-yellow-800"></span> -->
+			<!-- 						</p> -->
+
+		</div>
+		<hr class="margin-none" />
+		<div class="panel-body">
+
+
+
+			<div class="media v-middle">
+				<div class="media-left">
+					<img src="<?php echo $this->basePath("images/data.png")?>"
+						alt="People" class="img-circle width-60" />
+				</div>
+
+				<div class="media-body">
+					<h4>
+						<a href=""><?php //  echo $package->getPackagedInsurer()->getInsuranceName()?></a>
+						<br />
+					</h4>
+					<br>
+					<!-- 								Instructor -->
+				</div>
+				<div class="media-body">
+					<a href="<?php echo $this->url("cus_pack/default", array('action'=>'view', 'id'=>$package->getId()))?>" class="btn btn-default" style="width: 100%">View Package</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+<?php }?>

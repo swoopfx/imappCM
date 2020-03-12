@@ -1,0 +1,134 @@
+<div class="row">
+<?php ?>
+		<div class='col-md-3 col-sm-3 col-xs-12'>
+			<br> <br> <br>
+      <?php  echo $this->partial("settings-navigation")?>
+    </div>
+<?php
+$this->headtitle("Flutterwave Account");
+if ($showForm == TRUE) {
+    $flutterForm = $this->flutterForm;
+    $flutterFieldset = $flutterForm->get("brokerFlutterwaveFieldset");
+    $flutterForm->prepare();
+    $flashMessenger = $this->flashMessenger()
+        ->setMessageOpenFormat("<div%s>
+     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>
+         &times;
+     </button>
+     <ul><li style='color: red'>")
+        ->setMessageSeparatorString("</li><li>")
+        ->setMessageCloseString('</li></ul></div>');
+    ?>
+
+
+	
+	<div class="col-md-9 col-sm-9  col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>
+						<i class="fa fa-bars"></i> Payment Gateway Setup
+					</h2>
+				<?php echo $flashMessenger->render('error',   array('alert', 'alert-dismissable', 'alert-danger')); ?>
+ <?php echo $flashMessenger->render('info',    array('alert', 'alert-dismissable', 'alert-info')); ?>
+ <?php echo $flashMessenger->render('default', array('alert', 'alert-dismissable', 'alert-warning')); ?>
+ <?php echo $flashMessenger->render('success', array('alert', 'alert-dismissable', 'alert-success')); ?>
+				<ul class="nav navbar-right panel_toolbox">
+						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+
+					<div class="" role="tabpanel" data-example-id="togglable-tabs">
+						<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#tab_content1"
+								id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Enter
+									Flutterwave Details</a></li>
+							<li role="presentation" class=""><a href="#tab_content2"
+								role="tab" id="profile-tab" data-toggle="tab"
+								aria-expanded="false">How to setup payment oonline payment
+									gateway</a></li>
+
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							<div role="tabpanel" class="tab-pane fade active in"
+								id="tab_content1" aria-labelledby="home-tab">
+							<?php   echo  $this->form()->openTag($flutterForm); ?>
+							<br>
+
+
+
+								<div class="form-group">
+							
+								<?php  echo $this->formLabel($flutterFieldset->get('merchantId'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php  echo $this->formElement($flutterFieldset->get('merchantId'));?>
+									
+								</div>
+
+									<div style="font-size: 9px; color: red;">
+		
+								<?php  echo $this->formElementErrors($flutterFieldset->get('merchantId'));  // this defines the error?> 
+							</div>
+									<div id="progressNumber"></div>
+								</div>
+
+								<div class="form-group">
+							
+								<?php  echo $this->formLabel($flutterFieldset->get('encryptKey'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php  echo $this->formElement($flutterFieldset->get('encryptKey'));?>
+									
+								</div>
+
+									<div style="font-size: 9px; color: red;">
+		
+								<?php  echo $this->formElementErrors($flutterFieldset->get('encryptKey'));  // this defines the error?> 
+							</div>
+									<div id="progressNumber"></div>
+								</div>
+
+								<div
+									class="form-group col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+									
+							<?php  echo $this->formrow($flutterForm->get('submit'))?>
+							</div>
+							
+								<?php   echo  $this->form()->closeTag();?>
+						</div>
+							<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+								aria-labelledby="profile-tab">
+							<?php  echo $this->partial("broker-tool-flutterwave-snipet")?>
+						</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+<?php
+} else {
+    ?>
+   
+<div class="col-md-9 col-sm-9 col-xs-12">
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<img
+					src="<?php echo $this->basepath("flutterwave/success-badge.png")?>"><br>
+				<a href="<?php  echo $this->url("brokers-tool/default", array("action"=>"editflutteraccount"));?>" class="btn btn-default">Edit your Flutterwave payment
+					details</a>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12">Flutterwave Payment Gateway</div>
+		</div>
+<?php }?>
+
+</div>

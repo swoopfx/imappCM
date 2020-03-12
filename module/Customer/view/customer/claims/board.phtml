@@ -1,0 +1,167 @@
+<?php
+use Policy\Service\PolicyService;
+
+echo $this->headTitle("Claims Board");
+$policyEntity = $claimsEntity->getPolicy();
+?>
+
+<div class="row">
+
+	<div class="col-md-9">
+
+		<div class="row" data-toggle="isotope">
+			<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<div class="media v-middle">
+							<div class="media-body">
+								<h4 class="text-headline margin-none">Claims</h4>
+								<!--                       <p class="text-subhead text-light">This Month</p> -->
+							</div>
+
+						</div>
+					</div>
+					<div class="panel-body">
+						<ul class="list-group">
+							<li class="list-group-item media v-middle">
+								<div class="media-body">
+									<a href=" " class="text-subhead list-group-link">Claims Title:</a>
+								</div>
+								<div class="media-right">
+                      <?php  echo $this->escapeHtml($claimsEntity->getClaimTopic())?>
+                    </div>
+							</li>
+						</ul>
+						
+						<?php echo ($claimsEntity->getClaimStatus() != NULL ? $this->statusHelper($claimsEntity->getClaimStatus()->getStatus()) : '')?>
+					</div>
+
+					<div class="panel-footer text-right">
+						<a id="btn2"
+							data-href="<?php  echo $this->url("cus_claims/default", array("action"=>"policydetails"))?>"
+							class=" ajax_element btn btn-primary paper-shadow relative"
+							data-z="0" data-hover-z="1" data-animated>CLAIMS DETAILS</a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline margin-none">Policy</h4>
+						<!--                   <p class="text-subhead text-light">Your recent courses</p> -->
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item media v-middle">
+							<div class="media-body">
+								<a href=" " class="text-subhead list-group-link">Policy Code:</a>
+							</div>
+							<div class="media-right">
+                      <?php  echo $this->escapeHtml($policyEntity->getPolicyCode())?>
+                    </div>
+						</li>
+						<li class="list-group-item media v-middle">
+							<div class="media-body">
+								<a href="" class="text-subhead list-group-link">Insurer:</a>
+							</div>
+							<div class="media-right">
+                      <?php   echo ($policyEntity->getCoverNote()->getInsurer() == NULL ? "No Insurer Selected" : "<img alt='' src='".$this->insurerLogohelper($policyEntity->getCoverNote()->getInsurer()->getId())."' class='img-circle   img-responsive' width=100 >");?>
+                      <h4><?php  echo PolicyService::getInsurerName($policyEntity) ?></h4>
+							</div>
+						</li>
+
+					</ul>
+					<div class="panel-footer text-right">
+						<a
+							href="<?php echo $this->url("cus_policy/default", array("action"=>"view", "id"=>$policyEntity->getPolicyUid()));?>"
+							class="btn btn-white paper-shadow relative" data-z="0"
+							data-hover-z="1" data-animated>VIEW POLICY</a> <a id="btn2"
+							data-href="<?php  echo $this->url("cus_claims/default", array("action"=>"policydetails"))?>"
+							class=" ajax_element btn btn-primary paper-shadow relative"
+							data-z="0" data-hover-z="1" data-animated>PREVIEW <i
+							class="fa fa-plus"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="item col-xs-12 col-lg-6">
+
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline">
+							Documents
+						</h4>
+					</div>
+					<div class="panel-body">
+                  <?php  echo $this->customerPolicyDocumentListHelper($claimsEntity->getClaimsDoc())?>
+                </div>
+				</div>
+			</div>
+
+
+			<div class="item col-xs-12 col-lg-6">
+				<div class="s-container">
+					<h4 class="text-headline margin-none">Comments</h4>
+					<p class="text-subhead text-light">Latest student comments</p>
+				</div>
+				<div class="panel panel-default">
+					<ul class="list-group">
+                  <?php  echo $this->customerClaimsCommentViewhelper($claimsEntity->getComments())?>
+                  
+                </ul>
+				</div>
+              
+              <?php  echo $this->partial("comment-form", array("commentForm"=>$commentForm))?>
+					
+					<div style="text-align: center;">
+					<i id="commentajax" class="fa  fa-lg" style="display: none;"><img
+						alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+						height=30></i>
+				</div>
+
+			</div>
+			
+		</div>
+
+		<br /> <br />
+
+	</div>
+<!-- 	<div class="col-md-3"> -->
+
+<!-- 		<div class="panel panel-default" data-toggle="panel-collapse" -->
+<!-- 			data-open="true"> -->
+<!-- 			<div class="panel-heading panel-collapse-trigger"> -->
+<!-- 				<h4 class="panel-title">Menu</h4> -->
+<!-- 			</div> -->
+<!-- 			<div class="panel-body list-group"> -->
+<!-- 				<ul class="list-group list-group-menu"> -->
+<!-- 					<li class="list-group-item active"><a class="link-text-color" -->
+<!-- 						href="website-instructor-dashboard.html">Dashboard</a></li> -->
+<!-- 					<li class="list-group-item"><a class="link-text-color" -->
+<!-- 						href="website-instructor-courses.html">My Courses</a></li> -->
+<!-- 					<li class="list-group-item"><a class="link-text-color" -->
+<!-- 						href="website-instructor-messages.html">Messages</a></li> -->
+<!-- 					<li class="list-group-item"><a class="link-text-color" -->
+<!-- 						href="website-instructor-earnings.html">Earnings</a></li> -->
+<!-- 					<li class="list-group-item"><a class="link-text-color" -->
+<!-- 						href="website-instructor-statement.html">Statement</a></li> -->
+<!-- 					<li class="list-group-item"><a class="link-text-color" -->
+<!-- 						href="website-instructor-profile.html">Profile</a></li> -->
+<!-- 					<li class="list-group-item"><a class="link-text-color" -->
+<!-- 						href="login.html"><span>Logout</span></a></li> -->
+<!-- 				</ul> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+
+
+
+<!-- 	</div> -->
+
+	<div class="col-md-3">
+
+          <?php  echo $this->partial("customer_claims_upload_accident_images_snippet", array("dropZoneForm"=>$dropZoneForm));?>
+	
+        </div>
+
+</div>

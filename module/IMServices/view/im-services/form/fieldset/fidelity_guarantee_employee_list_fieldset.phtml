@@ -1,0 +1,101 @@
+<?php
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->fidelityEmployeeListFieldset;
+?>
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('employyefullName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('employyefullName'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Employee full name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('employyefullName'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('employeeCapacity'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('employeeCapacity'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Employee Designation"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('employeeCapacity'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('employeeGuarateeAmount'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($field->get('employeeGuarateeAmount'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Amount to guaratee staff"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('employeeGuarateeAmount'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('yearsdOfService'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('yearsdOfService'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="How many years in service"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('yearsdOfService'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('employeeSalary'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+		<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($field->get('employeeSalary'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Employee salary"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('employeeSalary'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<?php
+
+$json = json_encode(array(
+    "data" => $countId
+));
+?>
+	<div class="form-group">
+		<a id="sending_data_button"
+			class="ajax_element btn btn-danger btn-xs pull-right"
+			data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+</div>

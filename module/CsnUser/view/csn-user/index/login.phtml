@@ -1,0 +1,159 @@
+
+	
+ <?php
+ 
+ $this->headtitle("Login");
+$form = $this->form;
+$form->setAttribute('action', '' /*$this->url('login') */);
+$form->setAttribute('class', 'form-signin');
+$form->prepare();
+
+$form->get('usernameOrEmail')->setAttributes(array(
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Phone Number or Email'),
+    'aria-describedby' => 'basic-addon1'
+));
+
+$form->get('password')->setAttributes(array(
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Password'),
+    'aria-describedby' => 'basic-addon1'
+));
+
+$form->get('rememberme')->setAttributes(array(
+    'class' => 'remember'
+));
+$form->get('submit')->setAttributes(array(
+    'class' => 'btn btn-default submit btn-block',
+    "style"=>"width: 80%",
+    'value' => $this->translate('Log In')
+));
+
+?>
+
+
+
+		
+
+			
+			
+ 
+	<?php  echo $this->partial("general-error-ponters")?>
+
+
+					 
+
+ <div class="animate form login_form">
+          <section class="login_content">
+			<br>
+	<img src="<?php  echo $this->basepath("/images/cm.png")?>" width=150 />
+
+ 
+
+	<?php
+
+echo $this->form()->openTag($form);
+?>
+<h1>Login Form</h1>
+
+   <div>
+				
+<?php echo $this->formElement()->render($form->get('usernameOrEmail'));?>
+
+</div>
+			<div style="font-size: 9px; color: red;">
+<?php echo $this->formElementErrors($form->get('usernameOrEmail')); ?></div>
+
+			 <div>
+				
+<?php echo $this->formElement()->render($form->get('password'));?>
+
+</div>
+			<div style="font-size: 9px; color: red;">
+<?php echo $this->formElementErrors($form->get('password')); ?></div>
+<div>
+<?php
+
+echo $this->formRow($form->get('rememberme'));
+
+
+?>
+</div>
+			<div style="font-size: 9px; color: red;">
+<?php echo $this->formElementErrors($form->get('password')); ?></div>
+ <div>
+<?php echo  $this->formSubmit($form->get('submit'))?>
+</div>
+
+			<p><a href="<?php  echo $this->url("user-register", array("action"=>"reset-password"))?>">Forgot Password</p>		 
+  <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">New to site?
+                  <a href="<?php  echo $this->url('user-register')?>" class="to_register"> Create Account </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                
+              </div>
+
+			
+	
+<?php
+
+if ($this->messages) {
+    echo '<div style="font-size: 14px; color: red;">' . $this->messages . '</div>';
+    echo '<div style="font-size: 14px; color: red;">' . $this->error . '</div>';
+}
+;
+?>
+
+ <?php
+echo $this->formRow($form->get('csrf'));
+echo $this->form()->closeTag();
+?> 
+
+ </section>
+        </div>
+        
+        
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form>
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html">Submit</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+
+

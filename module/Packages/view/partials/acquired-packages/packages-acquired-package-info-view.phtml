@@ -1,0 +1,65 @@
+<?php
+
+?>
+<div class="x_content">
+	<div class="table-responsive">
+		<table class="table table-hover">
+
+			<tbody>
+				<tr>
+					<th style="width: 25%">PACKAGE  CODE</th>
+					<td><?php  echo strtoupper($customerPackageEntity->getPackages()->getPackageUid());?></td>
+
+				</tr>
+				<tr>
+					<th>PACKAGE STATUS</th>
+					<td> <?php  echo $this->statusHelper($customerPackageEntity->getAcquiredPackageStatus()->getStatus())?></td>
+
+				</tr>
+				<tr>
+					<th>PACKAGE NAME</th>
+					<td><p>
+                          <?php  echo ($customerPackageEntity->getPackages() == NULL ? "NO NAme" : $customerPackageEntity->getPackages()->getPackageName())?>
+                          </p></td>
+
+				</tr>
+				<tr>
+					<th>Prefered Insurer</th>
+					<td><p>
+					
+                          <?php   echo ($customerPackageEntity->getPackages()->getPackagedInsurer() == NULL ? "No Insurer Selected" : "<img alt='' src='".$this->insurerLogohelper($customerPackageEntity->getPackages()->getPackagedInsurer()->getId())."' class='img-circle   img-responsive' width=100 >");?>
+                          </p></td>
+
+				</tr>
+
+
+
+				<tr>
+					<th>DATE CREATED</th>
+					<td><?php  echo $this->dateFormat($customerPackageEntity->getCreatedOn(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") ?></td>
+
+				</tr>
+				<tr>
+					<th>DATE UPDATED</th>
+					<td>
+                        <?php  echo $this->dateFormat($customerPackageEntity->getUpdatedOn(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") ?></td>
+				</tr>
+
+				<tr>
+					<th>INSURANCE CATEGORY</th>
+					<td><?php   echo ($customerPackageEntity->getPackages()->getServiceType() == NULL ? "" : $customerPackageEntity->getPackages()->getServiceType()->getInsuranceService())?></td>
+				</tr>
+				<tr>
+					<th>INSURANCE SERVICE</th>
+					<td><?php  echo ($customerPackageEntity->getPackages()->getSpecificService() == NULL ? "" : $customerPackageEntity->getPackages()->getSpecificService()->getSpecificService())?></td>
+				</tr>
+				
+				<tr>
+					<th>RATE</th>
+					<td><?php  echo ($customerPackageEntity->getPackages()->getValue() == NULL ? "<span style='color: red'>No Value inputed yet</span> <a href='' data-toggle='modal' data-target='.bs-example-modal-lg' class='btn btn-xs btn-danger' style='width:40%;'>Click to input Value</a>"  : $this->package_value_representation($customerPackageEntity->getPackages()->getValueType()->getId(), $customerPackageEntity->getPackages()->getValue(), $customerPackageEntity->getPackages()->getCurrency()->getCode()))?></td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+<?php
+$obj = $this->jects;  ?>
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+	<div class="x_panel">
+		<div class='x_title'>
+			<h2>RELATED PROPERTY</h2>
+			<div class='clearfix'></div>
+			
+		
+		</div>
+		<div class="x_content">
+			<div class="table-responsive">
+				<table class="table table-hover">
+				
+<?php
+
+if ($obj == NULL) {
+    echo "<span> No Object Associated yet</span><br><br><a href='' class='btn btn-default'>Add Objects</a>";
+    // if the staus of proposal is waiting for customers response
+    // hide generate invoice Button
+} else {
+    ?>
+					<tbody>
+					<?php  foreach ($obj as $object){ ;?>
+						<tr>
+							
+							<td>
+							<div class="media-body">
+									<a href="<?php  echo $this->url("object/default", array('action'=>'view-object', 'inf'=>$object->getId()))?>"><strong><?php  echo strtoupper($object->getObjectUid())?></strong></a>
+									<br /> <strong>Name:</strong> <a><?php  echo $object->getObjectName();?></a>
+									<br /> <strong>Property Type:</strong> <a><?php  echo $object->getObjectType()->getObjectType();?></a>
+<br> 
+									
+									<strong>Value : </strong> <?php  echo $this->myCurrencyFormat((float)$object->getObjectValue(), $object->getCurrency()->getCode(), 'en_NG', true)?><br>
+									<small>Created <?php  echo $this->dateFormat($object->getcreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></small>
+								</div></td>
+								<td><a href="" class="btn btn-danger">Remove</a></td>
+
+						</tr>
+						<?php }?>
+					</tbody>
+					<?php echo  count($obj)?> Property Selected <a class="btn btn-default" href="">Attach More</a>
+					<?php }?>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

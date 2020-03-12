@@ -1,0 +1,207 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+// echo $this->headTitle("Insurer Admin Page");
+$customerEntity = $proposalEntity->getCustomer();
+?>
+
+<div class="slim-mainpanel">
+      <div class="container">
+        <div class="slim-pageheader">
+          <ol class="breadcrumb slim-breadcrumb">
+            <li class="breadcrumb-item"><a href="#">.</a></li>
+            
+          </ol>
+          <h6 class="slim-pagetitle">Customer Profile</h6>
+        </div><!-- slim-pageheader -->
+
+        <div class="row row-sm">
+          <div class="col-lg-8">
+            <div class="card card-profile">
+              <div class="card-body">
+                <div class="media">
+                  <img src="http://via.placeholder.com/500x500" alt="">
+                  <div class="media-body">
+                    <h3 class="card-profile-name"><?php echo strtoupper($customerEntity->getName())?></h3>
+                    <p class="card-profile-position">Category :   <a><?php  echo ($customerEntity->getCustomerCategory() == NULL? GeneralService::GENERAL_EMPTY_FIELD : $customerEntity->getCustomerCategory()->getCategory())?></a></p>
+                    <p><?php echo ($customerEntity->getFullAddress() != NULL ? $customerEntity->getFullAddress() : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+
+<!--                     <p class="mg-b-0">A consummate human capital management professional with international training and talent management implementations experience across the entire universe...<a href="">Read more</a></p> -->
+                  </div><!-- media-body -->
+                </div><!-- media -->
+              </div><!-- card-body -->
+              <div class="card-footer">
+<!--                 <a href="" class="card-profile-direct">http://thmpxls.me/profile?id=katherine</a> -->
+                <div>
+<!--                   <a href="">Edit Profile</a> -->
+<!--                   <a href="">Profile Settings</a> -->
+                </div>
+              </div><!-- card-footer -->
+            </div><!-- card -->
+
+<!--             <ul class="nav nav-activity-profile mg-t-20"> -->
+<!--               <li class="nav-item"><a href="" class="nav-link"><i class="icon ion-ios-redo tx-purple"></i> Share an update</a></li> -->
+<!--               <li class="nav-item"><a href="" class="nav-link"><i class="icon ion-image tx-primary"></i> Publish photo</a></li> -->
+<!--               <li class="nav-item"><a href="" class="nav-link"><i class="icon ion-document-text tx-success"></i> Add an article</a></li> -->
+<!--             </ul> -->
+            <!-- nav -->
+
+            <div class="card card-latest-activity mg-t-20">
+              <div class="card-body">
+                
+
+              </div><!-- card-body -->
+              
+            </div><!-- card -->
+
+            <div class="card card-experience mg-t-20">
+              <div class="card-body">
+                <div class="slim-card-title">Work Experience</div>
+                <div class="media">
+                  <div class="experience-logo">
+                    <i class="icon ion-briefcase"></i>
+                  </div><!-- experience-logo -->
+                  <div class="media-body">
+                    <h6 class="position-name">Front-End Engineer / Web Developer</h6>
+                    <p class="position-company">Cebu Machine Intelligence, Inc.</p>
+                    <p class="position-year">Nov 2012 - Present (5 years +) &nbsp;-&nbsp; <a href="">Edit</a></p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+              </div><!-- card-body -->
+              <div class="card-footer">
+                <a href="">Show more<span class="d-none d-sm-inline"> experiences (4)</span> <i class="fa fa-angle-down"></i></a>
+                <a href="">Add new</a>
+              </div><!-- card-footer -->
+            </div><!-- card -->
+
+            <div class="card card-recommendation mg-t-20">
+              <div class="card-body pd-25">
+                <div class="slim-card-title">Comment </div>
+                <div class="media align-items-center mg-y-25">
+                  <img src="http://via.placeholder.com/500x500" class="wd-40 rounded-circle" alt="">
+                  <div class="media-body mg-l-15">
+                    <h6 class="tx-14 mg-b-2"><a href=""><?php echo $name?></a></h6>
+                    
+                  </div><!-- media-body -->
+                  
+                </div><!-- media -->
+
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <p class="mg-b-0">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+              </div><!-- card-body -->
+              
+              
+              <div class="card-footer pd-y-12 pd-x-25 bd-t bd-gray-300">
+               <a href="">EDIT COMMENT</a>
+              </div><!-- card-footer -->
+            </div>
+          </div><!-- col-8 -->
+
+          <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+           
+           
+           <div class="card card-connection">
+              <div class="row row-xs">
+                <div class="col-4 tx-primary"></div>
+                <div class="col-8">Upload document here </div>
+              </div><!-- row -->
+             
+              
+            </div><!-- card -->
+            
+            
+            <div class="card card-people-list mg-t-20">
+              <div class="slim-card-title">Uploaded Document</div>
+              <div class="media-list">
+                <div class="media">
+                  <img src="http://via.placeholder.com/500x500" alt="">
+                  <div class="media-body">
+                    <a href="">Adrian Monino</a>
+                    <p>Software Engineer</p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <img src="http://via.placeholder.com/500x500" alt="">
+                  <div class="media-body">
+                    <a href="">Rolando Paloso</a>
+                    <p>Architect</p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <img src="http://via.placeholder.com/500x500" alt="">
+                  <div class="media-body">
+                    <a href="">Joyce Chua</a>
+                    <p>Sales Representative</p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <img src="http://via.placeholder.com/500x500" alt="">
+                  <div class="media-body">
+                    <a href="">Annalyn Mercado</a>
+                    <p>Sales Representative</p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media">
+                  <img src="http://via.placeholder.com/500x500" alt="">
+                  <div class="media-body">
+                    <a href="">Maricel Pasilbas</a>
+                    <p>Sales Representative</p>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+              </div><!-- media-list -->
+            </div><!-- card -->
+
+            
+
+            <div class="card pd-25 mg-t-20">
+              <div class="slim-card-title">Broker Information</div>
+
+              <div class="media-list mg-t-25">
+              <?php $brokerEntity = $customerEntity->getCustomerBroker()->getBroker(); ?>
+              <div class="media">
+                  <div><i class="icon ion- tx-home24 lh-0"></i></div>
+                  <div class="media-body mg-l-15 mg-t-4">
+                    <h6 class="tx-14 tx-gray-700"><?php  echo $customerEntity->getCustomerBroker()->getBroker()->getCompanyName()?></h6>
+                    
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                
+                <div class="media">
+                  <div><i class="icon ion-link tx-24 lh-0"></i></div>
+                  <div class="media-body mg-l-15 mg-t-4">
+                    <h6 class="tx-14 tx-gray-700">Websites</h6>
+                    <a href="" class="d-block"><?php echo ($brokerEntity->getBrokerWebsite()  != NULL ? $brokerEntity->getBrokerWebsite()  : GeneralService::GENERAL_EMPTY_FIELD)?></a>
+                   
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media mg-t-25">
+                  <div><i class="icon ion-ios-telephone-outline tx-24 lh-0"></i></div>
+                  <div class="media-body mg-l-15 mg-t-4">
+                    <h6 class="tx-14 tx-gray-700">Broker Phone Number</h6>
+                    <span class="d-block"><?php echo ($brokerEntity->getOfficialPhone()  != NULL ? $brokerEntity->getOfficialPhone()  : GeneralService::GENERAL_EMPTY_FIELD)?></span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                <div class="media mg-t-25">
+                  <div><i class="icon ion-ios-email-outline tx-24 lh-0"></i></div>
+                  <div class="media-body mg-l-15 mg-t-4">
+                    <h6 class="tx-14 tx-gray-700">Broker Email Address</h6>
+                    <span class="d-block"><?php echo ($brokerEntity->getBrokerEmail()  != NULL ? $brokerEntity->getBrokerEmail()  : GeneralService::GENERAL_EMPTY_FIELD)?></span>
+                  </div><!-- media-body -->
+                </div><!-- media -->
+                
+              </div><!-- media-list -->
+            </div><!-- card -->
+            
+            <div class="card card-connection">
+              <div class="row row-xs">
+                <div class="col-4 tx-primary"></div>
+                <div class="col-8">Account Manager </div>
+              </div><!-- row -->
+             
+              
+            </div><!-- card -->
+          </div><!-- col-4 -->
+        </div><!-- row -->
+
+      </div><!-- container -->
+    </div><!-- slim-mainpanel -->

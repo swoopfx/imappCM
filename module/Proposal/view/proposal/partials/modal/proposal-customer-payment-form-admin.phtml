@@ -1,0 +1,23 @@
+<?php
+?>
+<div class="alert alert-success">
+	<ul class="fa-ul">
+		<li><a class="alert-link">Only use this information whenever the customer
+				does not pay through the electronic channel and customer is paying a lump sum once
+				, but makes payment through cheque, cash payment</a>.</li>
+	</ul>
+</div>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div class="row">
+<?php 
+$manualPaymentForm->prepare();
+echo $this->form()->openTag($manualPaymentForm);
+echo $this->partial("transaction-manul-payment-fieldset", array("manualPaymentFieldset"=>$manualPaymentForm->get("manualPaymentFieldset")));
+echo $this->formsubmit($manualPaymentForm->get("submit"));
+echo $this->form()->closeTag();
+?>
+</div>
+

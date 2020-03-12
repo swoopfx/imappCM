@@ -1,0 +1,514 @@
+<?php
+$avaiationFieldset = $form->get("aviationFieldset");
+?>
+<!-- pilotDetails -->
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"aviationpilotdetails")) ?>">
+		Add Pilot Details</a>
+</div>
+
+<div class="form-group" id="div_pilotDetails"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;">
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('aircraftUsage'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('aircraftUsage'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Please, state the uses to which the aircraft will be
+ put (e.g tests, delivery of aircraft, passenger
+ carrying, cargo carrying, private pleasure, business)"></i>
+
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('aircraftUsage'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('geographicalOperation'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('geographicalOperation'));?>
+									
+								</div>
+
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Geographical operation"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('geographicalOperation'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('airlineBackground'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('airlineBackground'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Please, state the uses to which the aircraft will be
+ put (e.g tests, delivery of aircraft, passenger
+ carrying, cargo carrying, private pleasure, business)"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('airlineBackground'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('aircraftMakeNType'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('aircraftMakeNType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('aircraftMakeNType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('constructionYear'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('constructionYear'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('constructionYear'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('serialNumber'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('serialNumber'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('serialNumber'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('agreedHullValue'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('agreedHullValue'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('agreedHullValue'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isRegularMaintenance'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isRegularMaintenance'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isRegularMaintenance'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_maintenance">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isRegularlyHangered'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isRegularlyHangered'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isRegularlyHangered'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('hangeredLocation'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('hangeredLocation'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('hangeredLocation'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('maintenanceBy'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('maintenanceBy'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('maintenanceBy'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('lastMaintenanceDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('lastMaintenanceDate'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('lastMaintenanceDate'));  // this defines the error?> 
+							</div>
+	</div>
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isMaintenanceIncludeEngine'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isMaintenanceIncludeEngine'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isMaintenanceIncludeEngine'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isLien'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isLien'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isLien'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_lien">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('lienAmount'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('lienAmount'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('lienAmount'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('lienHolder'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('lienHolder'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('lienHolder'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isIncludeRisk'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isIncludeRisk'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isIncludeRisk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_include_risk"
+	style="margin: 10px; padding: 10px; background: #f4e2e2;">
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isIncludeFlightRisk'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isIncludeFlightRisk'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isIncludeFlightRisk'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isIncludeTaxiRisk'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isIncludeTaxiRisk'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isIncludeTaxiRisk'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isIncludeGroundRisk'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isIncludeGroundRisk'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isIncludeGroundRisk'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isMotoringRisk'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isMotoringRisk'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isMotoringRisk'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isIndemnityLimit'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isIndemnityLimit'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isIndemnityLimit'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_indemnity_limit">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('indemnityLimit'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('indemnityLimit'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('indemnityLimit'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('indemnityLimitOnePassenger'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('indemnityLimitOnePassenger'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('indemnityLimitOnePassenger'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('indemnityLimitOneAccident'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('indemnityLimitOneAccident'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('indemnityLimitOneAccident'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isPreviousInsurer'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isPreviousInsurer'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isPreviousInsurer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_previous_insurer">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isPreviousDecline'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isPreviousDecline'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isPreviousDecline'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group" id="div_decline_reason">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('declineReason'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('declineReason'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('declineReason'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('isPreviousCancel'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('isPreviousCancel'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('isPreviousCancel'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group" id="div_cancel_reason">
+
+								 <?php echo $this->formLabel($avaiationFieldset->get('cancelReason'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($avaiationFieldset->get('cancelReason'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($avaiationFieldset->get('cancelReason'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+	$("#div_lien").hide();
+	$("#div_maintenance").hide();
+	$("#div_include_risk").hide();
+	$("#div_indemnity_limit").hide();
+	$("#div_cancel_reason").hide();
+	$("#div_decline_reason").hide();
+	$("#div_previous_insurer").hide();
+
+	$("#isLien").change(function(){
+
+		if($('#isLien').is(":checked")){
+			$("#div_lien").show();
+			}else{
+				$("#div_lien").hide();
+				}
+		})
+
+		$("#isRegularMaintenance").change(function(){
+
+		if($('#isRegularMaintenance').is(":checked")){
+			$("#div_maintenance").show();
+			}else{
+				$("#div_maintenance").hide();
+				}
+		})
+
+
+		$("#isIncludeRisk").change(function(){
+
+		if($('#isIncludeRisk').is(":checked")){
+			$("#div_include_risk").show();
+			}else{
+				$("#div_include_risk").hide();
+				}
+		})
+
+
+
+		$("#isIndemnityLimit").change(function(){
+
+		if($('#isIndemnityLimit').is(":checked")){
+			$("#div_indemnity_limit").show();
+			}else{
+				$("#div_indemnity_limit").hide();
+				}
+		})
+		
+		$("#isPreviousDecline").change(function(){
+
+		if($('#isPreviousDecline').is(":checked")){
+			$("#div_decline_reason").show();
+			}else{
+				$("#div_decline_reason").hide();
+				}
+		})
+
+		$("#isPreviousInsurer").change(function(){
+
+		if($('#isPreviousInsurer').is(":checked")){
+			$("#div_previous_insurer").show();
+			}else{
+				$("#div_previous_insurer").hide();
+				}
+		})
+
+		$("#isPreviousCancel").change(function(){
+
+		if($('#isPreviousCancel').is(":checked")){
+			$("#div_cancel_reason").show();
+			}else{
+				$("#div_cancel_reason").hide();
+				}
+		})
+
+	
+})
+</script>

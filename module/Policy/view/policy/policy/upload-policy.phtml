@@ -1,0 +1,43 @@
+<?php
+echo $this->headtitle("Upload Policy");
+$policyUploadForm->prepare();
+$policyFloatForm->prepare();
+
+?>
+
+<div class="row">
+	<div class="col-md-9 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Upload Customer Policy</h2>
+				
+				<div class="clearfix"></div>
+			</div>
+                  <?php  echo $this->partial("general-error-ponters")?>
+                  <div class="x_content">
+
+				<!--                     <p>Simple table with project listing with progress and editing options</p> -->
+
+				<!-- start project list -->
+				<?php  echo $this->form()->openTag($policyFloatForm)?>
+				<?php  echo $this->partial("policy_upload_policy_form_snippet", array("uploadPolicyFieldset"=>$policyFloatForm->get("policyFloatFieldset")))?>
+				<?php //echo $this->formrow($policyUploadForm->get("reset"))?>
+				<?php echo $this->formrow($policyFloatForm->get("submit"))?>
+				<?php echo $this->form()->closeTag() ;?>
+
+				<!-- end project list -->
+
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3 col-sm-3 col-xs-1">
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner2.jpg")?>">
+			</div>
+		</div>
+	</div>
+</div>

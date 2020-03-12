@@ -1,0 +1,144 @@
+<?php
+echo $this->headtitle("Company Profile");
+
+?>
+<div id="wasabi_modal"></div>
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="x_panel">
+			<div class="x_title">
+				<h2><?php  //echo $brokerName ?></h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+				<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+					<div class="profile_img">
+						<div id="crop-avatar">
+							<!-- Current avatar -->
+							<a data-toggle="modal"
+									data-target='.bs-customer-change-logo-lg'> <img class="img-responsive avatar-view"
+								src="<?= $this->imprintLogo()?>" alt="Broker Logo"
+								title="Change the avatar">
+							</a>
+						</div>
+					</div>
+					<h3><?php // echo $brokerName ?></h3>
+
+					<ul class="list-unstyled user_data">
+						<li><i class="fa fa-map-marker user-profile-icon"></i> <?php echo ($brokerInfo->getAddress1() == NULL ? "No Address Available": $brokerInfo->getAddress1())?></li>
+
+						<li><i class="fa fa-briefcase user-profile-icon"></i><a href=""
+							data-toggle="modal" data-target=".bs-example-modal-sm"> Company
+								Profile</a></li>
+
+						<li><i class="fa fa-at user-profile-icon"></i> <?php echo ($brokerInfo->getBrokerEmail() == NULL ? "NO Email Available ": $brokerInfo->getBrokerEmail() )?>
+						</li>
+
+						<li class="m-top-xs"><i class="fa fa-globe user-profile-icon"></i>
+							<a
+							href="<?php echo ($brokerInfo->getBrokerWebsite() == NULL ? "#": $brokerInfo->getBrokerWebsite() )?>"
+							target="_blank"><?php echo ($brokerInfo->getBrokerWebsite() == NULL ? "No Website Available ": $brokerInfo->getBrokerWebsite() )?></a></li>
+					</ul>
+
+
+					<a style="width: 100%;" 
+						data-json='{"type":"standard"}'
+						data-href="<?php  echo $this->url("user_broker", array("action"=>"editprofilemodal"))?>"
+						id="btn3" class=" ajax_element btn btn-app"><i
+						class="fa fa-edit m-right-xs"></i>Edit Profile</a> <br /> <a
+						style="width: 100%;" class="btn btn-app"
+						href="<?php  echo $this->url("settings/default", array("action"=>"profile"))?>"
+						data-target=".broker-form"><i class="fa fa-edit m-right-xs"></i>C.E.O
+						Profile</a> <br />
+
+
+
+				</div>
+
+
+				<div class="col-md-9 col-sm-9 col-xs-12">
+
+
+					<!-- start of user-activity-graph -->
+
+					<!-- 					<ul class="stats-overview"> -->
+					<!-- 						<li><span class="name"> Estimated budget </span> <span -->
+					<!-- 							class="value text-success"> 2300 </span></li> -->
+					<!-- 						<li><span class="name"> Total amount spent </span> <span -->
+					<!-- 							class="value text-success"> 2000 </span></li> -->
+					<!-- 						<li class="hidden-phone"><span class="name"> Estimated project -->
+					<!-- 								duration </span> <span class="value text-success"> 20 </span></li> -->
+					<!-- 					</ul> -->
+					<br />
+
+					<div id="mainb" style="height: 350px;"></div>
+					<!-- end of user-activity-graph -->
+
+					<div class="" role="tabpanel" data-example-id="togglable-tabs">
+						<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+							
+							<li role="presentation" class=""><a href="#tab_content2"
+								role="tab" id="profile-tab" data-toggle="tab"
+								aria-expanded="false">Subscription</a></li>
+
+							<li role="presentation" class=""><a href="#tab_content4"
+								role="tab" id="profile-tab2" data-toggle="tab"
+								aria-expanded="false">Third Party</a></li>
+						</ul>
+						<div id="myTabContent" class="tab-content">
+							
+							<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+								aria-labelledby="profile-tab">
+
+								 <?php echo $this->dashboard_broker_account_helper($brokerInfo); ?>
+       <?php  echo $this->dashboard_broker_sub_helper($brokerInfo->getSubscription())?>
+       <div class="col-md-4 col-sm-4 col-xs-12"></div>
+
+							</div>
+
+							<div role="tabpanel" class="tab-pane fade" id="tab_content4"
+								aria-labelledby="profile-tab">
+
+
+								<div class="col-md-4 col-sm-6 col-xs-12">
+									<a
+										href="<?php  echo $this->url("s-m-s/default", array("action"=>"buy-sms"))?>"><img
+										alt="Buy SMS" title="Buy SMS"
+										src="<?php echo $this->basepath("img/sms.png")?>" width=200></a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+
+<div class="modal fade bs-customer-change-logo-lg" tabindex="-3"
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">CHANGE LOGO</h4>
+			</div>
+                        <?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+                         <div class="modal-body">
+                        
+                         </div>
+			<div class="modal-footer">
+                         <a href="<?php  echo $this->url("settings/default", array("action"=>"profile"))?>" class="btn btn-block btn-success"> REFRESH</a>
+                         
+                        </div>
+
+
+                      </div>
+	</div>
+</div>

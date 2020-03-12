@@ -1,0 +1,29 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+foreach ($objects as $object) {
+    ?>
+
+<tr>
+	<td><?php  echo strtoupper($object->getObjectUid())?><br> <strong>PROPERTY
+			NAME :</strong><?php  echo $object->getObjectName()?><br> <strong>VALUE
+			/ SUM ASSURED : </strong> <?php  echo ($object->getvalue() != NULL ? $this->myCurrencyFormat($object->getvalue(), $object->getCurrency()->getCode()) : GeneralService::GENERAL_EMPTY_FIELD)?><br>
+		<strong> Created On: <?php echo $this->dateFormat($object->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, 'en_US')?></strong><br>
+		<strong>Property :</strong> <?php echo $object->getObjectType()->getObjectType() ?>
+	</td>
+
+
+	<td><?php  echo $this->customerAllObjectStatus($object)?></td>
+	<td><?php  echo $this->customerAllOjectActionHelper($object)?><br>
+	<a data-toggle='tooltip' data-placement='bottom' title='Click to View the property'
+		href=" <?php
+    
+echo $this->url("cus_object/default", array(
+        "action" => "view",
+        "id" => $object->getObjectUid()
+    ))?>"
+		class='btn btn-sm btn-info' style='width: 100%'> View </a></td>
+
+</tr>
+
+<?php  }?>

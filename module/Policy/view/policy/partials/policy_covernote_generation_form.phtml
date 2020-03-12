@@ -1,0 +1,10 @@
+
+
+<?php echo $this->form()->openTag($coverNoteForm) ?>
+
+<hr>		
+<?php  echo $this->partial("policy_covernote_generation_fieldset", array("coverNoteFieldset"=>$coverNoteForm->get("coverNoteFieldset")))?>
+<div class="col-md-6">
+<?php echo $this->formrow($coverNoteForm->get("submit"))?>	
+</div>				
+<?php  echo $this->form()->closeTag()?>

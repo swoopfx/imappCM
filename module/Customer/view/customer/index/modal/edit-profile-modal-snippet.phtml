@@ -1,0 +1,68 @@
+<div class="row" ng-app="CustomerModule">
+
+<div id="success"></div>
+	<div id="error"></div>
+
+	<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+		alt=""
+		src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+		height=100></i>
+<?php
+$customerForm->prepare();
+echo $this->form()->openTag($customerForm);
+$customerForm->get("submit")->setAttributes(array(
+    "value" => "Update Customer",
+    "style"=>"width:100%"
+));
+$customerFieldset = $customerForm->get('customerFieldset');
+$customerFieldset->get('user')
+    ->get('username')
+    ->setAttributes(array(
+    'disabled' => 'disabled',
+        
+));
+$customerFieldset->get('user')
+    ->get('email')
+    ->setAttributes(array(
+    'disabled' => 'disabled'
+));
+?>
+<div class="checkbox">
+		<label>
+								<?php echo $this->formElement($customerForm->get('individual'));?>
+								
+								 </label>
+
+	</div>
+	<br>
+				<?php echo $this->partial('customer-new', array('customerFieldset'=>$customerFieldset))?>
+
+<?php
+echo $this->formRow($customerForm->get('csrf'));
+echo $this->formRow($customerForm->get('submit'));
+// echo $this->formRow($customerForm->get('reset'));
+echo $this->form()->closeTag();
+?>
+</div>
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('angular/CustomerModule.js'))
+    ->appendFile($this->basePath('angular/controllers/customerController.js'));
+?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+             $('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.phone').mask('00000000000');
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

@@ -1,0 +1,25 @@
+<?php
+$recommendForm->setAttributes(array(
+    "action"=>$this->url("offer/default", array("action"=>"recommend")),
+));
+$recommendForm->prepare();
+echo $this->form()->openTag($recommendForm);
+?>
+
+<div class="form-group">
+							
+    
+
+								<?php echo $this->formLabel($recommendForm->get('recommendedInsurer'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($recommendForm->get('recommendedInsurer'))?>  
+								</div>
+								<div style="font-size: 9px; color: red;">
+	<br>
+								<?php echo $this->formElementErrors($recommendForm->get('recommendedInsurer'))?> 
+								</div>
+							</div>
+							
+							<?php  echo $this->formrow($recommendForm->get("submit"))?>
+							
+							<?php echo $this->form()->closeTag()?>

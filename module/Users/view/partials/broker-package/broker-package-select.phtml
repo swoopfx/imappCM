@@ -1,0 +1,49 @@
+<?php 
+$form = $this->form;
+
+?>
+<div ng-app="SubModule">
+<div class="form-group">
+<?php $package = $form->get('package');
+//$package->setAttributes(array('value'=>2))
+?>
+							
+								<?php  //echo $this->formLabel($form->get('package'))?> 
+								
+								<div class="col-md-12 col-sm-12 col-xs-12">
+								<?php echo $this->formElement($form->get('package'));?>
+									
+								</div>
+								<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('package'));  // this defines the error?> 
+							</div></div>
+							
+							
+							<div class="form-group">
+							<?php  $form->get('months')->setAttributes(array(
+							    'value'=>3
+							))?>
+								<?php // echo $this->formLabel($form->get('months'))?> 
+								
+								<div class="col-md-12 col-sm-12 col-xs-12">
+								<?php echo $this->formElement($form->get('months'));?>
+									
+								</div>
+								<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('months'));  // this defines the error?> 
+							</div></div>
+							
+							<div class="tile-stats">
+
+							<div ng-cloak class="count"> {{totalAmount | currency :"&#x20A6;"}} <?php // echo $this->myCurrencyFormat(0, 'NGN', 'en_NG', true)?></div>
+
+							<h4>VAT: {{taxes | currency : "&#x20A6;"}}</h4>
+							<div class="clearfix"></div>
+							<p> <?php // echo $this->formrow($form->get('submit'))?></p>
+
+						</div>
+							
+</div>
+							

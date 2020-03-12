@@ -1,0 +1,80 @@
+<?php
+ use Zend\Session\Container;
+
+ $puidSession = new Container("piudSession")
+?>
+<div id="wasabi"></div>
+<div class="container">
+	<div class="row u-justify-center">
+		<div class="col-lg-6 u-text-center">
+			<h2 class="u-mb-small"><?php echo  ($port->getProposal() != NULL? $port->getProposal()->getCustomer()->getName() : "")?></h2>
+			<p class="u-text-large u-mb-large"><?php  echo $this->escapehtml(($port->getProposal() != NULL ? $port->getProposal()->getProposalTitle() : ""))?></p>
+			<p class="u-text-large u-mb-large" style="color: red;"><?php  echo ($port->getProposal() != NULL ? $port->getProposal()->getServiceType()->getInsuranceService() : "")?></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-xl-4 u-ml-auto">
+			<div class="c-card is-animated">
+				<span class="c-icon c-icon--large u-mb-small"> <i
+					class="feather icon-eye"></i>
+				</span>
+
+				<h5 class="u-mb-xsmall">View Details</h5>
+				<p class="u-mb-medium">Use this to view the Policy/Cover Details</p>
+				<a  class=" c-btn c-btn--info has-arrow"
+					href="<?php echo $this->url("insurer_portal/default", array("action"=>"page"))?>" > View <i
+					class="feather icon-chevron-right"></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-xl-4 u-mr-auto">
+			<div class="c-card is-animated">
+				<span class="c-icon c-icon--large u-mb-small"> <i
+					class="feather icon-upload"></i>
+				</span>
+
+				<h5 class="u-mb-xsmall">Upload Documents</h5>
+				<p class="u-mb-medium">Use this to upload customer related document
+					to the broker</p>
+				<a class="c-btn c-btn--info has-arrow" href="<?php echo $this->url("insurer_portal/default", array("action"=>"page"))?>">Upload<i
+					class="feather icon-chevron-right"></i></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-xl-4 u-ml-auto">
+			<div class="c-card is-animated">
+				<span class="c-icon c-icon--large u-mb-small"> <i
+					class="feather icon-message-square"></i>
+				</span>
+
+				<h5 class="u-mb-xsmall">Communicate</h5>
+				<p class="u-mb-medium">Invite your team members to Neat and work on
+					your projects together.</p>
+				<a href="<?php echo $this->url("insurer_portal/default", array("action"=>"page"))?>" class="c-btn c-btn--info has-arrow">
+					Communicate<i class="feather icon-chevron-right"></i>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-md-6 col-xl-4 u-mr-auto">
+			<div class="c-card is-animated">
+				<span class="c-icon c-icon--large u-mb-small"> <i
+					class="feather icon-book"></i>
+				</span>
+
+				<h5 class="u-mb-xsmall">Read Docs</h5>
+				<p class="u-mb-medium">A little confused, don't worry, learn how to
+					use Neat by reading our starter guide.</p>
+				<a href="<?php echo $this->url("insurer_portal/default", array("action"=>"page"))?>" class="c-btn c-btn--info has-arrow">Read
+					More<i class="feather icon-chevron-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+</div>

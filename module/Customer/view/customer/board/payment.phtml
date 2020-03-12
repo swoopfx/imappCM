@@ -1,0 +1,91 @@
+<?php
+use Zend\Session\Container;
+
+echo $this->headtitle("Make Payment");
+$paymentForm->prepare();
+$paystackPaymentSession = new Container("paystack_payment_session");
+// $paymentForm->setAttributes(array(
+// "action" => $this->url("board/default", array(
+// "action" => "payment"
+// ))
+// ));
+
+?>
+<div id="authpay">
+	<div id="ht"></div>
+</div>
+
+<div id="target_id"></div>
+<div ng-app="CustomerModule">
+	<div class="row">
+
+		<div class="col-md-12">
+	<?php // echo $this->partial("general-error-ponters")?>
+		<div class="col-sm-12 col-xs-12 col-md-7">
+				
+
+<?php  //echo $this->partial("customer-registered-card-details")?>
+
+				<hr>
+<?php echo $this->board_payment_amount_payable($invoiceEntity)?> 
+						
+				<div class="panel-body buttons-spacing-vertical">
+					<p>Select your prefered payment method.</p>
+					<p>
+
+						<a data-json='{"type":"standard"}'
+							data-href="<?php  echo $this->url("cus_payment/default", array("action"=>"showcardformmodal"))?>"
+							id="btn3" class=" ajax_element btn btn-primary btn-icon-stacked"><i
+							class="fa fa-2x fa-credit-card"></i> <span>Card Payment<br> ALL
+								CARDS
+						</span></a> 
+<!-- 						<a data-json='{"type":"standard"}' -->
+<!-- 							data-href=" -->
+							<?php  //echo $this->url("cus_payment/default", array("action"=>"showbankform"))?>"
+<!-- 							id="btn3" class=" ajax_element btn btn-inverse btn-icon-stacked" ><i -->
+<!-- 							class="fa fa-2x fa-bank"></i> <span>Bank Transfer<br> NIGERIAN -->
+<!-- 								BANKS -->
+<!-- 						</span></a> <a class="btn btn-info btn-icon-stacked"><i -->
+<!-- 							class="fa fa-2x fa-money"></i> <span>Cash Payment<br> PHYSICAL -->
+<!-- 								PAYMENT -->
+<!-- 						</span></a> -->
+					</p>
+				</div>
+
+
+			</div>
+
+			<!-- // END Tabbable Widget -->
+
+			<div class="col-md-5 col-xs-12 col-sm-12">
+			<?php  echo $this->partial("sub-layout-micropayment-list-snippet"); ?>
+			<?php  echo $this->partial("customer-invoice-details-snipet", array("invoiceEntity"=>$invoiceEntity))?>
+			
+			
+			<div class="panel panel-default">
+					<div class="panel-heading panel-collapse-trigger">
+						<h4 class="panel-title">Payment Status</h4>
+					</div>
+            <?php  echo $this->invoiceStatusViewHelper($invoiceEntity) ?>
+          </div>
+
+				
+
+<?php  //echo $this->partial("customer-board-featured-packages")?>
+			</div>
+
+			<br /> <br />
+
+		</div>
+
+
+	</div>
+
+
+</div>
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('angular/CustomerModule.js'))
+    ->appendFile($this->basePath('angular/controllers/customerController.js'));
+?>

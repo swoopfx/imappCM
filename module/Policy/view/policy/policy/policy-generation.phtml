@@ -1,0 +1,32 @@
+<?php
+$policyForm = $this->policyForm;
+
+$policyForm->prepare();
+
+?>
+
+<div id="success"></div>
+<div id="error"></div>
+
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div id="res">	
+			
+			
+<?php  echo $this->form()->openTag($policyForm)?>
+<?php  echo $this->partial("policy_policy_generation_form_snipet", array("policyFieldset"=>$policyForm->get("policyFieldset")));?>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<?php  echo $this->formrow($policyForm->get("submit"))?>
+</div>
+<?php  echo $this->form()->closeTag()?>
+<hr>
+<?php
+
+
+?>
+
+
+</div>
+

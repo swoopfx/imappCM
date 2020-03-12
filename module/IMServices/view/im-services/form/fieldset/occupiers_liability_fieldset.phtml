@@ -1,0 +1,494 @@
+<?php
+$occupiersLiabilityFieldset = $form->get("occupiersLiabilityFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('buildingType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('buildingType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Building category use ?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('buildingType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div id="div_nonResidetialType" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('nonResidetialType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('nonResidetialType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of non residential building"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('nonResidetialType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_occupiersName" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('occupiersName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('occupiersName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('occupiersName'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('residenceDesription'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('residenceDesription'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="A description of what the building is used for"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('residenceDesription'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('coverStartDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('coverStartDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed date cover begins"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('coverStartDate'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('coverEndDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('coverEndDate'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed date cover ends, 1 year would be the default date"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('coverEndDate'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('distanceFromGround'))?>
+								
+								<div class="col-md-5 col-sm-5 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('distanceFromGround'));?>
+									
+								</div>
+	<div class="col-md-2 col-sm-2 col-xs-2">meters</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How far is the building away from ground level, the hight of the builfin"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('distanceFromGround'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isGoodState'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isGoodState'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Defines if building is in good condition"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isGoodState'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_badCondition" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('badCondition'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('badCondition'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Spwcidic details about the bad condtion of the building"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('badCondition'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isSubjectToFlooding'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isSubjectToFlooding'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if building location is prone to flooding"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isSubjectToFlooding'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isExposedToFireStormOrQuake'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isExposedToFireStormOrQuake'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title=" Are the buildings specially exposed to loss by any of the perils of fire, 
+storm or earthquake"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isExposedToFireStormOrQuake'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_lossType" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('lossType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('lossType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the specific loss "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('lossType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isPreviousLoss'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isPreviousLoss'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Previously had a loss at any one time"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isPreviousLoss'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_previousLoss" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('previousLoss'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('previousLoss'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('previousLoss'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isUnoccupied'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isUnoccupied'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Will the building be unoccupied at any time"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isUnoccupied'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_unOccupiedPeriod" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('unOccupiedPeriod'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('unOccupiedPeriod'));?>
+									
+								</div>
+	<strong>months</strong> <i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Period it is usually/would be unoccupied"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('unOccupiedPeriod'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isPreviousDeclined'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isPreviousDeclined'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if proposed has been previously declined by an previous insurer"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isPreviousDeclined'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_declineDetails" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('declineDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('declineDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Reason given for the decline"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('declineDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isForRent'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isForRent'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if builing is let out for rent"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isForRent'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_countPayingGuest" class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('countPayingGuest'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('countPayingGuest'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Number of paying guest"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('countPayingGuest'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isDomesticStaff'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isDomesticStaff'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if building has domestic staff"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isDomesticStaff'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_has_staff">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}' data-ajax-loader="microFieldset"
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"occupiersliabilitystaff")) ?>">
+			Add Staff <i id="microFieldset" class="fa fa-spinner  fa-pulse fa-lg"
+			style="display: none;"> </i>
+		</a>
+	</div>
+
+	<div class="form-group" id="div_staff_list"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isTradeWithinBuilding'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isTradeWithinBuilding'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there is trade within the building"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isTradeWithinBuilding'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($occupiersLiabilityFieldset->get('isTradeAroundBuilding'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-11">
+								<?php echo $this->formElement($occupiersLiabilityFieldset->get('isTradeAroundBuilding'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there is trade around the building premises"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($occupiersLiabilityFieldset->get('isTradeAroundBuilding'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div id="div_has_staff">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}' data-ajax-loader="microFieldsetss"
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"occupiersliabilityfamily")) ?>">
+			Add Family member <i id="microFieldsetss"
+			class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i>
+		</a>
+	</div>
+
+	<div class="form-group" id="div_family_list"
+		style="margin: 10px; padding: 10px; background: #f1d3f2;"></div>
+
+</div>
+
+<br>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#div_nonResidetialType").hide();
+	$("#div_occupiersName").hide();
+	$("#div_badCondition").hide();
+	$("#div_lossType").hide();
+	$("#div_previousLoss").hide();
+	$("#div_unOccupiedPeriod").hide();
+	$("#div_countPayingGuest").hide();
+	$("#div_declineDetails").hide();
+	$("#div_has_staff").hide();
+
+	$("#buildingType").change(function(){
+		if($("#buildingType").val() == "2"){
+			$("#div_nonResidetialType").show();
+		}else{
+			$("#div_nonResidetialType").hide();
+			}
+		})
+		
+	$("#isGoodState").change(function(){
+		if($("#isGoodState").is(":checked")){
+			$("#div_badCondition").hide();
+		}else{
+			$("#div_badCondition").show();
+			
+			}
+		})
+		
+   $("#isExposedToFireStormOrQuake").change(function(){
+	   if($("#isExposedToFireStormOrQuake").is(":checked")){
+		   $("#div_lossType").show();
+	   }else{
+		   $("#div_lossType").hide();
+		   }
+	   })
+	   
+	   $("#isUnoccupied").change(function(){
+	   if($("#isUnoccupied").is(":checked")){
+		   $("#div_unOccupiedPeriod").show();
+	   }else{
+		   $("#div_unOccupiedPeriod").hide();
+		   }
+	   })
+	   
+	   $("#isPreviousLoss").change(function(){
+	   if($("#isPreviousLoss").is(":checked")){
+		   $("#div_previousLoss").show();
+	   }else{
+		   $("#div_previousLoss").hide();
+		   }
+	   })
+	   
+	   
+	    $("#isForRent").change(function(){
+	   if($("#isForRent").is(":checked")){
+		   $("#div_countPayingGuest").show();
+	   }else{
+		   $("#div_countPayingGuest").hide();
+		   }
+	   })
+	   
+	    $("#isPreviousDeclined").change(function(){
+	   if($("#isPreviousDeclined").is(":checked")){
+		   $("#div_declineDetails").show();
+	   }else{
+		   $("#div_declineDetails").hide();
+		   }
+	   })
+	   
+	   
+		
+	$("#isDomesticStaff").change(function(){
+		if($("#isDomesticStaff").is(":checked")){
+			$("#div_has_staff").show();
+			}else{
+				$("#div_has_staff").hide();
+				}
+		});
+})
+</script>
+

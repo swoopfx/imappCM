@@ -1,0 +1,435 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+?>
+
+
+	<style type="text/css">
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	outline: none;
+}
+
+.link-blue:hover svg {
+	fill: currentColor !important;
+}
+
+.link-blue:hover {
+	color: #003BFF;
+}
+
+.link-green:hover svg {
+	fill: currentColor !important;
+}
+
+.link-green:hover {
+	color: #282828;
+}
+
+.link-navy:hover svg {
+	fill: currentColor !important;
+}
+
+.link-navy:hover {
+	color: #007460;
+}
+
+.link-soft-black:hover {
+	color: #037362;
+	fill: #037362;
+	text-decoration: underline;
+}
+
+.link-dark-grey-500:hover {
+	color: #009E74;
+	text-decoration: underline;
+}
+
+.link-ksr-green-700:hover {
+	color: #282828;
+	text-decoration: underline;
+}
+
+@media all and (max-width: 540px) {
+	.img-responsive {
+		height: auto !important;
+		max-width: 100%;
+		width: 100% !important;
+	}
+	table[class*="container"] {
+		width: 320px !important;
+	}
+	.sm-col-1 {
+		width: 3.66667% !important;
+	}
+	.sm-col-2 {
+		width: 7.83333% !important;
+	}
+	.sm-col-3 {
+		width: 12% !important;
+	}
+	.sm-col-4 {
+		width: 16.16667% !important;
+	}
+	.sm-col-5 {
+		width: 20.33333% !important;
+	}
+	.sm-col-6 {
+		width: 24.5% !important;
+	}
+	.sm-col-7 {
+		width: 28.66667% !important;
+	}
+	.sm-col-8 {
+		width: 32.83333% !important;
+	}
+	.sm-col-9 {
+		width: 37% !important;
+	}
+	.sm-col-10 {
+		width: 41.16667% !important;
+	}
+	.sm-col-11 {
+		width: 45.33333% !important;
+	}
+	.sm-col-12 {
+		width: 49.5% !important;
+	}
+	.sm-col-13 {
+		width: 53.66667% !important;
+	}
+	.sm-col-14 {
+		width: 57.83333% !important;
+	}
+	.sm-col-15 {
+		width: 62% !important;
+	}
+	.sm-col-16 {
+		width: 66.16667% !important;
+	}
+	.sm-col-17 {
+		width: 70.33333% !important;
+	}
+	.sm-col-18 {
+		width: 74.5% !important;
+	}
+	.sm-col-19 {
+		width: 78.66667% !important;
+	}
+	.sm-col-20 {
+		width: 82.83333% !important;
+	}
+	.sm-col-21 {
+		width: 87% !important;
+	}
+	.sm-col-22 {
+		width: 91.16667% !important;
+	}
+	.sm-col-23 {
+		width: 95.33333% !important;
+	}
+	.sm-col-0 {
+		width: 0px !important;
+	}
+	.sm-col-24 {
+		width: 100% !important;
+	}
+	.hide-sm {
+		display: none !important;
+	}
+}
+</style>
+	<table class="mailer-body"
+		style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse; border-spacing: 0; color: #282828; font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; font-size: 14px; line-height: 1.5; margin: 0; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; width: 100% !important;"
+		bgcolor="#FBFBFA" width="100%" height="auto" cellpadding="0"
+		cellspacing="0">
+		<tbody>
+			<tr>
+				<td>
+					<center>
+						<table align="center" class="mx-auto container"
+							style="border-collapse: collapse; border-spacing: 0; margin-left: auto; margin-right: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 540px;"
+							width="540px" height="auto" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td>
+
+										
+
+
+										<table
+											class="bg-white w100p border border-grey-500 border-regular"
+											style="border: 1px solid #dcdedd; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+											bgcolor="#FFFFFF" width="100%" height="auto" cellpadding="0"
+											cellspacing="0">
+											<tbody>
+												<tr>
+													<td class="text-center pt5" style="padding-top: 30px;"
+														align="center">
+														<div class="type-24 mt2 black"
+															style="color: #000000; font-size: 24px; line-height: 30px; margin-top: 12px;">
+															<?php echo ($policyEntity->getPolicyName()== NULL ? "" : $policyEntity->getPolicyName());?></div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table align="center" class="col-16 sm-col-20 mx-auto"
+															style="border-collapse: collapse; border-spacing: 0; margin-left: auto; margin-right: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 66.16667%;"
+															width="100%" height="auto" cellpadding="0"
+															cellspacing="0">
+															<tbody>
+																<tr>
+																	<td class="type-14 text-center pt2 pb5 soft-black"
+																		style="color: #282828; font-size: 14px; line-height: 21px; padding-bottom: 30px; padding-top: 12px;"
+																		align="center"><?php  echo "";?><span
+																		class="bold navy-700"
+																		style="color: #282828; font-weight: 700;"><?php  echo ($policyEntity->getCoverNote()->getInsurer() == NULL ? "No Insurer selected": $policyEntity->getCoverNote()->getInsurer()->getInsuranceName());?></span>
+																		  <?php  echo "";?>.
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table align="center" class="col-24 border-top mx-auto"
+															style="border-collapse: collapse; border-spacing: 0; border-top-color: #DCDEDD; border-top-style: solid; border-top-width: 1px; margin-left: auto; margin-right: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 100%;"
+															width="100%" height="auto" cellpadding="0"
+															cellspacing="0">
+															<tbody>
+																<tr>
+																	<td
+																		class="col-20 sm-col-20 type-14 text-center pt4 pb4"
+																		style="font-size: 14px; line-height: 21px; padding-bottom: 24px; padding-top: 24px; width: 82.83333%;"
+																		align="center">Policy Number: <span
+																		class="bold navy-700"
+																		style="color: #282828; font-weight: 700;"><?php  echo $policyEntity->getPolicyCode() ;?></span>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+										
+
+
+										
+										<table
+											class="bg-white w100p border border-grey-500 border-regular"
+											style="border: 1px solid #dcdedd; border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;"
+											bgcolor="#FFFFFF" width="100%" height="auto" cellpadding="0"
+											cellspacing="0">
+											<tbody>
+												<tr>
+													<td>
+														<table align="center" class="col-20 sm-col-20 mx-auto"
+															style="border-collapse: collapse; border-spacing: 0; margin-left: auto; margin-right: auto; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 82.83333%;"
+															width="100%" height="auto" cellpadding="0"
+															cellspacing="0">
+															<tbody>
+																<tr>
+																	<td class="type-24 py4 black"
+																		style="color: #000000; font-size: 24px; line-height: 30px; padding-bottom: 24px; padding-top: 24px;">
+																		Policy Details <span
+																		class="type-12 ksr-green-700 normal"
+																		style="color: #037362; font-size: 12px; font-weight: 400; line-height: 18px;">
+
+																	</span>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="border-top py4 border-regular"
+																		style="border-top-color: #DCDEDD; border-top-style: solid; border-top-width: 1px; padding-bottom: 24px; padding-top: 24px;">
+																		<table align="left" class="col-10 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 41.16667%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-12 soft-black"
+																						style="color: #282828; font-size: 12px; line-height: 18px;">
+																						Policy</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<table align="left" class="col-14 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 57.83333%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-18"
+																						style="font-size: 18px; line-height: 30px;">
+																						<?php  echo $this->covernote_service_type_helper($policyEntity->getCoverNote());?></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="border-top py4 border-regular"
+																		style="border-top-color: #DCDEDD; border-top-style: solid; border-top-width: 1px; padding-bottom: 24px; padding-top: 24px;">
+																		<table align="left" class="col-10 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 41.16667%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-12 soft-black"
+																						style="color: #282828; font-size: 12px; line-height: 18px;">
+																						Cover</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<table align="left" class="col-14 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 57.83333%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div class="type-18"
+																							style="font-size: 18px; line-height: 30px;">
+																							<?php  echo $this->covernote_specific_service_type_helper($policyEntity->getCoverNote())?></div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="border-regular border-top pt4 py4"
+																		style="border-top-color: #DCDEDD; border-top-style: solid; border-top-width: 1px; padding-bottom: 24px; padding-top: 24px;">
+																		<table align="left" class="col-10 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 41.16667%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-12 soft-black"
+																						style="color: #282828; font-size: 12px; line-height: 18px;">
+																						Additional Details</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<table align="left" class="col-14 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 57.83333%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td>
+																						<div class="type-18"
+																							style="font-size: 18px; line-height: 30px;">
+																							<?php  echo ($policyEntity->getExtraInfo() == NULL ? "<i>No Information</i>" : $policyEntity->getExtraInfo())?></div>
+																						<div class="type-14 soft-black mt1"
+																							style="color: #282828; font-size: 14px; line-height: 21px; margin-top: 6px;">
+
+																						</div>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="pb4" style="padding-bottom: 24px;">
+																		<table align="left" class="col-9 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 37%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-12 dark-grey-500"
+																						style="color: #656969; font-size: 12px; line-height: 18px;">
+																						&nbsp;</td>
+																				</tr>
+																			</tbody>
+																		</table>
+
+																	</td>
+																</tr>
+																<tr>
+																	<td class="border-top py4 border-regular"
+																		style="border-top-color: #DCDEDD; border-top-style: solid; border-top-width: 1px; padding-bottom: 24px; padding-top: 24px;">
+																		<table align="left" class="col-10 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 41.16667%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-12 soft-black"
+																						style="color: #282828; font-size: 12px; line-height: 18px;">
+																						Cover Start Date </td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<table align="left" class="col-14 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 57.83333%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-18"
+																						style="font-size: 18px; line-height: 30px;"><?php  echo  ($policyEntity->getStartDate() != NULL ? $this->dateformat($policyEntity->getStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD)?>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+																
+																<tr>
+																	<td class="border-top py4 border-regular"
+																		style="border-top-color: #DCDEDD; border-top-style: solid; border-top-width: 1px; padding-bottom: 24px; padding-top: 24px;">
+																		<table align="left" class="col-10 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 41.16667%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-12 soft-black"
+																						style="color: #282828; font-size: 12px; line-height: 18px;">
+																						Cover End Date </td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<table align="left" class="col-14 sm-col-24"
+																			style="border-collapse: collapse; border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; table-layout: fixed; width: 57.83333%;"
+																			width="100%" height="auto" cellpadding="0"
+																			cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td class="type-18"
+																						style="font-size: 18px; line-height: 30px;"><?php  echo  ($policyEntity->getEndDate() != NULL ? $this->dateformat($policyEntity->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD)?>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+										
+										
+										
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</center>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+

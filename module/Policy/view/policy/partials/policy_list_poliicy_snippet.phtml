@@ -1,0 +1,63 @@
+<?php
+foreach ($policy as $pol){
+    ?>
+    <tr>
+	<td><a
+		href="<?php //echo $this->url("packages/default", array("action"=>"view", "id"=>$pol->getId()))?>"><?php // echo strtoupper(($pol->getPolicyCode() != NULL ? $pol->getPolicyCode() : " No Code"))?></a>
+
+	</td>
+	<td><?php  echo $pol->getCoverNote()->getCustomer()->getName() ?><br>
+		<?php  echo $pol->getCoverNote()->getCustomer()->getUser()->getUserName()?><br>
+		<?php  echo ($pol->getCoverNote()->getCustomer()->getUser()->getEmail() != NULL ? $pol->getCoverNote()->getCustomer()->getUser()->getEmail() : "No Email")?>
+		</td>
+	<td><strong>Policy Code: </strong><?php  echo $pol->getPolicyCode() ?> <br>
+		<strong>Poly Name: </strong><?php  echo ($pol->getPolicyName() != NULL ? $pol->getPolicyName() : "No Policy Name ")?><br>
+		<strong>Status: </strong><?php  echo $this->statusHelper($pol->getPolicyStatus()->getStatus())?><br>
+		<strong>Expires : </strong><?php  echo $this->dateformat($pol->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::SHORT, "en_us")?><br>
+		<strong>Insurer : </strong><img alt=""
+		src="<?php echo $this->insurerLogohelper($pol->getCoverNote()->getInsurer()->getId())?>"
+		class="img-circle   img-responsive" width=100></td>
+
+
+
+	<td>
+	<div style='text-align: center;'>
+	<i id='policyd<?php echo $pol->getId()?>' class='fa fa-lg'
+		style='display: none; text-align: center;'><img alt=''
+		src='<?php echo  $this->basePath('/processin.gif')  ?>' height=30>
+		<hr></i>
+</div>
+	<?php
+
+        $json = json_encode(array(
+            "data" => $pol->getPolicyUid()
+        ));
+        $viewSon = json_encode(array(
+            'data' => $pol->getId()
+        ));
+        ?>
+	<a data-ajax-loader="policyd<?php echo $pol->getId()?>" id="sending_data_button"
+		style="width: 100%" class="ajax_element btn btn-app"
+		data-json='<?php echo $json ?>'
+		data-href="<?php  echo $this->url("policy/default", array("action"=>"premanagemodal"))?>"><i
+			class="fa fa-play"></i>MANAGE POLICY</a>
+	<?php if($pol->getPolicyStatus()->getId() == \Policy\Service\PolicyService::POLICY_STATUS_ISSUED_AND_VALID){ ?>
+	<a data-ajax-loader="policyd<?php echo $pol->getId()?>" id="sending_data_button"
+		style="width: 100%" class="ajax_element btn btn-app"
+		data-toggle="tooltip" data-placement="top" title="View the policy"
+		data-json='<?php echo $viewSon ?>'
+		data-href="<?php  echo $this->url("policy/default", array("action"=>"viewpolicymodal"))?>"
+		style="width: 100%"> <i class="fa fa-eye"></i> VIEW POLICY
+	</a>
+	<?php
+        }
+        ?>
+        
+	<?php
+        //echo $this->policy_all_action_condition($pol)?> 
+        
+	</td>
+
+</tr>
+    <?php 
+}

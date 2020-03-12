@@ -1,0 +1,69 @@
+<?php
+$customer = $this->customer;
+if ($customer != NUll) {
+    foreach ($customer as $cust) {
+        // $cust = $cus->getCustomer();
+        ?>
+<tr>
+	<td></td>
+	<td>
+		<div class="media-body">
+			<strong>CUSTOMER ID.: </strong><a
+				href="<?php  echo $this->url('customer/default', array('action'=>'pre-profile', 'id'=>$cust->getId()))?>"><?php  echo ($cust->getAccountId() != NULL ? strtoupper($cust->getAccountId()) : "")?></a>
+			<br /> <strong>Customer Name:</strong> <a> <?php  echo ($cust->getName() != NULL ? strtoupper($cust->getName()) : "")?></a><br>
+
+			<strong>Customer Category: </strong> <?php echo ($cust->getCustomerCategory()->getId() != NULL ? $this->customer_category_type_view_helper($cust->getCustomerCategory()->getId()) : "")?><br>
+									<?php echo ($cust->getUser()->getUsername() != NULL ? $cust->getUser()->getUsername(): '')?><br>
+									<?php  echo ($cust->getUser()->getEmail() != NULL ? $cust->getUser()->getEmail() : '')?> <br>
+			<small>Created <?php  echo $this->dateFormat($cust->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></small>
+		</div>
+	</td>
+	<td>
+	
+	<?php
+        $json = json_encode(array(
+            'data' => $cust->getId()
+        ));
+
+        $jsonUid = json_encode(array(
+            "data" => $cust->getAccountId()
+        ));
+        ?>
+        <div style="text-align: center;">
+			<i id="customerActionButton<?php echo $cust->getId()?>"
+				class="fa  fa-lg" style="display: none;"><img alt=""
+				src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+		</div> <a data-ajax-loader="customerActionButton<?php echo $cust->getId()?>"
+		id='sending_data_button' class='btn btn-app btn-sm ajax_element'
+		data-json='<?php echo $json ?>' style='width: 100%'
+		data-href="<?php  echo $this->url("proposal/default", array("action"=>"createproposalmodal"))?>"><i
+			class="fa fa-edit"></i> Generate Proposal </a> <br> <a
+		data-ajax-loader="customerActionButton" style="width: 100%"
+		href="<?php  echo $this->url('customer/default', array('action'=>'pre-profile', 'id'=>$cust->getAccountId()))?>"
+		class="btn btn-app btn-xs"><i class="fa fa-eye"></i> Customer Details
+	</a><br>
+	</td>
+
+	<td><?php // echo $this->assigned_child_broker_button_helper($cust->getId()); ?> 
+	
+	<div style="text-align: center;">
+			<i id="customerActionButtons<?php echo $cust->getId()?>"
+				class="fa  fa-lg" style="display: none;"><img alt=""
+				src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+		</div> <a id='sending_data_button'
+		data-ajax-loader="customerActionButtons<?php echo $cust->getId()?>"
+		class='btn btn-app btn-sm ajax_element'
+		data-json='<?php echo $json ?>' style='width: 100%'
+		data-href="<?php  echo $this->url('customer/default',array('action'=>'edit'))?>"
+		class="btn btn-app btn-xs"><i class="fa fa-pencil"></i> Edit </a> <br>
+		<a id="sending_data_button" data-json='<?= $jsonUid ?>'
+		data-ajax-loader="customerActionButtons<?php echo $cust->getId()?>"
+		style="width: 100%"
+		data-href="<?php  echo $this->url('customer/default',array('action'=>'deleteconfirm'))?>"
+		class="btn btn-app btn-xs ajax_element"><i class="fa fa-trash"></i>
+			Delete </a></td>
+</tr>
+<?php
+    }
+}
+?>

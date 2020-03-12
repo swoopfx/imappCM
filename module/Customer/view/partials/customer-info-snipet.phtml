@@ -1,0 +1,52 @@
+<?php
+$customer = $this->customer;
+if ($this->identity() && $customer != NULL) {
+    ?>
+
+
+	<div class="col-md-6 col-sm-6 col-xs-12 profile_details">
+						<div class="well profile_view">
+							<div class="col-sm-12">
+								<h4 class="brief">
+									<i><?php  echo (strtoupper($customer->getAccountId() !=  NULL ? $customer->getAccountId() : "No Account Id"))?></i>
+								</h4>
+								<div class="left col-xs-7">
+									<h2> <?php  echo ($customer->getName() != NULL ? $customer->getName(): "NO Name Available " )?></h2>
+									<p>
+										<strong>Category: </strong> <?php echo ($customer->getCustomerCategory() != NULL ? $this->customer_category_type_view_helper($customer->getCustomerCategory()->getId()) : "")?>
+									</p>
+									<ul class="list-unstyled">
+										<li><i class="fa fa-building"></i> Address: <?php echo ($customer->getFullAddress() != NULL ? $customer->getFullAddress():"No Address")?></li>
+										<li><i class="fa fa-phone"></i> Phone #:  <?php  echo ($customer->getUser()->getUsername() != NULL ? $customer->getUser()->getUsername() : "")?></li>
+										<li><i class="fa fa-at"></i> Mail : <?php  echo ($customer->getUser()->getEmail() != NULL ? $customer->getUser()->getEmail() : "")?></li>
+										
+									</ul>
+									<br>
+								</div>
+								<div class="right col-xs-5 text-center">
+									<img src="<?php echo $this->basepath("images/img.jpg")?>"
+										alt="" class="img-circle img-responsive">
+								</div>
+							</div>
+							<div class="col-xs-12 bottom text-center">
+								<div class="col-xs-12 col-sm-6 emphasis">
+									
+								</div>
+								<div class="col-xs-12 col-sm-6 emphasis">
+									
+									<a id='btn3' data-json='{"type":"standard"}' data-href="<?php echo $this->url("customer/default", array("action"=>"edit", "id"=>$customer->getId()))?>" 
+class=' ajax_element btn btn-success btn-xs' style='width: 100%;'  href="" class="btn btn-primary btn-xs">
+										<i class="fa fa-user"> </i> Edit Profile
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+	
+	
+			
+			
+		
+	
+
+<?php  }?>

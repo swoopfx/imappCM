@@ -1,0 +1,285 @@
+<?php
+use Transactions\Service\InvoiceService;
+use Zend\Session\Container;
+use WasabiLib\Modal\Dialog;
+?>
+<h4><?php
+$proposalPremiumSession = new Container("proposal_premium");
+// var_dump($proposalPremiumSession->isAuto);
+// var_dump($proposalPremiumSession->premium);
+echo $proposalEntity->getProposalTitle();
+?></h4>
+
+
+<div class="" role="tabpanel" data-example-id="togglable-tabs">
+	<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#tab_content1"
+			id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Proposal
+				Details</a></li>
+
+		<li role="presentation" class=""><a href="#tab_content2" role="tab"
+			id="profile-tab" data-toggle="tab" aria-expanded="false">Property</a>
+		</li>
+		<li role="presentation" class=""><a href="#tab_content3" role="tab"
+			id="profile-tab2" data-toggle="tab" aria-expanded="false">Uploaded
+				Documents</a></li>
+
+
+
+
+	</ul>
+	<div id="myTabContent" class="tab-content">
+		<div role="tabpanel" class="tab-pane fade active in" id="tab_content1"
+			aria-labelledby="home-tab">
+			 <?php echo $this->partial("proposal-view-proposal", array("proposal"=>$proposalEntity))?>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+			aria-labelledby="profile-tab">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+			<?php echo $this->proposal_object_list_helper($proposalEntity)?>
+			</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="tab_content3"
+			aria-labelledby="profile-tab">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+			<?php  echo $this->proposal_process_doc_helper($proposalEntity->getId()) ?>
+			</div>
+			</div>
+		</div>
+
+
+
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="col-md-6 col-xs-12 tile">
+		<div class="x_panel">
+
+			<div class="x_content">
+				<a id="btn2" class="ajax_element btn btn-app"
+					data-json='{"type":"standard"}' data-href="messages"
+					style='width: 100%;'> <!-- 		 <span class="badge bg-orange">12</span>  -->
+					<i class="fa fa-send"></i> Messages
+				</a> <br> 
+				<?php
+    if ($proposalEntity->getInvoice() != NULL) {
+        if ($proposalEntity->getInvoice()->getIsMicro() == True) {
+            ?>
+				<a
+					<?php echo ($proposalEntity->getInvoice() != NULL ? ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : ""): "")?>
+					id="btn2" class="ajax_element btn btn-app"
+					data-json='{"type":"standard"}' data-href="deactivatemicropay"
+					style='width: 100%;'
+					<?php  echo ($proposalEntity->getInvoice() == NULL ?  "disabled='disabled'" : ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "") )?>>
+					<!-- 		 <span class="badge bg-orange">12</span>  --> <i
+					class="glyphicon glyphicon-euro"></i>Deactivate MicroPayment
+				</a>
+				<?php
+        } else {
+            ?>
+				<a
+					<?php echo ($proposalEntity->getInvoice() != NULL ? ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : ""): "")?>
+					id="btn2" class="ajax_element btn btn-app"
+					data-json='{"type":"standard"}' data-href="micropay"
+					style='width: 100%;'
+					<?php  echo ($proposalEntity->getInvoice() == NULL ?  "disabled='disabled'" : ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "") )?>>
+					<!-- 		 <span class="badge bg-orange">12</span>  --> <i
+					class="glyphicon glyphicon-euro"></i>Activate Micro Payment
+				</a> <?php }}?><br>
+				<?php  if($proposalEntity->getIsVisibile() == TRUE){?>
+				<button data-ajax-loader="hideloader" id="btn3"
+					data-json='{"type":"standard"}'
+					data-href="<?php  echo $this->url("proposalmodal/default", array("action"=>"hide"))?>"
+					class="ajax_element btn btn-app" style="width: 100%">
+					<i class="fa fa-eye-slash 2x "></i> HIDE PROPOSAL
+				</button>
+				<i id="hideloader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+					alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+					height=50></i>
+				<?php
+    } else {
+        
+        ?>
+				    <button id="btn3" data-json='{"type":"standard"}'
+					data-ajax-loader="showloader"
+					data-href="<?php  echo $this->url("proposalmodal/default", array("action"=>"show"))?>"
+					class="ajax_element btn btn-app" style="width: 100%">
+					<i class="fa fa-eye 2x "></i> SHOW PROPOSAL
+				</button>
+				<i id="showloader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+					alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+					height=50></i>
+				    <?php
+    }
+    ?>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6 col-xs-12 tile">
+		<div class="x_panel">
+
+			<div class="x_content">
+
+
+
+<?php if($proposalEntity->getCoverDetails() != NULL){?>
+
+				<button id="btn3" data-json='{"type":"standard"}'
+					data-href="<?php  echo $this->url("proposal/default", array("action"=>"getcoverdetailsmodal"))?>"
+					class="ajax_element btn btn-app" style="width: 100%">
+					<i class="fa fa-folder 2x "></i> VIEW DETAILS
+				</button>
+				<?php }?>
+				<?php
+    
+    if ($proposalEntity->getInvoice() != NULL) {
+        if ($proposalEntity->getInvoice()->getIsMicro() == True) {
+            ?>
+				<button id="btn3" data-json='{"type":"standard"}'
+					data-href="<?php  echo $this->url("proposal/default", array("action"=>"micropaymentspread"))?>"
+					class="ajax_element btn btn-app" style="width: 100%">
+					<i class="fa fa-list 2x "></i> SHOW PAYMENT SPREAD
+				</button>
+				<?php }}?>
+				
+				<a id="btn2" class="ajax_element btn btn-app"
+					data-json='{"type":"standard"}' data-href="exporttoinsurer"
+					style='width: 100%;'> <!-- 		 <span class="badge bg-orange">12</span>  -->
+					<i class="glyphicon glyphicon-export" data-toggle="tooltip"
+					data-placement="top"
+					title="Send the customer details to an insurer for processing"></i>
+					Export To Insurer
+				</a>
+
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	
+	
+	<?php
+
+if ($proposalEntity->getinvoice() != NULL) {
+    if (count($proposalEntity->getInvoice()->getManualProcess()) != 0) {
+        
+        ?>
+		
+		<div class="col-md-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+
+				<strong>MANUAL PAYMENT MADE</strong>
+
+				<div class="clearfix"></div>
+				<div class="x_content">
+					<br> <a
+						<?php echo ($proposalEntity->getInvoice()->getStatus()->getId() == InvoiceService::INVOICE_PAID_STATUS ? "disabled='disabled'" : "")?>
+						style="width: 100%;"
+						href="<?php  echo $this->url("invoice/default", array("action"=>"view", "id"=>$proposalEntity->getInvoice()->getId()))?>"
+						class="btn btn-xs btn-success">PROCESS PAYMENT</a>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+		<?php }}?>
+				
+			<?php // echo $this->partial("offer-view-snipet", array())?>
+		
+	
+
+</div>
+
+<div class="row">
+	<div class="col-md-12 col-xs-12 tile">
+		<div class="x_panel">
+
+			<div class="x_content">
+			
+			  
+<?php
+
+if ($proposalEntity->getInvoice() != NULL) {
+    ?>
+    
+				<a id="btn2" class="ajax_element btn btn-app"
+					data-json='{"type":"standard"}'
+					data-href="<?php  echo $this->url("proposal/default", array("action"=>"invoicepreview"))?>"
+					style='width: 100%;'> <!-- 		 <span class="badge bg-orange">12</span>  -->
+					<i class="fa fa-file-text 4x"></i>INVOICE PREVIEW
+				</a> <br>
+				<?php }?>
+
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-6 col-xs-12 ">
+		<div class="x_panel">
+			<div class="x_title">
+
+				<strong>Payment Status</strong>
+
+				<div class="clearfix"></div>
+				<div class="x_content">
+					<br>
+						<?php   echo $this->proposal_process_payment_helper($proposalEntity)?>
+					</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="col-md-6 col-xs-12 ">
+		<div class="x_panel">
+			<div class="x_title">
+
+
+
+				<div class="clearfix"></div>
+				<div style="text-align: center;">
+							<i id="closePreview" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=27></i>
+						</div>
+				<div class="x_content">
+					<br> <a id="btn2" data-ajax-loader="closePreview"
+						data-href="<?php echo $this->url("proposal/default", array("action"=>"processredirect")); ?>"
+						class=" btn btn-app ajax_element" style="width: 100%"> <i
+						class="fa fa-close 2x "></i> CLOSE
+					</a>
+						<?php   //echo $this->proposal_process_payment_helper($proposalEntity)?>
+					</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<hr>
+<div class="row">
+<div style="text-align: center;">
+							<i id="finalize" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=27></i>
+						</div>
+	<button
+		<?php  echo ((($proposalEntity->getIsManualPremium() == NULL || $proposalEntity->getIsManualPremium() == False) && $proposalPremiumSession->isAuto == False)  ?  "disabled='disabled'" : ""); ?>
+		id="btn1" data-ajax-loader="finalize" data-json='{"type":"dialog"}'
+		data-href="<?php  echo $this->url("proposal/default", array("action"=>"finalizedialog"))?>"
+		class="ajax_element btn btn-success" style="width: 100%">FINALIZE</button>
+</div>
+<hr>

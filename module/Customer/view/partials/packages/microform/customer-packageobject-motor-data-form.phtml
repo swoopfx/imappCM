@@ -1,0 +1,134 @@
+<?php
+$motorFields = $objectFieldsets->get("objectMotor");
+?>
+<?php echo $this->partial("customer-package-object-central-form", array("objectFieldsets"=>$objectFieldsets, "cat"=>$cat)); ?>
+<li class="list-group-item">
+	<div class="media v-middle">
+
+		<div class="form-group">
+		<?php
+
+$motorType = $motorFields->get("motorType");
+$motorType->setAttributes(array(
+    
+    "class" => ""
+));
+$motorType->setAttributes(array(
+    
+    "class" => "form-control"
+))?>
+
+<?php   echo $this->formlabel($motorType)?>
+		<?php  echo $this->formelement($motorType)?>
+		
+<!-- 			<input type="email" class="form-control" id="exampleInputEmail1" -->
+			<!-- 				placeholder="Enter email"> <label for="exampleInputEmail1">Email -->
+			<!-- 				address</label> -->
+		</div>
+	</div>
+</li>
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+$motorValueType = $motorFields->get("motorValueType");
+$motorValueType->setOptions(array(
+    "label_attributes" => array(
+        "class" => ""
+    )
+));
+$motorValueType->setAttributes(array(
+    
+    "class" => "form-control"
+))?>
+		<div class="form-group">
+		<?php  echo $this->formlabel($motorValueType)?>
+		<?php echo $this->formElement($motorValueType)?>
+		
+		</div>
+	</div>
+</li>
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+$chasisNumber = $motorFields->get("chasisNumber");
+$chasisNumber->setOptions(array(
+    "label_attributes" => array(
+        "class" => ""
+    )
+));
+$chasisNumber->setAttributes(array(
+    
+    "class" => "form-control"
+))?>
+		<div class="form-group form-control-material static required">
+		<?php echo $this->formElement($chasisNumber)?>
+		<?php  echo $this->formlabel($chasisNumber)?>
+		</div>
+	</div>
+</li>
+
+
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+	$motorNumber= $motorFields->get("motorNumber");
+	$motorNumber->setOptions(array(
+    "label_attributes" => array(
+        "class" => ""
+    )
+));
+	$motorNumber->setAttributes(array(
+    
+    "class" => "form-control"
+))?>
+		<div class="form-group form-control-material static required">
+		<?php echo $this->formElement($motorNumber)?>
+		<?php  echo $this->formlabel($motorNumber)?>
+		</div>
+	</div>
+</li>
+
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+	$motorNumber= $motorFields->get("motorNumber");
+	$motorNumber->setOptions(array(
+    "label_attributes" => array(
+        "class" => ""
+    )
+));
+	$motorNumber->setAttributes(array(
+    
+    "class" => "form-control"
+))?>
+		<div class="form-group form-control-material static required">
+		<?php echo $this->formElement($motorNumber)?>
+		<?php  echo $this->formlabel($motorNumber)?>
+		</div>
+	</div>
+</li>
+
+<li class="list-group-item paper-shadow">
+	<div class="media v-middle">
+	<?php
+
+	$motorNumber= $motorFields->get("motorNumber");
+	$motorNumber->setOptions(array(
+    "label_attributes" => array(
+        "class" => ""
+    )
+));
+	$motorNumber->setAttributes(array(
+    
+    "class" => "form-control"
+))?>
+		<div class="form-group form-control-material static required">
+		<?php echo $this->formElement($motorNumber)?>
+		<?php  echo $this->formlabel($motorNumber)?>
+		</div>
+	</div>
+</li>

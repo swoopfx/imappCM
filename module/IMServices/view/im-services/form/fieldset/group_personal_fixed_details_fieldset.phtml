@@ -1,0 +1,95 @@
+<?php
+
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->grouppersonalfixeddetail;
+?>
+
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('name'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('name'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Name"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('name'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('dob'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('dob'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persona Date Of Birth"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('dob'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('occupation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('occupation'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Persons Occupation"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('occupation'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('temporaryDisablementTotal'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('temporaryDisablementTotal'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Benefit for temporary displacement"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('temporaryDisablementTotal'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('permanentDisablement'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($field->get('permanentDisablement'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Benefit for permanent displacement"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('permanentDisablement'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	
+	<div class="form-group">
+		<a id="sending_data_button" class="ajax_element btn btn-danger btn-xs pull-right"
+			 data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+	</div>

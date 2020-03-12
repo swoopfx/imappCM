@@ -1,0 +1,52 @@
+<?php
+
+
+?>
+
+<div class="table-responsive">
+		<table class="table table-hover">
+
+			<tbody>
+				<tr>
+					<th style="width: 25%">Property CODE</th>
+					<td><?php  echo strtoupper(($object->getObjectUid() != NULL ? $object->getObjectUid() : " No UID"))?></td>
+
+				</tr>
+				<tr>
+					<th>PROPERTY NAME</th>
+					<td> <?php  echo ($object->getObjectName() != NULL ? $object->getObjectName() : " ")?></td>
+
+				</tr>
+				<tr>
+					<th>PROPERTY VALUE </th>
+					<td><p>
+                         <?php  echo  ($object->getValue() == NULL ? "" :  $this->myCurrencyFormat($object->getValue(), $object->getCurrency()->getCode()))?>
+                          </p></td>
+
+				</tr>
+				<tr>
+					<th>Property Type</th>
+					<td><p>
+					<?php  echo $object->getObjectType()->getObjectType()?>
+                           </p></td>
+
+				</tr>
+
+
+
+				<tr>
+					<th>DATE CREATED</th>
+					<td><?php echo $this->dateFormat($object->getCreatedOn(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") ?></td>
+
+				</tr>
+				<tr>
+					<th>DATE UPDATED</th>
+					<td>
+                        <?php  echo $this->dateFormat($object->getUpdateOn(), IntlDateFormatter::FULL, IntlDateFormatter::FULL, "en_US") ?></td>
+				</tr>
+
+				
+
+			</tbody>
+		</table>
+	</div>

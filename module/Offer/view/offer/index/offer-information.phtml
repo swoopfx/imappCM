@@ -1,0 +1,278 @@
+
+<?php
+echo $this->headtitle('New Offer Form - Offer-Information ');
+echo $this->HeadScript()->appendFile($this->basepath() . '/js/parsley/parsley.min.js', 'text/javascript');
+$todaysDate = date('Y/M/d');
+
+$offerInfoForm = $this->offerInfo;
+$offerInfoForm->prepare();
+//
+//
+// ?>
+
+<div class="row" ng-app="OfferModule">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Offer Information </h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+					
+					
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+			 <!-- Enter the view helper heere -->
+
+<?php
+
+echo $this->form()->openTag($offerInfoForm);
+$offerField = $offerInfoForm->get('offerFieldset');
+// $objectMotorData = $objectField->get('objectMotor');
+// $objectHouseData = $objectField->get('objectHouse');
+?>
+
+				<div class="form-group">
+							
+								<?php echo $this->formLabel($offerField->get('offerStatuses'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerField->get('offerStatuses'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerField->get('offerStatuses'));  // this defines the error?> 
+							</div>
+
+				<div class="form-group">
+							
+								<?php echo $this->formLabel($offerField->get('offerName'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerField->get('offerName'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerField->get('offerName'));  // this defines the error?> 
+							</div>
+
+				<div class="form-group">
+								<?php echo $this->formLabel($offerField->get('idPreferdInsurer'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerField->get('idPreferdInsurer'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($offerField->get('idPreferdInsurer'))?> 
+								
+							</div>
+
+				<div class="ln_solid"></div>
+				<p style="padding: 0px 100px;">
+								 
+								
+									<?php echo $this->formElement($offerInfoForm->get('requireAdvice'))?>  
+								<?php echo $this->formLabel($offerInfoForm->get('requireAdvice'))?>
+								
+								</p>
+
+				<div data-ng-show="brokerForm">
+					<div class="form-group">
+								<?php echo $this->formLabel($offerField->get('idInsuranceBroker'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerField->get('idInsuranceBroker'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerField->get('idInsuranceBroker'))?> 
+								
+							</div>
+				</div>
+
+				<div class="form-group">
+							
+								<?php echo $this->formLabel($offerField->get('offerServiceType'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerField->get('offerServiceType'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerField->get('offerServiceType'));  // this defines the error?> 
+							</div>
+
+				<div class="form-group">
+							
+								<?php echo $this->formLabel($offerField->get('offerSpecificService'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerField->get('offerSpecificService'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerField->get('offerSpecificService'));  // this defines the error?> 
+							</div>
+
+
+
+				
+				<?php $offerMoto = $offerField->get('motor_offer');?>
+				<div data-ng-show="motor_com_service">
+					<div class="ln_solid"></div>
+					<h2>
+						<i class="fa fa-bars"></i> Motor Insurance offer/ Proposal
+						(Commercial)
+					</h2>
+
+					<div class="form-group">
+							
+								<?php echo $this->formLabel($offerMoto->get('typeOfVehicle'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerMoto->get('typeOfVehicle'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerMoto->get('typeOfVehicle'));  // this defines the error?> 
+							</div>
+				</div>
+
+				<!-- Begin Non Commercial Form  -->
+				<div data-ng-show="motor_non_com_service">
+					<div class="ln_solid"></div>
+					<h2>
+						<i class="fa fa-bars"></i> Motor Insurance offer/ Proposal (
+						Non-Commercial)
+					</h2>
+					<div class="form-group">
+							
+								<?php echo $this->formLabel($offerMoto->get('typeOfVehicle'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($offerMoto->get('typeOfVehicle'));?>
+									
+								</div>
+								<?php $this->formElementErrors($offerMoto->get('typeOfVehicle'));  // this defines the error?> 
+							</div>
+
+					<p style="padding: 0px 100px;">
+						<br>
+								
+									<?php echo $this->formElement($offerMoto->get('isLimitedToOnlyMe'))?>
+									<?php echo  $this->formLabel($offerMoto->get('isLimitedToOnlyMe'))?> 
+									<br>
+					</p>
+					<div class="form-group" ng-show="onlyMeDrive">
+								<?php echo  $this->formLabel($offerMoto->get('peopleDrivingCar'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerMoto->get('peopleDrivingCar'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerMoto->get('peopleDrivingCar'))?> 
+								
+							</div>
+
+					<div class="form-group">
+								<?php echo  $this->formLabel($offerMoto->get('extraPurposeOfUse'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerMoto->get('extraPurposeOfUse'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerMoto->get('extraPurposeOfUse'))?> 
+								
+							</div>
+
+					<div class="form-group">
+								<?php echo  $this->formLabel($offerMoto->get('vehicleValueType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerMoto->get('vehicleValueType'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerMoto->get('vehicleValueType'))?> 
+								
+							</div>
+					<p style="padding: 0px 100px;">
+
+						<br>
+									<?php echo $this->formElement($offerMoto->get('isUsageInNigeria'))?>
+									<?php echo  $this->formLabel($offerMoto->get('isUsageInNigeria'))?> 
+									<br> 
+									
+									
+								
+									<?php echo $this->formElement($offerMoto->get('isGeneralInfo'))?>
+									<?php echo  $this->formLabel($offerMoto->get('isGeneralInfo'))?> 
+									
+									<br>
+					</p>
+					<!-- Begin General Info fields -->
+
+					<div ng-show="ginfo">
+						<div class="ln_solid"></div>
+						<h2>General Info form</h2>
+
+
+						<p style="padding: 0px 100px;">
+								
+									<?php echo $this->formElement($offerMoto->get('comprehensive_general_info')->get('isCarParked'))?>
+									<?php echo  $this->formLabel($offerMoto->get('comprehensive_general_info')->get('isCarParked'))?><br>
+							<br>  
+								
+								<?php echo $this->formElement($offerMoto->get('comprehensive_general_info')->get('isSoleOwner'))?>
+									<?php echo  $this->formLabel($offerMoto->get('comprehensive_general_info')->get('isSoleOwner'))?><br>
+							<br>
+									
+									<?php echo $this->formElement($offerMoto->get('comprehensive_general_info')->get('isCarHired'))?>
+									<?php echo  $this->formLabel($offerMoto->get('comprehensive_general_info')->get('isCarHired'))?><br>
+							<br>
+
+
+						</p>
+						<div class="form-group" ng-show="ishire">
+								<?php echo  $this->formLabel($offerMoto->get('comprehensive_general_info')->get('financeCompany'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($offerMoto->get('comprehensive_general_info')->get('financeCompany'))?> 
+								</div>
+								<?php echo $this->formElementErrors($offerMoto->get('comprehensive_general_info')->get('financeCompany'))?> 
+								
+							</div>
+
+
+					</div>
+					<!-- End Of General Info Fields -->
+				</div>
+				<!-- End Non Commercial Form  -->
+
+<div class="ln_solid"></div>
+				<div class="form-group">
+					<div class="col-md-6 col-md-offset-3">
+							
+							<?php echo $this->formsubmit($offerInfoForm->get('reset'));?>
+							<?php echo $this->formsubmit($offerInfoForm->get('next'));?>
+						</div>
+				</div>
+				<?php
+    echo $this->formRow($offerInfoForm->get('csrf'));
+    echo $this->form()->closeTag();
+    ?>
+
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-6 col-sm-6 col-xs-12">
+	Another Info
+	</div>
+</div>
+
+<?php
+
+echo $this->headScript()
+    ->appendFile($this->basePath('js/jquery.mask.min.js'))
+    ->appendFile($this->basePath('angular/OfferModule.js'))
+    ->appendFile($this->basePath('angular/controllers/offerController.js'));
+?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+             $('.money').mask('000,000,000,000,000.00', {reverse: true});
+            $('.phone').mask('0-000-000-0000');
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

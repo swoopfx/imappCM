@@ -1,0 +1,96 @@
+<?php
+$cashInSafeEntity = $coverEntity->getCashInSafeInsurance();
+
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Maximum amount to be insured</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getMaxInsuredAmount() != NUll ? $this->myCurrencyFormat($cashInSafeEntity->getMaxInsuredAmount(), $cashInSafeEntity->getCurrency()->getCode()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Nature, Make and Model of Safe</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getSafeNature() != NUll ? $cashInSafeEntity->getSafeNature() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Safes Location</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getSafeLocation() != NUll ? $cashInSafeEntity->getSafeLocation() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>All extra security arrangements</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getSecurityArrangements() != NUll ? $cashInSafeEntity->getSecurityArrangements() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Insured has employee fidelity insurance</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getIsEmployeeHasFidelityGuaratee() != NUll ? $this->trueFalseHelper($cashInSafeEntity->getIsEmployeeHasFidelityGuaratee()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Was previously insured</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getIsPreviousInsured() != NUll ? $this->trueFalseHelper($cashInSafeEntity->getIsPreviousInsured()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php  if($cashInSafeEntity->getIsPreviousInsured() == TRUE){?>
+			<tr>
+
+				<th>Was previously insured</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getPreviousInsurer() != NUll ? $cashInSafeEntity->getPreviousInsurer()->getInsuranceName() : "Not Specified") ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Reason for leavin previous insurer</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getLeftPreviousInsurerReason() != NUll ? $cashInSafeEntity->getLeftPreviousInsurerReason() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Previoulsly had loss/ lay claims</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getIsPreviousloss() != NUll ? $this->trueFalseHelper($cashInSafeEntity->getIsPreviousloss()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Measures taken to avert such loss in the future</th>
+				<td>
+				<?php  echo ($cashInSafeEntity->getMeasureTakenAfterLoss() != NUll ? $cashInSafeEntity->getMeasureTakenAfterLoss() : "Not Specified") ?>
+				</td>
+			</tr>
+			
+
+		</tbody>
+	</table>
+</div>

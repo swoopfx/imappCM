@@ -1,0 +1,44 @@
+<?php
+$customer = $this->customer;
+?>
+<div class="col-md-4 col-sm-4 col-xs-12">
+		<div class="x_panel">
+			<div class='x_title'>
+				<h2>CUSTOMER</h2>
+				<div class='clearfix'></div>
+			</div>
+			<div class="flex">
+                              <ul class="list-inline widget_profile_box">
+                                <li>
+                                  <a>
+                                    <i class="fa fa-facebook"></i>
+                                  </a>
+                                </li>
+                                <li>
+                                  <img src="<?php  echo $this->basepath('img/customeravatar/').$this->customer_category_avatar_helper($customer->getCustomerCategory()->getId())?>" alt="" class="img-circle profile_img">
+                                </li>
+                                <li>
+                                  <a>
+                                    <i class="fa fa-twitter"></i>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <br>
+                             <h3 class="name"><?php echo $customer->getName()?></h3>
+			<div class="x_content"><div class="media-body">
+									
+									<a><strong>Phone:</strong> <?php  echo $customer->getUser()->getUsername()?></a><br>
+									<a><strong>E-mail:</strong> <?php  echo $customer->getUser()->getEmail()?></a><br>
+									<a><strong>Address:</strong> <?php  echo $customer->getFullAddress()?></a><br>
+									<strong>City:</strong> <?php  echo  $customer->getCity()?><br>
+									<strong>State:</strong> <?php  echo ($customer->getState() != NULL ? $customer->getState()->getZoneName():"")?><br>
+									<strong>Country: </strong> <?php echo $customer->getCountry()->getCountryName()?><br>
+									 <small>Created: <?php  echo $this->dateFormat($customer->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></small>
+								</div>
+				<div class="table-responsive">
+					
+				</div>
+			</div>
+		</div>
+	</div>

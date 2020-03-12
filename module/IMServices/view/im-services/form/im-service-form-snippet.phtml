@@ -1,0 +1,16 @@
+<?php
+	
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->partial($formFields, array("form"=>$form));
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<?php 
+
+?>
+

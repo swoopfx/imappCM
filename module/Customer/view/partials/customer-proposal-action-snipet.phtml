@@ -1,0 +1,67 @@
+<?php
+$cus = $this->customer;
+if ($cus != NULL) {
+    ?>
+<div class="col-md-3 col-xs-12 widget widget_tally_box">
+	<div class="x_panel">
+
+		<div class="x_content">
+		<?php
+        $json = json_encode(array(
+            'data' => $cus->getId()
+        ));
+        ?>
+       
+		
+			<a data-json='<?php echo $json ?>' id='sending_data_button' class="ajax_element" data-toggle="tooltip" data-placement="top"
+				title="Create a proposal for this customer"
+				data-href="<?php  echo $this->url("proposal/default", array("action"=>"createproposalmodal"))?>">
+				<i class="fa fa-file-text-o fa-4x"></i> <strong> CREATE PROPOSALS</strong>
+			</a>
+			<div style="text-align: center;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-3 col-xs-12 widget widget_tally_box">
+	<div class="x_panel">
+
+		<div class="x_content">
+			<a  data-json='<?php echo $json ?>' id='sending_data_button' class="ajax_element" data-toggle="tooltip" data-placement="top"
+				title="Assign a staff to a Customer"
+				data-href="<?php  echo $this->url("customer/default", array("action"=>"assignstaffmodal"))?>"> <i
+				class="fa fa-users fa-4x" data-toggle="tooltip" data-placement="top"
+				title="Assign a staff to this customer"></i> <strong>ASSIGN STAFFS</strong> </a>
+			<div style="text-align: center;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-3 col-xs-12 widget widget_tally_box">
+	<div class="x_panel">
+
+		<div class="x_content">
+			<a  data-json='<?php echo $json ?>' id='sending_data_button' class="ajax_element" data-toggle="tooltip" data-placement="top"
+				title="Create property"
+				data-href="<?php  echo $this->url("customer/default", array("action"=>"addpropertymodal"))?>">
+				<i data-toggle="tooltip" data-placement="top"
+				title="Create a property for this customer" class="fa fa-suitcase fa-4x"></i> <strong>ADD PROPERTY</strong>
+			</a>
+			<div style="text-align: center;"></div>
+		</div>
+	</div>
+</div>
+<div class="col-md-3 col-xs-12 widget widget_tally_box">
+	<div class="x_panel">
+
+		<div class="x_content">
+			<a id='btn2' class="ajax_element" data-toggle="tooltip" data-placement="top"
+				title="Create property"
+				data-href="<?php  echo $this->url("customer/default", array("action"=>"analysis"))?>"> <i
+				class="fa fa-line-chart fa-4x"></i> <strong>ANALYSIS</strong></a>
+			<div style="text-align: center;"></div>
+		</div>
+	</div>
+</div>
+
+<?php  }?>

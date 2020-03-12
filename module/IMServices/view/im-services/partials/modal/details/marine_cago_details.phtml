@@ -1,0 +1,159 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+$marineCargoEntity = $coverEntity->getMarineCargo();
+
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Name of Vessel</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getNameOfVessel() != NUll ? $this->escapehtml($marineCargoEntity->getNameOfVessel()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Type of Vessel</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getTypeOfVessel() != NUll ? $this->escapehtml($marineCargoEntity->getTypeOfVessel()->getType()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  if($marineCargoEntity->getTypeOfVessel()->getId() == '1000'):?>
+			<tr>
+
+				<th>Nature of Cargo</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getCargoNature() != NUll ? $this->escapehtml($marineCargoEntity->getCargoNature()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  endif; ?>
+			
+			<tr>
+
+				<th>Years of experience in business</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getExperienceYears() != NUll ? $this->escapehtml($marineCargoEntity->getExperienceYears())." years" : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Type/Method cargo was packaged</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getPackagingType() != NUll ? $this->escapehtml($marineCargoEntity->getPackagingType()->getPackage()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($marineCargoEntity->getPackagingType()->getId() == "100"):?>
+			<tr>
+
+				<th>Specific Packaging type</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getOthersPackage() != NUll ? $this->escapehtml($marineCargoEntity->getOthersPackage()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif; ?>
+			
+			
+			<tr>
+
+				<th>Mode of transmitting cargo</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getTransitMode() != NUll ? $this->escapehtml($marineCargoEntity->getTransitMode()->getTransitMode()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Cover Type</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getCoverType() != NUll ? $this->escapehtml($marineCargoEntity->getCoverType()->getCover()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Cover Type</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getCoverType() != NUll ? $this->escapehtml($marineCargoEntity->getCoverType()->getCover()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>Cargo Value</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getCoverType() != NUll ? $this->myCurrencyFormat($this->escapehtml($marineCargoEntity->getCargoValue(), $marineCargoEntity->getCurrency()->getCode())): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+
+
+			<tr>
+
+				<th>Maximum Sum Insured per Conveyance</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getExpectedPremium() != NUll ? $this->myCurrencyFormat($this->escapehtml($marineCargoEntity->getMaxSumInsured(), $marineCargoEntity->getCurrency()->getCode())): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Expected Premium</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getExpectedPremium() != NUll ? $this->myCurrencyFormat($this->escapehtml($marineCargoEntity->getExpectedPremium(), $marineCargoEntity->getCurrency()->getCode())): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Voyage From</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getVoyageFrom() != NUll ?$this->escapehtml($marineCargoEntity->getVoyageFrom()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Voyage To</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getVoyageTo() != NUll ?$this->escapehtml($marineCargoEntity->getVoyageTo()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Cargo is Containized</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getIsContainized() != NUll ?$this->trueFalseHelper($marineCargoEntity->getIsContainized()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Was previously declined, canceled and renegotiated terms by an
+					insurer</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getIsPreviousDecline() != NUll ?$this->trueFalseHelper($marineCargoEntity->getIsPreviousDecline()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if($marineCargoEntity->getIsPreviousDecline()):?>
+			<tr>
+
+				<th>Details of insurer decision</th>
+				<td>
+				<?php  echo ($marineCargoEntity->getDeclineReason() != NUll ?$this->escapehtml($marineCargoEntity->getDeclineReason()): GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+
+		</tbody>
+	</table>
+</div>

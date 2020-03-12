@@ -1,0 +1,45 @@
+<?php
+$info = $this->info;
+$form = $this->form;
+
+?>
+
+
+<!-- start accordion -->
+<div class="accordion" id="accordion" role="tablist"
+	aria-multiselectable="true">
+
+	<div class="panel">
+		<a class="panel-heading collapsed" role="tab" id="headingTwo"
+			data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+			aria-expanded="false" aria-controls="collapseTwo">
+			<h4 class="panel-title">Please read <?php  echo $info->getTermName();?></h4>
+		</a>
+		<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+			aria-labelledby="headingTwo">
+			<div class="panel-body">
+				
+				<?php echo $info->getTermsDescription(); ?>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- end of accordion -->
+
+
+
+<div class="ln_solid"></div>
+ <?php  echo $this->formLabel($form->get('acceptance'))?> 
+                                                
+<div class="checkbox">
+							
+							
+								<?php  echo $this->formElement($form->get('acceptance'))?>
+							<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($form->get('acceptance')); ?>  
+							</div>
+						</div>
+
+
+

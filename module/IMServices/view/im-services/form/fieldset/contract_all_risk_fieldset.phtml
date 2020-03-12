@@ -1,0 +1,518 @@
+<?php
+$contractAllRiskFieldset = $form->get("contractAllRiskFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('contractName'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('contractName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('contractName'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('value'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('currency'));?>
+									
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('value'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('value'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('contractAddress'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('contractAddress'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('contractAddress'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('supervisingEngineer'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('supervisingEngineer'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('supervisingEngineer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('nearestAirport'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('nearestAirport'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('nearestAirport'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('nearestLandmark'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('nearestLandmark'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('nearestLandmark'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('contractDescription'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('contractDescription'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('contractDescription'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('mainContractor'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('mainContractor'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('mainContractor'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('consultingEngineer'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('consultingEngineer'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('consultingEngineer'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('contractStartDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('contractStartDate'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('contractStartDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('contractEndDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('contractEndDate'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('contractEndDate'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"contractallriskvaluelist")) ?>">
+		Add Insured List</a>
+</div>
+
+<div class="form-group" id="value_list"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;">
+</div>
+<hr>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isTesting'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isTesting'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isTesting'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_testing_date">
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('testingStartDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('testingStartDate'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('testingStartDate'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('testingEndDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('testingEndDate'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('testingEndDate'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isMaintenance'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isMaintenance'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isMaintenance'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_maitenance_period">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('maintenanceStartDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('maintenanceStartDate'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('maintenanceStartDate'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('maintenanceEndDate'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('maintenanceEndDate'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('maintenanceEndDate'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isSimilarConstruction'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isSimilarConstruction'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isSimilarConstruction'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_similar_project">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('previousContructionName'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('previousContructionName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('previousContructionName'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isExtension'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isExtension'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isExtension'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_existing_plant">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('existingPlant'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('existingPlant'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('existingPlant'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isCivilCompleted'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isCivilCompleted'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isCivilCompleted'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_civil_work">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('civilWork'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('civilWork'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('civilWork'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('soilCondition'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('soilCondition'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('soilCondition'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group" id="div_other_soil">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('otherSoil'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('otherSoil'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('otherSoil'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isOtherRisk'))?>
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isOtherRisk'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isOtherRisk'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_other_risk">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isAgravatedRisk'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isAgravatedRisk'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isAgravatedRisk'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isAgravatedFire'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isAgravatedFire'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isAgravatedFire'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isAgravatedExplosion'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isAgravatedExplosion'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isAgravatedExplosion'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($contractAllRiskFieldset->get('isEarthQuake'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12 checkbox">
+								<?php echo $this->formElement($contractAllRiskFieldset->get('isEarthQuake'));?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo  $this->formElementErrors($contractAllRiskFieldset->get('isEarthQuake'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+
+<script>
+
+
+
+ $(document).ready(function(){
+	 $("#div_testing_date").hide();
+	 $("#div_maitenance_period").hide();
+	 $("#div_similar_project").hide();
+	 $("#div_existing_plant").hide();
+	 $("#div_other_soil").hide();
+	 $("#div_civil_work").hide();
+	 $("#div_other_risk").hide();
+
+	 $("#isCivilCompleted").change(function(){
+			if($("#isCivilCompleted").is(":checked")){
+				$("#div_civil_work").hide();
+				}else{
+					 $("#div_civil_work").show();
+					}
+			 });
+
+
+		 $("#isMaintenance").change(function(){
+			 if($("#isMaintenance").is(":checked")){
+				
+				 $("#div_maitenance_period").show();
+				 }else{
+					 $("#div_maitenance_period").hide();
+					 }
+			 })
+			 
+			 
+			  $("#isTesting").change(function(){
+			 if($("#isTesting").is(":checked")){
+				
+				 $("#div_testing_date").show();
+				 }else{
+					 $("#div_testing_date").hide();
+					 }
+			 })
+
+
+   $("#isSimilarConstruction").change(function(){
+	  if($("#isSimilarConstruction").is(":checked")){
+		  $("#div_similar_project").show();
+		  }else{
+			  $("#div_similar_project").hide();
+			  }
+	  })
+	  
+	  $("#isOtherRisk").change(function(){
+		  
+	  if($("#isOtherRisk").is(":checked")){
+		  $("#div_other_risk").show();
+		  }else{
+			  $("#div_other_risk").hide();
+			  }
+	  })
+
+	   $("#isExtension").change(function(){
+		  
+	  if($("#isExtension").is(":checked")){
+		  $("#div_existing_plant").show();
+		  }else{
+			  $("#div_existing_plant").hide();
+			  }
+	  })
+
+	  $("#soilCondition").change(function(){
+		  if($("#soilCondition").val() == "1000"){
+			  $("#div_other_soil").show();
+			  }else{
+				  $("#div_other_soil").hide();
+				  }
+		  })
+		 
+	 
+	 });
+
+  
+
+</script>

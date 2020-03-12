@@ -1,0 +1,171 @@
+<?php
+$field = $this->fieldset;
+?>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('packageName'))?> <strong style="color: red">*</strong> <i
+		class="fa fa-info-circle" data-toggle='tooltip' data-placement='top' title="Provide a name that uniquely defines this package e.g AXA Jumbo X Motor insurance"></i>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('packageName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('packageName'));  // this defines the error?> 
+							</div>
+</div>
+
+<!-- <div class="form-group"> -->
+							
+								<?php //echo $this->formLabel($field->get('packageCategory'))?> 
+								
+<!-- 								<div class="col-md-6 col-sm-6 col-xs-12"> -->
+								<?php //echo $this->formElement($field->get('packageCategory'));?>
+									
+<!-- 								</div>
+	<div style="font-size: 9px; color: red;"> -->
+								<?php // $this->formElementErrors($field->get('packageCategory'));  // this defines the error?> 
+<!-- 							</div> -->
+<!-- </div> -->
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('serviceType'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('serviceType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('serviceType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('specificService'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('specificService'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('specificService'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('description'))?> <i
+		class="fa fa-info" data-toggle='tooltip' data-placement='top' title="provide a detailed description of the package including required documents for processing  "></i>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('description'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('description'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('coverDuration'))?> <i
+		class="fa fa-info" data-toggle='tooltip' data-placement='top' title="This defines the duration of this cover. A termed cover inticate for a specified duration "></i>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('coverDuration'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('coverDuration'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('packagedInsurer'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('packagedInsurer'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('packagedInsurer'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('currency'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('currency'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('currency'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($field->get('valueType'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('valueType'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('valueType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+				
+								<?php echo $this->formLabel($field->get('value'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('value'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('value'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+				
+								<?php echo $this->formLabel($field->get('sumAssured'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('sumAssured'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($field->get('sumAssured'));  // this defines the error?> 
+							</div>
+</div>
+
+<!-- <!-- <script type="text/javascript"> --> 
+<!-- // function onServiceTypeChange(val){ -->
+<!-- // 	$.ajax({ -->
+<!-- // 		type:"POST", -->
+<!-- 		url:"", -->
+<!-- // 		data:"id="+val, -->
+<!-- // 		success:function(data){ -->
+<!-- // 			$("#specific-service").html(data); -->
+<!-- // 		} -->
+			
+<!-- // 	}); -->
+<!-- // } -->
+<!-- <!-- </script> --> 

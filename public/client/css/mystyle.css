@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+
+.pack_image_wrapper{
+	width: 350px; 
+	overflow: hidden;
+}
+.pack_image_wrapper img{
+	position:relative;
+	top:10%;
+	transform: translateY(-50)
+}

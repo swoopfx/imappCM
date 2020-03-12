@@ -1,0 +1,32 @@
+
+<?php //echo $this->formElement($this->objectField->get('customer'))?>
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($this->objectField->get('objectType'))?><span
+		class="required">*</span>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php  echo $this->formElement($this->objectField->get('objectType'))?>
+							
+						</div>
+	<div style="font-size: 9px; color: red;">
+						<?php  echo $this->formElementErrors($this->objectField->get('objectType'));?>
+					</div>
+</div>
+<?php
+//$objectMotorData = $this->objectField->get('objectMotor');
+// $objectHouseData = $this->objectField->get('objectHouse');
+
+?>
+
+
+<!-- Begin Motor Data -->
+<?php // echo $this->partial("object-motor-data-snipet", array("objectMotorData"=>$objectMotorData))?>
+<!-- End Motor Data -->
+<!-- <button class="add_field_button">Add More Fields</button> -->
+<!-- Begin House Data -->
+<?php // echo $this->partial("", )?>
+
+<!-- Begin House Data -->

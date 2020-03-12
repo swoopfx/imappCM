@@ -1,0 +1,36 @@
+<?php
+$bankDepostFieldset = $manualProcessForm->get("bankDeposit")?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($bankDepostFieldset->get('bank'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($bankDepostFieldset->get('bank'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($bankDepostFieldset->get('bank'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($bankDepostFieldset->get('depositDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($bankDepostFieldset->get('depositDate'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($bankDepostFieldset->get('depositDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($bankDepostFieldset->get('depositorName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($bankDepostFieldset->get('depositorName'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($bankDepostFieldset->get('depositorName'))?> 
+								</div>
+</div>

@@ -1,0 +1,51 @@
+<?php
+
+
+?>
+<div class="row">
+<?php if ($account != NULL){
+foreach ($account as $accounts){?>
+<div class="col-md-3 col-xs-12 widget widget_tally_box">
+                        <div class="x_panel">
+                          <div class="x_title">
+                            <h2><?php echo $accounts->getBankName()->getBankName();?></h2>
+                            
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="x_content">
+
+                            <div style="text-align: center; margin-bottom: 17px">
+<!--                               <img alt="" src=" -->
+                              <?php //echo $this->nigeria_bank_logo_helper($accounts->getBankName()->getBankLogo())?>
+<!--                               " style="width: 80%;"> -->
+                            </div>
+
+                           
+
+                            
+                            
+                            <div>
+                              <ul class="list-inline widget_tally">
+                                <li>
+                                  <p align="center"><strong>Acc Name:</strong>
+                                   <?php  echo ($accounts->getAccountName() == NULL ?  " ": $accounts->getAccountName())?>
+                                    
+                                  </p>
+                                </li>
+                                <li>
+                                  <p align="center"> <strong>Acc No. :</strong>
+                                   <?php  echo ($accounts->getBankAccountNo() == NULL ?  " ": $accounts->getBankAccountNo())?>
+                                    
+                                  </p>
+                                </li>
+                                
+                                
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <?php }}?>
+</div>

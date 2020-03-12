@@ -1,0 +1,236 @@
+<?php
+$advancedPaymentBondFieldset = $form->get("advancedPaymentBondFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('bondValue'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('currency'));?>
+									
+								</div>
+								<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('bondValue'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('bondValue'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('commenceDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('commenceDate'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('commenceDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('finishDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('finishDate'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('finishDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('partyName'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('partyName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('partyName'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('partyAddress'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('partyAddress'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('partyAddress'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('contractPrice'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('currency'));?>
+									
+								</div>
+								<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('contractPrice'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('contractPrice'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('isAwardedByTender'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('isAwardedByTender'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('isAwardedByTender'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('tenderDetails'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('tenderDetails'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('tenderDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('contractNo'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('contractNo'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('contractNo'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('contractDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('contractDetails'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('contractDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('maintenancePeriod'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('maintenancePeriod'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('maintenancePeriod'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('contractLocation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('contractLocation'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('contractLocation'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('isRetentionForMaintenance'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('isRetentionForMaintenance'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('isRetentionForMaintenance'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('maintenanceRententionValue'))?>
+								
+								<div class="col-md-4 col-sm-4 col-xs-8">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('maintenanceRententionValue'));?>
+									
+								</div><strong>%</strong>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('maintenanceRententionValue'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('isReimbuseIncresedCost'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('isReimbuseIncresedCost'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('isReimbuseIncresedCost'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('isPreviousContractWithPrincipal'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('isPreviousContractWithPrincipal'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('isPreviousContractWithPrincipal'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($advancedPaymentBondFieldset->get('isOwnPlantUsed'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($advancedPaymentBondFieldset->get('isOwnPlantUsed'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($advancedPaymentBondFieldset->get('isOwnPlantUsed'));  // this defines the error?> 
+							</div>
+</div>

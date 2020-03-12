@@ -1,0 +1,190 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsCashInTransitFieldset = $form->get("claimsCashInTransitFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsCashInTransitFieldset->get("claims")
+));
+
+?>
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('lossDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('lossDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date the loss took place"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('lossDate'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('lossByWhom'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('lossByWhom'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Person in charge of loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('lossByWhom'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('isPolice'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('isPolice'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if police has been notified"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('isPolice'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('policeContactDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('policeContactDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date police was notified"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('policeContactDate'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('isPoliceReport'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('isPoliceReport'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if a police report was issued"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('isPoliceReport'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('policeStation'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('policeStation'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Location of the police station report was issued"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('policeStation'))?> 
+								</div>
+</div>
+<hr>
+<h4>Employee details</h4>
+<br>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('employeeInCharge'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('employeeInCharge'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Employee in-charge during loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('employeeInCharge'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('employeeServiceYears'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('employeeServiceYears'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Number of years said employee has been in service "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('employeeServiceYears'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('isEmployeeInService'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('isEmployeeInService'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is the employee still in service"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('isEmployeeInService'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('employeeSalary'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('employeeSalary'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Employee salary per annum "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('employeeSalary'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('isEmployeeInPreviousLoss'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('isEmployeeInPreviousLoss'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has the employee been involved in a previous loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('isEmployeeInPreviousLoss'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('reasonDoubtEmployeeIntegrity'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('reasonDoubtEmployeeIntegrity'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide reasons to doubt the integrity of the employee"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('reasonDoubtEmployeeIntegrity'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsCashInTransitFieldset->get('recoveryStep'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsCashInTransitFieldset->get('recoveryStep'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Measures taken for successful recovery of the said funds"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsCashInTransitFieldset->get('recoveryStep'))?> 
+								</div>
+</div>
+
+
+
+<?php
+echo $this->formrow($form->get("submit"));
+
+
+echo $this->form()->closeTag();

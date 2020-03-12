@@ -1,0 +1,135 @@
+<?php
+$cardBillingForm->prepare();
+$cardBillingFieldset = $cardBillingForm->get("cardBillingFieldset");
+echo $this->form()->openTag($cardBillingForm);
+
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cardBillingFieldset->get("billingaddress"))?> 
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formElement($cardBillingFieldset->get("billingaddress"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($cardBillingFieldset->get("billingaddress"))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cardBillingFieldset->get("billingzip"))?> 
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formElement($cardBillingFieldset->get("billingzip"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($cardBillingFieldset->get("billingzip"))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cardBillingFieldset->get("billingcountry"))?> 
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formElement($cardBillingFieldset->get("billingcountry"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($cardBillingFieldset->get("billingcountry"))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cardBillingFieldset->get("billingstate"))?> 
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formElement($cardBillingFieldset->get("billingstate"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($cardBillingFieldset->get("billingstate"))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cardBillingFieldset->get("billingcity"))?> 
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formElement($cardBillingFieldset->get("billingcity"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($cardBillingFieldset->get("billingcity"))?> 
+								</div>
+</div>
+<?php  echo $this->formrow($cardBillingForm->get("submit"))?>
+<?php echo $this->form()->closeTag();?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+//         	$("#isTemredValue").hide();
+//         		$('#ajaxStatus')
+//         		.ajaxStart(function() {
+//         		$(this).show();
+//         		})
+//         		.ajaxStop(function() {
+//         		$(this).hide();
+//         		});
+            // $('.money').mask('000,000,000,000,000.0', {reverse: true});
+//             $('.phone').mask('0-000-000-0000');
+            $("#billing_country").change(function(){
+                //alert("The index chosen is ");
+               //$("#pack_cover").val(303);
+                $.ajax({
+                    type:"POST",
+                    data: { 
+                        'service':$("#billing_country").val() , 
+//                         'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+                    },
+                    url:"/general/state",
+                    dataType:"html",
+                    success:function(data, status){
+                        $("#billing_state").html(data)
+                    },
+                    error:function(){
+                        alert("we could not retrive the State/Territory list")
+                    }
+                })
+            	//$("#pack_cover").html("<option value='303'>PUM PUM </option>");
+            })
+            
+
+//             if($("#coverduration").val() == "100"){
+//               	 $("#isTemredValue").show();
+//                }else{
+//               	 $("#isTemredValue").hide();
+//                }
+
+//             $("#coverduration").change(function(){
+// 				if($("#coverduration").val() == "100"){
+// 					$("#isTemredValue").show();
+// 				}else{
+// 					$("#isTemredValue").hide();
+// 				}
+// 			});
+           
+
+        });
+
+       
+
+        
+
+        
+    
+
+</script>

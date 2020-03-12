@@ -1,0 +1,93 @@
+<?php
+?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualPaymentFieldset->get("paymentMode"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPaymentFieldset->get("paymentMode"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($manualPaymentFieldset->get("paymentMode"))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualPaymentFieldset->get("amountPaid"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPaymentFieldset->get("amountPaid"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($manualPaymentFieldset->get("amountPaid"))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualPaymentFieldset->get("currency"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPaymentFieldset->get("currency"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($manualPaymentFieldset->get("currency"))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($manualPaymentFieldset->get("datePaid"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPaymentFieldset->get("datePaid"))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($manualPaymentFieldset->get("datePaid"))?> 
+								</div>
+</div>
+
+
+	<div class="form-group" id="check_number_div">
+							
+								<?php  echo $this->formLabel($manualPaymentFieldset->get("checkNumber"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($manualPaymentFieldset->get("checkNumber"))?>  
+								</div>
+		<div style="font-size: 9px; color: red;">
+								
+								<?php echo $this->formElementErrors($manualPaymentFieldset->get("checkNumber"))?> 
+								</div>
+	</div>
+	
+	<?php
+
+echo $this->headScript()
+
+    ->appendFile($this->basePath('js/jquery.maskMoney.js'));
+?>
+<script type="text/javascript">
+ $(document).ready(function(){
+	 
+	$("#amount_paid").maskMoney();
+	
+
+	 });
+
+ $(document).ready(function(){
+	$("#check_number_div").hide();
+	 $("#payment_mode").change(function(){
+				 if($("#payment_mode").val() == "50"){
+					 $("#check_number_div").show();
+					 }else{
+						 $("#check_number_div").hide();
+					 }
+				
+		 		 });
+	 })
+</script>
+
+

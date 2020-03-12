@@ -1,0 +1,158 @@
+<?php
+$oilEnergyEntity = $coverEntity->getOilEnergyInsurance();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+		<?php
+
+if (count($oilEnergyEntity->getNonOilRisk()) > 0) {
+    
+    ?>
+		
+		<tr>
+
+				<th>Non Oil Risk Cover</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Risk</th>
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($oilEnergyEntity->getNonOilRisk() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getRisk() != NUll ? $risk->getRisk() : "Not Specified") ?>
+								</td>
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+
+				</td>
+			</tr>
+			
+			<?php }?>
+			<tr>
+
+				<th>Other Non Oil Risk</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getOthersNonoilRisk() != NUll ? $oilEnergyEntity->getOthersNonoilRisk() : "Empty") ;?>
+							</td>
+			</tr>
+
+
+
+<?php
+
+if (count($oilEnergyEntity->getOilRisk()) > 0) {
+    
+    ?>
+		
+		<tr>
+
+				<th>Oil Risk Cover</th>
+				<td>
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Risk</th>
+
+							</tr>
+						</thead>
+						<tbody>
+					<?php  foreach ($oilEnergyEntity->getOilRisk() as $risk){?>
+					<tr>
+
+								<td><?php  echo ($risk->getRisk() != NUll ? $risk->getRisk() : "Not Specified") ?>
+								</td>
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+
+				</td>
+			</tr>
+			
+			<?php }?>
+			
+			
+			<tr>
+
+				<th>Other Oil Risk</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getOtherOilRisk() != NUll ? $oilEnergyEntity->getOtherOilRisk() : "Empty") ;?>
+							</td>
+			</tr>
+
+
+
+			<tr>
+
+				<th>Number of employees</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getNoOfEmployees() != NUll ? $oilEnergyEntity->getNoOfEmployees() : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Was Previously Insured</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getisPreviouslyInsured() != NUll ? $this->trueFalseHelper($oilEnergyEntity->getIsPreviouslyInsured()) : "Empty") ;?>
+							</td>
+			</tr>
+
+			<tr>
+
+				<th>Previously Made Claims</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getIsPreviousClaims() != NUll ? $this->trueFalseHelper($oilEnergyEntity->getIsPreviousClaims()) : "Empty") ;?>
+							</td>
+			</tr>
+			<?php  if($oilEnergyEntity->getIsPreviousClaims() == TRUE){?>
+			<tr>
+
+				<th>Loss Details</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getLossDetails() != NUll ? $this->escapehtml($oilEnergyEntity->getLossDetails()) : "Empty") ;?>
+							</td>
+			</tr>
+
+<?php }?>
+
+<tr>
+
+				<th>Previously Declined</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($oilEnergyEntity->getIsPreviousDecline()) : "Empty") ;?>
+							</td>
+			</tr>
+			
+			<?php  if($oilEnergyEntity->getIsPreviousDecline() == TRUE){?>
+			<tr>
+
+				<th>Loss Details</th>
+				<td>
+				<?php  echo ($oilEnergyEntity->getDeclineReason() != NUll ? $this->escapehtml($oilEnergyEntity->getDeclineReason()) : "Empty") ;?>
+							</td>
+			</tr>
+
+<?php }?>
+		</tbody>
+	</table>
+
+</div>

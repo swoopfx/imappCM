@@ -1,0 +1,426 @@
+<?php
+$proffesionalIndemnityFieldset = $form->get("proffesionalIndemnityFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isOutStandingIndemnity'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isOutStandingIndemnity'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Is there availaible any outstanding indemnity, any circumstances which might give rise to a claim against this 
+practice "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isOutStandingIndemnity'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_isOutStandingIndemnity" class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('indemnityValue'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('indemnityValue'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Outstanding Indemnity Value"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('indemnityValue'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}'
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"professionalindemnitypartnerdetails"))?>">
+		Add Partners </a>
+
+</div>
+
+<div class="form-group" id="partner_details"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('annualBrokerageIncome'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+								<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('annualBrokerageIncome'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Annual brokage income if applicable"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('annualBrokerageIncome'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('headOffice'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('headOffice'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Head office address?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('headOffice'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('otherOffice'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('otherOffice'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other Office address?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('otherOffice'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('indemnityStart'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('indemnityStart'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date Indmnity Begins"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('indemnityStart'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('indemnityEnd'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('indemnityEnd'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date indemnity ends"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('indemnityEnd'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isUnderwritingAgent'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isUnderwritingAgent'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Do you act as Underwriting Agent for any Syndicate, Underwriters or Insurance Companies?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isUnderwritingAgent'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('profession'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('profession'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Profession"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('profession'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('professionalBody'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('professionalBody'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate member of what professional body associated with"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('professionalBody'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('membership'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('membership'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Membership status of suc professional body"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('membership'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('professionDuration'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('professionDuration'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="How long has above membership status been maintained"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('professionDuration'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isPreviousInsure'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isPreviousInsure'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there was a previous cover from another insurer"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isPreviousInsure'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_previous_insure">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isDeclined'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isDeclined'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Indicate if insurer declined to provide cover"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isDeclined'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isSubjectToIncrease'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isSubjectToIncrease'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Indicate if insurer increased premium"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isSubjectToIncrease'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isSpecialRestriction'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isSpecialRestriction'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Indicate if insurer provided special restriction"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isSpecialRestriction'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group" id="div_special_restriction">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('specialRestriction'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('specialRestriction'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Head office address?"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('specialRestriction'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isAdditonalInfo'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isAdditonalInfo'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Head office address?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isAdditonalInfo'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_additional_info">
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('totalPartners'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('totalPartners'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Head office address?"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('totalPartners'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('totalStaff'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('totalStaff'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Head office address?"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('totalStaff'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('isCoverAllStaff'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('isCoverAllStaff'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Head office address?"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('isCoverAllStaff'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($proffesionalIndemnityFieldset->get('limitIndemnity'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($proffesionalIndemnityFieldset->get('limitIndemnity'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Head office address?"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($proffesionalIndemnityFieldset->get('limitIndemnity'));  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<script>
+ $(document).ready(function(){
+	 $("#div_additional_info").hide();
+	 $("#div_isOutStandingIndemnity").hide();
+	 $("#div_special_restriction").hide();
+	 $("#div_previous_insure").hide();
+
+	 
+
+	 $("#isSpecialRestriction").change(function(){
+		 if($("#isSpecialRestriction").is(":checked")){
+				$("#div_special_restriction").show();
+			}else{
+				$("#div_special_restriction").hide();
+			}
+		 });
+
+	 $("#isPreviousInsure").change(function(){
+		 if($("#isPreviousInsure").is(":checked")){
+				$("#div_previous_insure").show();
+			}else{
+				$("#div_previous_insure").hide();
+			}
+		 });
+
+	 $("#isAdditonalInfo").change(function(){
+		 if($("#isAdditonalInfo").is(":checked")){
+				$("#div_additional_info").show();
+			}else{
+				$("#div_additional_info").hide();
+			}
+		 });
+
+
+	 $("#isOutStandingIndemnity").change(function(){
+		 if($("#isOutStandingIndemnity").is(":checked")){
+				$("#div_isOutStandingIndemnity").show();
+			}else{
+				$("#div_isOutStandingIndemnity").hide();
+			}
+		 });
+	 
+	 })
+</script>

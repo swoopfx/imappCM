@@ -1,0 +1,32 @@
+<?php
+$count = 200;
+$i = 0 ;
+if (count($packages) != 0) {
+    
+    while ($i < count($packages) && count($packages) < $count ) {
+        //var_dump($packages[$i]);
+        ?>
+
+<tr>
+	<td><a href="<?php echo $this->url("packages/default", array("action"=>"view", "id"=>$packages[$i]->getId()))?>"><?php  echo strtoupper(($packages[$i]->getPackageUid() != NULL ? $packages[$i]->getPackageUid() : " No UID"))?></a></td>
+	<td><?php  echo ($packages[$i]->getPackageName() != NULL ? $packages[$i]->getPackageName() : " ")?></td>
+	<td><?php  echo ($packages[$i]->getPackageCategory() != NULL ? $packages[$i]->getPackageCategory()->getObjectType() : " ")?></td>
+	<td><img alt="" src="<?php echo $this->insurerLogohelper($packages[$i]->getPackagedInsurer()->getId())?>" class="img-circle   img-responsive" width=100 ></td>
+	<td><?php  echo $this->package_value_representation($packages[$i]->getValueType()->getId(), $packages[$i]->getValue(), $packages[$i]->getCurrency()->getCode())?></td>
+	
+	<td><a
+		href="<?php echo $this->url("packages/default", array("action"=>"view", "id"=>$packages[$i]->getPackageUid()))?>"
+		title="View Package" alt="View Package" class="btn btn-warning btn-xs"><i
+			class="fa fa-eye"></i></a> <a href="<?php  echo $this->url("packages/default", array("action"=>"review", "id"=>$packages[$i]->getPackageUid()))?>"
+		title="Edit Package" alt="edit Package" class="btn btn-info btn-xs"><i
+			class="fa fa-pencil"></i></a>
+			<a href="<?php  echo $this->url("packages/default", array("action"=>"delete", "id"=>$packages[$i]->getPackageUid()))?>"
+		title="Delete Package" alt="edit Package" class="btn btn-danger btn-xs"><i
+			class="fa fa-trash"></i></a>
+			</td>
+</tr>
+<?php
+    $i++ ;
+}
+}
+?>

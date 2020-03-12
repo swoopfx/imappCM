@@ -1,0 +1,36 @@
+
+<?php 
+
+$claims = $this->claims;
+if ($claims != NUll) {
+foreach ($claims as $claim){
+?>
+<tr>
+                          <td><?php  echo ($claim->getClaimUid() != NULL ? strtoupper($claim->getClaimUid()) : 'No UId')?> </td>
+                          <td>
+                            <?php  echo ($claim->getClaimTopic() != NULL ? $claim->getClaimTopic() : '')?>
+                          </td>
+                          
+                          <td>
+                            <?php echo ($claim->getPolicy() != NULL ? $claim->getPolicy()->getPolicyName() : "No Policy Selected")?>
+                          </td>
+                          <td>
+                           <?php echo ($claim->getClaimStatus() != NULL ? $this->statusHelper($claim->getClaimStatus()->getStatus()) : '')?>
+                          </td>
+                          <td>
+                            <?php echo $this->claimsActionButtonHelper($claim)?>
+                            <div style="text-align: center;">
+							<i id="claimsAction" class="fa  fa-lg" style="display: none;"><img
+								alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+								height=50></i>
+						</div>
+						<div style='text-align: center;'>
+							<i id="claimprocess<?php echo $claim->getId()?>" class="fa  fa-pulse fa-lg"
+								style="display: none;"><img alt=""
+								src="<?php  echo $this->basepath("/processin.gif")?>" height=20></i>
+								</div>
+                          </td>
+                        </tr>
+
+<?php }}
+?>

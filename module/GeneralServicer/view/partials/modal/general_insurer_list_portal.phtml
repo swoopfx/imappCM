@@ -1,0 +1,31 @@
+<?php
+use function GuzzleHttp\json_encode;
+?>
+
+
+<div class="x_content">
+	<table class="table table-hover">
+
+		<tbody>
+		<?php
+if (count($data) > 0) {
+    foreach ($data as $dat) {
+        $dataJson = json_encode(array("data"=>$dat->getId()));
+        ?>
+<tr>
+				<td><strong><a data-ajax-loader="the_portal_loader" id="sending_data_button" class="ajax_element"  data-json ='{"data":"<?= $dat->getId()?>"}'
+						data-href="<?php  echo $this->url("proposalmodal/default", array("action"=>"theportal"));?>"><?php echo $dat->getEmail(); ?></a></strong></td>
+			</tr>
+
+<?php }}else{ echo "No Data Available";}?>
+
+</tbody>
+	</table>
+
+</div>
+<div style=" text-align: center;">
+<i id="the_portal_loader" class="fa fa-lg" style="display: none; text-align: center;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/processin.gif")?>"
+	height=50><hr></i>
+	</div>

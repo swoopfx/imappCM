@@ -1,0 +1,25 @@
+<div id="div_insurer" class="form-group">
+								Insurer:
+	<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($policyFieldset->get('insurer'))?> 
+								</div>
+
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($policyFieldset->get('insurer'))?> 
+								</div>
+</div>
+<?php
+$policyForm->prepare();
+echo $this->form()->openTag($policyForm);
+echo $this->partial("policy-generate-policy-form-snippet", array("policyFieldset"=>$policyForm->get("policyFieldset")));
+echo $this->formsubmit($policyForm->get("submit"));
+echo $this->form()->closeTag();
+
+?>
+
+<script>
+$(document).ready(function(){
+	$("#div_insurer").hide();
+})
+</script>

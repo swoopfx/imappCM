@@ -1,0 +1,74 @@
+<?php
+?>
+
+<!-- .panel -->
+<div class="panel panel-default paper-shadow" data-z="0.5"
+	data-hover-z="1" data-animated>
+	<div class="panel-heading">
+		<h4 class="text-headline">Service Information</h4>
+	</div>
+	<div class="panel-body">
+		<p class="text-caption">
+			<i class="fa fa-calendar fa-fw"></i><strong style="color: red">  <?php  echo $this->dateFormat($offerEntity->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></strong>
+			<br /> 
+			<?php  if($offerEntity->getRecommendedInsurer() != NULL){?>
+			<i class="fa fa-institution fa-fw"></i> Broker Recommended Insurer: <img
+				alt=""
+				src="<?php  echo ($offerEntity->getRecommendedInsurer() == NULL ? "" : $this->insurerLogohelper($offerEntity->getRecommendedInsurer()->getId()))?>"
+				class="img-circle width-80">
+				<?php if($offerEntity->getIsRecommendedInsurer() == TRUE){?>
+				 
+		
+		
+		<div class="icon-block s30 bg-grey-500 text-white img-circle">
+			<i class="fa fa-check"></i>
+		</div>Insurer Accepted
+				 <?php }else{?>
+				<a
+			href="<?php echo $this->url("cus_offer/default", array("action"=>"accept-insurer"))?>"
+			data-toggle="tooltip" data-placement="top"
+			title="Click to accept recommended insurer, do not click if you do not want this insurer"
+			class="btn btn-xs btn-success" style="width: 100%">Accept Recommended
+			Insurer</a><?php }?><br /> <br />
+		<hr>
+		<i class="fa fa-institution fa-fw"></i> Prefered Insurer: <img alt=""
+			src="<?php  echo ($offerEntity->getIdPreferdInsurer() == NULL ? "" : $this->insurerLogohelper($offerEntity->getIdPreferdInsurer()->getId()))?>"
+			class="img-circle width-80"> <br>
+				<?php }else {?>
+				<img alt=""
+			src="<?php  echo ($offerEntity->getIdPreferdInsurer() == NULL ? "" : $this->insurerLogohelper($offerEntity->getIdPreferdInsurer()->getId()))?>"
+			class="img-circle width-80"> 
+				<?php }?>
+				<hr>
+				 Status : <?php echo $this->statusHelper($offerEntity->getOfferStatuses()->getOfferStatusId())?><br>
+
+
+		<hr>
+		<i class="fa fa-gbp fa-fw"></i> Premium Value: <strong
+			style="color: red"><?php  echo $this->customer_offer_now_premium_helper($offerEntity)?></strong>
+		</p>
+	</div>
+	<hr class="margin-none" />
+	<div class="panel-body text-center">
+		<p>
+			<a class="btn btn-success btn-lg paper-shadow relative" data-z="1"
+				<?php  echo ($offerEntity->getInvoice() == NULL ? "disabled='disabled'" : " ")?>
+				data-hover-z="2" data-animated
+				href="<?php  echo $this->url("cus_offer/default", array("action"=>"pre-payment"))?>">Make
+				Payment</a>
+		</p>
+		<!-- 		<p class="text-body-2"> -->
+		<!-- 			or <a href="#">buy course for $1</a> -->
+		<!-- 		</p> -->
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item"><a
+			href="<?php echo $this->url("cus_invoice/default", array("action"=>"view", "id"=>($offerEntity->getInvoice() == NULL ? " " : $offerEntity->getInvoice()->getInvoiceUid())))?>"
+			<?php  echo ($offerEntity->getInvoice() == NULL ? "disabled='disabled'" : " ")?>
+			class="btn btn-xs btn-primary" style="width: 100%;"><i class=" "></i>
+				View Generated Invoice</a></li>
+		<!-- 		<li class="list-group-item"><a href="#" class="text-light"><i -->
+		<!-- 				class="fa fa-twitter fa-fw"></i> Tweet this course</a></li> -->
+	</ul>
+</div>
+<!-- // END .panel -->

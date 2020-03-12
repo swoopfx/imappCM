@@ -1,0 +1,18 @@
+<?php
+
+$messageForm->prepare();
+echo $this->form()->openTag($messageForm);
+?>
+<div class="input-group">
+<?php  echo $this->formelement($messageForm->get("messageEntered")->get("messageText"))?>
+                           
+                            <span class="input-group-btn">
+                            <?php  //echo $this->formrow($messageForm->get("csrf"))?>
+                              <?php echo $this->formrow($messageForm->get("submit"))?>
+                            </span>
+                          </div>
+
+<?php
+echo $this->form()->closeTag();
+?>
+

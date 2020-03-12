@@ -1,0 +1,257 @@
+<?php
+?>
+<hr>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('title'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('title'))?>
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Title of person"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('title'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('firstname'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('firstname'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Entity firstname"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('firstname'));?>
+					</div>
+</div>
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('lastname'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('lastname'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Entity lastname"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('lastname'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('othername'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('othername'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other names if applicable"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('othername'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+
+<?php  echo $this->formLabel($objectPerson->get('isMarried'))?>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<?php
+
+$objectPerson->get("isMarried")
+    ->setOptions(array(
+    "label_attributes" => array(
+        "class" => "col-md-3"
+    )
+))
+    ->setAttributes(array(
+    "class" => "col-md-6"
+))?>
+		
+		<?php echo $this->formElement($objectPerson->get('isMarried'))?>
+		
+                    
+                 
+
+
+	</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if entity is married"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('isMarried'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('maidenName'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('maidenName'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Maiden Name of entity"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('maidenName'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+
+<?php  echo $this->formLabel($objectPerson->get('isNigerian'))?>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<?php
+
+$objectPerson->get("isNigerian")
+    ->setOptions(array(
+    "label_attributes" => array(
+        "class" => "col-md-3"
+    )
+))
+    ->setAttributes(array(
+    "class" => "col-md-6"
+))?>
+		
+		<?php echo $this->formElement($objectPerson->get("isNigerian"))?>
+		
+                    
+                 
+
+
+	</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if entity is married"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('isNigerian'));?>
+					</div>
+</div>
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('mobileNumber'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('mobileNumber'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Entity mobile number"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('mobileNumber'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('sex'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('sex'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Entity sex"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('sex'));?>
+					</div>
+</div>
+
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('age'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('age'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date of birth of entity"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('age'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('bvn'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('bvn'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Bank verification number of entity"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('bvn'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('address'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('address'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Address of entity "></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('address'));?>
+					</div>
+</div>
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('countryId'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('countryId'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Country of entity address"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('countryId'));?>
+					</div>
+</div>
+
+
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectPerson->get('cityId'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectPerson->get('cityId'))?>
+							
+						</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Respective city"></i>
+	<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectPerson->get('cityId'));?>
+					</div>
+</div>
+
+<hr>
+
+<script>
+
+</script>

@@ -1,0 +1,65 @@
+<?php
+$ap = $this->ap;
+$count = (count($ap) < 5 ? count($ap) : 5);
+?>
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2>My Proposals</h2>
+			<ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div class="x_content">
+
+
+
+			<div class="table-responsive">
+				<table class="table table-hover">
+                                    <?php
+                                    
+                                    if (count($ap) == 0) {
+                                        echo "<span> Active Proposal</span>";
+                                    } else {
+                                        ?>
+                                        <thead>
+						
+					</thead>
+					<tbody>
+                                         <?php for($i=0; $i < $count ; $i++){?>
+                                            <tr>
+							<td>
+								<div class="media-body">
+									<a><strong><?php  echo strtoupper($ap[$i]->getProposalCode())?></strong></a>
+									<br /> <a><?php  echo $ap[$i]->getProposalTitle()?></a><br> <strong>Customer:</strong>
+									<a class="title"
+										href="<?php  echo $this->url('customer/default', array('action'=>'profile', 'id'=>$ap[$i]->getCustomer()->getId()))?>"><?php  echo $ap[$i]->getCustomer()->getName()?></a><br>
+									<strong>Service Category: </strong> <?php echo ($ap[$i]->getServiceType() == NULL ? "" : $ap[$i]->getServiceType()->getInsuranceService())?><br>
+									<small>Created <?php  echo $this->dateFormat($ap[$i]->getcreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></small>
+								</div>
+							</td>
+
+
+							<td>
+								<p>
+									<a
+										href="<?php  echo $this->url('proposal/default', array('action'=>'pre-process', 'id'=>$ap[$i]->getProposalCode()))?>"
+										class="btn btn-default">View</a>
+								</p>
+							</td>
+						</tr>
+                                             <?php   }}?>
+                                             
+
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+
+		<a href="<?php echo $this->url("proposal/default", array("action"=>"my-proposals"))?>" class="btn btn-default"> View All</a>
+	</div>
+</div>

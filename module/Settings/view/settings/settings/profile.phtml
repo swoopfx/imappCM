@@ -1,0 +1,188 @@
+<?php
+use CsnUser\Service\UserService;
+
+echo $this->headtitle("My Profile");
+
+$userEntity = $this->identity();
+$userRole = $userEntity->getRole()->getId();
+
+?>
+
+<div class="row">
+	<div class="">
+<?php  echo $this->partial("general-error-ponters") ?>
+<?php  if($brokerEntity->getCeo() == NULL){?>	
+<div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span>
+                    </button>
+                    <strong>Error !</strong>  You have no profile please create one
+                  </div>
+                  <?php }?>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>
+							My Profile 
+						</h2>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+							<div class="profile_img">
+								<div id="crop-avatar">
+									<!-- Current avatar -->
+									<img class="img-responsive avatar-view"
+										src="<?=  $this->imprintLogo()?>"
+										alt="Avatar" title="Company Logo">
+								</div>
+							</div>
+                      <?php  if($userRole == UserService::USER_ROLE_BROKER){?>
+                      
+                      <?php
+                        
+                        if ($brokerEntity->getCeo() == NULL) {
+                            echo " ";
+                        } else {
+                            echo $this->partial("broker-ceo-info-snippet", array(
+                                "ceoEntity" => $brokerEntity->getCeo()
+                            ));
+                            
+                        }
+                        ?>
+							<a data-toggle="modal"
+								data-target='.bs-customer-change-pin-modal-lg' href=""
+								style="width: 100%" class="btn btn-primary btn-xs">Change Logo</a>
+
+							<?php
+                    } elseif ($userRole == UserService::USER_ROLE_BROKER_CHILD) {
+                        echo $this->partial("broker-ceo-info-snippet", array(
+                            "ceoEntity" => $brokerChildEntity
+                        ));
+                    }
+                    ?>
+                    
+
+                      
+                      <br />
+
+
+
+						</div>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+
+
+							<div class="" role="tabpanel" data-example-id="togglable-tabs">
+								<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#tab_content1"
+										id="home-tab" role="tab" data-toggle="tab"
+										aria-expanded="true"><?php
+        if ($userRole == UserService::USER_ROLE_BROKER) {
+            echo ($brokerEntity->getCeo() == NULL ? "Create Profile" : " Edit Profile");
+        } else {
+            echo ($brokerChildEntity == NULL ? "Create Profile" : " Edit Profile");
+        }
+        ?></a></li>
+<!-- 									<li role="presentation" class=""><a href="#tab_content2" -->
+<!-- 										role="tab" id="profile-tab" data-toggle="tab" -->
+<!-- 										aria-expanded="false">Edit Login</a></li> -->
+									
+								</ul>
+								<div id="myTabContent" class="tab-content">
+									<div role="tabpanel" class="tab-pane fade active in"
+										id="tab_content1" aria-labelledby="home-tab">
+
+										<!-- start recent activity -->
+									
+								<?php
+        
+        if ($userRole == UserService::USER_ROLE_BROKER) {
+            $ceoForm->prepare();
+            echo $this->form()->openTag($ceoForm);
+            echo $this->partial("broker-ceo-form-snippet", array(
+                "brokerCeoFieldset" => $ceoForm->get("brokerCeoFieldset")
+            ));
+            // echo $this->formrow($ceoForm->get("csrf"));
+            echo $this->formrow($ceoForm->get("submit"));
+            echo $this->form()->closeTag();
+        } elseif ($userRole == UserService::USER_ROLE_BROKER_CHILD) {
+            $brokerChildForm->prepare();
+            echo $this->form()->openTag($brokerChildForm);
+            echo $this->partial("broker-child-form-snippet", array(
+                "brokerCeoFieldset" => $brokerChildForm->get("brokerChildFieldset")
+            ));
+            echo $this->formrow($brokerChildForm->get("submit"));
+            echo $this->form()->closeTag();
+        }
+        ?>
+										<!-- end recent activity -->
+
+									</div>
+									<div role="tabpanel" class="tab-pane fade" id="tab_content2"
+										aria-labelledby="profile-tab">
+
+										<!-- start user projects -->
+										<!--  Login details goes here -->
+										<!-- end user projects -->
+
+									</div>
+									<div class="modal fade bs-customer-change-pin-modal-lg" tabindex="-3"
+	role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">CHANGE LOGO</h4>
+			</div>
+                        <?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+                         <div class="modal-body">
+                        
+                         </div>
+			<div class="modal-footer">
+                         <a href="<?php  echo $this->url("settings/default", array("action"=>"profile"))?>" class="btn btn-block btn-success"> REFRESH</a>
+                         
+                        </div>
+
+
+                      </div>
+	</div>
+</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<?php
+
+echo $this->headScript()->appendFile($this->basePath('js/jquery.mask.min.js'))?>
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+            
+            $('.phone').mask('00000000000');
+//             $('.url').mask('http://#.#', {'translation': {
+//                A: {pattern: /[A-Za-z0-9]/},
+//                S: {pattern: /[A-Za-z]/}
+               
+//              }
+//         });
+            
+
+        });
+
+        // for the type of customer
+        
+    </script>

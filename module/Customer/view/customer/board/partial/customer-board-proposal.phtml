@@ -1,0 +1,59 @@
+<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline margin-none">My Proposals</h4>
+
+					</div>
+					<ul class="list-group">
+						
+						
+						
+					
+<?php
+$count = (count ( $proposals ) < 10 ? count ( $proposals ) : 10);
+if (count ( $proposals ) == 0) {
+	echo "<li class='list-group-item media v-middle'><div class='media-body'>No proposals issued yet</div></li>";
+} else {
+	for($i = 0; $i < $count; $i ++) {
+		?>
+		
+		<li class="list-group-item media v-middle">
+							<div class="media-body">
+							<div class="caption">
+									<span class="text-light">PROPOSAL:</span> <a
+										href="<?php  echo $this->url("cus_proposal/default", array("action"=>"pre-view", "id"=>$proposals[$i]->getId()))?>"><?php echo strtoupper((count($proposals[$i]->getProposalCode()) == 0 ? " " : $proposals[$i]->getProposalCode())) ?></a>
+								</div>
+								<h4 class="text-subhead margin-none">
+									<a href="<?php  echo $this->url("cus_proposal/default", array("action"=>"pre-view", "id"=>$proposals[$i]->getId()))?>" class="list-group-link"><?php  echo ($proposals[$i]->getProposalTitle() == NULL ?  " ": $proposals[$i]->getProposalTitle())?></a>
+								</h4>
+								<div class="caption">
+									<span class="text-light">Category:</span> <a
+										href="<?php  echo $this->url("cus_proposal/default", array("action"=>"view", "id"=>$proposals[$i]->getProposalCode()))?>"><?php echo ($proposals[$i]->getInsuranceCategory() == NULL ? "" : $proposals[$i]->getInsuranceCategory()->getType())?></a>
+								</div>
+								<div class="caption">
+									<span class="text-light">TYPE:</span> <a
+										href=""><?php echo ($proposals[$i]->getServiceType() == NULL ?  "" : $proposals[$i]->getServiceType()->getInsuranceService()) ?></a>
+								</div>
+							</div>
+							<div class="media-right text-center">
+								<div class="text-display-1 text-green-300"> <img alt="" src="<?php echo ( $proposals[$i]->getInsurer() == NULL ? "/img/logo.png" : $this->insurerLogohelper($proposals[$i]->getInsurer()->getId()))?>" class="img-circle width-80"></div>
+								
+							</div>
+							<div>
+							<small>Created On : <?php  echo $this->dateFormat($proposals[$i]->getcreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></small>
+							</div>
+						</li>
+
+<?php
+	}
+}
+?>
+
+</ul>
+					<div class="panel-footer text-right">
+						<a href="<?php echo $this->url("cus_proposal");?>"
+							class="btn btn-white paper-shadow relative" data-z="0"
+							data-hover-z="1" data-animated href="#"> <?php  echo (count($proposals) > 0 ? "View all": "")?></a>
+					</div>
+				</div>
+			</div>

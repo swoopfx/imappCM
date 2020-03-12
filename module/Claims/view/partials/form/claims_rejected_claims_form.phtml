@@ -1,0 +1,51 @@
+
+<div class="alert alert-success">
+	<ul class="fa-ul">
+		<li><a class="alert-link">Only use this information whenever the
+				insurer has rejected/declined the submitted claims</a>.</li>
+	</ul>
+</div><?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$rejectedClaimFieldset = $form->get("claimsRejectedFieldset");
+
+?>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($rejectedClaimFieldset->get('declineResason'))?> 
+								
+	<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($rejectedClaimFieldset->get('declineResason'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Decline Reason"></i>
+								
+								<?php echo $this->formElementErrors($rejectedClaimFieldset->get('declineResason'))?> 
+								
+							</div>
+							
+							<div class="form-group">
+							
+								<?php echo $this->formLabel($rejectedClaimFieldset->get('reasonDescription'))?> 
+								
+	<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($rejectedClaimFieldset->get('reasonDescription'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Decline Description"></i>
+								
+								<?php echo $this->formElementErrors($rejectedClaimFieldset->get('reasonDescription'))?> 
+								
+							</div>
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag()?>
+
+<div style="text-align: center;">
+								<i id="rejectajax" class="fa  fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=30></i>
+							</div>
+
+
+

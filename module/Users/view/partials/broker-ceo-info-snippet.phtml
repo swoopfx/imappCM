@@ -1,0 +1,19 @@
+<?php
+$userEntity = $this->identity();
+?>
+
+<h3><?php  echo $ceoEntity->getFullName() ?></h3>
+
+                      <ul class="list-unstyled user_data">
+                        <li><i class="fa fa-map-marker user-profile-icon"></i> <?php echo $userEntity->getUserName()?>
+                        </li>
+
+                        <li>
+                          <i class="fa fa-briefcase user-profile-icon"></i> <?php  echo $userEntity->getEmail()?>
+                        </li>
+
+<!--                         <li class="m-top-xs"> -->
+<!--                           <i class="fa fa-external-link user-profile-icon"></i> -->
+<!--                           <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a> -->
+<!--                         </li> -->
+                      </ul>

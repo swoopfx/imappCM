@@ -1,0 +1,205 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsBurglaryFieldset = $form->get("claimsBurglaryFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsBurglaryFieldset->get("claims")
+));
+?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('theftDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('theftDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date the loss took place"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('theftDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('theftEntryDesc'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('theftEntryDesc'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Description of the theft , including mode of entry"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('theftEntryDesc'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('theftSuspect'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('theftSuspect'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide the name of any suspect"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('theftSuspect'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('dateTheftDiscovered'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('dateTheftDiscovered'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide the name of any suspect"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('dateTheftDiscovered'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('dateTheftDiscovered'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('dateTheftDiscovered'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide the name of any suspect"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('dateTheftDiscovered'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('datePoliceNotify'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('datePoliceNotify'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date police was nofitied"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('datePoliceNotify'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('stationPoliceNotify'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('stationPoliceNotify'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Police station report was made"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('stationPoliceNotify'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('isOccupiedAtBurglary'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('isOccupiedAtBurglary'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date police was nofitied"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('isOccupiedAtBurglary'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('unOccupiedDuration'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11"><div class="col-md-11 col-sm-11 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('unOccupiedDuration'))?>  
+								</div><strong>Days</strong></div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Number of days in a year building was un-occupied"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('unOccupiedDuration'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('isAvailableSecurity'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('isAvailableSecurity'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Premises has security"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('isAvailableSecurity'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('securityType'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('securityType'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of security"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('securityType'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('isPreviousLoss'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('isPreviousLoss'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has previouly has loss at any time"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('isPreviousLoss'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsBurglaryFieldset->get('previousLoss'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsBurglaryFieldset->get('previousLoss'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the previous loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsBurglaryFieldset->get('previousLoss'))?> 
+								</div>
+</div>
+
+<?php 
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+//echo $this->headScript()->appendFile($this->basePath('js/jquery.js'));
+?>
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>
+<script>
+ $(document).ready(function(){
+  $("#theftDate").bind("change", function(){
+// 	  alert("OK");
+	 $("#dateTheftDiscovered").val($("#theftDate").val()) ;
+	  })
+	 })
+</script>

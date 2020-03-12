@@ -1,0 +1,26 @@
+<?php
+$cashFieldset = $manualProcessForm->get("cash");
+?>
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cashFieldset->get('collectedBy'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($cashFieldset->get('collectedBy'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($cashFieldset->get('collectedBy'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($cashFieldset->get('datePaid'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($cashFieldset->get('datePaid'))?>  
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($cashFieldset->get('datePaid'))?> 
+								</div>
+</div>

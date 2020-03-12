@@ -1,0 +1,470 @@
+<?php
+$groupPersonalAccidentFieldset = $form->get("groupPersonalAccidentFieldset");
+
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('personalAccidentType'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('personalAccidentType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Group Personal accident type"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('personalAccidentType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="fixed_fieldset">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"grouppersonalfixeddetail")) ?>">
+			Add Fixed Benefit Details</a>
+	</div>
+
+	<div class="form-group" id="div_group_personal_fixed_details"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+</div>
+
+<div id="wages_fieldset">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"grouppersonalwagesdetail")) ?>">
+			Add Wages Benefit Details</a>
+	</div>
+
+	<div class="form-group" id="div_group_personal_wages_details"
+		style="margin: 10px; padding: 10px; background: #f0f1d3;"></div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isIncludeEmoluments'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isIncludeEmoluments'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What emoluments( if any) are to be included in addition to basic salary or wage?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isIncludeEmoluments'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_emoluments">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('emoluments'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('emoluments'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details to be included in addition to basic salary or wage?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('emoluments'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('highestEmolumentPaid'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-6 col-sm-6 col-xs-10">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('highestEmolumentPaid'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="This defines the highest emolument that should be paid to any one individual"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('highestEmolumentPaid'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isRestrictedToEmployeeAccident'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isRestrictedToEmployeeAccident'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="This defines that the cover is restricted to accidents only"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isRestrictedToEmployeeAccident'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group" id="div_restriction">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('restriction'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('restriction'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide names and details of whom restrictions apply to"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('restriction'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isPersonsInSoundHealth'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isPersonsInSoundHealth'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Attest that persons are in sound health"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isPersonsInSoundHealth'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isTravel'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isTravel'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Will any be covered for travel by air or by motor car in the course of his or her duties"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isTravel'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group" id="div_travelDetails">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('travelDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('travelDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name, Post and travel details whom this applies to "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('travelDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isUseMachinery'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isUseMachinery'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Will any of the persons to be insured use machinery"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isUseMachinery'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group" id="div_machineryDetails">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('machineDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('machineDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Type of machine and persons who is covered for this"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('machineDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isOtherExtension'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isOtherExtension'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Include other extended cover"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isOtherExtension'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group" id="div_extensionDetails">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('extensionDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('extensionDetails'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details of the cover extension"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('extensionDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isPreviousGroupAccident'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isPreviousGroupAccident'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was previously insurered by another insurer"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isPreviousGroupAccident'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_isPreviousInsurer">
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isDeclined'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isDeclined'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Was declined by previous insurer"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isDeclined'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_declineDetails">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('declineDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('declineDetails'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Was declined by previous insurer"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('declineDetails'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isTerminated'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isTerminated'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Policy terminated by previous insurer"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isTerminated'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_terminateDetails">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('terminatedDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('terminatedDetails'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Reason and details of termination"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('terminatedDetails'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('isSpecialCondition'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('isSpecialCondition'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top"
+			title="Previous insurer stated a special condition"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('isSpecialCondition'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+	<div class="form-group" id="div_condtionDetails">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('conditionDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('conditionDetails'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Details about special condition"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('conditionDetails'));  // this defines the error?> 
+							</div>
+	</div>
+
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($groupPersonalAccidentFieldset->get('addtionalFacts'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($groupPersonalAccidentFieldset->get('addtionalFacts'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Are there any additional facts likely to affect the proposed, Insurance which should be disclosed to the underwriter"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($groupPersonalAccidentFieldset->get('addtionalFacts'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	 $("#div_condtionDetails").hide();
+	 $("#div_terminateDetails").hide();
+	 $("#div_declineDetails").hide();
+	 $("#div_extensionDetails").hide();
+	 $("#div_isPreviousInsurer").hide();
+	 $("#div_machineryDetails").hide();
+	 $("#div_travelDetails").hide();
+	 $("#div_restriction").hide();
+	 $("#div_emoluments").hide();
+	 $("#fixed_fieldset").hide();
+	 $("#wages_fieldset").hide();
+
+	 $("#personalAccidentType").change(function(){
+		 if($("#personalAccidentType").val() == "10"){
+			 $("#fixed_fieldset").show();
+			 $("#wages_fieldset").hide();
+			 }else if($("#personalAccidentType").val() == "20"){
+				 $("#wages_fieldset").show();
+				 $("#fixed_fieldset").hide();
+				 }else{
+					 $("#fixed_fieldset").hide();
+					 $("#fixed_fieldset").hide();
+					 }
+		 })
+
+	 $("#isSpecialCondition").change(function(){
+		 if($("#isSpecialCondition").is(":checked")){
+			 $("#div_condtionDetails").show();
+			 }else{
+				 $("#div_condtionDetails").hide();
+				 }
+		 })
+
+
+		 $("#isTerminated").change(function(){
+		 if($("#isSpecialCondition").is(":checked")){
+			 $("#div_terminateDetails").show();
+			 }else{
+				 $("#div_terminateDetails").hide();
+				 }
+		 })
+		 $("#isDeclined").change(function(){
+		 if($("#isDecline").is(":checked")){
+			 $("#div_declineDetails").show();
+			 }else{
+				 $("#div_declineDetails").hide();
+				 }
+		 })
+
+		 $("#isOtherExtension").change(function(){
+		 if($("#isOtherExtension").is(":checked")){
+			 $("#div_extensionDetails").show();
+			 }else{
+				 $("#div_extensionDetails").hide();
+				 }
+		 })
+		 $("#isUseMachinery").change(function(){
+		 if($("#isUseMachinery").is(":checked")){
+			 $("#div_machineryDetails").show();
+			 }else{
+				 $("#div_machineryDetails").hide();
+				 }
+		 })
+		 $("#isTravel").change(function(){
+		 if($("#isTravel").is(":checked")){
+			 $("#div_travelDetails").show();
+			 }else{
+				 $("#div_travelDetails").hide();
+				 }
+		 })
+		 $("#isRestrictedToEmployeeAccident").change(function(){
+		 if($("#isRestrictedToEmployeeAccident").is(":checked")){
+			 $("#div_restriction").show();
+			 }else{
+				 $("#div_restriction").hide();
+				 }
+		 })
+
+		  $("#isIncludeEmoluments").change(function(){
+		 if($("#isIncludeEmoluments").is(":checked")){
+			 $("#div_emoluments").show();
+			 }else{
+				 $("#div_emoluments").hide();
+				 }
+		 })
+ $("#isPreviousGroupAccident").change(function(){
+		 if($("#isPreviousGroupAccident").is(":checked")){
+			 $("#div_isPreviousInsurer").show();
+			 }else{
+				 $("#div_isPreviousInsurer").hide();
+				 }
+		 })
+		 
+	 })
+</script>

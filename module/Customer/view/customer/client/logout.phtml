@@ -1,0 +1,15 @@
+<?php
+use Zend\Session\Container;
+
+echo $this->headtitle ( "Customer Logout" );
+$hiddenSession = new Container("hiddenSession")
+?>
+<?php  echo $this->partial("general-error-ponters")?>
+
+
+<div class="page-section parallax relative overflow-hidden">
+	
+	<img style="width: 100%" src="<?php echo $this->basePath("img/thanks.png")?>">
+	<h3>Thanks for using us</h3>
+	<a href="<?php  echo $this->url("client_login", array("brokerid"=>$hiddenSession->id))?>">Login</a>
+</div>

@@ -1,0 +1,35 @@
+<?php
+
+
+if(count($proposals) > 0){
+    foreach ($proposals as $off){ ?>
+    
+    <tr>
+							<td>
+								<div class="checkbox checkbox-single">
+									<input id="checkbox1" type="checkbox" checked> <label
+										for="checkbox1">Label</label>
+								</div>
+							</td>
+							<td><span class="label label-default"><?php  echo $this->dateFormat($off->getUpdatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></span></td>
+							<td><a href="<?php echo $this->url("cus_proposal/default", array("action"=>"edit", "id"=>$off->getId()))?>"><?php  echo ($off->getProposalTitle() == NULL ? "": $off->getProposalTitle())?></a></td>
+							<td><a href="<?php  echo $this->url("cus_proposal", array())?>"><?php  echo ($off->getProposalCode()== NULL ? "": $off->getProposalCode())?></a></td>
+							
+							<td>
+								<span class="badge badge-red"><?php echo $off->getProposalStatus()->getStatus()->getStatusWord()?></span>
+							</td>
+							<td class="text-right"><a href="<?php echo $this->url("cus_proposal/default", array("action"=>"view", "id"=>$off->getId()))?>" class="btn btn-default btn-xs"
+								data-toggle="tooltip" data-placement="top" title="View"><i
+									class="fa fa-eye"></i></a>
+									<a href="<?php echo $this->url("cus_proposal/default", array("action"=>"edit", "id"=>$off->getId()))?>" class="btn btn-default btn-xs"
+								data-toggle="tooltip" data-placement="top" title="Edit"><i
+									class="fa fa-pencil"></i></a> <a href="#"
+								class="btn btn-danger btn-xs" data-toggle="tooltip"
+								data-placement="top" title="Delete"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+ <?php        
+    }
+}
+
+?>

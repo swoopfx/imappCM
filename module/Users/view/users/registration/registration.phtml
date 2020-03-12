@@ -1,0 +1,235 @@
+<?php
+$the_background = "/images/bg2.jpg";
+// $the_background = " "
+// echo $this->partial('csn-user/layout/nav-menu', array('navMenu' => $this->navMenu)); ?>
+<div class="jumbotron" style="background-image: url(<?php echo $the_background; ?>);">
+	<div class="container-fluid">
+		<div class="form-div-2 row">
+			<h1>
+				<a href="<?php echo $this->url('home') ?>"><img
+					src="<?php echo $this->basePath('/img/mybroker200.png') ?>"
+					alt="My Brokerap Logo" /></a>
+
+
+			</h1>
+			<div class="col-md-6 ad">
+
+				<h1>Premium Brokers</h1>
+				<div class="p-ad">
+					<h3>Starling Firms</h3>
+					<p class="desc">Insurance made at it best</p>
+					<ul class="rating">
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+					</ul>
+				</div>
+
+				<div class="p-ad">
+					<h3>Colcopot Inc.</h3>
+					<p class="desc">Staked Energy for the nation</p>
+					<ul class="rating">
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+					</ul>
+				</div>
+
+				<div class="p-ad">
+					<h3>Monopal Systems</h3>
+					<p class="desc">Live wind informtion systems</p>
+					<ul class="rating">
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+					</ul>
+				</div>
+
+
+				<div class="p-ad">
+					<h3>Denos Insurance Brokers</h3>
+					<p class="desc">Living the life</p>
+					<ul class="rating">
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+						<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="col-md-6 reg">
+				<h1>Register</h1>
+				<br>	
+<?php
+/**
+ * CsnUser - Coolcsn Zend Framework 2 User Module
+ *
+ * @link https://github.com/coolcsn/CsnUser for the canonical source repository
+ * @copyright Copyright (c) 2005-2013 LightSoft 2005 Ltd. Bulgaria
+ * @license https://github.com/coolcsn/CsnUser/blob/master/LICENSE BSDLicense
+ * @author Stoyan Cheresharov <stoyan@coolcsn.com>
+ * @author Svetoslav Chonkov <svetoslav.chonkov@gmail.com>
+ * @author Nikola Vasilev <niko7vasilev@gmail.com>
+ * @author Stoyan Revov <st.revov@gmail.com>
+ * @author Martin Briglia <martin@mgscreativa.com>
+ */
+
+// echo $this->partial('csn-user/layout/nav-menu', array('navMenu' => $this->navMenu, 'user' => $this->identity()));
+
+$form = $this->form;
+
+/**
+ * Set form fields classes and placeholders here
+ */
+
+$form->setAttributes(array(
+    'class' => 'form'
+));
+
+$form->get('username')->setAttributes(array(
+    'class' => 'form-control inpt-form',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Username')
+));
+
+$form->get('email')->setAttributes(array(
+    'class' => 'form-control',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Your Email')
+));
+
+$form->get('password')->setAttributes(array(
+    
+    'class' => 'form-control',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Password')
+));
+
+$form->get('passwordVerify')->setAttributes(array(
+    'class' => 'form-control',
+    
+    'aria-describedby' => 'basic-addon1',
+    'placeholder' => $this->translate('Confirm Password')
+));
+
+$form->get('question')->setAttributes(array(
+    'class' => 'form-control'
+));
+
+$form->get('answer')->setAttributes(array(
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Type Your Answer')
+));
+
+$form->get('captcha')->setAttributes(array(
+    'required' => 'true',
+    'class' => 'form-control',
+    'placeholder' => $this->translate('Verify you are human')
+));
+
+$form->get('submit')->setAttributes(array(
+    'class' => 'btn btn btn-success',
+    'value' => $this->translate('Sign Up')
+));
+
+$form->get('login')->setAttributes(array(
+    'class' => 'btn btn btn-warning',
+    'label' => $this->translate('Sign In')
+));
+
+$form->prepare();
+?>
+
+  
+   
+       
+          <?php echo $this->form()->openTag($form); ?>
+         <?php echo $this->formRadio($form->get('user_roles'))?>
+         
+         
+         <br> <br>
+            <?php
+            $element = $form->get('username');
+            echo $this->formElement($element);
+            ?>
+              <div style="font-size: 9px; color: red;">
+              <?php
+            echo $this->formElementErrors($element);
+            ?>
+              </div>
+
+				<br>
+                <?php
+                // $element = $form->get('firstName');
+                // echo $this->formElement($element);
+                // echo $this->formElementErrors($element);
+                // ?>
+              
+                <?php
+                // $element = $form->get('lastName');
+                // echo $this->formElement($element);
+                // echo $this->formElementErrors($element);
+                // ?>
+             
+            <?php
+            $element = $form->get('email');
+            echo $this->formElement($element);
+            echo $this->formElementErrors($element);
+            ?>
+           <br>
+                <?php
+                $element = $form->get('password');
+                echo $this->formPassword($element);
+                echo $this->formElementErrors($element);
+                ?>
+           <br>
+                <?php
+                $element = $form->get('passwordVerify');
+                echo $this->formPassword($element);
+                echo $this->formElementErrors($element);
+                ?>
+         <br>
+                <?php
+                $element = $form->get('question');
+                echo $this->formElement($element);
+                echo $this->formElementErrors($element);
+                ?>
+             <br>
+                <?php
+                $element = $form->get('answer');
+                echo $this->formElement($element);
+                echo $this->formElementErrors($element);
+                ?>
+           
+<!--             <div class="row"> -->
+				<!--               <div class="col-xs-12 col-md-12"> -->
+                <?php
+                // $element = $form->get('captcha');
+                // echo $this->formElement($element);
+                // echo $this->formElementErrors($element);
+                // ?>
+<!--               </div> -->
+				<!--             </div> -->
+				<br>
+                <?php echo $this->formRow($form->get('submit'))?>              
+                <?php echo $this->formButton($form->get('login'))?>              
+             
+          <?php
+        echo $this->formRow($form->get('csrf'));
+        echo $this->form()->closeTag();
+        ?>         
+      
+
+<!-- End of the facts  -->
+
+			</div>
+		</div>
+	</div>

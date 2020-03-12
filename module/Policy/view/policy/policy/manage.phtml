@@ -1,0 +1,390 @@
+<?php
+use Policy\Service\PolicyService;
+use GeneralServicer\Service\GeneralService;
+use Policy\Service\CoverNoteService;
+
+echo $this->headtitle("Manage Policy");
+$policyIdJson = json_encode(array(
+    "data" => $policyEntity->getId()
+));
+
+$policyUidJson = json_encode(array(
+    "data" => $policyEntity->getPolicyUid()
+));
+?>
+
+<div id="wasabi_modal"></div>
+
+<?php
+
+echo $this->partial("general-error-ponters");
+
+?>
+<div class="row">
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="x_panel fixed_height_320">
+			<div class="x_title">
+				<h2>Policy Details</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="panel-body scroll-view">
+					<h3 class="green"> <?php echo ($policyEntity->getPolicyName() != NULL ? $policyEntity->getPolicyName()  : GeneralService::GENERAL_EMPTY_FIELD)?></h3>
+
+
+					<div class="project_detail">
+
+						<p class="title">Policy</p>
+						<p><?php  echo CoverNoteService::getServiceTypeName($policyEntity->getCoverNote());?></p>
+						<hr>
+						<p class="title">Cover</p>
+						<p><?php  echo CoverNoteService::getSpecificTypeName($policyEntity->getCoverNote())?></p>
+					</div>
+					<div style='text-align: center;'
+						class="col-md-12 col-sm-12 col-xs-12"><?php  echo $this->statusHelper($policyEntity->getPolicyStatus()->getStatus())?></div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="x_panel fixed_height_320">
+			<div class="x_title">
+				<h2>Premium Details</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+
+
+
+				<h3 class="name_title"><?php  echo  (PolicyService::getPremiumPayable($policyEntity) != NULL ? $this->myCurrencyFormat(PolicyService::getPremiumPayable($policyEntity)) : GeneralService::GENERAL_EMPTY_FIELD)?></h3>
+				<p>Payable to</p>
+
+				<div class="divider"></div>
+
+				<p><?php  echo (PolicyService::getInsurerName($policyEntity) != NULL ? PolicyService::getInsurerName($policyEntity) : GeneralService::GENERAL_EMPTY_FIELD)?></p>
+<hr>
+<?php  if($policyEntity->getCoverNote()->getPremiumChangeReason() != NULL):?>
+<a id="btn3" data-ajax-loader="viewpremiumchangereasonmodal" class="btn btn-xs btn-primary ajax_element" style="width: 100%" data-href="<?php  echo $this->url("policy/default", array("action"=>'viewpremiumchangereasonmodal'))?>">View Change Reason</a>
+<div style="text-align: center;">
+							<i id="viewpremiumchangereasonmodal" class="fa  fa-lg"
+								style="display: none;"><img alt=""
+								src="<?php  echo $this->basepath("/processin.gif")?>" height=20></i>
+						</div>
+<?php  endif;?>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-sm-6 col-xs-12">
+		<div class="x_panel fixed_height_320">
+			<div class="x_title">
+				<h2>Property List</h2>
+				<ul class="nav navbar-right panel_toolbox">
+
+
+					<li> <?php
+
+    if ($policyEntity->getCoverNote()
+        ->getCoverCategory()
+        ->getId() == CoverNoteService::COVERNOTE_CATEGORY_FLOAT_POLICY) {
+        ?>
+                            <a class="btn btn-xs btn-warning">Attach
+							Property</a>
+                        <?php }?></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="dashboard-widget-content">
+				<div style="text-align: center;">
+							<i id="viewallproperty" class="fa  fa-lg"
+								style="display: none;"><img alt=""
+								src="<?php  echo $this->basepath("/processin.gif")?>" height=20></i>
+						</div>
+					<ul class="list-unstyled timeline widget top_profiles scroll-view">
+                      <?php
+
+                    if (count(PolicyService::getAssociatedObjects($policyEntity)) > 0) {
+                        $object = PolicyService::getAssociatedObjects($policyEntity);
+                        // var_dump(count($object));
+                        for ($i = 0; $i < count($object); $i ++) {
+
+                            ?>
+                      <li>
+							<p>
+								<a><strong><?php  echo $object[$i]->getObjectType()->getObjectType()?></strong>: <?php  echo $object[$i]->getObjectName()?> ( <?php  echo $this->myCurrencyFormat($object[$i]->getValue())?> )</a>
+							</p>
+						</li>
+                      <?php
+                            if ($i == 3) {
+                                break;
+                            }
+                        }
+                        ?>
+                      <a id="btn2" data-ajax-loader="viewallproperty"
+							data-href="<?php  echo $this->url("policy/default", array("action"=>"viewallpropertylistmodal"))?>"
+							class="ajax_element btn btn-xs btn-primary" style="width: 100%">View
+							All</a>
+						
+                      <?php
+                    } else {
+                        echo "No Property Available";
+                    }
+                    ?>
+                    
+                      </ul>
+                      
+				</div>
+			</div>
+		</div>
+	</div>
+
+<?php  echo $this->partial("proposal-customer-create-side-snipet", array('customer'=>$policyEntity->getCoverNote()->getCustomer()))?>
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-3 col-sm-3 col-xs-12">
+
+		<a id="btn2" data-ajax-loader="changepolicystatus"
+			data-href="<?php  echo $this->url("policy/default", array("action"=>"changepolicystatusmodal"))?>"
+			style="width: 100%" class="ajax_element btn btn-app"><i
+			class="fa fa-retweet"></i>Change Policy Status</a>
+		<div style="text-align: center;">
+			<i id="changepolicystatus" class="fa  fa-lg" style="display: none;"><img
+				alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+				height=20></i>
+		</div>
+	</div>
+
+	<div class="col-md-3 col-sm-3 col-xs-12">
+		<a id="btn2" data-ajax-loader="changepremium"
+			data-href="<?php  echo $this->url("policy/default", array("action"=>"changepremiumpayablemodal"))?>"
+			style="width: 100%" class="ajax_element btn btn-app"><i
+			class="fa fa-certificate"></i>Change Premium Payable</a>
+		<div style="text-align: center;">
+			<i id="changepremium" class="fa  fa-lg" style="display: none;"><img
+				alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+				height=20></i>
+		</div>
+	</div>
+	
+	<div class="col-md-3 col-sm-3 col-xs-12">
+		<a id="btn2" data-ajax-loader="renewalStatus"
+			data-href="<?php  echo $this->url("policy/default", array("action"=>"pendingpolicyhook"))?>"
+			style="width: 100%" class="ajax_element btn btn-app"><?php echo ($hooks == NULL ? "" : "<span class='badge bg-green'>renewal</span>")?><i
+			class="fa fa-exchange"></i>View Renewal Status</a>
+		<div style="text-align: center;">
+			<i id="renewalStatus" class="fa  fa-lg" style="display: none;"><img
+				alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+				height=20></i>
+		</div>
+	</div>
+
+
+
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>
+					Policy Activity <i class="fa fa-info-circle" data-toggle="tooltip"
+						data-placement="top" title="Documents activity on the policy"></i>
+				</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="dashboard-widget-content">
+
+					<ul class="list-unstyled timeline widget top_profiles scroll-view">
+						<?php  echo $this->policyManageActivityHelper($policyEntity); ?>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+		<?php //if()?>
+		
+	</div>
+
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+
+							<div style="text-align: center;">
+								<i id="buttonAction" class="fa  fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=30></i>
+							</div>
+							
+<?php  if($policyEntity->getPolicyStatus()->getId() == PolicyService::POLICY_STATUS_SUSPENDED){?>
+<div class="col-md-6 col-sm-6 col-xs-12">
+
+
+
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"suspensioninfo"))?>"
+									id="btn2"><i class="fa fa-eye" data-toggle="tooltip"
+									data-placement="top" title="View the content of the policy"></i>Suspension
+									Info</a>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<a id="btn2" style="width: 100%"
+									class=" ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"unrevokeconfirmation"))?>"><i
+									class="fa fa-edit" data-toggle="tooltip" data-placement="top"
+									title="Edit content of the policy"></i>Activate Policy</a>
+							</div>
+<?php }else{?>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"viewpolicymodal"))?>"
+									data-json='<?= $policyIdJson?>' id="sending_data_button"><i
+									class="fa fa-eye" data-toggle="tooltip" data-placement="top"
+									title="View the content of the policy"></i>View Policy</a>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a id="btn2" data-json='<?php echo $policyUidJson ?>'
+									style="width: 100%" class=" ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"editpolicymodal"))?>"><i
+									class="fa fa-edit" data-toggle="tooltip" data-placement="top"
+									title="Edit content of the policy"></i>Edit Policy</a>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" id="btn2"
+									class="btn btn-app ajax_element"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"message"))?>"><i
+									class="fa fa-comment" data-toggle="tooltip"
+									data-placement="top" title="Send a message to the customer"></i>Customer
+									Message</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"revokeconfirmation"))?>"
+									data-json='<?= $policyUidJson?>' id="sending_data_button"><i
+									class="fa fa-unlink" data-toggle="tooltip" data-placement="top"
+									title="View the content of the policy"></i>Revoke Policy</a>
+							</div>
+ <?php if($policyEntity->getIsSpecialTerms() == TRUE){?>
+ <div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"viewspecialterms"))?>"
+									id="btn2"><i class="fa fa-book" data-toggle="tooltip"
+									data-placement="top" title="View the special terms invoked"></i>View
+									Terms</a>
+							</div>
+ 
+ <?php }else{?>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"specialterms"))?>"
+									id="btn2"><i class="fa fa-book" data-toggle="tooltip"
+									data-placement="top" title="View the content of the policy"></i>Include
+									Special Terms</a>
+							</div>
+<?php }?>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"renewpolicymodal"))?>"
+									data-json='<?= $policyUidJson?>' id="sending_data_button"><i
+									class="fa fa-circle-o-notch" data-toggle="tooltip"
+									data-placement="top" title="View the content of the policy"></i>Renew
+									Policy</a>
+							</div>
+<?php }?>
+
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="row">
+
+
+			<!-- Start to do list -->
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Uploaded Documents</h2>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+
+						<div class="">
+                      <?php echo $this->policy_document_list($policyEntity)?>
+<!--                         <ul class="to_do"> -->
+							<!-- 								<li> -->
+							<!-- 									<p> -->
+							<!-- 										<input type="checkbox" class="flat"> Schedule meeting with new -->
+							<!-- 										client -->
+							<!-- 									</p> -->
+							<!-- 								</li> -->
+
+							<!-- 							</ul> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End to do list -->
+
+			<!-- start of weather widget -->
+			<div class="col-md-6 col-sm-6 col-xs-12">
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Uploader</h2>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+						<div class="row">
+							<div class="col-sm-12">
+                          <?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+                        </div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!-- end of weather widget -->
+		</div>
+
+		<div id="row"></div>
+
+
+
+	</div>
+</div>

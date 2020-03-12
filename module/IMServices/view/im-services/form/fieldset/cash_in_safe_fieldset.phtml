@@ -1,0 +1,188 @@
+<?php
+$cashInSafeFieldset = $form->get("cashInSafeFieldset");
+?>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('maxInsuredAmount'))?>
+								<div class="col-md-2 col-sm-2 col-xs-2">
+								<?php echo $this->formElement($cashInSafeFieldset->get('currency'));?>
+									
+								</div>
+	<div class="col-md-5 col-sm-5 col-xs-5">
+								<?php echo $this->formElement($cashInSafeFieldset->get('maxInsuredAmount'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Maximum amount to be insured ?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('maxInsuredAmount'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('safeNature'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('safeNature'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Nature of safe,please provide the make and type"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('safeNature'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('safeLocation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('safeLocation'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Provide information the safe is located e.g MD office"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('safeLocation'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('securityArrangements'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('securityArrangements'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Does the location have any secuirt arrangments like installed cctv camera ?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('securityArrangements'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('isEmployeeHasFidelityGuaratee'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('isEmployeeHasFidelityGuaratee'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if emplyees have fidelity guaratee insurance?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('isEmployeeHasFidelityGuaratee'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('isPreviousInsured'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('isPreviousInsured'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there was a previous insurere convering this risk"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('isPreviousInsured'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_previous_insurer">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('previousInsurer'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('previousInsurer'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="The previous insurer?"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('previousInsurer'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('leftPreviousInsurerReason'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('leftPreviousInsurerReason'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Reason for leaving previous insurer"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('leftPreviousInsurerReason'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('isPreviousloss'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('isPreviousloss'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there was a previous loss"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('isPreviousloss'));  // this defines the error?> 
+							</div>
+	</div>
+
+	<div class="form-group" id="div_measure_teken">
+
+								 <?php echo $this->formLabel($cashInSafeFieldset->get('measureTakenAfterLoss'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-12">
+								<?php echo $this->formElement($cashInSafeFieldset->get('measureTakenAfterLoss'));?>
+									
+								</div>
+								<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Measures taken to avert such loss"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($cashInSafeFieldset->get('measureTakenAfterLoss'));  // this defines the error?> 
+							</div>
+
+	</div>
+	<script type="text/javascript">
+$(document).ready(function(){
+	$("#div_previous_insurer").hide();
+	$("#div_measure_teken").hide();
+
+	$("#isPreviousloss").change(function(){
+		if($("#isPreviousloss").is(":checked")){
+			$("#div_measure_teken").show();
+		}else{
+			$("#div_measure_teken").hide();
+			}
+		})
+
+		$("#isPreviousInsured").change(function(){
+		if($("#isPreviousInsured").is(":checked")){
+			$("#div_previous_insurer").show();
+		}else{
+			$("#div_previous_insurer").hide();
+			}
+		})
+})
+							</script>
+</div>

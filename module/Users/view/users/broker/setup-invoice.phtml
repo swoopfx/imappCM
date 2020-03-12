@@ -1,0 +1,54 @@
+<?php
+echo $this->headtitle("INVOICE");
+$brokerInfo = $this->brokerInfo;
+$invoice = $this->invoiceInfo;
+$brokerSub = $this->brokerSub;
+$payForm = $this->payForm;
+
+if ($this->identity()) {
+    ?>
+
+<div class="row">
+	<div class="col-md-9 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Broker Setup Invoice</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+                  
+                  <?php
+    
+    echo $this->partial('users-setup-invoice-snipet', array(
+        'brokerInfo' => $brokerInfo,
+        'invoice' => $invoice,
+        'sub' => $brokerSub,
+        'payForm'=>$payForm,
+        "isSetup"=>$isSetup
+    ))?>
+                  
+                   </div>
+		</div>
+	
+	</div>
+	<div class="col-md-3 col-xs-12">
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner2.jpg")?>">
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php }?>
+            
+       

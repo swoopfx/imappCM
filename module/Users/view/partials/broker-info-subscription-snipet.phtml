@@ -1,0 +1,69 @@
+<?php
+$sub = $this->sub;
+
+if($sub->getIsValid() == TRUE){
+?>
+
+<div
+									class="animated flipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									
+									<div class="tile-stats">
+										<div class="icon">
+											<i class="fa fa-check-square-o"></i>
+										</div>
+										<div class="count">179</div>
+										<h4>Package : New Sign ups</h4>
+										<div class="flex">
+											<ul class="list-inline count2">
+												<li>
+													<h3>123</h3> <span>Total User</span>
+												</li>
+												<li>
+													<h3>1234</h3> <span>Registered</span>
+												</li>
+												<li>
+													<h3>123</h3> <span>Outstanding</span>
+												</li>
+											</ul>
+										</div>
+
+										
+										<h5>Registered User</h5>
+										<?php //$this->partial();?>
+									</div>
+								</div>
+								<div
+									class="animated flipInY col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<div class="tile-stats">
+										<div class="icon">
+											<i class="fa fa-check-square-o"></i>
+										</div>
+										<div class="count">179</div>
+										<div class="flex">
+											<ul class="list-inline count2">
+												<li>
+													<h3>123</h3> <span>No. Of User</span>
+												</li>
+												<li>
+													<h3>1234</h3> <span>No. Registered</span>
+												</li>
+												<li>
+													<h3>123</h3> <span>Following</span>
+												</li>
+											</ul>
+										</div>
+
+										<h3>Package : New Sign ups</h3>
+										Registered User
+										<p>Lorem ipsum psdea itgum rixt.</p>
+										<p>Lorem ipsum psdea itgum rixt.</p>
+										<p>Lorem ipsum psdea itgum rixt.</p>
+									</div>
+								</div>
+
+
+<?php }else{ ?>
+// at this point the subscription os not valid 
+
+    
+<?php }?>

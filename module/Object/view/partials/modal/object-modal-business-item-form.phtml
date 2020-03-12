@@ -1,0 +1,15 @@
+<div id="success"></div>
+	<div id="error"></div>
+
+	<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+		alt=""
+		src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+		height=100></i>
+<?php
+$objectBusinessItemForm->prepare();
+echo $this->form()->openTag($objectBusinessItemForm);
+echo $this->partial("object-business-equipment-snipet", array("objectBusinessEquipment"=>$objectBusinessItemForm->get("objectBusinessItemFieldset")));
+// echo $this->formrow($objectBusinessItemForm->get("csrf"));
+echo $this->formsubmit($objectBusinessItemForm->get("submit"));
+echo $this->form()->closeTag();
+?>

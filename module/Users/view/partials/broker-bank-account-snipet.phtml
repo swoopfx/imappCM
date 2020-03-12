@@ -1,0 +1,97 @@
+<?php
+$form = $this->form;
+?>
+
+<br>
+
+
+
+
+
+
+<div class="highlight" style="min-height: 40px">
+<p><strong></strong> <div style="color: red;" id="accountNam"></div> </p>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($form->get('bankName'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form->get('bankName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('bankName'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($form->get('accountName'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form->get('accountName'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('accountName'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($form->get('bankAccountNo'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form->get('bankAccountNo'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('bankAccountNo'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($form->get('swiftCode'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form->get('swiftCode'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('swiftCode'));  // this defines the error?> 
+							</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($form->get('sortCode'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form->get('sortCode'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('sortCode'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($form->get('bankAddress'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($form->get('bankAddress'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($form->get('bankAddress'));  // this defines the error?> 
+							</div>
+</div>
+

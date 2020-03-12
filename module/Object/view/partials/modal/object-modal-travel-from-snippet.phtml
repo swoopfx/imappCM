@@ -1,0 +1,15 @@
+<div id="success"></div>
+	<div id="error"></div>
+
+	<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+		alt=""
+		src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+		height=100></i>
+<?php
+$objectTravelForm->prepare();
+echo $this->form()->openTag($objectTravelForm);
+echo $this->partial("object-travel-snipet-form", array("objectTravel"=>$objectTravelForm->get("objectTravelFieldset")));
+// echo $this->formrow($objectTravelForm->get("csrf"));
+echo $this->formsubmit($objectTravelForm->get("submit"));
+echo $this->form()->closeTag();
+?>

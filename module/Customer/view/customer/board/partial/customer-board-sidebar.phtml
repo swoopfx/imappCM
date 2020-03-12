@@ -1,0 +1,181 @@
+<?php
+?>
+<div class="col-md-3">
+
+
+
+	<div class="panel panel-default" data-toggle="panel-collapse"
+		data-open="true">
+		<div class="panel-heading panel-collapse-trigger">
+			<h4 class="panel-title">Statistics</h4>
+		</div>
+		<div class="panel-body list-group">
+			<ul class="list-group">
+				<li class="list-group-item"><span class="badge badge-red pull-right"><?php  echo count($offer) ?></span>
+					<a class="list-group-link"
+					href="<?php  echo $this->url("cus_offer")?>">Active Quotes</a></li>
+				<li class="list-group-item"><span class="badge pull-right"><?php echo count($proposals)?></span>
+					<a class="list-group-link"
+					href="<?php echo $this->url("cus_proposal")?>">Active Proposals</a>
+				</li>
+				<li class="list-group-item"><span class="badge pull-right"><?php echo count($activePackage)?></span>
+					<a class="list-group-link"
+					href="<?php echo $this->url("cus_pack", array("action"=>"active"))?>">Active
+						Packages</a></li>
+				<li class="list-group-item"><span class="badge pull-right"><?php echo count($claims)?></span>
+					<a class="list-group-link"
+					href="<?php  echo $this->url("cus_claims")?>">My Unsettled Claims</a></li>
+				<li class="list-group-item"><span class="badge pull-right"><?php  echo count($policy)?></span>
+					<a class="list-group-link"
+					href="<?php  echo $this->url("cus_policy")?>">My Policy</a></li>
+				<li class="list-group-item"><span class="badge pull-right"><?php echo count($invoices)?></span>
+					<a class="list-group-link"
+					href="<?php  echo $this->url("cus_invoice")?>">My Invoices</a></li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="panel">
+		<div style="text-align: center;">
+			<i id="layClaimsButton" class="fa  fa-lg" style="display: none;"><img
+				alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+				height=27></i>
+		</div>
+		<style>
+.pulse-button {
+	/*   position: relative; */
+	/*   top: 50%; */
+	/*   left: 50%; */
+	/*   margin-left: -50px; */
+	/*   margin-top: -50px; */
+	/*   display: block; */
+	/*   width: 100px; */
+	/*   height: 100px; */
+/* 	font-size: 1.3em; */
+	font-weight: light;
+	font-family: 'Trebuchet MS', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+/* 	line-height: 100px; */
+	letter-spacing: -1px;
+	/*   color: white; */
+	border: none;
+	/*   border-radius: 50%; */
+/* 	background: #5a99d4; */
+	/*   cursor: pointer; */
+	/*   box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5); */
+	-webkit-animation: pulse 1.5s infinite;
+}
+
+.pulse-button:hover {
+	-webkit-animation: none;
+}
+
+@
+-webkit-keyframes pulse { 0% {
+	-moz-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
+}
+70%
+{
+/* -moz-transform */
+:
+ 
+scale
+(1);
+
+    
+-ms-transform
+:
+ 
+scale
+(1);
+
+    
+-webkit-transform
+:
+ 
+scale
+(1);
+
+    
+transform
+:
+ 
+scale
+(1);
+
+    
+box-shadow
+:
+ 
+0
+0
+0
+50
+px
+ 
+rgba
+(90
+,
+153,
+212,
+0);
+}
+100%
+{
+-moz-transform
+:
+ 
+scale
+(0
+.9
+);
+
+    
+-ms-transform
+:
+ 
+scale
+(0
+.9
+);
+
+    
+-webkit-transform
+:
+ 
+scale
+(0
+.9
+);
+
+    
+transform
+:
+ 
+scale
+(0
+.9
+);
+/*     box-shadow: 0 0 0 0 rgba(90, 153, 212, 0); */
+
+  
+}
+}
+</style>
+		<a id="btn3" data-ajax-loader="layClaimsButton"
+			class="ajax_element btn  btn-danger btn-stroke pulse-button"
+			data-json='{"type":"standard"}'
+			data-href="<?php  echo $this->url("board", array("action"=>"layclaimmodal"))?>"
+			style='width: 100%;'>Press To Lay Claim</a>
+	</div>
+	<?php echo $this->board_customer_account_manager();?>
+	<h4>Featured Packages</h4>
+		<?php echo $this->partial("customer-board-featured-packages");?>
+
+
+	</div>
+

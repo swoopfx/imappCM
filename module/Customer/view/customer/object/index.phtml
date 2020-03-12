@@ -1,0 +1,40 @@
+<?php
+echo $this->headtitle("My Property");
+
+?>
+
+<div class="row">
+	<div class="col-md-9">
+
+		<div class="panel panel-default">
+			<!-- Data table -->
+			<div class="table-responsive">
+
+				 <table id="myTable"  class="table v-middle">
+					<thead>
+						<tr>
+							<th>Property Details</th>
+
+							<th>Status</th>
+							
+							
+							<th></th>
+
+						</tr>
+					</thead>
+					
+					<tbody>
+
+<?php  echo $this->partial("customer_object_snippet_all");?>
+
+					</tbody>
+				</table>
+				<!-- // Data table -->
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+	<?php  echo $this->partial("customer-board-featured-packages")?>
+	</div>
+</div>
+

@@ -1,0 +1,29 @@
+<?php
+$commentForm->prepare();
+echo $this->form()->openTag($commentForm);
+?>
+<div class="form-group">
+
+	<div class="col-md-12 col-sm-12 col-xs-12">
+								<?php echo $this->formElement($commentForm->get('commentFieldset')->get("topic"))?>  
+							
+								</div>
+</div>
+
+<div class="form-group">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formElement($commentForm->get('commentFieldset')->get("comment"))?>  
+								</div>
+</div>
+
+<div class="form-group">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+									<?php echo $this->formsubmit($commentForm->get("submit"))?>  
+								</div>
+
+
+</div>
+<?php
+echo $this->form()->closeTag();
+
+?>

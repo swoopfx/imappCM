@@ -1,0 +1,71 @@
+<?php
+echo $this->headtitle("View Policy");
+
+?>
+
+
+<div class="row">
+<?php
+
+echo $this->partial("general-error-ponters");
+?>
+
+	<div class="col-md-9 col-sm-9 col-xs-12">
+	<?php 
+	/**
+	 * If the invoice is micro payment show button 
+	 * Else hide button
+	 */
+	?>
+<!-- 	<a class="btn btn-block btn-primary"> VIEW PAYMENT BREAKDOWN </a> -->
+		<div class="x_panel">
+
+<!-- hkbrslg rgklb rsgnrskg uhkjgbuifgnkflhg kfjbiug kqgh werjkbfdskg bfsdkjhuifg nfkuhg fskjg fs kgb fs gbsfbg rsbsrkbsfkg bsfmbf dgvbniughn kjgfjbnugnfdugh fjgb dfs dfj,g hdjnerhgdgjoi ngkjdhg jfdgoij ndklhgrjn gijerk uekrb k -->
+<?php
+
+echo $this->partial("policy_certificate_snippet", array(
+"policy" => $policyEntity
+))
+?>
+
+
+
+		
+
+
+
+</div>
+
+
+	</div>
+
+
+
+
+
+	<div class="col-md-3 col-sm-3 col-xs-12">
+	<div class="x_panel">
+
+			<div class="x_content">
+				<?php  echo $this->policy_document_list($policyEntity)?>
+					</div>
+		</div>
+		
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<h3>Upload All Document related to this policy here</h3>
+				<?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+
+<?php
+$this->headLink()->appendStylesheet('/css/main.css');
+//$this->headLink()->appendStylesheet('http://fonts.googleapis.com/css?family=Raleway:400,300,600');
+?>

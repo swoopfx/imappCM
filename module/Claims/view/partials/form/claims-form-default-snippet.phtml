@@ -1,0 +1,30 @@
+
+<?php 
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsDefaultFieldset = $form->get("claimsDefaultFieldset")?>
+<hr>
+<?php echo  $this->partial("claims-form-form-snippet", array("claimsFieldset"=>$claimsDefaultFieldset->get("claims")))?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsDefaultFieldset->get('estimatedClaims'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsDefaultFieldset->get('estimatedClaims'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Estimated claims value amount"></i>
+								<?php echo $this->formElementErrors($claimsDefaultFieldset->get('estimatedClaims'))?> 
+								
+							</div>
+
+							<?php echo $this->formrow($form->get("submit"))?>
+							
+							<?php  echo $this->form()->closeTag()?>
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa  fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=50></i>
+</div>

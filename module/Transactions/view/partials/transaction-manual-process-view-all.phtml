@@ -1,0 +1,19 @@
+<?php
+foreach ($manualPayments as $manualPayment){
+    ?>
+    <tr>
+	<td><?php  echo strtoupper(($manualPayment->getInvoice()->getInvoiceUid() != NULL ? $manualPayment->getInvoice()->getInvoiceUid() : " "))?><br>
+	<?php  echo $this->statusHelper($manualPayment->getInvoice()->getStatus()->getStatus())?><br>
+	<strong>Amount Payable</strong>: <?php  echo $this->myCurrencyFormat($manualPayment->getInvoice()->getAmount(), $manualPayment->getInvoice()->getCurrency()->getCode()); ?>
+	<br><small>Date Created : <?php echo  $this->dateFormat($manualPayment->getInvoice()->getGeneratedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::SHORT, "en_us")?></small>
+	</td>
+	<td>
+	<?php  echo $this->transactionManualPaymentDetails($manualPayment)?>
+	</td>
+	
+</tr>
+    
+    <?php 
+}
+
+?>

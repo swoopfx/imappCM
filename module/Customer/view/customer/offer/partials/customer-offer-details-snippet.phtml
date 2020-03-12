@@ -1,0 +1,76 @@
+<?php
+
+?>
+
+<div class="page-section">
+			<div class="media media-grid v-middle">
+				<div class="media-left">
+					<span class="icon-block half bg-blue-300 text-white"><i class="fa fa-eye"></i></span>
+				</div>
+				<div class="media-body">
+					<h1 class="text-display-1 margin-none"><?php  echo ($offerEntity->getOfferName()== NULL ? "NO Name Available" : strtoupper($offerEntity->getOfferName()) )?></h1>
+				</div>
+			</div>
+
+		</div>
+		<div class="panel panel-default paper-shadow" data-z="0.5">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<div class="media v-middle">
+						<div class="media-body">
+							<h4 class="text-headline margin-none">OFFER DETAILS</h4>
+							<p class="text-subhead text-light"><?php  echo strtoupper($offerEntity->getOfferCode())?></p>
+						</div>
+						
+					</div>
+				</li>
+
+				<li class="list-group-item media v-middle">
+					<div class="media-left">
+						<div class="icon-block half img-circle bg-grey-300">
+							<i class="fa fa-file-text text-white"></i>
+						</div>
+					</div>
+					<div class="media-body">
+						<h4 class="text-subhead margin-none">
+							<strong>OFFER NAME :</strong> <?php  echo ($offerEntity->getOfferName() == NULL ? "" : $offerEntity->getOfferName()) ?>
+						</h4>
+						<h4 class="text-subhead margin-none">
+							<strong>Service  Category :</strong> <?php  echo ($offerEntity->getOfferServiceType() == NULL ? "" : $offerEntity->getOfferServiceType()->getInsuranceService()) ?>
+						</h4>
+						<div class="text-light text-caption">
+							Created On <?php  echo $this->dateFormat($offerEntity->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?> &nbsp; | <i class="fa fa-clock-o fa-fw"></i> 5 mins
+						</div>
+						
+					</div>
+					
+				</li>
+
+				
+
+<!-- 				<li class="list-group-item media v-middle"> -->
+<!-- 					<div class="media-left"> -->
+<!-- 						<div class="icon-block half img-circle bg-grey-300"> -->
+<!-- 							<i class="fa fa-file-text text-white"></i> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="media-body"> -->
+<!-- 						<h4 class="text-subhead margin-none"> -->
+<!-- 							<a href="website-forum-thread.html" class="link-text-color">I -->
+<!-- 								think this is the right way?</a> -->
+<!-- 						</h4> -->
+<!-- 						<div class="text-light text-caption"> -->
+<!-- 							posted by <a href="#"> <img src="images/people/110/woman-4.jpg" -->
+<!-- 								alt="person" class="img-circle width-20" /> Michelle Gustav -->
+<!-- 							</a> &nbsp; | <i class="fa fa-clock-o fa-fw"></i> 5 mins -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+<!-- 					<div class="media-right"> -->
+<!-- 						<a href="website-forum-thread.html" -->
+<!-- 							class="btn btn-white text-light"><i class="fa fa-comments fa-fw"></i> -->
+<!-- 							8</a> -->
+<!-- 					</div> -->
+<!-- 				</li> -->
+
+			</ul>
+		</div>

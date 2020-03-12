@@ -1,0 +1,41 @@
+<?php  if(count($packages) == 0){
+echo "No Package Available " ;
+}else{
+foreach ($packages as $package){
+    ?>
+
+<div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="panel-body">
+
+              <div class="media media-clearfix-xs">
+                <div class="media-left text-center">
+                  <div class="cover width-150 width-100pc-xs overlay cover-image-full hover margin-v-0-10">
+                    <img alt=""
+				src="<?php  echo $this->customer_packages_image_helper($package)?>"
+				class="img-circle width-120">
+                  </div>
+                </div>
+                <div class="media-body">
+                  <h4 class="text-headline margin-v-5-0"><a href="<?php echo $this->url("cus_pack/default", array('action'=>'view', 'id'=>$package->getPackageUid()))?>"><?php  echo ($package->getPackageName() == NULL ? "" : $package->getPackageName())?></a></h4>
+                  <strong> Insurance Company : </strong><?php  echo ($package->getPackagedInsurer()== NULL ? "No Insurance Selected" : $package->getPackagedInsurer()->getInsuranceName())?>
+                  <p><a href="<?php echo $this->url("cus_pack/default", array('action'=>'view', 'id'=>$package->getPackageUid()))?>" class="btn btn-success" >View Package</a>  <a href="<?php echo $this->url("cus_pack/default", array('action'=>'preacquire', "id"=>$package->getId()))?>" class="btn btn-danger" >Acquire Package</a></p>
+
+                  <hr class="margin-v-8" />
+                  <div class="media v-middle">
+                    <div class="media-left">
+                     <strong> Premium Value Rate : </strong>
+                    </div>
+                    <div class="media-body">
+                      <h4><a href="3"> <?php  echo ($package->getValue() == NULL ? "" : $this->package_value_representation($package->getValueType()->getId(), $package->getValue(), "NGN"))?></a>
+                        <br/>
+                      </h4>
+                     
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+<?php }}?>

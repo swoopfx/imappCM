@@ -1,0 +1,262 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsProfessionalIndemnityFieldset = $form->get("claimsProfessionalIndemnityFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsProfessionalIndemnityFieldset->get("claims")
+));
+
+?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('claimnantDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('claimnantDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Full name of the claimant or potential claimant, the party making the claim or potential claim a against you or the firm/company"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('claimnantDetails'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('retainerReason'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('retainerReason'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What were you retained/contracted to do "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('retainerReason'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('isEvidenced'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('isEvidenced'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was your retainer/contract for services evidenced in writing"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('isEvidenced'))?> 
+								</div>
+</div>
+<hr>
+<div id="div_isEvidenced" v-if="seen" class="form-group">
+	<strong> If so, please upload the neccessay document If not, please
+		provide appropriate particulars of the date of the retainer/contract
+		and its terms. </strong>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('workDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('workDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="When did you perform the work out of which the claim arises or may arise?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('workDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('companyClaimPrincipal'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('companyClaimPrincipal'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What is that person’s title, duties and contact details?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('companyClaimPrincipal'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('principalClaimTitle'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('principalClaimTitle'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Who is the person within the firm/company, who actually performed the work or against whom the claim or potential 
+claim is principally directed?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('principalClaimTitle'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('claimNature'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('claimNature'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What is the precise nature of the claim (i.e. the claimant’s allegations) or the fact or circumstance that might give rise to
+a claim?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('claimNature'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('isProceeding'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('isProceeding'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Have proceedings commenced? If so, please attach a copy of the court documents"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('isProceeding'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('claimDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('claimDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="On what date did you first become aware of the claim or the fact or circumstance?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('claimDate'))?> 
+								</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('isClaimsInWriting'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('isClaimsInWriting'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Was the first intimation of a claim in writing or verbal, please upload a copy of details in eiter case"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('isClaimsInWriting'))?> 
+								</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('claimAmount'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('claimAmount'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What amount, if any, i s claimed?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('claimAmount'))?> 
+								</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('amountDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('amountDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If known, what does that amount comprise"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('amountDetails'))?> 
+								</div>
+</div>
+
+
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('claimFactsNdComments'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('claimFactsNdComments'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What are your comments in response to the claim or the fact or circumstance that might give 
+rise to a claim?"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('claimFactsNdComments'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('isActinSolicitor'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('isActinSolicitor'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Have you instructed a solicitor or other lawyer to act for you "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('isActinSolicitor'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsProfessionalIndemnityFieldset->get('solicitorDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsProfessionalIndemnityFieldset->get('solicitorDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="If so, what is that lawyer’s name, firm,
+address and charge out rates"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsProfessionalIndemnityFieldset->get('solicitorDetails'))?> 
+								</div>
+</div>
+
+
+
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>
+<script>
+ var = new Vue({
+	 el:"#div_isEvidenced",
+	 data:{
+		 seen:FALSE
+		 }
+	 })
+</script>

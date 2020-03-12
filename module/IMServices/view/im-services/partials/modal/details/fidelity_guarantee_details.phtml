@@ -1,0 +1,33 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$fidelityGuarateeEntity = $coverEntity->getFidelityGaruantee();
+
+?>
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+			</tr>
+		</thead>
+		<tbody>
+		
+		<tr>
+
+				<th>Company brief description</th>
+				<td><?php  echo ($fidelityGuarateeEntity->getBriefDescription() != NUll ? $this->escapehtml($fidelityGuarateeEntity->getBriefDescription()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Company brief description</th>
+				<td><?php  echo ($fidelityGuarateeEntity->getIsOtherInstruments() != NUll ? $this->trueFalseHelper($fidelityGuarateeEntity->getIsOtherInstruments()) :  GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+		
+		</tbody>
+	</table>
+
+</div>

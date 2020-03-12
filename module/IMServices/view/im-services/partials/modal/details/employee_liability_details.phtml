@@ -1,0 +1,140 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$employeeLiabilityEntity = $coverEntity->getEmployersLiability();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Description of Company/Profession</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getDesc() != NUll ? $this->escapehtml($employeeLiabilityEntity->getDesc()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Will work be undertaken in other countries?</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getIsTakenInOtherCountries() != NUll ? $this->trueFalseHelper($employeeLiabilityEntity->getIsTakenInOtherCountries()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  if($employeeLiabilityEntity->getIsTakenInOtherCountries() == TRUE){?>
+			<tr>
+
+				<th>Other country details</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getOtherCountryDetails() != NUll ? $this->escapehtml($employeeLiabilityEntity->getOtherCountryDetails()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>The premises abides with the statute of a safety work place</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getIsPremiseLawful() != NUll ? $this->trueFalseHelper($employeeLiabilityEntity->getIsPremiseLawful()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Proposed Cover Start date</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getCoverFromDate() != NUll ? $this->dateFormat($employeeLiabilityEntity->getCoverFromDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "em_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Proposed Cover End date</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getCoverToDate() != NUll ? $this->dateFormat($employeeLiabilityEntity->getCoverToDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "em_US") : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if(count($employeeLiabilityEntity->getEmployeeDetails()) >0){?>
+			<tr>
+			<th>Staff Details</th>
+				<td>
+					
+						<table class="table table-hover ">
+							<thead>
+								<tr>
+									<th>Employee Category</th>
+									<th>Number of Employee</th>
+									<th>Estimated Wages</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+					<?php foreach ($employeeLiabilityEntity->getEmployeeDetails() as $staff){?>
+					<tr>
+
+									<td> <?php echo ($staff->getEmployeeDescription() != NUll ? $staff->getEmployeeDescription() : GeneralService::GENERAL_EMPTY_FIELD) ;?>
+								</td>
+
+									<td>	 <?php echo ($staff->getNumbersOfEmployee() != NUll ? $staff->getNumbersOfEmployee() : GeneralService::GENERAL_EMPTY_FIELD) ;?></td>
+									<td>	 <?php echo ($staff->getEstimatedPeriodWage() != NUll ? $this->myCurrencyFormat($staff->getEstimatedPeriodWage()) : GeneralService::GENERAL_EMPTY_FIELD) ;?></td>
+
+									
+
+								</tr>
+						
+					<?php }?>
+					</tbody>
+						</table>
+					
+				</td>
+			</tr>
+			<?php }?>
+			<tr>
+
+				<th>Premises come within the Law or regulation governing maintenance?</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getIsLawsNRegulation() != NUll ? $this->trueFalseHelper($employeeLiabilityEntity->getIsLawsNRegulation()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($employeeLiabilityEntity->getIsLawsNRegulation()){?>
+			<tr>
+
+				<th>Specific Laws and Regulation</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getLawsNRegulation() != NUll ? $employeeLiabilityEntity->getLawsNRegulation() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			<tr>
+
+				<th>Have you any circular saws or other machinery driven by steam, gas, water, electricity</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getLawsNRegulation() != NUll ? $this->trueFalseHelper($employeeLiabilityEntity->getIsSawNMachine()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Premises come within the Law or regulation governing maintenance?</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getIsBoilersNpressureLifts() != NUll ? $this->trueFalseHelper($employeeLiabilityEntity->getIsBoilersNpressureLifts()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Building is fenced properly</th>
+				<td>
+				<?php  echo ($employeeLiabilityEntity->getIsFencedProperly() != NUll ? $this->trueFalseHelper($employeeLiabilityEntity->getIsFencedProperly()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+		</tbody>
+	</table>
+</div>

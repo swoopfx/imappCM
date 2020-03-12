@@ -1,0 +1,175 @@
+<?php
+echo $this->headTitle("Policy Float Manager")?>
+<div class="row">
+
+
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+
+
+		<div class="row">
+
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+
+					<div class="x_content">
+						<div class="dashboard-widget-content">
+
+							<div style="text-align: center;">
+								<i id="buttonAction" class="fa  fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=50></i>
+							</div>
+
+
+							<div class="col-md-6 col-sm-6 col-xs-12">
+
+
+
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"suspensioninfo"))?>"
+									id="btn2"><i class="fa fa-eye" data-toggle="tooltip"
+									data-placement="top" title="View the content of the policy"></i>Suspension
+									Info</a>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<a id="btn2" style="width: 100%"
+									class=" ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"unrevokeconfirmation"))?>"><i
+									class="fa fa-edit" data-toggle="tooltip" data-placement="top"
+									title="Edit content of the policy"></i>Activate Policy</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"viewpolicymodal"))?>"
+									data-json='<?= $policyIdJson?>' id="sending_data_button"><i
+									class="fa fa-eye" data-toggle="tooltip" data-placement="top"
+									title="View the content of the policy"></i>View Policy</a>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a id="btn2" data-json='<?php echo $policyUidJson ?>'
+									style="width: 100%" class=" ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"editpolicymodal"))?>"><i
+									class="fa fa-edit" data-toggle="tooltip" data-placement="top"
+									title="Edit content of the policy"></i>Edit Policy</a>
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" id="btn2"
+									class="btn btn-app ajax_element"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"message"))?>"><i
+									class="fa fa-comment" data-toggle="tooltip"
+									data-placement="top" title="Send a message to the customer"></i>Customer
+									Message</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"revokeconfirmation"))?>"
+									data-json='<?= $policyUidJson?>' id="sending_data_button"><i
+									class="fa fa-unlink" data-toggle="tooltip" data-placement="top"
+									title="View the content of the policy"></i>Revoke Policy</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"viewspecialterms"))?>"
+									id="btn2"><i class="fa fa-book" data-toggle="tooltip"
+									data-placement="top" title="View the special terms invoked"></i>View
+									Terms</a>
+							</div>
+
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"specialterms"))?>"
+									id="btn2"><i class="fa fa-book" data-toggle="tooltip"
+									data-placement="top" title="View the content of the policy"></i>Include
+									Special Terms</a>
+							</div>
+
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<a style="width: 100%" class="ajax_element btn btn-app"
+									data-ajax-loader="buttonAction"
+									data-href="<?php  echo $this->url("policy/default", array("action"=>"renewpolicymodal"))?>"
+									data-json='<?= $policyUidJson?>' id="sending_data_button"><i
+									class="fa fa-circle-o-notch" data-toggle="tooltip"
+									data-placement="top" title="View the content of the policy"></i>Renew
+									Policy</a>
+							</div>
+
+
+						</div>
+					</div>
+					<div style='text-align: center;'
+						class="col-md-12 col-sm-12 col-xs-12"><?php  //echo $this->statusHelper($policyEntity->getPolicyStatus()->getStatus())?></div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+	</div>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>Uploaded Documents</h2>
+
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+
+					<div class="">
+
+						<!--                         <ul class="to_do"> -->
+						<!-- 								<li> -->
+						<!-- 									<p> -->
+						<!-- 										<input type="checkbox" class="flat"> Schedule meeting with new -->
+						<!-- 										client -->
+						<!-- 									</p> -->
+						<!-- 								</li> -->
+
+						<!-- 							</ul> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End to do list -->
+
+		<!-- start of weather widget -->
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			<div class="x_panel">
+				<div class="x_title">
+					<h2>Uploader</h2>
+
+					<div class="clearfix"></div>
+				</div>
+				<div class="x_content">
+					<div class="row">
+						<div class="col-sm-12">
+                          <?php // echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+                        </div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

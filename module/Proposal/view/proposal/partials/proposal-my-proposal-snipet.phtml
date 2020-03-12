@@ -1,0 +1,66 @@
+<?php
+$proposal = $this->proposal;
+$count = (count($proposal) < 100 ? count($proposal) : 100);
+
+?>
+
+<div class="table-responsive">
+	<table <?php
+    
+if (count($proposal) != 0) {
+        echo "id='datatable'";
+    }
+    ?>
+					class="table table-striped table-bordered">
+                                    <?php
+                                    
+                                    if (count($proposal) == 0) {
+                                        $link = $this->url("proposal");
+                                        echo "<span> No  Proposal Generated <a href='".$link."' class='btn btn-default'>Generate Proposal</a> </span>";
+                                    } else {
+                                        ?>
+                                        <thead>
+			<tr>
+				<th>PROPOSAL</th>
+				<th>INFORMATION</th>
+				<th>STATUS</th>
+
+
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+                                         <?php for($i=0; $i < $count ; $i++){?>
+                                            <tr>
+				<td><div class="media-body">
+						<a><?php  echo strtoupper($proposal[$i]->getProposalCode())?></a> <br /> <a><?php  echo $proposal[$i]->getProposalTitle()?></a>
+						<br />
+						<small>Created <?php  echo $this->dateFormat($proposal[$i]->getcreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></small>
+					</div></td>
+				<td>
+					<div class="media-body">
+						<strong>Customer:</strong> <a class="title"
+							href="<?php  echo $this->url('customer/default', array('action'=>'profile', 'id'=>$proposal[$i]->getCustomer()->getId()))?>"><?php  echo $proposal[$i]->getCustomer()->getName()?></a>
+						<p>
+							<strong>Service Category: </strong> <?php echo ($proposal[$i]->getServiceType() == NULL ? "" : $proposal[$i]->getServiceType()->getInsuranceService())?><br>
+							<small>Specific Service: <?php  echo $proposal[$i]->getSpecificService()->getSpecificService()?></small>
+								</p>
+						<p>
+							
+						</p>
+					</div>
+				</td>
+				<td>
+				<p><?php echo $this->proposal_view_status_helper($proposal[$i])?></p>
+				</td>
+
+				<td>
+					<a style="width: 100%" href="<?php  echo $this->url("proposal/default", array("action"=>"pre-process", "id"=>$proposal[$i]->getProposalCode(), "pro"=>"true"))?>" class="btn btn-warning btn-xs"><i class="fa fa-cloud"></i> Process Proposal</a>
+					<a  style="width: 100%" href="<?php  echo $this->url("proposal/default", array("action"=>"delete", "id"=>$proposal[$i]->getId()))?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete Proposal</a>
+				</td>
+			</tr>
+                                             <?php   }}?>
+                                        </tbody>
+	</table>
+</div>
+

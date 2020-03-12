@@ -1,0 +1,147 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$gitEntity = $coverEntity->getGit();
+?>
+
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+
+				<th>Description of Goods</th>
+				<td><?php  echo ($gitEntity->getGoodDescription() != NUll ? $this->escapehtml($gitEntity->getGoodDescription()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Geographical Area</th>
+				<td><?php  echo ($gitEntity->getGeographicalArea() != NUll ? $this->escapehtml($gitEntity->getGeographicalArea()->getArea()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Other Geographical Area</th>
+				<td><?php  echo ($gitEntity->getOtherGeographicalArea() != NUll ? $this->escapehtml($gitEntity->getOtherGeographicalArea()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Transport medium</th>
+				<td><?php  echo ($gitEntity->getTransportMedium() != NUll ? $this->escapehtml($gitEntity->getTransportMedium()->getMedium()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Transport medium</th>
+				<td><?php  echo ($gitEntity->getOtherTransportMedium() != NUll ? $this->escapehtml($gitEntity->getOtherTransportMedium()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php  if(count($gitEntity->getSpecificGoods()) == 0):?>
+			<tr>
+
+				<th>Transport medium</th>
+				<td><?php  echo ($gitEntity->getOtherTransportMedium() != NUll ? $this->escapehtml($gitEntity->getOtherTransportMedium()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+
+<?php endif;?>
+
+
+              <tr>
+
+				<th>Goods are locked and attended to regularly</th>
+				<td><?php  echo ($gitEntity->getIsLockeNAttended() != NUll ? $this->trueFalseHelper($gitEntity->getIsLockeNAttended()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Facility has anti theft device</th>
+				<td><?php  echo ($gitEntity->getIsAntiTheftDevice() != NUll ? $this->trueFalseHelper($gitEntity->getIsAntiTheftDevice()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<?php if($gitEntity->getIsAntiTheftDevice()):?>
+			<tr>
+
+				<th>Anti theft device</th>
+				<td><?php  echo ($gitEntity->getAntiTheftDevice() != NUll ?$gitEntity->getAntiTheftDevice() : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<?php endif;?>
+			
+			
+			<tr>
+
+				<th>Yearly Total Estimate of  </th>
+				<td><?php  echo ($gitEntity->getYearlyTotalEstimate() != NUll ? $this->myCurrencyFormat($gitEntity->getYearlyTotalEstimate()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Limit to apply in respect of any consignment</th>
+				<td><?php  echo ($gitEntity->getEstimatedLimit() != NUll ? $this->myCurrencyFormat($gitEntity->getEstimatedLimit()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Anti theft device</th>
+				<td><?php  echo ($gitEntity->getIsOtherInsurance() != NUll ?$this->trueFalseHelper($gitEntity->getIsOtherInsurance()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Other Insurance</th>
+				<td><?php  echo ($gitEntity->getOtherInsurance() != NUll ? $this->escapehtml($gitEntity->getOtherInsurance()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			
+			<tr>
+
+				<th>Previously Declined</th>
+				<td><?php  echo ($gitEntity->getOtherInsurance() != NUll ? $this->escapehtml($gitEntity->getOtherInsurance()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Other Insurance</th>
+				<td><?php  echo ($gitEntity->getIsIncreaseContribution() != NUll ? $this->trueFalseHelper($gitEntity->getIsIncreaseContribution()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<tr>
+
+				<th>Other Insurance</th>
+				<td><?php  echo ($gitEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($gitEntity->getIsPreviousDecline()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<tr>
+
+				<th>Other Insurance</th>
+				<td><?php  echo ($gitEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($gitEntity->getIsPreviousDecline()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+			<tr>
+
+				<th>Other Insurance</th>
+				<td><?php  echo ($gitEntity->getIsPreviousDecline() != NUll ? $this->trueFalseHelper($gitEntity->getIsPreviousDecline()) : GeneralService::GENERAL_EMPTY_FIELD) ?></td>
+
+			</tr>
+		</tbody>
+	</table>
+</div>

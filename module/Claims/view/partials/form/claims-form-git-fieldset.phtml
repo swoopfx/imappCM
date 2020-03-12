@@ -1,0 +1,17 @@
+<?php
+$claimsGitFieldset = $this->claimsGit;
+
+?>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimdDefaltFieldset->get('estimatedClaims'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimdDefaltFieldset->get('estimatedClaims'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Estimated claims value amount"></i>
+								<?php echo $this->formElementErrors($claimdDefaltFieldset->get('estimatedClaims'))?> 
+								
+							</div>

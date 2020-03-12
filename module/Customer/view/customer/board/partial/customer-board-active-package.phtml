@@ -1,0 +1,43 @@
+
+<div class="item col-xs-12 col-lg-6">
+				<div class="panel panel-default paper-shadow" data-z="0.5">
+					<div class="panel-heading">
+						<h4 class="text-headline margin-none">My Active Packages</h4>
+						
+					</div>
+					<ul class="list-group">
+						<?php
+						$count = (count ( $activePackages ) < 5 ? count ( $activePackages) : 5);
+if (count ( $activePackages) == 0) {
+	echo "<li class='list-group-item media v-middle'><div class='media-body'>No Active Packages</div></li>";
+} else {
+	for($i = 0; $i < $count; $i ++) {
+		
+		?>
+						<li class="list-group-item media v-middle">
+							<div class="media-body">
+								<h4 class="text-subhead margin-none">
+									<a href="<?php echo $this->url("cus_pack/default", array("action"=>"con-acquire", "id"=>$activePackages[$i]->getId()))?>" class="list-group-link"><?php   echo ($activePackages[$i]->getPackages()->getPackageName() != NULL ? $activePackages[$i]->getPackages()->getPackageName() : "")?></a>
+								</h4>
+								<div class="caption">
+									<span class="text-light">Created On :</span> <a
+										href="<?php echo $this->url("cus_pack/default", array("action"=>"con-acquire", "id"=>$activePackages[$i]->getId()))?>"><?php  echo $this->dateFormat($activePackages[$i]->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::SHORT, "en_US")?></a>
+								</div>
+							</div>
+							<div class="media-right text-center">
+								<?php  echo $this->board_package_value_type_helper($activePackages[$i]->getPackages()->getId())?>
+							</div>
+						</li>
+						<?php
+	}
+}
+?>
+						
+					</ul>
+					<div class="panel-footer">
+						<a href="<?php  echo $this->url("cus_pack/default", array("action"=>"active"))?>"
+							class="btn btn-primary paper-shadow relative" data-z="0"
+							data-hover-z="1" data-animated href="#"> View All</a>
+					</div>
+				</div>
+			</div>

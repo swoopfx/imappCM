@@ -1,0 +1,138 @@
+<?php
+$buglaryEntity = $coverEntity->getBuglary();
+?>
+
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+
+				<th>Building Is residential</th>
+				<td><?php  echo ($buglaryEntity->getIsResidential() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsResidential()) : "Not Specified") ?></td>
+
+			</tr>
+<?php if($buglaryEntity->getIsResidential() == "0"){?>
+			<tr>
+
+				<th>Non Residential Type</th>
+				<td><?php  echo ($buglaryEntity->getPropertyType() != NUll ? $buglaryEntity->getPropertyType()->getType() : "Not Specified") ?></td>
+
+			</tr>
+			<?php }?>
+			<?php if($buglaryEntity->getPropertyType() != NULL){?>
+			<?php if($buglaryEntity->getPropertyType()->getId() == "1000"){?> 
+			<tr>
+
+				<th>Defined Non-Residential Type</th>
+				<td><?php  echo ($buglaryEntity->getOtherProperty() != NUll ? $buglaryEntity->getOtherProperty() : "Not Specified") ?></td>
+
+			</tr>
+			<?php }}?>
+			
+			 <tr>
+
+				<th>Building is always occupied</th>
+				<td><?php  echo ($buglaryEntity->getIsAlwaysOccupied() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsAlwaysOccupied()) : "Not Specified") ?></td>
+
+			</tr>
+			<?php  if($buglaryEntity->getIsAlwaysOccupied() == FALSE){?>
+			<tr>
+
+				<th>Duration Not Occuppied</th>
+				<td><?php  echo ($buglaryEntity->getNotOccupiedDuaration() != NUll ? $buglaryEntity->getNotOccupiedDuaration() : "Not Specified") ?></td>
+
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Building lock in good condition</th>
+				<td><?php  echo ($buglaryEntity->getIsLockInGoodState() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsLockInGoodState()) : "Not Specified") ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Stock contains jewelry</th>
+				<td><?php  echo ($buglaryEntity->getIsStockContainsJewelry() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsStockContainsJewelry()) : "Not Specified") ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Jewelry Value</th>
+				<td><?php  echo ($buglaryEntity->getJewelryValue() != NUll ? $buglaryEntity->getJewelryValue() : "Not Specified") ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Has anti-theft device</th>
+				<td><?php  echo ($buglaryEntity->getIsAntiTheftDevice() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsAntiTheftDevice()) : "Not Specified") ?></td>
+
+			</tr>
+
+			<tr>
+
+				<th>Building has Safe</th>
+				<td><?php  echo ($buglaryEntity->getIsSafe() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsSafe()) : "Not Specified") ?></td>
+
+			</tr>
+			
+			<?php  if($buglaryEntity->getIsSafe() == TRUE && count($buglaryEntity->getSafeDetails()) > 0){?>
+			<tr>
+
+				<th>Safe Details</th>
+				<td>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Product Name</th>
+								<th>Product Cost</th>
+								<th>Make</th>
+								<th>Model</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php foreach ($buglaryEntity->getSafeDetails() as  $det){?>
+						<tr>
+								<td><?php  echo ($sef->getProductName() != NUll ? $sef->getProductName : "Not Specified") ?></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<?php }?>
+						</tbody>
+					</table>
+				</td>
+
+			</tr>
+			
+			
+			<?php }?>
+			
+			
+			<tr>
+
+				<th>Regular Stock is taken</th>
+				<td><?php  echo ($buglaryEntity->getIsRegularStock() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsRegularStock()) : "Not Specified") ?></td>
+
+			</tr>
+			
+			<tr>
+
+				<th>Sole Occupier</th>
+				<td><?php  echo ($buglaryEntity->getIsSoleOccupier() != NUll ? $this->trueFalseHelper($buglaryEntity->getIsSoleOccupier()) : "Not Specified") ?></td>
+
+			</tr>
+			
+		</tbody>
+	</table>
+
+</div>

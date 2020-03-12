@@ -1,0 +1,36 @@
+<?php
+
+// claimsFieldset = $
+//$policy
+?>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsFieldset->get('claimTopic'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsFieldset->get('claimTopic'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($claimsFieldset->get('claimTopic'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsFieldset->get('claimInfo'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsFieldset->get('claimInfo'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($claimsFieldset->get('claimInfo'))?> 
+								
+							</div>
+							
+							<?php  //if($this->claimsFormServiceTypeHelper($claimsEntity->getPolicy()->getCoverNote()) == GeneralService::INSURANCE_SERVICE_MOTOR){
+// 							echo $this->partial("claims-form-motor-snipet", array("claimsMotor"=>$claimsFieldset->get("claimsMotor")));
+// 							}?>
+ <?php // echo $this->claimsFormConditionHelper($claimsEntity, $form)?>
+ <?php  //echo $this->partial($formFields, array("form"=>$form))?>
+							
+							
+<?php //echo $this->formrow($claimsForm->get("csrf"))?>
+							

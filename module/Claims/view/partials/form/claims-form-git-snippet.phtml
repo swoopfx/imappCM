@@ -1,0 +1,272 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsGitFieldset = $form->get("claimsGitFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsGitFieldset->get("claims")
+));
+?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('damageDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('damageDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date the loss took place"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('damageDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('deliveryDate'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('deliveryDate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Proposed date goods would be delivered"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('deliveryDate'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('goodsFrom'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('goodsFrom'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Location Goods were coming from "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('goodsFrom'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('goodsTo'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('goodsTo'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Location Goods were going to "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('goodsTo'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('goodsTotalValue'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsGitFieldset->get('goodsTotalValue'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total estimated value of goods conveyed "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('goodsTotalValue'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('driverName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('driverName'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the the driver "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('driverName'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('driverContactDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('driverContactDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Driver contact details "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('driverContactDetails'))?> 
+								</div>
+</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('vehicleRegMark'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('vehicleRegMark'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Distinct mark to identify vehichle"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('vehicleRegMark'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('isReceiptIssued'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('isReceiptIssued'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="A way bill / receipt was issued"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('isReceiptIssued'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('goodsInspectionLocation'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('goodsInspectionLocation'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Last location goods were inspected"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('goodsInspectionLocation'))?> 
+								</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('isAccompaniedInTransit'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('isAccompaniedInTransit'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if goods where accompanied in transit"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('isAccompaniedInTransit'))?> 
+								</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('accompaniedByWhom'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('accompaniedByWhom'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Accompanied by whom"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('accompaniedByWhom'))?> 
+								</div>
+</div>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('isTheftSuspection'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('isTheftSuspection'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there is a theft suspect"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('isTheftSuspection'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('suspectDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('suspectDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details of the suspect"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('suspectDetails'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('isPreviousClaims'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('isPreviousClaims'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details of the suspect"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('isPreviousClaims'))?> 
+								</div>
+</div>
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('isPoliceNotified'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('isPoliceNotified'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="indicate if police has been notified"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('isPoliceNotified'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('datePoliceNotified'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('datePoliceNotified'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date police was notified"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('datePoliceNotified'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('isAlternativePolicy'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('isAlternativePolicy'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Has other policy on the property"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('isAlternativePolicy'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsGitFieldset->get('alternativePolicy'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsGitFieldset->get('alternativePolicy'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about other policy on the property"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsGitFieldset->get('alternativePolicy'))?> 
+								</div>
+</div>
+
+
+<?php 
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+
+?>

@@ -1,0 +1,43 @@
+ 
+<?php
+$assignBrokerForm = $this->assignBrokerForm;
+$assignBrokerForm->prepare();
+$assignBrokerFieldset = $assignBrokerForm->get("assignBrokerFieldset");
+
+echo $this->form()->openTag($assignBrokerForm);
+
+?>
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div class="modal-body">
+	<div class="form-group">
+<?php  $element = $assignBrokerFieldset->get('brokerChild')?>
+							
+								<?php echo $this->formLabel($element)?> 
+								
+								<div class="col-md-9 col-sm-9 col-xs-12">
+								<?php echo $this->formElement($element);?>
+									
+								</div>
+		<div style="font-size: 9px; color: red;">
+			<br>
+								<?php echo $this->formElementErrors($element);  // this defines the error?> 
+							</div>
+	</div>
+</div>
+<div class="modal-footer">
+                         <?php // echo $this->formrow($assignBrokerForm->get('csrf'))?>
+                         <?php  echo $this->formrow($assignBrokerForm->get('submit'))?>
+                        </div>
+<?php  echo $this->form()->closetag() ?>
+
+<script type="text/javascript">
+
+
+$("#chosen-select").chosen({width: "95%"});
+    
+    
+    </script>
+   

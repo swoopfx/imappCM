@@ -1,0 +1,133 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+$travelInsuranceEntity = $coverEntity->getTravelInsurance();
+
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+			<tr>
+
+				<th>Proposed Cover Start Date</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getCoverStartDate() != NUll ? $this->dateFormat($travelInsuranceEntity->getCoverStartDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Proposed Cover End Date</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getCoverEndDate() != NUll ? $this->dateFormat($travelInsuranceEntity->getCoverEndDate(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Departure City</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getDeparture() != NUll ? $this->escapehtml($travelInsuranceEntity->getDeparture()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<tr>
+
+				<th>Destination City</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getDestination() != NUll ? $this->escapehtml($travelInsuranceEntity->getDestination()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Coverage Sum</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getCoverStartDate() != NUll ? $this->myCurrencyFormat($this->escapehtml($travelInsuranceEntity->getCoverageSum()), $travelInsuranceEntity->getCurrency()->getCode()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Provide cover for lost baggage</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getIsLostBaggage() != NUll ? $this->trueFalseHelper($this->escapehtml($travelInsuranceEntity->getIsLostBaggage())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($travelInsuranceEntity->getIsLostBaggage()):?>
+			<tr>
+
+				<th>Lost Baggage Condition</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getLostBaggageCoverage() != NUll ? $this->escapehtml($travelInsuranceEntity->getLostBaggageCoverage()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Lost Baggage Cover Sum</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getLostBaggageSum() != NUll ? $this->myCurrencyFormat($this->escapehtml($travelInsuranceEntity->getLostBaggageSum())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Provide cover for travel interuption</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getIsTravelInteruptionCover() != NUll ? $this->trueFalseHelper($this->escapehtml($travelInsuranceEntity->getIsTravelInteruptionCover())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<?php if($travelInsuranceEntity->getIsTravelInteruptionCover()):?>
+			<tr>
+
+				<th>Travel Interuption Condition</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getTravelInteruptionCoverage() != NUll ? $this->escapehtml($travelInsuranceEntity->getTravelInteruptionCoverage()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Travel Interruption Cover Sum</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getTravelInteruptionSum() != NUll ? $this->myCurrencyFormat($this->escapehtml($travelInsuranceEntity->getTravelInteruptionSum())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			
+			<?php endif;?>
+			
+			<tr>
+
+				<th>It is insurer custom package</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getIsPackage() != NUll ? $this->trueFalseHelper($this->escapehtml($travelInsuranceEntity->getIsPackage())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if($travelInsuranceEntity->getIsPackage()):?>
+		<tr>
+
+				<th>Insurer Package Name</th>
+				<td>
+				<?php  echo ($travelInsuranceEntity->getPackageName() != NUll ? $this->escapehtml($travelInsuranceEntity->getPackageName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+		<?php  endif;?>
+			
+			
+
+		</tbody>
+	</table>
+</div>
+

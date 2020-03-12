@@ -1,0 +1,16 @@
+<?php
+
+?>
+<div class="form-group">
+							
+								<?php  echo $this->formLabel($microPaymentForm->get("microPayment"))?> 
+								<div class="col-md-6 col-sm-6 col-xs-6">
+									<?php echo $this->formElement($microPaymentForm->get("microPayment"))?>  
+								</div>
+								<div class="col-md-4 col-sm-4 col-xs-4">
+									<?php // echo $this->formrow($microPaymentForm->get("submit"))?> 
+								</div>
+								
+								<?php echo $this->formElementErrors($microPaymentForm->get("microPayment"))?> 
+								
+							</div>

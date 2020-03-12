@@ -1,0 +1,132 @@
+<?php
+$this->headtitle("Agent Pricing");
+$prices = $this->price;
+?>
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-4">
+				<h1>Insurance Agents Pricing</h1>
+			</div>
+			<div class="col-lg-8 col-sm-8">
+				<!--             <ol class="breadcrumb pull-right"> -->
+				<!--               <li> -->
+				<!--                 <a href="#"> -->
+				<!--                   Home -->
+				<!--                 </a> -->
+				<!--               </li> -->
+				<!--               <li> -->
+				<!--                 <a href="#"> -->
+				<!--                   Pages -->
+				<!--                 </a> -->
+				<!--               </li> -->
+				<!--               <li class="active"> -->
+				<!--                 Price Two -->
+				<!--               </li> -->
+				<!--             </ol> -->
+				<?php  // breadcrunmb goes here ?>
+			</div>
+		</div>
+	</div>
+</div>
+<!--breadcrumbs end-->
+
+<!--container start-->
+<div class="gray-bg price-container">
+	<div class="section first">
+		<div class="container">
+		
+		<?php
+$price_array = (array) $prices;
+if (empty($price_array)) {
+    echo "<h3> There are no Packages available";
+} else {
+    ?>
+		
+<div class="page-header">
+				<h1 class="text-center">
+					<span class="wow flipInX"> Pricing and Plans </span> <small
+						class="wow flipInX"> </small>
+
+				</h1>
+			</div>
+
+
+
+			<div class="row">
+				<div class="price-two-container">
+				
+				<?php foreach ($prices as $price){ ?>
+					<div class="col-md-4">
+						<div class="pricing-table-two wow fadeInUp">
+							<div class="inner">
+								<div class="title">
+									<?php  echo $this->escapehtml($price->getPackageName());?> <span
+										class="price"> <?php echo $this->currencyFormat(20000, 'NGN', null, 'en_NG'); ?> </span>
+								</div>
+								<p class="desc"><?php echo $this->escapehtml($price->getPackageDesc())?></p>
+								<p class="desc text-error">
+									<a href="#" class="text-error"> Details </a> | <a href="#"
+										class="text-error"> Licensing help </a>
+								</p>
+								<ul class="items">
+									<li class="available">
+										<div class="icon-holder"></div>
+										<div class="desc">
+											<span class="text-black"><strong>Max No. of Employees:</strong> <?php echo $this->escapehtml($price->getMaxEmployee()); ?> </span>
+
+										</div>
+									</li>
+									<?php
+        
+        echo $this->displayPriceCondition($price->getIsDesktop(), "Available on Desktops");
+        echo $this->displayPriceCondition($price->getIsDesktop(), "Support Services");
+        echo $this->displayPriceCondition($price->getIsApi(), "API")?>
+									
+<!-- 									<li class="available"> -->
+									<!-- 										<div class="icon-holder"> -->
+									<!-- 											<i class="fa fa-check text-success "> </i> -->
+									<!-- 										</div> -->
+									<!-- 										<div class="desc"> -->
+									<!-- 											<span class="text-black"> Desktop Interface </span> -->
+
+									<!-- 										</div> -->
+									<!-- 									</li> -->
+
+
+
+									<!-- 									<li> -->
+									<!-- 										<div class="icon-holder"> -->
+									<!-- 											<i class="fa fa-times text-error "> </i> -->
+									<!-- 										</div> -->
+									<!-- 										<div class="desc"> -->
+									<!-- 											<span class="text-black"> Enhanced Security </span> -->
+
+									<!-- 										</div> -->
+									<!-- 									</li> -->
+
+								</ul>
+								<div class="price-actions">
+									<a href="javascript:;" class="btn"> Subscribe </a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<?php }?>
+
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+		
+		
+		<?php } // end of else?> 
+		
+		</div>
+
+
+	</div>
+</div>
+<!--container end-->

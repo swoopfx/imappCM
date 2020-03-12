@@ -1,0 +1,199 @@
+<?php
+echo $this->headtitle("My Property");
+
+?>
+
+<div class="row">
+
+	<div class="col-md-9">
+
+		<div class="tabbable">
+
+			<!-- Tabs -->
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#home" data-toggle="tab">PROPERTY DETAIL</a></li>
+              <?php if($this->customerAllOjectActionHelper($objectEntity) == NULL){?>
+              <li><a href="#profile" data-toggle="tab"> FULL DETAILS </a></li>
+              <?php }?>
+             
+               <li><a href="#doc" data-toggle="tab">Attched Documents</a></li>
+              
+                </ul>
+			<!-- // END Tabs -->
+
+			<!-- Panes -->
+			<div class="tab-content form-horizontal">
+				<div id="home" class="tab-pane active">
+					<div class="panel panel-default paper-shadow" data-z="0.5">
+
+						<div class="table-responsive">
+							<table class="table text-subhead v-middle">
+								<thead>
+									<tr>
+										<th></th>
+										<th></th>
+										<!--                     <th class="width-80 text-center">Reference</th> -->
+										<!--                     <th class="width-50 text-center">Amount</th> -->
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><strong>Property Identifier</strong></td>
+										<td> <?php  echo strtoupper($objectEntity->getObjectUid())?></td>
+
+									</tr>
+									<tr>
+										<td><strong>Property Name</strong></td>
+										<td><?php  echo ($objectEntity->getObjectName() == NULL ? "" : $objectEntity->getObjectName())?></td>
+
+									</tr>
+									<tr>
+										<td><strong>Property Value</strong></td>
+										<td><?php  echo  ($objectEntity->getValue() == NULL ? "" :  $this->myCurrencyFormat($objectEntity->getValue(), $objectEntity->getCurrency()->getCode()))?>
+                     </td>
+
+									</tr>
+									<tr>
+										<td><strong>Property Type</strong></td>
+										<td> <?php  echo $objectEntity->getObjectType()->getObjectType()?></td>
+
+									</tr>
+									<tr>
+										<td><strong>Date Created</strong></td>
+										<td><small> <?php echo $this->dateFormat($objectEntity->getCreatedOn(), IntlDateFormatter::FULL, IntlDateFormatter::SHORT, "en_US") ?></small></td>
+
+									</tr>
+
+
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+					<div class="form-group margin-bottom-none">
+						<div class="col-md-offset-2 col-md-10">
+						
+                    <?php  echo $this->customerAllOjectActionHelper($objectEntity)?>
+<!--                       <button type="submit" class="btn btn-success paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated>Update Billing</button> -->
+						</div>
+					</div>
+
+				</div>
+				<div id="profile" class="tab-pane">
+					<!-- Deep information about the property -->
+					<div class="panel panel-default paper-shadow" data-z="0.5">
+
+						<div class="table-responsive">
+							<table class="table text-subhead v-middle">
+								<thead>
+									<tr>
+										<th></th>
+										<th></th>
+										<!--                     <th class="width-80 text-center">Reference</th> -->
+										<!--                     <th class="width-50 text-center">Amount</th> -->
+									</tr>
+								</thead>
+								<tbody>
+									
+									
+<?php  //var_dump($this->customerAllOjectActionHelper($objectEntity)); ?>
+<?php if($this->customerAllOjectActionHelper($objectEntity) == NULL){
+    
+    echo $this->customerObjectFullDetailsHelper($objectEntity)
+    ;}?>
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="doc" class="tab-pane">
+				
+				<?php  echo $this->partial("general-dropzone-upload-form-snippet", array("dropZoneUploadForm"=>$dropZoneForm))?>
+  
+                  <hr>
+                  <?php  echo $this->customerObjectUploadedDocHelper($objectEntity->getDocument())?>
+					<!--  List all document attached to this property -->
+				</div>
+
+
+			</div>
+
+			<hr />
+			<div class="media v-middle s-container">
+				<div class="media-body"></div>
+				<div class="media-right">
+				<?php
+    // var_dump("HI");
+    // var_dump($uploadForm);
+    // echo $this->partial("generic-upload-form", array("uploadForm"=>$uploadForm));
+    
+    ?>
+				
+<!-- 					<a href="#modal-update-credit-card" data-toggle="modal" -->
+					<!-- 						class="btn btn-white paper-shadow relative" data-animated -->
+					<!-- 						data-z="0.5" data-hover-z="1" href="">Upload Document</a> -->
+				</div>
+			</div>
+			<!-- // END Panes -->
+
+		</div>
+
+
+
+		<!-- Tabbable Widget -->
+
+		<!-- // END Tabbable Widget -->
+
+		<div class="modal grow modal-backdrop-white fade"
+			id="modal-update-credit-card">
+			<div class="modal-dialog modal-sm">
+				<div class="v-cell">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+							</button>
+							<h4 class="modal-title">Update Credit Card</h4>
+						</div>
+						<div class="modal-body">
+							<form>
+
+
+								<div class="form-group form-control-material">
+									<input type="text" class="form-control" id="cvv"
+										placeholder="123"> <label for="cvv">CVV</label>
+								</div>
+								<button type="submit"
+									class="btn btn-success paper-shadow relative" data-z="0.5"
+									data-hover-z="1" data-animated data-dismiss="modal">Update
+									Credit Card</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br /> <br />
+
+	</div>
+	<div class="col-md-3"></div>
+
+</div>
+

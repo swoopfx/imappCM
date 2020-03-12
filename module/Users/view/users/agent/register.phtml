@@ -1,0 +1,102 @@
+<?php
+$this->headtitle("Agent Registration");
+$agentForm = $this->agentForm;
+
+$agentForm->setAttributes(array(
+    'class' => '',
+    'role' => 'form'
+));
+$agentForm->prepare();
+?>
+
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-sm-4">
+				<h1>Agent Registration Form</h1>
+			</div>
+			<!--           <div class="col-lg-8 col-sm-8"> -->
+			<!--             <ol class="breadcrumb pull-right"> -->
+			<!--               <li> -->
+			<!--                 <a href="#"> -->
+			<!--                   Home -->
+			<!--                 </a> -->
+			<!--               </li> -->
+			<!--               <li> -->
+			<!--                 <a href="#"> -->
+			<!--                   Blog -->
+			<!--                 </a> -->
+			<!--               </li> -->
+			<!--               <li class="active"> -->
+			<!--                 Blog -->
+			<!--               </li> -->
+			<!--             </ol> -->
+			<!--           </div> -->
+		</div>
+	</div>
+</div>
+<!--breadcrumbs end-->
+
+<!--container start-->
+<div class="container">
+	<div class="row">
+		<!--blog start-->
+		<div class="col-lg-9 ">
+
+
+			<h2 id="forms-example">Agent Registration Form</h2>
+			<p>You are about to register as an Insurance Agent</p>
+			<div class="bs-example">
+			<?php  echo $this->form()->openTag($agentForm); ?>
+				
+					<div class="form-group">
+					<?php $agentRegisterField = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($agentRegisterField->get('username'))?> <?php echo $this->formElement($agentRegisterField->get('username'))?>
+					</div>
+				<div class="form-group">
+					<?php $agentRegisterField = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($agentRegisterField->get('email'))?> <?php echo $this->formElement($agentRegisterField->get('email'))?>
+					</div>
+				<div class="form-group">
+					<?php $agentRegisterField = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($agentRegisterField->get('password'))?> <?php echo $this->formElement($agentRegisterField->get('password'))?>
+					</div>
+				<div class="form-group">
+					<?php $agentRegisterField = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($agentRegisterField->get('passwordVerify'))?> <?php echo $this->formElement($agentRegisterField->get('passwordVerify'))?>
+					</div>
+
+				<div class="form-group">
+					<?php $agentRegisterField = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($agentRegisterField->get('question'))?> <?php echo $this->formElement($agentRegisterField->get('question'))?>
+					</div>
+
+				<div class="form-group">
+					<?php $agentRegisterField = $agentForm->get('agent_register_field');?>
+						<?php echo $this->formLabel($agentRegisterField->get('answer'))?> <?php echo $this->formElement($agentRegisterField->get('answer'))?>
+					</div>
+					
+					
+					<?php  echo $this->formSubmit($agentForm->get('submit'))?>
+					
+				
+			</div>
+			<!-- /example -->
+
+
+
+
+			<br>
+		</div>
+
+		<div class="col-lg-3">
+			<div class="blog-side-item">Adverts Go here</div>
+		</div>
+
+		<!--blog end-->
+	</div>
+
+</div>
+<!--container end-->
+<?php  echo $this->form()->closeTag($agentForm);?>

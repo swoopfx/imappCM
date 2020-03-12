@@ -1,0 +1,202 @@
+<?php
+$groupPersonalAccidentEntity = $coverEntity->getGroupPersonalAccident();
+?>
+<div class="x_content">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+
+			</tr>
+		</thead>
+		<tbody>
+
+
+
+			<tr>
+
+				<th>Benefit Category</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getPersonalAccidentType() != NUll ? $groupPersonalAccidentEntity->getPersonalAccidentType()->getType() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($groupPersonalAccidentEntity->getPersonalAccidentType()->getId() == 10){?>
+			<tr>
+
+				<th>Fixed Benefit Details</th>
+				<td>
+				<?php  // echo ($agricPropertyEntity->getIsPreviousClaim() != NUll ? $this->trueFalseHelper($agricPropertyEntity->getIsPreviousClaim()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Include Emoluments</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsIncludeEmoluments() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsIncludeEmoluments()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php if($groupPersonalAccidentEntity->getIsIncludeEmoluments() == TRUE){?>
+			<tr>
+
+				<th>Emoluments Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getEmoluments() != NUll ? $groupPersonalAccidentEntity->getEmoluments() : "Not Specified") ?>
+				</td>
+			</tr>
+
+               <?php }?>
+               
+               <tr>
+
+				<th>Highest paid Emolument</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getHighestEmolumentPaid() != NUll ? "&#8358; ".$groupPersonalAccidentEntity->getHighestEmolumentPaid() : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Accident Only Restriction</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsRestrictedToEmployeeAccident() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsRestrictedToEmployeeAccident()) : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php  if($groupPersonalAccidentEntity->getIsRestrictedToEmployeeAccident() == TRUE){?>
+			<tr>
+
+				<th>Restriction Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getRestriction() != NUll ?$groupPersonalAccidentEntity->getRestriction() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Person are in good health</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsPersonsInSoundHealth() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsPersonsInSoundHealth()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Provide Travel Cover</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsTravel() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsTravel()) : "Not Specified") ?>
+				</td>
+			</tr>
+
+<?php if($groupPersonalAccidentEntity->getIsTravel() == TRUE){?>
+			<tr>
+
+				<th>Travel Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getTravelDetails() != NUll ? $groupPersonalAccidentEntity->getTravelDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+<?php }?>
+			<tr>
+
+				<th>Cover For Machine Use</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsUseMachinery() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsUseMachinery()) : "Not Specified") ?>
+				</td>
+			</tr>
+<?php if($groupPersonalAccidentEntity->getIsUseMachinery() == TRUE){?>
+			<tr>
+
+				<th>Machine Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getMachineDetails() != NUll ? $groupPersonalAccidentEntity->getMachineDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+
+<?php }?>
+			<tr>
+
+				<th>Other Extended Cover</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsOtherExtension() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsOtherExtension()) : "Not Specified") ?>
+				</td>
+			</tr>
+<?php if($groupPersonalAccidentEntity->getIsOtherExtension() == TRUE){?>
+			<tr>
+
+				<th>Extended Cover Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getExtensionDetails() != NUll ? $groupPersonalAccidentEntity->getMachineDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+<?php }?>
+			<tr>
+
+				<th>Previously Insured</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsPreviousGroupAccident() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsPreviousGroupAccident()) : "Not Specified") ?>
+				</td>
+			</tr>
+			
+			<?php if($groupPersonalAccidentEntity->getIsPreviousGroupAccident() == TRUE){?>
+			<tr>
+
+				<th>Previous Insurer Declined</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsDeclined() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsDeclined()) : "Not Specified") ?>
+				</td>
+			</tr>
+<?php if($groupPersonalAccidentEntity->getIsDeclined() == TRUE){?>
+			<tr>
+
+				<th>Decline Details/Reason</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getDeclineDetails() != NUll ? $groupPersonalAccidentEntity->getDeclineDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+<?php }?>
+			<tr>
+
+				<th>Previous Insurer Terminated policyr</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsTerminated() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsTerminated()) : "Not Specified") ?>
+				</td>
+			</tr>
+<?php if($groupPersonalAccidentEntity->getIsTerminated() == TRUE){?>
+			<tr>
+
+				<th>Extended Cover Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getTerminatedDetails() != NUll ? $groupPersonalAccidentEntity->getTerminatedDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+<?php }?>
+
+			<tr>
+
+				<th>Any Special Condition</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getIsSpecialCondition() != NUll ? $this->trueFalseHelper($groupPersonalAccidentEntity->getIsOtherExtension()) : "Not Specified") ?>
+				</td>
+			</tr>
+<?php if ($groupPersonalAccidentEntity->getIsSpecialCondition() == TRUE){?>
+			<tr>
+
+				<th>Condtion Details</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getConditionDetails() != NUll ? $groupPersonalAccidentEntity->getMachineDetails() : "Not Specified") ?>
+				</td>
+			</tr>
+			<?php }}?>	
+			<tr>
+
+				<th>Additional Fact for Underwriter</th>
+				<td>
+				<?php   echo ($groupPersonalAccidentEntity->getAddtionalFacts() != NUll ? $groupPersonalAccidentEntity->getAddtionalFacts() : "Not Specified") ?>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</div>

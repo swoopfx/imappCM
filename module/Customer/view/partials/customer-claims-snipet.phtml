@@ -1,0 +1,53 @@
+<?php
+use Claims\Service\ClaimsService;
+
+$customerClaim = $this->customerClaims;
+$count = (count($customerClaim) < 10 ? count($customerClaim) : 10);
+
+?>
+
+
+<div class="col-md-4 col-sm-12   col-xs-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Unsettled Claims</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                    <div class="x_content">
+                  <?php  if ($customerClaim == NULL){
+                  echo "No Claims Submitted Yet
+                 ";
+                  }else{?>
+                  
+                  
+                  <ul class="list-unstyled top_profiles scroll-view">
+                          <?php for($i=0; $i < $count ; $i++){?>
+                          <li class="media event"><a
+					class="pull-left border-red profile_thumb"> <i
+						class="fa fa-tasks red"></i>
+				</a>
+					<div class="media-body">
+						<a <?php echo ($customerClaim[$i]->getClaimStatus()->getId() == ClaimsService::CLAIMS_STATUS_INITIATED ? "data-toggle='tooltip' data-placement='top' title='The customer is yet to complete this claims form '" : "")?> class="title" href="<?php echo ($customerClaim[$i]->getClaimStatus()->getId() == ClaimsService::CLAIMS_STATUS_INITIATED ? "#" : $this->url("claims/default", array("action"=>'pre-process', 'id'=>$customerClaim[$i]->getId())))?>"> <?php echo strtoupper($customerClaim[$i]->getClaimUid())?></a>
+						<p>
+							 <?php echo ($customerClaim[$i]->getClaimTopic() == NULL ? "" : $customerClaim[$i]->getClaimTopic())?>
+						</p>
+						<p>
+							<small><?php  echo $this->dateFormat($customerClaim[$i]->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></small>
+						</p>
+					</div></li>
+                          <?php }?>
+                          
+                       
+                       
+                  
+                  </ul>
+                        <?php }?>
+                        </div>
+                </div>
+              </div>

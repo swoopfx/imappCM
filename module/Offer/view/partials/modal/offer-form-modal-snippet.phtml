@@ -1,0 +1,67 @@
+<?php  $offerFieldset = $offerForm->get("offerFieldset")?>
+<div id="success"></div>
+	<div id="error"></div>
+
+	<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+		alt=""
+		src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+		height=100></i>
+<?php echo $this->form()->openTag($offerForm)?>
+                  <?php  echo $this->partial("customer-offer-form-snippet", array("offerFieldset"=>$offerFieldset))?>
+                   
+                    <?php  //echo $this->formrow($offerForm->get("csrf"))?>
+                          <?php echo $this->formrow($offerForm->get("submit"))?>
+                    <?php echo $this->form()->closeTag()?>
+
+
+<script type="text/javascript">
+
+
+        $(document).ready(function () {
+        	
+//         		$('#ajaxStatus')
+//         		.ajaxStart(function() {
+//         		$(this).show();
+//         		})
+//         		.ajaxStop(function() {
+//         		$(this).hide();
+//         		});
+            // $('.money').mask('000,000,000,000,000.0', {reverse: true});
+//             $('.phone').mask('0-000-000-0000');
+            $("#service-type").change(function(){
+                //alert("The index chosen is ");
+               $("#pack_cover").val(303);
+                $.ajax({
+                    type:"POST",
+                    data: { 
+                        'service':$("#service-type").val() , 
+//                         'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+                    },
+                    url:"/package/service",
+                    dataType:"html",
+                    success:function(data, status){
+                        $("#specific-service").html(data)
+                    },
+                    error:function(){
+                        alert("we could not retrive the cover details")
+                    }
+                })
+            	//$("#pack_cover").html("<option value='303'>PUM PUM </option>");
+            })
+            
+
+        });
+
+        // for the type of customer
+
+       
+        //function add_category() {
+        	
+
+           
+
+//             return false;
+//         }
+    
+
+</script>

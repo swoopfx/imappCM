@@ -1,0 +1,243 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$professionalIndemnityEntity = $coverEntity->getProfessionalIndemnity();
+?>
+
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Company Head Office</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getHeadOffice() != NUll ? $this->escapehtml($professionalIndemnityEntity->getHeadOffice()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Other Office</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getOtherOffice() != NUll ? $this->escapehtml($professionalIndemnityEntity->getOtherOffice()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+<?php  if($professionalIndemnityEntity->getIsOutStandingIndemnity()):?>
+			<tr>
+
+				<th>Outstanding Indemnity Value</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIndemnityValue() != NUll ? $this->myCurrencyFormat($this->escapehtml($professionalIndemnityEntity->getIndemnityValue())) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+<?php  endif;?>
+			<tr>
+
+				<th>Proposed Start Date</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIndemnityStart() != NUll ? $this->dateFormat($professionalIndemnityEntity->getIndemnityStart(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Proposed End Date</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIndemnityEnd() != NUll ? $this->dateFormat($professionalIndemnityEntity->getIndemnityEnd(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_US") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Annual Brokage Income</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getAnnualBrokerageIncome() != NUll ? $this->myCurrencyFormat($professionalIndemnityEntity->getAnnualBrokerageIncome()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+
+
+
+
+			<tr>
+
+				<th>Is proposed an underwriting agent for any Syndicate,
+					Underwriters or Insurance Companies</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsUnderwritingAgent() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsUnderwritingAgent()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Type of profession</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getProfession() != NUll ? $this->escapehtml($professionalIndemnityEntity->getProfession()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Professional Body</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getProfessionalBody() != NUll ? $this->escapehtml($professionalIndemnityEntity->getProfessionalBody()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Professional Body Membership Status</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getMembership() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsUnderwritingAgent()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+
+			<tr>
+
+				<th>Member of Body Duration (years)</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getProfessionDuration() != NUll ? $this->escapehtml($professionalIndemnityEntity->getProfessionDuration()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if(count($professionalIndemnityEntity->getPartnerDetails()) > 0):?>
+			<tr>
+
+				<th>Partner Details</th>
+				<td>
+
+					<table class="table table-hover ">
+						<thead>
+							<tr>
+								<th>Partner Name</th>
+								<th>Qualification</th>
+								<th>Date Qualified</th>
+								<th>Partner Capacity</th>
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($professionalIndemnityEntity->getPartnerDetails() as $staff){?>
+					<tr>
+
+								<td> <?php echo ($staff->getPartnerName() != NUll ? $this->escapehtml($staff->getPartnerName()) : "Empty") ;?>
+								</td>
+
+								<td>	 <?php echo ($staff->getQualification() != NUll ? $this->escapehtml($staff->getQualification()) : "Empty") ;?></td>
+								<td>	 <?php echo ($staff->getDateQualified() != NUll ? $this->dateFormat($staff->getDateQualified(), IntlDateFormatter::LONG, IntlDateFormatter::NONE, "en_us") : "Empty") ;?></td>
+
+								<td>	 <?php echo ($staff->getPartnerCapacity() != NUll ? $this->escapehtml($staff->getPartnerCapacity()) : "Empty") ;?> years</td>
+
+
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+
+				</td>
+
+			</tr>
+			<?php  endif;?>
+			
+			<?php if($professionalIndemnityEntity->getIsPreviousInsure()):?>
+			<tr>
+
+				<th>Is previously insured</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsPreviousInsure() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsPreviousInsure()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Is previously declined by an insurer</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsDeclined() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsDeclined()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Previous insurance was subject to increment</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsSubjectToIncrease() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsSubjectToIncrease()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Previous insurance was subject to special restriction</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsSpecialRestriction() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsSpecialRestriction()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<?php if($professionalIndemnityEntity->getIsSpecialRestriction()):?>
+			<tr>
+
+				<th>Is subject to special restriction</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getSpecialRestriction() != NUll ? $this->escapehtml($professionalIndemnityEntity->getSpecialRestriction()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php endif;?>
+			<?php endif;?>
+			
+			<tr>
+
+				<th>Has additional information</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsAdditonalInfo() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsAdditonalInfo()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  if($professionalIndemnityEntity->getIsAdditonalInfo()):?>
+			
+			<tr>
+
+				<th>Total number of partners</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getTotalPartners() != NUll ? $this->escapehtml($professionalIndemnityEntity->getTotalPartners()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+		
+			
+			<tr>
+
+				<th>Total staff other than Secretaries and Messengers</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getTotalStaff() != NUll ? $this->escapehtml($professionalIndemnityEntity->getTotalStaff()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Cover all Staff</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getIsCoverAllStaff() != NUll ? $this->trueFalseHelper($professionalIndemnityEntity->getIsCoverAllStaff()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+<!-- 			<h4>Indemnity Limit</h4> -->
+			<tr>
+
+				<th>Indemnity Limit.</th>
+				<td>
+				<?php  echo ($professionalIndemnityEntity->getLimitIndemnity() != NUll ? $this->escapehtml($professionalIndemnityEntity->getLimitIndemnity()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<?php endif;?>
+		</tbody>
+	</table>
+</div>
+

@@ -1,0 +1,94 @@
+<?php
+use Transactions\Service\InvoiceService;
+
+$proposal = $this->proposal;
+?>
+
+<div class="x_panel">
+	<div class='x_title'>
+		<h2>VIEW PROPOSALS</h2>
+		<div class='clearfix'></div>
+	</div>
+	<div class="x_content">
+		<div class="table-responsive">
+			<table class="table table-hover">
+
+				<tbody>
+					<tr>
+						<th style="width: 32%">PROPOSAL CODE</th>
+						<td><?php  echo strtoupper($proposal->getProposalCode());?></td>
+
+					</tr>
+					<tr>
+						<th>PROPOSAL STATUS</th>
+						<td><?php echo $this->proposal_view_status_helper($proposal)?></td>
+
+					</tr>
+					<tr>
+						<th>PROPOSAL TITLE</th>
+						<td><p>
+                          <?php  echo ($proposal->getProposalTitle() == NULL ? "" : $proposal->getProposalTitle())?>
+                          </p></td>
+
+					</tr>
+
+					<tr>
+						<th>PROPSAL DESCRIPTION</th>
+						<td><div style="text-align: center;">
+								<i id="descButton" class="fa  fa-lg" style="display: none;"><img
+									alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+									height=27></i>
+							</div>
+							<a id="btn2" data-ajax-loader="descButton"
+							class="ajax_element btn btn-default"
+							data-json='{"type":"standard"}'
+							data-href="<?php  echo $this->url("proposalmodal/default", array("action"=>"proposaldesc"))?>"
+							style='width: 100%;'> View Proposal Description</a></td>
+
+					</tr>
+
+					<tr>
+						<th>DATE CREATED</th>
+						<td><?php  echo $this->dateFormat($proposal->getcreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></td>
+
+					</tr>
+					<tr>
+						<th>INSURANCE COMPANY</th>
+						<td>
+                        <?php  echo ($proposal->getInsurer() == NULL ? "" : $proposal->getInsurer()->getInsuranceName());?></td>
+					</tr>
+
+
+					<tr>
+						<th>Premium Value</th>
+						<td><?php  echo ($proposal->getValue() == NULL ? "" : $this->package_value_representation($proposal->getValueType()->getId(), $proposal->getValue(), "NGN"))?></td>
+					</tr>
+					<tr>
+						<th>INSURANCE SERVICE</th>
+						<td><?php  echo ($proposal->getServiceType() == NULL ? "" : $proposal->getServiceType()->getInsuranceService())?></td>
+					</tr>
+					<tr>
+						<th>COVER</th>
+						<td><?php  echo ($proposal->getSpecificService() == NULL ? "" : $proposal->getSpecificService()->getSpecificService())?></td>
+					</tr>
+					<tr>
+						<th>COVER DURATION</th>
+						<td><?php  echo ($proposal->getCoverDuration() == NULL ? " "  : $proposal->getCoverDuration()->getDuration() )?></td>
+					</tr>
+						
+						<?php if($proposal->getValueType()->getId() == "10"){?>
+						<tr>
+						<th>TERMED DURATION</th>
+						<td><?php  echo ($proposal->getTermedDuration() == NULL ? " "  : $proposal->getTermedDuration() )?> <strong>Years</strong></td>
+					</tr>
+						<?php }?>
+
+					</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+
+

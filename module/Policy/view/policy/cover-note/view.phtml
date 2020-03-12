@@ -1,0 +1,62 @@
+<?php
+echo $this->headtitle("View CoverNote");
+
+?>
+<div id="wasabi_modal"></div>
+<div class="row">
+
+
+	<div class="col-md-9 col-sm-12 col-xs-12">
+<?php  echo $this->partial("general-error-ponters")?>
+<?php echo $this->partial("policy_covernote_view_snippet", array("coverNote"=>$coverNote, "brokerEntity"=>$brokerEntity))?>
+
+
+		<div class="col-md-12 col-sm-12 col-xs-12">
+		<div id="success"></div>
+			<div id="error"></div>
+
+			<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+				alt=""
+				src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+				height=100></i>
+		<?php if($coverNote->getPolicy() == NULL){?>
+			<p>
+				<a style="width: 100%;" id="btn3"
+					class=" ajax_element btn btn-primary "
+					data-json='{"type":"standard"}' data-href="policymodalform">Generate
+					Policy</a>
+			</p>
+			
+			<?php }?>
+		</div>
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+	<div class="col-md-3 col-xs-12">
+
+		<div class="x_panel">
+
+			<div class="x_content">
+				<img alt="" style='width: 100%;'
+					src="<?php echo $this->basepath("imappadd/banner2.jpg")?>">
+			</div>
+		</div>
+	</div>
+
+
+	
+</div>
+
+<?php
+//$this->headLink()->appendStylesheet('/css/main.css');
+$this->headLink()->appendStylesheet('http://fonts.googleapis.com/css?family=Lato:100,300,400');
+?>

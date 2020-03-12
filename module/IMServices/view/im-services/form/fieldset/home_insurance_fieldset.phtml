@@ -1,0 +1,237 @@
+<?php
+$homeInsuranceFieldset = $form->get("homeInsuranceFieldset");
+?>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}' data-ajax-loader="microFieldset"
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"housegoodsvaluelist")) ?>">
+		Insurable Goods <i id="microFieldset"
+		class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i>
+	</a>
+</div>
+
+<div class="form-group" id="div_home_goods"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+	
+	<br>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('occupierCategory'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('occupierCategory'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What sort of occupaton building is used for"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('occupierCategory'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('otherOcuppierCategry'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('otherOcuppierCategry'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other category not listed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('otherOcuppierCategry'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('buildingWallType'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('buildingWallType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other category not listed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('buildingWallType'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('buildingFloorType'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('buildingFloorType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other category not listed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('buildingFloorType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('buildingFloorType'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('buildingFloorType'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Other category not listed"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('buildingFloorType'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('isValuables'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('isValuables'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Willing to insure valuable like gold, wristwatches in the house"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('isValuables'));  // this defines the error?> 
+							</div>
+</div>
+<div id="div_isValuables">
+	<div class="form-group">
+		<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+			data-json='{"type":"standard"}' data-ajax-loader="microFieldsets"
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"housevaluableslist")) ?>">
+			Insurable Valuables <i id="microFieldsets"
+			class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i>
+		</a>
+	</div>
+
+	<div class="form-group" id="div_home_valuables"
+		style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('insuredSum'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('insuredSum'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Total insured sum"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('insuredSum'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('otherOcuppierCategry'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('otherOcuppierCategry'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Indicate if there should be a cover for the agricultural property, this include warehouse, factory, silo e.t.c."></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('otherOcuppierCategry'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('isOtherFinancialInterest'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('isOtherFinancialInterest'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What sort of occupaton building is used for"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('isOtherFinancialInterest'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('isPersonalPropertyCoverage'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('isPersonalPropertyCoverage'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('isPersonalPropertyCoverage'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('isSoundState'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('isSoundState'));?>
+									
+								</div>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('isSoundState'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($homeInsuranceFieldset->get('isLeftFor30Days'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($homeInsuranceFieldset->get('isSoundState'));?>
+									
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="What sort of occupaton building is used for"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($homeInsuranceFieldset->get('isSoundState'));  // this defines the error?> 
+							</div>
+</div>
+
+<script>
+$(document).ready(function(){
+$("#otherOcuppierCategry").hide();
+$("#div_isValuables").hide();
+
+$("#isValuables").change(function(){
+	if($("#isValuables").is(":checked")){
+		$("#div_isValuables").show();
+	}else{
+		$("#div_isValuables").hide();
+	}
+})
+	
+})
+</script>

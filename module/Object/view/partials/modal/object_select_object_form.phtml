@@ -1,0 +1,33 @@
+
+<div style="text-align: center;">
+	<i id="selectObjectLoader" class="fa fa-lg"
+		style="display: none; text-align: center;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=50>
+	<hr></i>
+</div>
+<div class="row">
+
+<?php
+$selectObjectForm->prepare();
+echo $this->form()->openTag($selectObjectForm)?>
+<div class="form-group">
+								<?php echo $this->formLabel($selectObjectForm->get("selectObjectfield")->get('object'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($selectObjectForm->get("selectObjectfield")->get('object'))?>  
+								</div>
+								
+								<?php echo $this->formElementErrors($selectObjectForm->get("selectObjectfield")->get('object'))?> 
+								
+							</div>
+<?php echo $this->formsubmit($selectObjectForm->get("submit"))?>
+<?php  echo $this->form()->closeTag();?>
+ 
+   </div>
+
+<script type="text/javascript">
+
+
+$("#object").chosen({width: "95%"});
+    
+  
+    </script>

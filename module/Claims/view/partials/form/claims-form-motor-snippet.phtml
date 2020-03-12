@@ -1,0 +1,159 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsMotorFieldset = $form->get("claimsMotorFieldset")?>
+
+<?php echo  $this->partial("claims-form-form-snippet", array("claimsFieldset"=>$claimsMotorFieldset->get("claims")))?>
+<div class="form-group">
+							
+								<?php echo $this->partial("claims-form-motor-driver-details-snipet", array("claimMotor"=>$claimsMotorFieldset))?> 
+								
+							</div>
+<hr>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('witness1'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorFieldset->get('witness1'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the first witness of the accident"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('witness1'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('witness1Phone'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorFieldset->get('witness1Phone'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Phone number of the first witness of the accident"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('witness1Phone'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('witness1Address'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorFieldset->get('witness1Address'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Address of the first witness of the accident"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('witness1Address'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('witness2'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorFieldset->get('witness2'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the second witness of the accident"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('witness2'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('witness2Address'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorFieldset->get('witness2Address'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Address of the second witness of the accident"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('witness2Address'))?> 
+								
+							</div>
+<hr>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('damageDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsMotorFieldset->get('damageDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details about the damage on the car"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('damageDetails'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('repairEstimate'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-10">
+									<?php echo $this->formElement($claimsMotorFieldset->get('repairEstimate'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of the first witness of the accident"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('repairEstimate'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('repairerName'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsMotorFieldset->get('repairerName'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Name of proposed repairer"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('repairerName'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('repairerPhone'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsMotorFieldset->get('repairerPhone'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Phone number of proposed repairer"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('repairerPhone'))?> 
+								
+							</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('repairerAddress'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsMotorFieldset->get('repairerAddress'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Address of proposed repairer"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('repairerAddress'))?> 
+								
+							</div>
+
+
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsMotorFieldset->get('motorLocation'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<?php echo $this->formElement($claimsMotorFieldset->get('motorLocation'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Present location of the motor"></i>
+								<?php echo $this->formElementErrors($claimsMotorFieldset->get('motorLocation'))?> 
+								
+							</div>
+
+
+<?php echo $this->formrow($form->get("submit"))?>
+							
+							<?php  echo $this->form()->closeTag()?>
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa  fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>
+

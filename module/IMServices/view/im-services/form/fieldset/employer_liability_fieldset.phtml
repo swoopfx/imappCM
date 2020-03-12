@@ -1,0 +1,229 @@
+<?php
+$employerLiabilityFieldset = $form->get("employerLiabilityFieldset");
+
+?>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('desc'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('desc'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top" title="Describe the profession of the employee"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('desc'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('isTakenInOtherCountries'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10 checkbox">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('isTakenInOtherCountries'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top"
+		title="Employee functions is taking place in other country"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('isTakenInOtherCountries'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div id="div_otherCountryDetails" class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('otherCountryDetails'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('otherCountryDetails'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top"
+		title="Details of work to be done in other countries"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('otherCountryDetails'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('isPremiseLawful'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10 checkbox">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('isPremiseLawful'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top"
+		title="Does premises abide to laws of safe work place "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('isPremiseLawful'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('coverFromDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('coverFromDate'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top" title="Cover starts from "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('coverFromDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('coverToDate'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('coverToDate'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top" title="Cover Ends on "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('coverToDate'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('isLawsNRegulation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('isLawsNRegulation'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top"
+		title="Do your premises come within the meaning of any Law or regulation governing the conduct or maintenance of such premises"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('isLawsNRegulation'));  // this defines the error?> 
+							</div>
+</div>
+
+<div id="div_lawsNRegulation" class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('lawsNRegulation'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('lawsNRegulation'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top" title="If so name such Laws or Regulations"></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('lawsNRegulation'));  // this defines the error?> 
+							</div>
+</div>
+
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('isSawNMachine'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('isSawNMachine'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top"
+		title="Have you any circular saws or other machinery  "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('isSawNMachine'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('isBoilersNpressureLifts'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('isBoilersNpressureLifts'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top"
+		title="Have you any  machinery driven by steam, gas, water, electricity or other mechanical power "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('isBoilersNpressureLifts'));  // this defines the error?> 
+							</div>
+</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($employerLiabilityFieldset->get('isFencedProperly'))?>
+								
+								<div class="col-md-7 col-sm-7 col-xs-10">
+								<?php echo $this->formElement($employerLiabilityFieldset->get('isFencedProperly'));?>
+									
+								</div>
+	<i class="glyphicon glyphicon-info-sign" data-toggle="tooltip"
+		data-placement="top" title="Is premises fenced properly "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo  $this->formElementErrors($employerLiabilityFieldset->get('isFencedProperly'));  // this defines the error?> 
+							</div>
+</div>
+
+<div class="form-group">
+	<a id="btn2" class="ajax_element btn btn-default btn-xs pull-right"
+		data-json='{"type":"standard"}' data-ajax-loader="microFieldset"
+		data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"employeeliabilitydetail")) ?>">
+		Add Employee Details <i id="microFieldset"
+		class="fa fa-spinner  fa-pulse fa-lg" style="display: none;"> </i>
+	</a>
+</div>
+
+<div id="employee_liability_details"
+	style="margin: 10px; padding: 10px; background: #c2f4e0;"></div>
+
+<script>
+$(document).ready(function(){
+	$("#div_otherCountryDetails").hide();
+	$("#div_lawsNRegulation").hide();
+
+	$("#isTakenInOtherCountries").change(function(){
+		if($("#isTakenInOtherCountries").is(":checked")){
+			$("#div_otherCountryDetails").show();
+		}else{
+			$("#div_otherCountryDetails").hide();
+			}
+	})
+
+	$("#isLawsNRegulation").change(function(){
+		if($("#isLawsNRegulation").is(":checked")){
+			$("#div_lawsNRegulation").show();
+		}else{
+			$("#div_lawsNRegulation").hide();
+			}
+	})
+})
+</script>

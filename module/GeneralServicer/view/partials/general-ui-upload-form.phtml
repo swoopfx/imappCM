@@ -1,0 +1,35 @@
+<br>
+<br>
+<span id="uploaded_doc"></span>
+<!-- <span id="element_simple_form"></span> -->
+<!-- <form id="simpleForm" class="ajax_element" action="simpleFormExample" method="POST" -->
+<!--     data-ajax-loader="myLoader"> -->
+
+<!--     <input type="text" name="written_text"> -->
+<!--     <input type="submit" value="try it"> -->
+    
+<!--     </form> -->
+<?php
+$uploadUiForm->prepare();
+echo $this->form()->openTag($uploadUiForm);
+?>
+
+	 <?php echo $this->formelement($uploadUiForm->get("file"));
+	 ?>
+	  <i id="myLoader" class="fa-pulse fa-lg fa-4x" style="display: none;"><img alt="" src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>" height=100></i>
+	 <hr>
+	 <?php
+	 echo $this->formsubmit($uploadUiForm->get("upload"));
+	 ?>
+	
+	
+
+
+<?php
+ echo $this->form()->closeTag() ?>
+
+
+
+
+
+

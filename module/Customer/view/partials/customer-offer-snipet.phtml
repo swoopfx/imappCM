@@ -1,0 +1,53 @@
+<?php
+use Offer\Service\OfferService;
+
+$offers = $this->customerActiveOffer;
+$count = (count($offers) < 10 ? count($offers) : 10);
+?>
+
+
+<div class="col-md-4 col-sm-12   col-xs-12 ">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2>Active Offers</h2>
+			<ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div class="x_content">
+                  <?php
+                
+                if ($offers == NULL) {
+                    echo "No Offer Submitted
+                 ";
+                } else {
+                    ?>
+                  <ul class="list-unstyled top_profiles scroll-view">
+                          <?php for($i=0; $i < $count ; $i++){?>
+                          <li class="media event"><a
+					class="pull-left border-yellow profile_thumb"> <i
+						class="fa fa-folder yellow"></i>
+				</a>
+					<div class="media-body">
+						<a
+							<?php echo ($offers[$i]->getOfferStatuses()->getId() == OfferService::OFFER_STATUS_UNSAVED ? "data-toggle='tooltip' data-placement='top' title='This customer has not updated the required information' 'disabled='disabled'" : "")?>
+							class="title"
+							href="<?php echo ($offers[$i]->getOfferStatuses()->getId() == OfferService::OFFER_STATUS_UNSAVED ? "#" : $this->url("offer/default", array("action"=>'pre-process', 'id'=>$offers[$i]->getId())))?>"> <?php echo strtoupper($offers[$i]->getOfferCode())?></a>
+						<p>
+							<?php echo ($offers[$i]->getOfferName() == NULL ? "" : $offers[$i]->getOfferName())?>
+						</p>
+						<p>
+							<small><?php  echo $this->dateFormat($offers[$i]->getUpdatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></small>
+						</p>
+					</div></li>
+                          <?php }?>
+                          
+                       
+                        <?php }?>
+                         </ul>
+		</div>
+	</div>
+</div>

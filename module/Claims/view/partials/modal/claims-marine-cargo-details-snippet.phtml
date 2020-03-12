@@ -1,0 +1,62 @@
+<?php
+
+use GeneralServicer\Service\GeneralService;
+
+?>
+
+<tr>
+
+				<th>Damage Extent</th>
+				<td>
+<?php  echo ($details->getDamageExtent() != NUll ?$this->escapehtml( $details->getDamageExtent()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Place of loss</th>
+				<td>
+<?php  echo ($details->getPlaceOfLoss() != NUll ? $this->escapehtml($details->getPlaceOfLoss()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Is third party involved</th>
+				<td>
+<?php  echo ($details->getIsThirdPartyInvoved() != NUll ? $this->trueFalseHelper($details->getIsThirdPartyInvoved()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  if($details->getIsThirdPartyInvoved() == TRUE):?>
+			<tr>
+
+				<th>Details of third party involved</th>
+				<td>
+<?php  echo ($details->getThirdPartyinvolved() != NUll ? $this->escapehtml($details->getThirdPartyinvolved()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php  endif;?>
+			
+			<tr>
+
+				<th>Cause of Damage</th>
+				<td>
+<?php  echo ($details->getCauseOfDamage() != NUll ? $this->escapehtml($details->getCauseOfDamage()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Date of Loss</th>
+				<td>
+<?php  echo ($details->getDateOfLoss() != NUll ? $this->dateformat($details->getDateOfLoss(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Place of loss</th>
+				<td>
+<?php  echo ($details->getClearingAgent() != NUll ? $this->escapehtml($details->getClearingAgent()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>

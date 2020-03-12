@@ -1,0 +1,309 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+$contractAllRiskEntity = $coverEntity->getContractAllRisk();
+?>
+
+<div class="x_content table-responsive">
+	<table class="table table-hover table-responsive">
+
+		<tbody>
+
+			<tr>
+
+				<th>Name of Contract</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractName() != NUll ? $contractAllRiskEntity ->getContractName() : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<tr>
+
+				<th>Contract Value</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractValue() != NUll ? $this->myCurrencyFormat($contractAllRiskEntity ->getContractValue()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Contract Address</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractAddress() != NUll ? $contractAllRiskEntity ->getContractAddress() : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Contract Description</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractDescription() != NUll ? $this->escapehtml($contractAllRiskEntity ->getContractDescription()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Supervising Engineer</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getSupervisingEngineer() != NUll ? $contractAllRiskEntity ->getSupervisingEngineer() : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Nearest Airport</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getNearestAirport() != NUll ? $contractAllRiskEntity ->getNearestAirport() : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Nearest Landmark</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractAddress() != NUll ? $contractAllRiskEntity ->getContractAddress() : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Main Contractor</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getMainContractor() != NUll ? $this->escapehtml($contractAllRiskEntity ->getMainContractor()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Consulting Engineer</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getConsultingEngineer() != NUll ? $this->escapehtml($contractAllRiskEntity ->getConsultingEngineer()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Contract Start Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractStartDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getContractStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Contract End Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractEndDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getContractEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if(count($contractAllRiskEntity->getValueList()) > 0):?>
+			<tr>
+
+				<th>Value List</th>
+				<td>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+					<?php foreach ($contractAllRiskEntity->getValueList() as $list){?>
+					<tr>
+
+								<td> <?php echo ($list->getValueName() != NUll ? $list->getValueName() : GeneralService::GENERAL_EMPTY_FIELD) ;?>
+								</td>
+
+								<td>	<?php echo ($list->getValue() != NUll ? $this->myCurrencyFormat($list->getValue()) : GeneralService::GENERAL_EMPTY_FIELD) ;?></td>
+
+
+
+
+							</tr>
+						
+					<?php }?>
+					</tbody>
+					</table>
+				</td>
+			</tr>
+			
+			<?php  endif;?>
+
+			<tr>
+
+				<th>Contract End Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getContractEndDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getContractEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Project has testing period</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsTesting() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsTesting()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  if($contractAllRiskEntity->getIsTesting() == TRUE){?>
+			<tr>
+
+				<th>Testing Start Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getTestingStartDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getTestingStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Testing End Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getTestingEndDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getTestingEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Project has maintenance period</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsMaintenance() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsMaintenance()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php  if($contractAllRiskEntity->getIsMaintenance() == TRUE){?>
+			<tr>
+
+				<th>Maintenance Start Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getMaintenanceStartDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getMaintenanceStartDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Maintenance End Date</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getMaintenanceEndDate() != NUll ? $this->dateFormat($contractAllRiskEntity ->getMaintenanceEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us") : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Similar project has been handled by insured</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsSimilarConstruction() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsSimilarConstruction()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($contractAllRiskEntity->getIsSimilarConstruction() == TRUE){?>
+			<tr>
+
+				<th>Similar Contract Name</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getPreviousContructionName() != NUll ? $this->escapehtml($contractAllRiskEntity ->getPreviousContructionName()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Current project is an extension of a previous work</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsExtension() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsExtension()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($contractAllRiskEntity->getIsExtension() == TRUE){?>
+			<tr>
+
+				<th>Brief information of the existing contract/project</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getExistingPlant() != NUll ? $this->escapehtml($contractAllRiskEntity ->getExistingPlant()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Civil/Engineering work has been completed</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsCivilCompleted() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsCivilCompleted()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($contractAllRiskEntity->getIsCivilCompleted() != TRUE){?>
+			<tr>
+
+				<th>Information of outstanding civil/engineering work</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getCivilWork() != NUll ? $this->escapehtml($contractAllRiskEntity ->getCivilWork()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php }?>
+			
+			<tr>
+
+				<th>Identify if there is any agravated risk</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsAgravatedRisk() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsAgravatedRisk()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			<?php if($contractAllRiskEntity->getIsAgravatedRisk() == TRUE){?>
+			<tr>
+
+				<th>Aggravated fire exist</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsAgravatedFire() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsAgravatedFire()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<tr>
+
+				<th>RIisk of explosion</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsAgravatedExplosion() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsAgravatedExplosion()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+
+			<tr>
+
+				<th>Earthquake Risk</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getIsEarthQuake() != NUll ? $this->trueFalseHelper($contractAllRiskEntity ->getIsEarthQuake()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			
+			
+			<?php }?>
+			
+			<tr>
+
+				<th>Soil Condition</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getSoilCondition() != NUll ? $this->escapehtml($contractAllRiskEntity ->getSoilCondition()->getCondition()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php if($contractAllRiskEntity->getSoilCondition() != NULL):?>
+			<?php if($contractAllRiskEntity->getSoilCondition()->getId() == "1000"){?>
+			<tr>
+
+				<th>Specific Soil Condition</th>
+				<td>
+				<?php  echo ($contractAllRiskEntity->getOtherSoil() != NUll ? $this->escapehtml($contractAllRiskEntity ->getOtherSoil()) : GeneralService::GENERAL_EMPTY_FIELD) ?>
+				</td>
+			</tr>
+			<?php
+    }
+			endif;
+
+?>
+			
+		</tbody>
+
+
+	</table>
+</div>

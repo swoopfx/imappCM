@@ -1,0 +1,195 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0"
+	offset="0" style="margin: 0pt auto; padding: 0px; background: #F4F7FA;">
+	<table id="main" width="100%" height="100%" cellpadding="0"
+		cellspacing="0" border="0" bgcolor="#F4F7FA">
+		<tbody>
+			<tr>
+				<td valign="top">
+					<table class="innermain" cellpadding="0" width="580"
+						cellspacing="0" border="0" bgcolor="#F4F7FA" align="center"
+						style="margin: 0 auto; table-layout: fixed;">
+						<tbody>
+							<!-- START of MAIL Content -->
+							<tr>
+								<td colspan="4">
+									<!-- Logo start here -->
+									<table class="logo" width="100%" cellpadding="0"
+										cellspacing="0" border="0">
+										<tbody>
+											<tr>
+												<td colspan="2" height="30"></td>
+											</tr>
+											<tr>
+												<td valign="top" align="center"></td>
+											</tr>
+											<tr>
+												<td colspan="2" height="30"></td>
+											</tr>
+										</tbody>
+									</table> <!-- Logo end here --> <!-- Main CONTENT -->
+									<table width="100%" cellpadding="0" cellspacing="0" border="0"
+										bgcolor="#ffffff"
+										style="border-radius: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
+										<tbody>
+											<tr>
+
+											</tr>
+											<tr>
+												<td height="40"></td>
+											</tr>
+											<tr
+												style="font-family: -apple-system, BlinkMacSystemFont,&amp; amp; #39; Segoe UI&amp;amp; #39; ,&amp; amp; #39; Roboto &amp;amp; #39; ,&amp; amp; #39; Oxygen &amp;amp; #39; ,&amp; amp; #39; Ubuntu &amp;amp; #39; ,&amp; amp; #39; Cantarell &amp;amp; #39; ,&amp; amp; #39; Fira Sans&amp;amp; #39; ,&amp; amp; #39; Droid Sans&amp;amp; #39; ,&amp; amp; #39; Helvetica Neue&amp;amp; #39; , sans-serif; color: #4E5C6E; font-size: 14px; line-height: 20px; margin-top: 20px;">
+												<td class="content" colspan="2" valign="top" align="center"
+													style="padding-left: 90px; padding-right: 90px;">
+													<table width="100%" cellpadding="0" cellspacing="0"
+														border="0" bgcolor="#ffffff">
+														<tbody>
+															<tr>
+																<td align="center" valign="bottom" colspan="2"
+																	cellpadding="3"><img alt="logo" height="80"
+																	src="<?php echo $logo ?>" /></td>
+															</tr>
+															<tr>
+																<td height="30" &nbsp;=""></td>
+															</tr>
+															<tr>
+																<td align="center">
+																	<div
+																		style="font-size: 22px; line-height: 32px; font-weight: 500; margin-left: 20px; margin-right: 20px; margin-bottom: 25px;">Successfully made payment for invoice <?php echo $invoiceNumber ?></div>
+																</td>
+															</tr>
+															<tr>
+																<td height="24" &nbsp;=""></td>
+															</tr>
+															<tr>
+																<td height="1" bgcolor="#DAE1E9"></td>
+															</tr>
+															<tr>
+																<td height="24" &nbsp;=""></td>
+															</tr>
+															<tr>
+																<td align="center">
+																	<table style="width: 100%; border-collapse: collapse;">
+																		<tbody
+																			style="border: 0; padding: 0; margin-top: 20px;">
+																			<tr>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">Transaction
+																					Number</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;"><span
+																					style="font-family: 'Monaco', monospace; border: 1px solid #DAE1E9; letter-spacing: 2px; padding: 5px 8px; border-radius: 4px; background-color: #F4F7FA; color: #2E7BC4;"><?php echo $transactionNumber ?></span>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">Invoice
+																					Number</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;"><?php echo $invoiceNumber ?></td>
+																			</tr>
+																			<tr>
+																				<td width="50%" valign="top"
+																					style="padding-bottom: 10px; padding-top: 10px;">Payment
+																					method</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;"><?php echo $paymentType ?></td>
+																			</tr>
+																			<tr>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">Date</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;"><?php echo $date ?></td>
+																			</tr>
+																			<tr>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">Amount
+																					<br />
+																				</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">
+																					<strong><?php echo $amount ?></strong> <br />
+																				</td>
+																			</tr>
+																			<tr>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">Currency</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;"><?php echo $currency ?></td>
+																			</tr>
+
+																			<tr>
+																				<td style="padding-bottom: 10px; padding-top: 10px;">Total</td>
+																				<td style="padding-bottom: 10px; padding-top: 10px;"><?php echo $total ?></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td height="24" &nbsp;=""></td>
+															</tr>
+															<tr>
+																<td height="1" bgcolor="#DAE1E9"></td>
+															</tr>
+															<tr>
+																<td height="24" &nbsp;=""></td>
+															</tr>
+
+
+
+															<tr>
+																<td height="24" &nbsp;=""></td>
+															</tr>
+															<tr>
+																<td align="center"><span
+																	style="color: #9BA6B2; font-size: 12px; line-height: 19px;">
+																		<p>
+    For customer service inquiries, please contact  <?php echo ($broker->getBrokerEmail() != NULL ? $broker->getBrokerEmail() : " "); ?>.
+     
+  </p>
+																		<p>
+  <?php echo ($broker->getAddress() != NULL ? $broker->getAddress() : ""); ?>
+</p>
+
+																</span></td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td height="60"></td>
+											</tr>
+										</tbody>
+									</table>
+
+									<table width="100%" cellpadding="0" cellspacing="0" border="0">
+										<tbody>
+											<tr>
+												<td height="10">&nbsp;</td>
+											</tr>
+											<tr>
+												<td valign="top" align="center"><span
+													style="font-family: -apple-system, BlinkMacSystemFont,&amp; amp; #39; Segoe UI&amp;amp; #39; ,&amp; amp; #39; Roboto &amp;amp; #39; ,&amp; amp; #39; Oxygen &amp;amp; #39; ,&amp; amp; #39; Ubuntu &amp;amp; #39; ,&amp; amp; #39; Cantarell &amp;amp; #39; ,&amp; amp; #39; Fira Sans&amp;amp; #39; ,&amp; amp; #39; Droid Sans&amp;amp; #39; ,&amp; amp; #39; Helvetica Neue&amp;amp; #39; , sans-serif; color: #9EB0C9; font-size: 10px;">&copy;
+														<a href="<?php echo GeneralService::CM_URL?>" target="_blank"
+														style="color: #9EB0C9 !important; text-decoration: none;"><?php echo GeneralService::CM_PRODUCT_NAME ?></a> <?php echo date("Y"); ?>
+                          </span></td>
+											</tr>
+											<tr>
+												<td height="50">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table> <!-- FOOTER end here -->
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

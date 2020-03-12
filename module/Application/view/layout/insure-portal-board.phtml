@@ -1,0 +1,144 @@
+<?php use GeneralServicer\Service\GeneralService; ?>
+
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle('Loan App  '. $this->translate(' '))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')?>
+
+        <!-- Le styles -->
+        <?php
+        
+        echo $this->headLink(array(
+            'rel' => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $this->basePath() . '/img/favicon.ico'
+        ))
+            
+            ->prependStylesheet($this->basePath('css/wasabi.gritter.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.modal.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.suggest.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.wizard.css'))
+            ->prependStylesheet($this->basePath('css/slim.css'))
+            ->prependStylesheet($this->basePath('lib/rickshaw/css/rickshaw.min.css'))
+            ->prependStylesheet($this->basePath('lib/chartist/css/chartist.css'))
+            ->prependStylesheet($this->basePath('lib/Ionicons/css/ionicons.css'))
+           
+            ->prependStylesheet($this->basePath('lib/font-awesome/css/font-awesome.css'))?>
+
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()
+        ->prependFile($this->basePath('js/wasabi.gritter.js'))
+        ->prependFile($this->basePath('js/wasabi.suggest.js'))
+        ->prependFile($this->basePath('js/wasabilib.min.js'))
+        ->prependFile($this->basePath('lib/bootstrap/js/bootstrap.js'))
+        ->prependFile($this->basePath('lib/jquery/js/jquery.js'))
+        ;
+        ?>
+
+    </head>
+<body>
+	<div class="slim-header">
+		<div class="container">
+			<div class="slim-header-left">
+				
+
+				
+				<!-- search-box -->
+			</div>
+			<!-- slim-header-left -->
+			<div class="slim-header-right">
+				
+				<!-- dropdown -->
+
+				<!-- dropdown -->
+				<div class="dropdown dropdown-c">
+					<a href="#" class="logged-user" data-toggle="dropdown"> <img
+						src="http://via.placeholder.com/500x500" alt=""> <span><?php // echo( $this->hasIdentity() ? $this->identity()->getEmail() : "" )?></span>
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<nav class="nav">
+							 <a
+								href="<?php  echo $this->url("logout")?>" class="nav-link"><i
+								class="icon ion-forward"></i> Sign Out</a>
+						</nav>
+					</div>
+					<!-- dropdown-menu -->
+				</div>
+				<!-- dropdown -->
+			</div>
+			<!-- header-right -->
+		</div>
+		<!-- container -->
+	</div>
+	<!-- slim-header -->
+
+
+
+
+	<!-- slim-navbar -->
+
+
+	<div class="slim-mainpanel">
+		<div class="container">
+<!-- 			<div class="slim-pageheader"> -->
+<!-- 				<ol class="breadcrumb slim-breadcrumb"> -->
+<!-- 					<li class="breadcrumb-item"><a href="#">Home</a></li> -->
+<!-- 					<li class="breadcrumb-item active" aria-current="page">Dashboard</li> -->
+<!-- 				</ol> -->
+<!-- 				<h6 class="slim-pagetitle">Dashboard 01</h6> -->
+<!-- 			</div> -->
+			<!-- slim-pageheader -->
+			<?php echo $this->partial("general-error-ponters");?>
+<div id="wasabi_modal"></div>
+       <?php echo $this->content; ?>
+        
+
+        
+
+        
+
+      </div>
+		<!-- container -->
+	</div>
+	<!-- slim-mainpanel -->
+
+
+
+
+
+	<div class="slim-footer">
+		<div class="container">
+			<p>Copyright 2018 &copy; All Rights Reserved. </p>
+			<p>
+				Powered By: <a href=""><?php  echo GeneralService::COMPANY_NAME ?></a>
+			</p>
+		</div>
+		<!-- container -->
+	</div>
+	<!-- slim-footer -->
+
+	<script src="/lib/jquery/js/jquery.js"></script>
+	<script src="/lib/popper.js/js/popper.js"></script>
+	<script src="/lib/bootstrap/js/bootstrap.js"></script>
+	<script src="/lib/jquery.cookie/js/jquery.cookie.js"></script>
+	<script src="/lib/chartist/js/chartist.js"></script>
+	<script src="/lib/d3/js/d3.js"></script>
+	<script src="/lib/rickshaw/js/rickshaw.min.js"></script>
+	<script src="/lib/jquery.sparkline.bower/js/jquery.sparkline.min.js"></script>
+
+	<script src="/js/ResizeSensor.js"></script>
+	<script src="/js/dashboard.js"></script>
+	<script src="/js/slim.js"></script>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

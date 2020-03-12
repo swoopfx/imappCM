@@ -1,0 +1,33 @@
+<?php
+
+$objects = $this->jects;
+//var_dump($objects);
+?>
+<div class='col-md-3 col-sm-3 col-xs-12 widget widget_tally_box'>
+		<div class='x_panel ui-ribbon-container fixed_height_390'>
+<!-- 			<div class='ui-ribbon-wrapper'> -->
+<!-- 				<div class='ui-ribbon'>30% Off</div> -->
+<!-- 			</div> -->
+			
+			<div class='x_content'>
+			<div class="col-xs-12"><a href="<?php echo $this->url("proposal/default", array("action"=>"pre-process", "id"=>$jects->getId()))?>" class="btn btn-success" style="width: 100%;"> Process Proposal</a></div>
+<div class="col-xs-12"><a href="" class="btn btn-danger" style="width: 100%;">Revoke Proposal</a></div>
+<?php   if (count($objects) == 0){?>
+
+				<div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    
+                    <strong style="color: red">No Property Attached to this Proposal</strong> 
+                    <h3 class="name_title" >Select Property Below</h3>
+                  </div>
+                  
+<?php  }else{ ?>
+<div class='divider'></div>
+ <h3 class="name_title" ><a href="" class="btn btn-default"> Generate Premium</a></h3>
+				<p></p>
+
+<?php }?>
+				
+
+			</div>
+		</div>
+	</div>

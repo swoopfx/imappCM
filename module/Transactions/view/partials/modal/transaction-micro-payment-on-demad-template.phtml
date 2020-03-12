@@ -1,0 +1,35 @@
+<?php
+if (count($data) > 0) {
+    for ($i = 0; $i < count($data['value']); $i ++) {
+        $info .= "<tr>
+            
+                                  <td>Payment " . ($i + 1) . "</td>
+                                  <td>" . number_format((float) $data['value'][$i], 2, '.', '') . "</td>
+                                  <td>" . $data['dueDate'][$i]->format("D, d M Y ") . "</td>
+                                      
+                                </tr>";
+    }
+}
+?>
+
+<div class='panel-body'>
+                            <table class='table table-striped'>
+                              <objectad>
+                                <tr>
+            
+                                  <th>Payment</th>
+                                  <th>Amount Payable</th>
+                                  <th>Date</th>
+                                </tr>
+                              </objectad>
+                              <tbody>
+            
+                                " . $info . "
+                              </tbody>
+                            </table>
+<button id='btn3' class='ajax_element btn btn-xs btn-success'
+						data-json='" . json_encode($json) . "' data-ajax-loader='ver_loader' data-href='generatemicropayment'
+						style='width: 100%;'>
+						 Generate MicroPayment
+					</button>
+                          </div>

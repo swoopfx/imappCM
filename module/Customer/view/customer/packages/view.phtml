@@ -1,0 +1,85 @@
+<?php
+ echo $this->headTitle("View Packages");
+
+?>
+
+<div class="row">
+      <div class="col-lg-7 col-md-7">
+<div class="page-section padding-top-none">
+            <div class="media media-grid v-middle">
+              <div class="media-left">
+                <span class="icon-block half bg-blue-300 text-white"><i class="fa fa-eye"></i></span>
+              </div>
+              <div class="media-body">
+                <h1 class="text-display-1 margin-none"><?php echo $package->getPackageName() ?></h1>
+              </div>
+            </div>
+            <br/>
+            
+          </div>
+        <div class="page-section">
+        
+          <div class="width-350 width-300-md width-100pc-xs paragraph-inline">
+            <div class="embed-responsive embed-responsive-16by9">
+            <div class="pack_image_wrapper">
+            <img alt="" height=200
+				src="<?php  echo $this->customer_packages_image_helper($package)?>"
+				>
+				</div>
+            </div>
+          </div>
+          <?php echo $package->getDescription()?>
+<!--           <p> -->
+<!--             <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipisicing elit. Ad aperiam autem cumque deleniti dicta iusto laboriosam laudantium omnis, possimus praesentium provident quam quas, sapiente sint, ut! Adipisci aliquid assumenda consequuntur -->
+<!--             cupiditate deleniti dicta dolore dolorem -->
+<!--             <strong>dolores enim </strong>eos hic illo inventore iure libero magnam minima minus obcaecati optio pariatur porro quibusdam quos reiciendis, sapiente sint veritatis. Eveniet in magni sunt?</p> -->
+<!--           <br/> -->
+<!--           <p class="margin-none"> -->
+<!--             <span class="label bg-gray-dark">New</span> -->
+<!--             <span class="label label-grey-200">WordPress</span> -->
+<!--             <span class="label label-grey-200">Beginner</span> -->
+<!--           </p> -->
+        </div>
+
+       
+
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-5"> 
+        <!-- .panel -->
+          <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+            <div class="panel-heading">
+              <h4 class="text-headline"><?php  echo $package->getPackageName() ?></h4>
+            </div>
+            <div class="panel-body">
+              <p class="text-caption">
+<!--                 <i class="fa fa-clock-o fa-fw"></i> 4 hrs &nbsp; -->
+
+                <i class="fa fa-calendar fa-fw"></i> <strong style="color: red"><?php echo $this->dateFormat($package->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></strong>
+                <br/>
+                <i class="fa fa-user fa-fw"></i> Service: <strong style="color: red"> <?php  echo ($package->getServiceType() != NULL ? $package->getServiceType()->getInsuranceService() : "")?></strong>
+                <br/>
+                <i class="fa fa-mortar-board fa-fw"></i> Premium Value: <strong style="color: red"> <?php  echo $this->package_value_representation($package->getValueType()->getId(), $package->getValue(), $package->getCurrency()->getCode())?></strong>
+                <br/>
+                <i class="fa fa-check fa-fw"></i> Insurer: <img alt="" src="<?php echo $this->insurerLogohelper($package->getPackagedInsurer()->getId())?>" class="img-circle width-80">
+              </p>
+            </div>
+            <hr class="margin-none" />
+            <div class="panel-body text-center">
+            
+              <p><a class="btn btn-success btn-lg paper-shadow relative" data-z="1" data-hover-z="2" data-animated href="<?php  echo $this->url("cus_pack/default", array("action"=>"preacquire", "id"=>$package->getId()))?>">ACQUIRE NOW</a></p>
+<!--               <p class="text-body-2">or <a href="#">buy course for $1</a></p> -->
+            </div>
+<!--             <ul class="list-group"> -->
+<!--               <li class="list-group-item"> -->
+<!--                 <a href="#" class="text-light"><i class="fa fa-facebook fa-fw"></i> Share on facebook</a> -->
+<!--               </li> -->
+<!--               <li class="list-group-item"> -->
+<!--                 <a href="#" class="text-light"><i class="fa fa-twitter fa-fw"></i> Tweet this course</a> -->
+<!--               </li> -->
+<!--             </ul> -->
+          </div>
+          <!-- // END .panel -->
+      <?php  echo $this->partial("customer-board-featured-packages")?></div>
+    </div>
+    
+    <?php echo $this->headLink()->appendStylesheet('/client/css/mystyle.css');?>

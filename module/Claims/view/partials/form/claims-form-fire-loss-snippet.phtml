@@ -1,0 +1,66 @@
+<?php
+$form->prepare();
+echo $this->form()->openTag($form);
+$claimsfireLossFieldset = $form->get("claimsfireLossFieldset");
+echo $this->partial("claims-form-form-snippet", array(
+    "claimsFieldset" => $claimsfireLossFieldset->get("claims")
+));
+?>
+
+<hr>
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsfireLossFieldset->get('fireDetails'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsfireLossFieldset->get('fireDetails'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Details and causes of the fire, any realted information about the fire"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsfireLossFieldset->get('fireDetails'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsfireLossFieldset->get('fireDatetime'))?> 
+								<div class="col-md-6 col-sm-6 col-xs-11">
+									<?php echo $this->formElement($claimsfireLossFieldset->get('fireDatetime'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Date fire occured "></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsfireLossFieldset->get('fireDatetime'))?> 
+								</div>
+</div>
+
+<div class="form-group">
+							
+								<?php echo $this->formLabel($claimsfireLossFieldset->get('estimatedLoss'))?> 
+								<div class="col-md-1 col-sm-1 col-xs-1">&#8358;</div>
+	<div class="col-md-5 col-sm-5 col-xs-11">
+									<?php echo $this->formElement($claimsfireLossFieldset->get('estimatedLoss'))?>  
+								</div>
+	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top"
+		title="Value of estimated Loss"></i>
+	<div style="font-size: 9px; color: red;">
+								<?php echo $this->formElementErrors($claimsfireLossFieldset->get('estimatedLoss'))?> 
+								</div>
+</div>
+
+
+	<div class="text-right">
+		<a id="" style="width: 40%" class="btn btn-primary btn-xs" data-href="<?php ?>"> Add Loss List</a>
+</div>
+
+<br>
+<?php
+echo $this->formsubmit($form->get("submit"));
+echo $this->form()->closeTag();
+?>
+
+
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg" style="display: none;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=30></i>
+</div>

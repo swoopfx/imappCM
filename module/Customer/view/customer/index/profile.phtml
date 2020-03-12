@@ -1,0 +1,117 @@
+<?php
+$this->headtitle("Customer Profile ");
+$customer = $this->customer;
+// $customerPolicy = $this->customerPolicy;
+$customerClaims = $this->unsettledClaims;
+$customerProposal = $this->customerProposal;
+
+if ($this->identity()) {
+    
+    ?>
+<div id="wasabi_modal_view"></div>
+<div id="wasabi_modal"></div>
+<div class="row">
+<?php  echo $this->partial("general-error-ponters")?>
+	<div class="col-md-12">
+		<div class="x_panel">
+			<div class="x_content">
+				<div class="row">
+					<?php  echo $this->partial('customer-info-snipet', array('customer'=>$customer));?>
+					
+
+
+					<div class=" col-sm-3 col-md-3 col-xs-12">
+
+						<div class="x_panel">
+ <div style='text-align: center;'>
+							<i id='customerActionButton' class='fa fa-lg'
+								style='display: none; text-align: center;'><img alt=''
+								src='<?php echo  $this->basePath('/processin.gif')  ?>'
+								height=50>
+								<hr></i>
+						</div>
+							<div class="x_content">
+								<a style="width: 100%" id="btn3" data-ajax-loader="customerActionButton"
+									class=" ajax_element btn btn-app"
+									data-json='{"type":"standard"}'
+									data-href="<?php  echo $this->url("customer/default", array("action"=>"messaging"))?>">
+									<i data-toggle="tooltip" data-placement="top"
+									title="Send a message to the customer" class="fa fa-comment"></i>
+									Send A Message to Customer
+								</a> 
+								
+								<?php  //echo $this->partial("customer-message-form-snippet", array("messageForm"=>$messageForm))?>
+								<a data-toggle="tooltip" data-placement="top" data-ajax-loader="customerActionButton"
+									title="View all property associated to this customer"
+									href="<?php echo $this->url("customer/default", array("action"=>"customer-object", "inf"=>$customer->getId()))?>"
+									style="width: 100%" class="btn btn-app"> <i
+									class="fa fa-suitcase"></i> Customer Property
+								</a> <a id="btn3" class=" ajax_element btn btn-app" data-ajax-loader="customerActionButton"
+									data-json='{"type":"standard"}' data-href="policyuploadform"
+									href="<?php //echo $this->url("policy/default", array("action"=>"upload-policy"))?>"
+									style="width: 100%" class="btn btn-app"> <i
+									data-toggle="tooltip" data-placement="top"
+									title="Use this to upload any pre-existing insurance policy"
+									class="fa fa-umbrella"></i> Upload Policy
+								</a>  <a id="btn3" class=" ajax_element btn btn-app" data-ajax-loader="customerActionButton"
+									data-json='{"type":"standard"}' data-href="<?php  echo $this->url("customer/default", array("action"=>"pinchangemodal"))?>"
+									style="width: 100%" class="btn btn-app"> <i
+									data-toggle="tooltip" data-placement="top"
+									title="Use this to reset the customers pincode"
+									class="fa fa-unlock-alt"></i> Change PinCode
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12 col-xs-12">
+						<div>
+							<div class="x_title">
+								<h2>Assigned Staff</h2>
+
+								<div class="clearfix"></div>
+							</div>
+							<ul class="list-unstyled top_profiles scroll-view">
+                          
+                          <?php  echo $this->customerAssignedBroker($customer->getId())?>
+                        </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Begin Proposal Action Button -->
+<div class="row">
+
+<?php  echo $this->partial('customer-proposal-action', array('customer'=>$customer))?>
+
+</div>
+<!-- End Proposal Action Button -->
+
+<div class="row">
+              <?php  echo $this->partial('customer-policy-snipet', array('customerPolicy'=>$customerPolicy))?>
+              <?php   echo $this->partial('customer-proposal-snipet', array('customerProposal'=>$customerProposal))?>
+              
+              <?php  echo $this->partial('customer-claims-snipet', array('customerClaims'=>$customerClaims))?>
+</div>
+<div class="row">
+              <?php  echo $this->partial('customer-offer-snipet', array('customerActiveOffer'=>$customerActiveOffer))?>
+              
+              <?php  echo $this->partial('customer-invoice-snipet', array('expiringInvoices'=>$expiringInvoices, "invoiceType"=>'Expiring Invoice'))?>
+               <?php  echo $this->partial('customer-unpublished-policy-snipet', array("unpublishedPolicy"=>$unpublishedPolicy))?>
+
+              
+            </div>
+<?php }?>
+
+
+
+
+
+
+
+
+
+

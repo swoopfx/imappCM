@@ -1,0 +1,66 @@
+<?php
+?>
+
+<div class="panel panel-default curriculum open paper-shadow"
+	data-z="0.5">
+	<div class="panel-heading panel-heading-gray" data-toggle="collapse"
+		data-target="#curriculum-1">
+		<div class="media">
+			<div class="media-left">
+				<span class="icon-block img-circle bg-indigo-300 half text-white"><i
+					class="fa fa-folder-open"></i></span>
+			</div>
+			<div class="media-body">
+				<h4 class="text-headline">OFFER DETAILS</h4>
+				<p>Detailed overview about this offer</p>
+			</div>
+		</div>
+		<span class="collapse-status collapse-open">Open</span> <span
+			class="collapse-status collapse-close">Close</span>
+	</div>
+	<div class="list-group collapse in" id="curriculum-1">
+		<div class="list-group-item media active"
+			data-target="website-take-course.html">
+			
+			<div class="media-body">
+			 OFFER CODE :  <?php  echo ($offer->getOfferCode() == NULL ? "NO name inputed yet" : $offer->getOfferCode())?> &nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp; Status : <span class="badge badge-red"><?php echo ($offer->getOfferStatuses() == NULL ? "Offer Status not defined" : $offer->getOfferStatuses()->getOfferStatusId()->getStatusWord())?></span>
+			</div>
+<!-- 			<div class="media-right"> -->
+<!-- 				<div class="width-100 text-right text-caption">2:03 min</div> -->
+<!-- 			</div> -->
+		</div>
+		<div class="list-group-item media active"
+			data-target="website-take-course.html">
+			
+			<div class="media-body">
+			OFFER NAME :  <?php  echo ($offer->getOfferName() == NULL ? "NO name inputed yet" : $offer->getOfferName())?>
+			</div>
+<!-- 			<div class="media-right"> -->
+<!-- 				<div class="width-100 text-right text-caption">2:03 min</div> -->
+<!-- 			</div> -->
+		</div>
+		<div class="list-group-item media active"
+			data-target="website-take-course.html">
+			 
+			<div class="media-body">
+			INSURER : <img alt="" src="<?php echo $this->insurerLogohelper($offer->getIdPreferdInsurer()->getId())?>" class="img-circle width-80">
+			</div>
+<!-- 			<div class="media-right"> -->
+<!-- 				<div class="width-100 text-right text-caption">2:03 min</div> -->
+<!-- 			</div> -->
+		</div>
+		<div class="list-group-item media active"
+			data-target="website-take-course.html">
+			
+			<div class="media-body">
+				  Cretaed On  &nbsp; | <i class="fa fa-clock-o fa-fw"></i> <?php  echo $this->dateFormat($offer->getCreatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?>  <br> Last Update &nbsp; | <i class="fa fa-clock-o fa-fw"></i> <?php  echo $this->dateFormat($offer->getUpdatedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?>
+			</div>
+			
+		</div>
+
+		
+	
+		
+		
+	</div>
+</div>

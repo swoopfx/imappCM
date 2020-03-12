@@ -1,0 +1,21 @@
+<div style=" text-align: center;">
+<i id="myLoader" class="fa fa-lg" style="display: none; text-align: center;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/processin.gif")?>"
+	height=50><hr></i>
+	</div>
+	
+<?php
+$customerPinForm->prepare();
+echo $this->form()->openTag($customerPinForm);
+?>
+                         <div class="modal-body">
+                        
+                        <?php  echo $this->partial("customer-client-pincode-form", array("ele"=>$customerPinForm->get("pinCodeFieldset")))?>
+                         </div>
+			<div class="modal-footer">
+                         
+                         <?php  echo $this->formrow($customerPinForm->get('submit'))?>
+                        </div>
+
+<?php  echo $this->form()->closeTag()?>

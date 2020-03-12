@@ -1,0 +1,173 @@
+
+<?php
+use Zend\Session\Container;
+
+$microFieldsetCounterSession = new Container("micro_fieldset_counter_session");
+$countId = "count" . $microFieldsetCounterSession->cropAgricfList;
+?>
+
+<div id="<?= $countId ?>">
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('cropTypeInsured'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('cropTypeInsured'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Type Of Crop "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('cropTypeInsured'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('cropsBiggestThreat'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('cropsBiggestThreat'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Crops biggest trhreat, disease type "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('cropsBiggestThreat'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('cropSeedVariety'))?>
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($field->get('cropSeedVariety'));?>
+									
+								</div>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Specie or type being planted "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('cropSeedVariety'));  // this defines the error?> 
+							</div>
+	</div>
+
+
+<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('vegetationPeriod'))?>
+								
+								<div class="col-md-4 col-sm-4 col-xs-12">
+								<?php echo $this->formElement($field->get('vegetationPeriod'));?>
+									
+								</div>
+								<strong>months</strong>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Plant period till harvest"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('vegetationPeriod'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('hectares'))?>
+								
+								<div class="col-md-4 col-sm-4 col-xs-12">
+								<?php echo $this->formElement($field->get('hectares'));?>
+									
+								</div>
+								<strong>hectares</strong>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Size of this particaular crop planted "></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('hectares'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('noOfPlantsPerHectare'))?>
+								
+								<div class="col-md-4 col-sm-4 col-xs-12">
+								<?php echo $this->formElement($field->get('noOfPlantsPerHectare'));?>
+									
+								</div>
+								
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Approximate number of plant per hactare"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('noOfPlantsPerHectare'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('annualProduction'))?>
+								
+								<div class="col-md-4 col-sm-4 col-xs-12">
+								<?php echo $this->formElement($field->get('annualProduction'));?>
+									
+								</div>
+								<strong>metric tonnes</strong>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Total annual production in metric tonnes"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('annualProduction'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('cropSalesValue'))?>
+								<div class="col-md-1 col-sm-1 col-xs-1"> &#8358; </div>
+								<div class="col-md-4 col-sm-4 col-xs-10">
+								<?php echo $this->formElement($field->get('cropSalesValue'));?>
+									
+								</div>
+								<strong>hectares</strong>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Value per metric tonne"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('cropSalesValue'));  // this defines the error?> 
+							</div>
+	</div>
+	
+	
+	<div class="form-group">
+
+								 <?php echo $this->formLabel($field->get('sumInsured'))?>
+								
+								<div class="col-md-1 col-sm-1 col-xs-2"> &#8358; </div>
+								<div class="col-md-4 col-sm-4 col-xs-10">
+								<?php echo $this->formElement($field->get('sumInsured'));?>
+									
+								</div>
+								<strong>hectares</strong>
+		<i class="fa fa-info-circle" data-toggle="tooltip"
+			data-placement="top" title="Sum Insured on crop"></i>
+		<div style="font-size: 9px; color: red;">
+								<?php echo  $this->formElementErrors($field->get('sumInsured'));  // this defines the error?> 
+							</div>
+	</div>
+
+<?php
+
+$json = json_encode(array(
+    "data" => $countId
+));
+?>
+
+	<div class="form-group">
+		<a id="sending_data_button"
+			class="ajax_element btn btn-danger btn-xs pull-right"
+			data-json='<?php  echo $json ?>'
+			data-href="<?php echo $this->url("proposalmodal/default", array("action"=>"removediv")) ?>">remove</a>
+	</div>
+	<hr>
+</div>

@@ -1,0 +1,33 @@
+<?php
+
+
+$staffEmailForm->prepare();
+$fieldset = $staffEmailForm->get("staffEmailFieldset");
+echo $this->form()->openTag($staffEmailForm);
+?>
+
+<i id="soader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div class="form-group">
+<?php  $element1 = $fieldset->get('email')?>
+							
+								<?php echo $this->formLabel($element1)?> 
+								
+								<div class="col-md-8 col-sm-8 col-xs-12">
+								<?php echo $this->formElement($element1);?>
+									
+								</div><i class="fa fa-info-circle"
+		data-toggle="tooltip" data-placement="top"
+		title="Enter the new email "></i>
+	<div style="font-size: 9px; color: red;">
+		<br>
+								<?php echo $this->formElementErrors($element1);  // this defines the error?> 
+							</div>
+</div>
+<hr>
+
+<?php 
+echo $this->formRow($staffEmailForm->get('submit'));
+echo $this->form()->closeTag();

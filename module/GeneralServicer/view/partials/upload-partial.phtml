@@ -1,0 +1,28 @@
+<?php
+$upload = $this->upload;
+?>
+<div class="row">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		The Hidden div that show the image stays here
+		<div class="form-group">
+							
+								<?php echo $this->formLabel($upload->get('file'))?> 
+								
+								<div class="col-md-6 col-sm-6 col-xs-12">
+								<?php echo $this->formElement($upload->get('file'));?>
+									
+								</div>
+			<div style="font-size: 9px; color: red;">
+								<?php $this->formElementErrors($upload->get('file'));  // this defines the error?> 
+							</div>
+							<i id="myLoader" class="fa fa-spinner fa-pulse fa-lg" style="display: none;"></i>
+		</div>
+		
+		<div class="form-group">
+		<?php echo $this->formRow($upload->get('upload'))?>
+		</div>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+	<img alt="" src="">
+	</div>
+</div>

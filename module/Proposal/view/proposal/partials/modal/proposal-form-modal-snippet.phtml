@@ -1,0 +1,122 @@
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<?php
+$proposalForm->prepare();
+// $proposalForm->setAttributes(array(
+// "action" => "/proposal/process"
+// ))
+?>
+    <?php echo  $this->form()->openTag($proposalForm);?>
+     <?php echo $this->partial("proposal-form-snipet", array("proposalFieldset"=>$proposalForm->get("proposalFieldset")))?>
+                          <?php  echo $this->formrow($proposalForm->get("csrf"))?>
+                          <?php echo $this->formrow($proposalForm->get("submit"))?>
+                          <?php  echo $this->form()->closeTag(); ?>
+<script type="text/javascript">
+
+function getspecifics(){
+	$.ajax({
+        type:"POST",
+        data: { 
+            'service':$("#service-type").val() , 
+//             'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+        },
+        url:"/package/service",
+        dataType:"html",
+        beforeSend:function(){},
+        success:function(data, status){
+//            
+            $("#specific-service").html(data)
+        },
+        error:function(){
+            alert("we could not retrive the cover details")
+        }
+    })
+}
+
+        $(document).ready(function () {
+        	$("#isTemredValue").hide();
+        	$("#currency_id").show();
+
+        	if($("#service-type").val() != ""){
+
+        		 getspecifics()
+                
+            	}
+        	
+//         		$('#ajaxStatus')
+//         		.ajaxStart(function() {
+//         		$(this).show();
+//         		})
+//         		.ajaxStop(function() {
+//         		$(this).hide();
+//         		});
+            // $('.money').mask('000,000,000,000,000.0', {reverse: true});
+//             $('.phone').mask('0-000-000-0000');
+            $("#service-type").change(function(){
+
+            getspecifics();
+                //alert("The index chosen is ");
+               //$("#pack_cover").val(303);
+//                 $.ajax({
+//                     type:"POST",
+//                     data: { 
+//                         'service':$("#service-type").val() , 
+// //                         'ca$libri': 'no$libri' // <-- the $ sign in the parameter name seems unusual, I would avoid it
+//                     },
+//                     url:"/package/service",
+//                     dataType:"html",
+//                     success:function(data, status){
+//                         $("#specific-service").html(data)
+//                     },
+//                     error:function(){
+//                         alert("we could not retrive the cover details")
+//                     }
+//                 })
+            	//$("#pack_cover").html("<option value='303'>PUM PUM </option>");
+            })
+            
+
+//             if($("#coverduration").val() == "100"){
+//               	 $("#isTemredValue").show();
+//                }else{
+//               	 $("#isTemredValue").hide();
+//                }
+
+            $("#coverduration").change(function(){
+				if($("#coverduration").val() == "100"){
+					$("#isTemredValue").show();
+				}else{
+					$("#isTemredValue").hide();
+				}
+			});
+
+			$("#value_typer").change(function(){
+				if($("#value_typer").val() == "1"){
+					$("#currency_id").hide();
+				}else{
+					$("#currency_id").show();
+				}
+			})
+
+			$("#value_typer").change(function(){
+				if($("#value_typer").val() == "10"){
+// 					alert("sumAsus");
+					$("#valueLabel").text("Sum Assured");
+					$("#coverduration").val("100");
+					$("#isTemredValue").show();
+					}else{
+						$("#isTemredValue").hide();
+						$("#valueLabel").text("Premium Rate/Value");
+						$("#coverduration").val("1");
+						}
+				})
+           
+
+        });
+
+       
+
+</script>
+

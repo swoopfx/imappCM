@@ -1,0 +1,250 @@
+<?php
+use GeneralServicer\Service\GeneralService;
+use Claims\Service\ClaimsService;
+
+if ($claimsEntity->getIsSettled() == TRUE && $claimsEntity->getClaimsSettled()) :
+    ?>
+<style>
+<!--
+.onoffswitch {
+	position: relative;
+	width: 90px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+	display: none;
+}
+
+.onoffswitch-label {
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	border: 2px solid #999999;
+	border-radius: 20px;
+}
+
+.onoffswitch-inner {
+	display: block;
+	width: 200%;
+	margin-left: -100%;
+	transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	font-size: 14px;
+	color: white;
+	font-family: Trebuchet, Arial, sans-serif;
+	font-weight: bold;
+	box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+	content: "PAID";
+	padding-left: 10px;
+	background-color: #34A7C1;
+	color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+	content: " UNPAID";
+	padding-right: 10px;
+	background-color: #EEEEEE;
+	color: #999999;
+	text-align: right;
+}
+
+.onoffswitch-switch {
+	display: block;
+	width: 18px;
+	margin: 6px;
+	background: #FFFFFF;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 56px;
+	border: 2px solid #999999;
+	border-radius: 20px;
+	transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+	margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+	right: 0px;
+}
+-->
+</style>
+<?php
+    $checked = ($claimsEntity->getClaimStatus()->getId() == ClaimsService::CLAIMS_STATUS_SETTLED_AND_PAID ? "checked disabled" : "")?>
+<div class="row">
+
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+
+			<div class="x_content">
+				<div class="dashboard-widget-content"
+					style="background-color: #eefef5;">
+
+					<div style="text-align: center;">
+						<i id="buttonAction" class="fa  fa-lg" style="display: none;"><img
+							alt="" src="<?php  echo $this->basepath("/processin.gif")?>"
+							height=30></i>
+					</div>
+
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>Claims Approval Details</h2>
+
+								<div class="clearfix"></div>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table table-striped">
+
+									<tbody>
+										<tr>
+
+											<td><?php echo ($claimsEntity->getClaimStatus() != NULL ? $this->statusHelper($claimsEntity->getClaimStatus()->getStatus()) : '')?></td>
+											<td>
+												<div style="text-align: center;">
+													<i id="loading" class="fa  fa-lg" style="display: none;"><img
+														alt=""
+														src="<?php  echo $this->basepath("/processin.gif")?>"
+														height=25></i>
+												</div>
+												<div class="onoffswitch">
+
+													<input <?php  echo $checked ?> type="checkbox"
+														name="onoffswitch" data-ajax-loader="loading"
+														class="ajax_element onoffswitch-checkbox "
+														data-href=<?php echo $this->url("claims/default", array("action"=>"ajaxchangetopaidconfirmation"))?>
+														id="myonoffswitch"> <label class="onoffswitch-label"
+														for="myonoffswitch"> <span class="onoffswitch-inner"></span>
+														<span class="onoffswitch-switch"></span>
+													</label>
+												</div> <i class="fa fa-info-circle" data-toggle="tooltip"
+												data-placement="top"
+												title="Switch this to paid whenever the customer has revceived payment from broker "></i>
+											</td>
+
+										</tr>
+										<tr>
+
+											<td><strong>Approved Value</strong></td>
+											<td><?php  echo ($claimsEntity->getClaimsSettled() != NULL ? $this->myCurrencyFormat($claimsEntity->getClaimsSettled()->getAmountApproved()) : "")?></td>
+
+										</tr>
+										<tr>
+
+											<td><strong>Additional information</strong></td>
+											<td><?php
+
+    $approvidedetailsButton = "<a id='btn2' class='ajax_element btn btn-xs btn-default' data-href='" . $this->url("claims/default", array(
+        "action" => "approvedfulldetails"
+    )) . "'>View Information</a>";
+    echo ($claimsEntity->getClaimsSettled()->getInformation() != NULL ? $approvidedetailsButton : GeneralService::GENERAL_EMPTY_FIELD)?></td>
+
+										</tr>
+										<tr>
+
+											<td><strong>Upload Approval Doc.</strong> <i
+												class="fa fa-info-circle" data-toggle="tooltip"
+												data-placement="top"
+												title="Documents relating to the approval of the claims are uploaded and availaible here "></i>
+												<hr><?php  echo $this->claimsSettledDocumentListHelper($claimsEntity)?></td>
+											<td><div class="row">
+													<div class="col-sm-12">
+                          <?php
+    $dropZoneForm->setAttributes(array(
+        // "id" => "simpleForm",
+        // "class" => "ajax_element",
+        "action" => $this->url("claims/default", array(
+            "action" => "uploadsettledclaimdoc"
+        ))
+    ));
+    echo $this->partial("general-dropzone-upload-form-snippet", array(
+        "dropZoneUploadForm" => $dropZoneForm
+    ))?>
+                        </div>
+												</div></td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="">
+						<label> . </label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<?php 
+// echo $this->headScript()->appendFile('https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js');
+// echo $this->headLink()->appendStylesheet('https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css');
+endif;
+
+?>
+<script>
+
+function changetopaidstatus(){
+	 $.ajax({
+		 type:"POST",
+// 		 data:{
+// 			 "service":$("#country").val(),
+// 		 },
+		 url:"/claims/ajaxchangetopaidclaims",
+		 dataType:"json",
+		 beforeSend:function(){
+			 $("#loading").show();
+			 },
+// 		 success: function(data, status){
+// 			 $("#state").html(data);
+// 			 },
+		 error:function(){
+			 alert("We could not reterieve state");
+			 },
+			 complete:function(){
+				 $("#loading").hide();
+				 }
+			 
+		 
+		 });
+	 
+	 }
+
+
+$(document).ready(function(){
+
+// 	$("#myonoffswitch").change(function(){
+// 		if($("#myonoffswitch").is(":checked")){
+// // 			$("#peopleDrivingCar_group").hide();
+
+// changetopaidstatus();
+// 		}else{
+// // 			$("#peopleDrivingCar_group").show();
+// 		}
+// 	})
+})
+</script>

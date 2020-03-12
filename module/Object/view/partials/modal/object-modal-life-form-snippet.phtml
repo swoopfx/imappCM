@@ -1,0 +1,38 @@
+
+<div id="success"></div>
+<div id="error"></div>
+
+<i id="myLoader" class="fa  fa-pulse fa-lg" style="display: none;"><img
+	alt=""
+	src="<?php  echo $this->basepath("/animated-loading-gif-2.gif")?>"
+	height=100></i>
+<div id="res">
+<?php
+// echo $this->headScript()
+// ->appendFile($this->basePath('chosen/chosen.jquery.js'));
+// echo $this->headLink()->appendStylesheet('chosen/chosen.css');
+
+$objectLifeForm->get('objectLifeFieldset')->setAttributes(array(
+    'id'=>'chosen-select'
+));
+$objectLifeForm->prepare();
+echo $this->form()->openTag($objectLifeForm);
+echo $this->partial("object-person-snippet-form", array(
+    "objectPerson" => $objectLifeForm->get("objectLifeFieldset")
+));
+// echo $this->formrow($objectLifeForm->get("csrf"));
+echo $this->formsubmit($objectLifeForm->get("submit"));
+echo $this->form()->closeTag();
+
+
+
+?>
+
+</div>
+<script type="text/javascript">
+
+
+$("#chosen-select").chosen({width: "95%"});
+    
+    
+    </script>

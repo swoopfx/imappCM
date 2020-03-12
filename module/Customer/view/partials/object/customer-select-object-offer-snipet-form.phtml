@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+	<i id="myLoader" class="fa fa-lg"
+		style="display: none; text-align: center;"><img alt=""
+		src="<?php  echo $this->basepath("/processin.gif")?>" height=50>
+	<hr></i>
+</div>
+<?php
+echo  $this->partial("object-select-object-form-snipet", array("selectObjectForm" => $selectObjectForm));
+?>
+
+<?php  //echo $this->headLink()->appendStylesheet('/client/css/vendor/all.css')->appendStylesheet('/client/css/app/app.css');
+//echo $this->headScript()->appendFile($this->basePath('/client/js/vendor/all.js'));
+
+?>
+
+<script
+	src="<?php echo $this->basePath("/client/js/app/essentials.js")?>"></script>

@@ -1,0 +1,64 @@
+<?php echo $this->doctype(); ?>
+<html lang="en"
+	class="transition-navbar-scroll top-navbar-xlarge bottom-footer">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate(' '))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')?>
+
+        <!-- Le styles -->
+        <?php
+        
+        echo $this->headLink(array(
+            'rel' => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $this->basePath() . '/img/favicon.ico'
+        ))
+            ->
+        appendStylesheet($this->basePath('client/css/vendor/all.css'))
+            ->appendStylesheet($this->basePath('client/css/app/app.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.gritter.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.modal.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.suggest.css'))
+            ->prependStylesheet($this->basePath('css/wasabi.wizard.css'))
+//             ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+//             ->prependStylesheet($this->basePath('css/bootstrap.min.css'))?>
+        
+
+     
+        
+    <!-- Scripts -->
+        <?php
+        
+        echo $this->headScript()
+        ->prependFile($this->basePath('/js/vue.js'))
+            ->
+        // ->prependFile($this->basePath('client/js/vendor/core/velocity.js'))
+        // ->prependFile($this->basePath('js/wasabi.gritter.js'))
+        // ->prependFile($this->basePath('js/wasabi.suggest.js'))
+        // ->prependFile($this->basePath('js/wasabilib.min.js'))
+        // ->prependFile($this->basePath('js/nprogress.js'))
+        
+        // ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array(
+        // 'conditional' => 'lt IE 9'
+        // ))
+        // ->prependFile($this->basePath('js/html5shiv.min.js'), 'text/javascript', array(
+        // 'conditional' => 'lt IE 9'
+        // ))
+        prependFile($this->basePath('chosen/chosen.jquery.js'))
+            ->prependFile($this->basePath('js/imApp.js'))
+            ->prependFile($this->basePath('angular/lib/angular.js'))
+            ->prependFile($this->basePath('js/nprogress.js'));
+        // ->prependFile($this->basePath('js/bootstrap.min.js'))
+        // ->prependFile($this->basePath('js/jquery.min.js'));
+        ?>
+
+       <script src="https://unpkg.com/@pusher/chatkit-client@1/dist/web/chatkit.js"></script>
+
+    </head>
+<body>

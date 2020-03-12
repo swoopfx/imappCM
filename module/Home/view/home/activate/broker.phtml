@@ -1,0 +1,42 @@
+<?php
+echo $this->headtitle("broker Activattion");
+$activationForm->prepare();
+?>
+<?php  echo $this->partial("general-error-ponters")?>
+<h4>Enter Login Details</h4>
+<?php  echo $this->form()->openTag($activationForm)?>
+<?php 
+$brokerInfo = $activationForm->get('brokerInfo');
+$user = $activationForm->get('brokerInfo')->get("user");
+$user->get('username')->setAttributes(array(
+    "placeholder"=>"Broker Login Phone Number"
+));
+$user->get('email')->setAttributes(array(
+    "placeholder"=>"Broker Login Email"
+));
+?>
+
+<div class="row">
+<div class="col-md-12">
+		 <?php  echo $this->formelement($brokerInfo->get("idInduranceBoker"))?>
+	</div>
+	<div class="col-md-12">
+		 <?php  echo $this->formelement($user->get("username"))?>
+	</div>
+	
+	<div class="col-md-12">
+		 <?php  echo $this->formelement($user->get("email"))?>
+	</div>
+	<div class="col-md-12">
+		 <?php  echo $this->formElement($activationForm->get("promoMonths"))?>
+	</div>
+	
+	<div class="col-md-12">
+		 <?php  echo $this->formrow($activationForm->get("submit"))?>
+	</div>
+	
+	
+</div>
+
+<?php  echo $this->form()->closeTag()?>
+

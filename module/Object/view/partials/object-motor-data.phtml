@@ -1,0 +1,113 @@
+<div id="motor_data_form" data-ng-show="isMotorShow">
+	<div class="ln_solid"></div>
+	<hr>
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('motorType'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('motorType'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectMotorData->get('motorType'));?>
+					</div>
+	</div>
+	
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('motorModel'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('motorModel'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectMotorData->get('motorModel'));?>
+					</div>
+	</div>
+
+
+<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('makeYear'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('makeYear'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectMotorData->get('makeYear'));?>
+					</div>
+	</div>
+
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('motorValueType'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('motorValueType'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo  $this->formElementErrors($objectMotorData->get('motorValueType'));?>
+					</div>
+	</div>
+
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('motorNumber'))?><strong style="color: red">*</strong>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('motorNumber'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo $this->formElementErrors($objectMotorData->get('motorNumber'));?>
+					</div>
+	</div>
+
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('engineNumber'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+			
+						<?php echo $this->formElement($objectMotorData->get('engineNumber'))?>
+						
+		</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo $this->formElementErrors($objectMotorData->get('engineNumber'));?>
+					</div>
+	</div>
+
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('chasisNumber'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('chasisNumber'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo $this->formElementErrors($objectMotorData->get('chasisNumber'));?>
+					</div>
+	</div>
+
+	<div class="item form-group">
+						
+							<?php  echo $this->formLabel($objectMotorData->get('numberOfSeats'))?>
+
+		<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php echo $this->formElement($objectMotorData->get('numberOfSeats'))?>
+							
+						</div>
+		<div style="font-size: 9px; color: red;">
+						<?php echo $this->formElementErrors($objectMotorData->get('numberOfSeats'));?>
+					</div>
+	</div>
+</div>
+<!-- End Motor Data -->
+
+<!-- Begin House Data -->
+

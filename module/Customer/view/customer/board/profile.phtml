@@ -1,0 +1,240 @@
+<?php
+use Customer\Service\CustomerService;
+
+echo $this->headtitle("My Profile");
+?>
+<div class="row">
+	<div class="col-md-9">
+
+		<!-- Tabbable Widget -->
+		<div class="tabbable paper-shadow relative" data-z="0.5">
+
+			<!-- Tabs -->
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#"><i
+						class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">My Profile</span></a></li>
+				
+			</ul>
+			<!-- // END Tabs -->
+
+			<!-- Panes -->
+			<div class="tab-content">
+
+				<div id="account" class="tab-pane active">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">Phone Numberr</label>
+							<div class="col-md-6">
+								<i class="fa fa-phone"></i> <?php echo $customerEntity->getUser()->getUserName() ?>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-2 control-label">Full Name</label>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-6">
+										<?php  echo $customerEntity->getName()?>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-2 control-label">Email : </label>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-6">
+										<?php  echo $customerEntity->getUser()->getEmail()?>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-2 control-label">Address </label>
+							<div class="col-md-6">
+								<?php  echo $customerEntity->getFullAddress()?>
+							</div>
+						</div>
+						<?php if($customerEntity->getCustomerCategory()->getId() == CustomerService::CUSTOMER_CATEGORY_IND){?>
+						<div class="form-group">
+							<label for="" class="col-md-2 control-label">Date oF Birth</label>
+							<div class="col-md-6">
+								<?php echo ($customerEntity->getDob() == NULL ? "Date of birth not available" :$this->dateFormat($customerEntity->getDob(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_Us"))?>
+							</div>
+						</div>
+						<?php }?>
+						
+						
+						<div class="form-group margin-none">
+							<div class="col-md-offset-2 col-md-10">
+								<div class="media-right">
+                    <a id ="btn3" data-href="<?php  echo $this->url("board/default", array("action"=>"editprofile"))?>" data-json='{"type":"standard"}' class="ajax_element btn btn-default" >EDIT MY PROFILE</a>
+                  </div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</div>
+			<!-- // END Panes -->
+
+		</div>
+		<!-- // END Tabbable Widget -->
+		
+		<!-- Tabbable Widget -->
+		<div class="tabbable paper-shadow relative" data-z="0.5">
+
+			<!-- Tabs -->
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#"><i
+						class="fa fa-fw fa-lock"></i> <span class="hidden-sm hidden-xs">Login Deails</span></a></li>
+				
+			</ul>
+			<!-- // END Tabs -->
+
+			<!-- Panes -->
+			<div class="tab-content">
+
+				<div id="account" class="tab-pane active">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">Username :</label>
+							<div class="col-md-6">
+								<?php echo $customerEntity->getUser()->getUserName() ?>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-2 control-label">PIN CODE</label>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-6">
+										<a id ="btn3" data-href="<?php  echo $this->url("board/default", array("action"=>"repin"))?>" data-json='{"type":"standard"}' class="ajax_element btn btn-primary paper-shadow relative" data-z="0.5"
+									data-hover-z="1" data-animated href="">CHANGE PIN CODE </a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputEmail3" class="col-md-2 control-label">Security Question </label>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-6">
+									
+										<?php echo ($customerEntity->getUser()->getQuestion() == NULL ? "<span style='color: red;'>No Security question </span>" : $customerEntity->getUser()->getQuestion()->getQuestion())?>
+									</div>
+									<div class="col-md-6">
+										<a class="btn btn-primary paper-shadow relative" data-z="0.5"
+									data-hover-z="1" data-animated href="">Change Security Question  and Anwser</a>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						
+						
+						
+						
+						
+					</form>
+				</div>
+
+			</div>
+			<!-- // END Panes -->
+
+		</div>
+		<!-- // END Tabbable Widget -->
+
+		<br /> <br />
+
+	</div>
+
+	<div class="col-md-3">
+
+		<div class="panel panel-default" data-toggle="panel-collapse"
+			data-open="true">
+			<div class="panel-heading panel-collapse-trigger">
+				<h4 class="panel-title">My Account</h4>
+			</div>
+			<div class="panel-body list-group">
+				<ul class="list-group list-group-menu">
+					<li class="list-group-item"><a class="link-text-color"
+						href="<?php  echo $this->url("board")?>">Dashboard</a></li>
+					<li class="list-group-item"><a class="link-text-color"
+						href="<?php  echo $this->url("cus_proposal")?>">My Proposals</a></li>
+					<li class="list-group-item"><a class="link-text-color"
+						href="<?php  echo $this->url("cus_offer")?>">My Active Offers</a></li>
+					<li class="list-group-item"><a class="link-text-color"
+						href="<?php  echo $this->url("cus_message")?>">My Messages</a></li>
+					<li class="list-group-item"><a class="link-text-color"
+						href="<?php  echo $this->url("cus_pack")?>"><span>My Packages</span></a></li>
+						<li class="list-group-item"><a class="link-text-color"
+						href="<?php  echo $this->url("cus_invoice")?>"><span>My Invoice</span></a></li>
+				</ul>
+			</div>
+		</div>
+
+		
+		 <?php  echo $this->partial("customer-board-featured-packages")?>
+		 
+
+	</div>
+</div>
+
+<!-- Begin modal view -->
+<?php  $editProfileForm->get("submit")->setAttributes(array(
+    "value"=>"UPDATE MY PROFILE"
+));
+$editProfileForm->setAttributes(array(
+    "action"=>$this->url("board/default", array("action"=>"profile")),
+))
+?>
+<?php  $editProfileForm->prepare()?>
+<div class="modal grow modal-backdrop-white fade" id="modal-edit-my-profile">
+            <div class="modal-dialog modal-lg">
+              <div class="v-cell">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">EDIT MY PROFILE</h4>
+                  </div>
+                  <div class="modal-body">
+                    <?php  echo $this->form()->openTag($editProfileForm)?>
+                      
+                      <?php  echo $this->partial("customer_board_edit_profile_snippet", array("customerFieldset"=>$editProfileForm->get("customerFieldset")))?>
+                      <?php  echo $this->formrow($editProfileForm->get("csrf"))?>
+                      <?php  echo $this->formrow($editProfileForm->get("submit"))?>
+                     
+                   <?php  echo $this->form()->closeTag()?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--  End Modal View -->
+
+
+<!--  Begin pincode modl view -->
+<?php $pinCodeForm->prepare()?>
+<div class="modal grow modal-backdrop-white fade" id="modal-change-pincode">
+            <div class="modal-dialog modal-sm">
+              <div class="v-cell">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">CHANGE PIN CODE</h4>
+                  </div>
+                  <div class="modal-body">
+                    <?php  echo $this->form()->openTag($pinCodeForm)?>
+                      
+                      <?php echo $this->partial("customer-client-pincode-form", array("ele"=>$pinCodeForm->get("pinCodeFieldset")))?>
+                       <?php  //echo $this->formrow($pinCodeForm->get("csrf"))?>
+                      <?php  echo $this->formrow($pinCodeForm->get("submit"))?>
+                     
+                   <?php  echo $this->form()->closeTag()?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>

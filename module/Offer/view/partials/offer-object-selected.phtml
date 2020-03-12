@@ -1,0 +1,51 @@
+<?php
+$offerObjectForm = $this->offerObjectForm;
+
+?>
+
+<div class="table-responsive">
+					<table class="table table-striped jambo_table bulk_action">
+						<thead>
+							<tr>
+<!-- 								<th><input type="checkbox" id="check-all" class="flat"></th> -->
+								
+								<th style="width: 0%">Object ID</th>
+								<th style="width: 20%">Object Name</th>
+
+								<th>Object Value</th>
+								<th>Status</th>
+								<th style="width: 20%"></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr ng-repeat="obj in selectedObject">
+							
+								
+							
+							
+<!-- 								<td class="a-center "><input type="checkbox" class="flat" -->
+<!-- 									name="table_records"></td> -->
+								
+								<td><a data-ng-bind="obj.id"></a> <br /> <small
+									data-ng-bind="obj.datecreated"></small></td>
+									
+								<td>
+								
+									<p data-ng-bind="obj.name"></p>
+								</td>
+								<td>{{obj.value | currency : "&#8358;" : 2}}</td>
+								<td>
+									<button type="button" class="btn btn-danger btn-xs">{{obj.status}}</button>
+								</td>
+								<td><a href="#"
+									class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>
+									
+										Remove </a></td>
+							</tr>
+
+
+
+						</tbody>
+					</table>
+				</div>

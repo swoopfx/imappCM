@@ -1,0 +1,48 @@
+<?php
+?>
+
+<div class="panel panel-default" data-toggle="panel-collapse"
+	data-open="true">
+	<div class="panel-heading panel-collapse-trigger">
+		<h4 class="panel-title">Invoice Details</h4>
+	</div>
+	<div class="panel-body">
+		<div class="media v-middle">
+			<div class="media-left"><strong>Payable: </strong></div>
+			<div class="media-body">
+				<h4 class="text-title margin-none">
+					<a href="#"><?php echo $this->myCurrencyFormat($invoiceEntity->getAmount(), $invoiceEntity->getCurrency()->getCode())?></a>
+				</h4>
+
+			</div>
+		</div>
+		<br />
+		<div class="expandable expandable-indicator-white expandable-trigger">
+			<div class="expandable-content">
+
+
+
+				<div
+					class="media media-grid media-paper-shadow margin-top-none s-container">
+
+					<h4 class="text-title media-heading">
+						Invoice #: <a href="" class="link-text-color"><?php echo strtoupper( $invoiceEntity->getInvoiceUid())?></a>
+					</h4>
+					<p class="text-light text-caption">
+						Created On: <a href="#">
+                       <?php echo $this->dateFormat($invoiceEntity->getGeneratedOn(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?></a>
+						<br>
+					</p>
+					<p class="text-light">
+                  Due Date : <?php   echo $this->dateFormat($invoiceEntity->getExpiryDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::NONE, "en_US") ?><br><br>
+                  Made To : <?php   echo $invoiceEntity->getCustomer()->getCustomerBroker()->getBroker()->getBrokerName()?><br><br>
+                   Being For : <?php echo  $invoiceEntity->getInvoiceCategory()->getCategory() ?><br>
+					</p>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>

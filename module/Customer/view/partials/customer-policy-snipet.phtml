@@ -1,0 +1,46 @@
+<?php
+$policy = $this->customerPolicy;
+$count = (count($policy) < 10 ? count($policy) : 10);
+
+?>
+
+<div class="col-md-4 col-sm-12   col-xs-12 ">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2>Customer Policy</h2>
+			<ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+
+
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div class="x_content">
+                   <?php
+                
+if ($policy == NULL) {
+                    echo "No policy available";
+                } else {
+                    ?>
+                  <ul class="list-unstyled top_profiles scroll-view">
+                  <?php for($i=0; $i < $count ; $i++){?>
+                  <li class="media event"><a
+					class="pull-left border-blue profile_thumb"> <i
+						class="fa fa-umbrella blue"></i>
+				</a>
+					<div class="media-body">
+						<a class="title" href="#"> <?php  //echo ($policy[$i]->getPolicyName() == NULL ? "" : $policy[$i]->getPolicyName()) ?></a>
+						<p>
+							<strong><?php echo $policy[$i]->getCoverNote()->getInsurer()->getInsuranceName() ?> </strong> (<?php  echo ($policy[$i]->getPolicyCode() == NULL ? " " : strtoupper($policy[$i]->getPolicyCode()))?> )</p>
+						<p>
+							<small>Expiry Date: <?php echo $this->dateFormat($policy[$i]->getEndDate(), IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM, "en_US")?></small>
+						</p>
+					</div></li>
+                   <?php 
+ }
+                }
+                ?>
+                  </ul>
+		</div>
+	</div>
+</div>
