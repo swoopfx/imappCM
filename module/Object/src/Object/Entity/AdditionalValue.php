@@ -106,7 +106,7 @@ class AdditionalValue
      *
      * @return AdditionalValue
      */
-    public function setObject(\Object\Entity\Object $object = null)
+    public function setObject( $object = null)
     {
         $this->object = $object;
         

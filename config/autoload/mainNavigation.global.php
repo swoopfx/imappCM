@@ -11,19 +11,19 @@ return array(
             [ // Begining Hone tab
                 'label' => '<i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span>',
                 'route' => 'dashboard',
-
+                
                 'pages' => [ // Begining Offer sub Tab
                     [
                         'label' => 'DashBoard',
                         'route' => 'dashboard',
                         'controller' => 'Index',
-                        'action'     => 'dashboard',
-                        'resource'	  => 'Home\Controller\Index',
-                        'privilege'  => 'dashboard',
+                        'action' => 'dashboard',
+                        'resource' => 'Home\Controller\Index',
+                        'privilege' => 'dashboard',
                         'params' => [
                             'action' => 'dashboard'
-                        ],
-                        
+                        ]
+                    
                     ],
                     [
                         'label' => 'Invoices',
@@ -46,7 +46,7 @@ return array(
                             'action' => 'index'
                         ]
                     ]
-
+                    
                     // [
                     // 'label' => 'Non-Electronic Payments',
                     // 'route' => 'payment/default',
@@ -63,15 +63,15 @@ return array(
             // 'action' => 'view-all-object'
             // ]
             // ],
-
+            
             // End of Offer sub Tab
             // End home Tab
-
+            
             [
                 'label' => '<i class="fa fa-umbrella"></i> Policies <span class="fa fa-chevron-down"></span>',
                 'uri' => '#',
                 'pages' => [
-
+                    
                     [
                         'label' => 'Policy',
                         'route' => 'policy/default',
@@ -87,26 +87,26 @@ return array(
                             'action' => 'expired'
                         ]
                     ],
-
+                    
                     [
                         'label' => 'Cover Note',
                         'route' => 'cover-note/default',
                         'params' => [
                             'action' => 'all'
                         ]
-                    ],
-
-//                     [
-//                         'label' => 'Unpublished Policy',
-//                         'route' => 'policy/default',
-//                         'params' => [
-//                             'action' => 'floatall'
-//                         ]
-//                     ],
-//                     [
-//                         'label' => 'Generate Policy',
-//                         'route' => 'policy'
-//                     ]
+                    ]
+                    
+                    // [
+                    // 'label' => 'Unpublished Policy',
+                    // 'route' => 'policy/default',
+                    // 'params' => [
+                    // 'action' => 'floatall'
+                    // ]
+                    // ],
+                    // [
+                    // 'label' => 'Generate Policy',
+                    // 'route' => 'policy'
+                    // ]
                 ]
             ],
             // [
@@ -116,39 +116,39 @@ return array(
             // 'action' => 'company-policy'
             // ]
             // ]
-
-//             [ // Begining Ofer Tab
-//                 'label' => '<i class=" fa fa-folder-open"></i> Quote <span class="fa fa-chevron-down"></span> ',
-//                 'route' => 'offer',
-//                 'pages' => [ // Begining Offer sub Tab
-//                     [
-//                         'label' => 'View Active Quote',
-//                         'route' => 'offer/default'
-//                     ]
-//                 ]
-//             ],
+            
+            // [ // Begining Ofer Tab
+            // 'label' => '<i class=" fa fa-folder-open"></i> Quote <span class="fa fa-chevron-down"></span> ',
+            // 'route' => 'offer',
+            // 'pages' => [ // Begining Offer sub Tab
+            // [
+            // 'label' => 'View Active Quote',
+            // 'route' => 'offer/default'
+            // ]
+            // ]
+            // ],
             // 'params' => [
             // 'action' => 'index'
             // ]
-
+            
             // [
             // 'label' => ' Make New Offer',
             // 'route' => 'offer/default',
-
+            
             // 'params' => [
             // 'action' => 'offer-information'
             // ]
             // ]
-
+            
             // [
             // 'label' => ' Help',
             // 'route' => 'offer/default',
-
+            
             // 'params' => [
             // 'action' => 'help'
             // ]
             // ]
-
+            
             [ // Begining Ofer Tab
                 'label' => '<i class=" fa fa-male"></i> Customer <span class="fa fa-chevron-down"></span> ',
                 'route' => 'customer',
@@ -160,7 +160,7 @@ return array(
                     // 'params' => [
                     // 'action' => 'index'
                     // ]
-
+                    
                     [
                         'label' => 'Registered Customer',
                         'route' => 'customer/default',
@@ -170,69 +170,69 @@ return array(
                     ]
                 ]
             ],
-
-//             [ // Begining Ofer Tab
-//                 'label' => '<i class=" fa fa-plus-square"></i> Packages <span class="fa fa-chevron-down"></span> ',
-//                 'route' => 'packages',
-//                 'pages' => [ // Begining Offer sub Tab
-//                     [
-//                         'label' => 'Create Package',
-//                         'route' => 'packages/default',
-//                         'params' => [
-//                             'action' => 'create'
-//                         ]
-//                     ],
-
-//                     [
-//                         'label' => 'View All Package',
-//                         'route' => 'packages/default',
-//                         'params' => [
-//                             'action' => 'all'
-//                         ]
-//                     ],
-
-//                     [
-//                         'label' => 'Feature Packages',
-//                         'route' => 'packages/default',
-//                         'params' => [
-//                             'action' => 'featured'
-//                         ]
-//                     ],
-
-//                     [
-//                         'label' => 'Acquired Packages',
-//                         'route' => 'acquired-packages/default',
-//                         'params' => [
-//                             'action' => 'index'
-//                         ]
-//                     ]
-//                 ]
-//             ],
-
+            
+            // [ // Begining Ofer Tab
+            // 'label' => '<i class=" fa fa-plus-square"></i> Packages <span class="fa fa-chevron-down"></span> ',
+            // 'route' => 'packages',
+            // 'pages' => [ // Begining Offer sub Tab
+            // [
+            // 'label' => 'Create Package',
+            // 'route' => 'packages/default',
+            // 'params' => [
+            // 'action' => 'create'
+            // ]
+            // ],
+            
+            // [
+            // 'label' => 'View All Package',
+            // 'route' => 'packages/default',
+            // 'params' => [
+            // 'action' => 'all'
+            // ]
+            // ],
+            
+            // [
+            // 'label' => 'Feature Packages',
+            // 'route' => 'packages/default',
+            // 'params' => [
+            // 'action' => 'featured'
+            // ]
+            // ],
+            
+            // [
+            // 'label' => 'Acquired Packages',
+            // 'route' => 'acquired-packages/default',
+            // 'params' => [
+            // 'action' => 'index'
+            // ]
+            // ]
+            // ]
+            // ],
+            
             [ // Begining Ofer Tab
                 'label' => '<i class=" fa fa-edit"></i> Proposals <span class="fa fa-chevron-down"></span> ',
                 'route' => 'proposal',
                 'pages' => [ // Begining Offer sub Tab
-
+                             
                     // [
-                    // 'label' => 'Proposals',
-                    // 'route' => 'proposal/default',
-                    // 'params' => [
-                    // 'action' => 'create'
-                    // ]
-                    // ],
-
+                             // 'label' => 'Proposals',
+                             // 'route' => 'proposal/default',
+                             // 'params' => [
+                             // 'action' => 'create'
+                             // ]
+                             // ],
+                             
                     // [
-                    // 'label' => 'Generate Proposals',
-                    // 'route' => 'proposal/default',
-                    // 'params' => [
-                    // 'action' => 'create'
-                    // ]
-                    // ],
-                    // 'params' => [
-                    // 'action' => 'index'
-                    // ]
-
+                             // 'label' => 'Generate Proposals',
+                             // 'route' => 'proposal/default',
+                             // 'params' => [
+                             // 'action' => 'create'
+                             // ]
+                             // ],
+                             // 'params' => [
+                             // 'action' => 'index'
+                             // ]
+                    
                     [
                         'label' => 'My Proposals ',
                         'route' => 'proposal/default',
@@ -249,7 +249,7 @@ return array(
             // 'action' => 'create'
             // ]
             // ]
-
+            
             // End of Offer sub Tab
             // [
             // 'label' => '<i class="fa fa-line-chart"></i> Report <span class="fa fa-chevron-down"></span> ',
@@ -261,7 +261,7 @@ return array(
             // ]
             // ]
             // ],
-
+            
             [
                 'label' => '<i class="fa fa-tasks"></i> Claims <span class="fa fa-chevron-down"></span> ',
                 'uri' => '#',
@@ -270,7 +270,7 @@ return array(
                     // 'label' => 'Lay Claims',
                     // 'route' => 'claims'
                     // ],
-
+                    
                     [
                         'label' => 'View Claims', // this is for brokers
                         'route' => 'claims/default',
@@ -280,7 +280,7 @@ return array(
                     ]
                 ]
             ],
-
+            
             [ // Begin Agennt Tools tabs
                 'label' => '<i class="fa fa-cloud"></i>Analyzer <span class="fa fa-chevron-down"></span>',
                 'uri' => '#',
@@ -288,27 +288,27 @@ return array(
                     [
                         'label' => 'Business Analysis',
                         'route' => 'analytics/default',
-                        "params"=>[
-                            "action"=>"business"
+                        "params" => [
+                            "action" => "business"
                         ]
                     ],
                     [
                         'label' => 'Consumer Analysis',
                         'route' => 'analytics/default',
-                        "params"=>[
-                            "action"=>"consumer"
+                        "params" => [
+                            "action" => "consumer"
                         ]
                     ],
                     [
                         'label' => 'Risk Analysis',
                         'route' => 'analytics/default',
-                        "params"=>[
-                            "action"=>"risk"
+                        "params" => [
+                            "action" => "risk"
                         ]
                     ]
                 ]
             ],
-
+            
             // [
             // 'label' => '<i class="fa fa-gears"></i>Brokers Tools <span class="fa fa-chevron-down"></span>',
             // 'uri' => '#',
@@ -332,10 +332,10 @@ return array(
             // 'action' => 'new'
             // ]
             // ],
-
+            
             // ]
             // ],
-
+            
             [
                 'label' => '<i class="fa fa-wrench"></i>Settings <span class="fa fa-chevron-down"></span>',
                 'uri' => '#',
@@ -349,12 +349,12 @@ return array(
                         "controller" => "Wallet",
                         'route' => 'wallet',
                         'resource' => 'Wallet\Controller\Wallet',
-//                         'privilege' => 'pr',
+                        // 'privilege' => 'pr',
                         "params" => [
                             "action" => "overview"
                         ]
                     ],
-
+                    
                     [
                         'label' => 'Company Profile',
                         "action" => "profile",
@@ -391,7 +391,7 @@ return array(
                             'action' => 'add-staff'
                         ]
                     ],
-
+                    
                     [
                         'label' => 'Web Config',
                         "action" => "webconfig",
@@ -414,7 +414,7 @@ return array(
             ]
         )
     ),
-
+    
     'service_manager' => [
         'factories' => [
             'mnavigation' => 'Navigations\Service\Factory\MainNavigationFactory'

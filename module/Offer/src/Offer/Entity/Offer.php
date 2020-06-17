@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Offer\Entity\OfferServiceType;
 use Offer\Entity\OfferSpecificService;
 use GeneralServicer\Entity\Document;
-use Object\Entity\Object;
+use Object\Entity\Object as  OBJ;
 use CsnUser\Entity\User;
 use Users\Entity\InsuranceBrokerRegistered;
 use Settings\Entity\Insurer;
@@ -669,7 +669,7 @@ class Offer
     /**
      * Add object
      *
-     * @param Object $object            
+     *          
      *
      * @return Offer
      */
@@ -685,11 +685,11 @@ class Offer
     /**
      * Remove object
      *
-     * @param \Object\Entity\Object $object            
+     *           
      */
-    public function removeObject(\Object\Entity\Object $object)
+    public function removeObject($obj)
     {
-        $this->object->removeElement($object);
+        $this->object->removeElement($obj);
     }
 
     /**

@@ -16,7 +16,7 @@ use IMServices\Entity\ContractAllRisk;
  *
  * This defines a group of objects
  *
- * @ORM\Table(name="object")
+ * @ORM\Table(name="objects")
  * @ORM\Entity(repositoryClass="Object\Entity\Repository\ObjectRepository")
  */
 class Object

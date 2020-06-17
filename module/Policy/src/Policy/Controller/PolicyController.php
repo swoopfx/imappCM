@@ -133,6 +133,7 @@ class PolicyController extends AbstractActionController
             ));
 
             $policyEntity = $policyHookEntity->getPolicy();
+            
             $mailParam = array(
                 "messagePointers" => array(
                     "to" => $policyEntity->getCoverNote()

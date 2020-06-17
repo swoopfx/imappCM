@@ -443,7 +443,7 @@ class ObjectPersonData
      * @param \Object\Entity\Object $object
      * @return ObjectPersonData
      */
-    public function setObject(\Object\Entity\Object $object = null)
+    public function setObject($object = null)
     {
         $this->object = $object;
         $this->object->setObjectLife($this);

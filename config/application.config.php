@@ -48,12 +48,12 @@ return array(
         'WasabiLib',
         'Help',
         'Webhook',
-        'General',
+        'General','Proparty',
     ),
     'module_listener_options' => array(
         'module_paths' => array(
             './module',
-            './vendor',
+            './vendor','./module',
         ),
         'config_glob_paths' => array(
             'config/autoload/{{,*.}global,{,*.}local}.php',
