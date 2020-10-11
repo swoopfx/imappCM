@@ -196,6 +196,7 @@ class BlobService
             throw new \Exception($this->error_messages[4]);
             
         } else {
+            
             $content = fopen($file['tmp_name'], 'r');
             // $content = file_get_contents($file[0]['name']);
 //             var_dump($file);
